@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CIUDADANÍAS">
+    <meta name="author" content="Oliver Castelblanco M. y Liz Arévalo para CISP">
+    <link rel="shortcut icon" href="ico/favicon.png">
+    <title>CIUDADANÍAS</title>
+    <!-- Bootstrap core CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    <link href="estilos.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.0/holder.js"></script>
+    <style type="text/css">
+    /* Estos estilos ya los trae el tema de Moodle */
+        body {
+            background-color: #2f3d46;
+        }
+    </style>
+  </head>
+
+  <body>
+
+  
+    <div class="container-fluid">
+        
+        
+        <!-- Contiene el cuerpo que hay que pegar en Moodle -->
+        <link href="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/estilos.css" rel="stylesheet" />
+        <script src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/jquery.js" type="text/javascript"></script>
+        <script src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/bootstrap.min.js" type="text/javascript"></script>
+        
+        <!-- Carrusel con viñetas principales -->
+        <div class="row-fluid">
+            <div class="span12">
+                <div id="carruselInicio" class="carousel slide" data-interval="15000" >
+                    <ol class="carousel-indicators">
+                        <li data-target="#carruselInicio" data-slide-to="0" class="active"></li>
+                        <li data-target="#carruselInicio" data-slide-to="1"></li>
+                        <li data-target="#carruselInicio" data-slide-to="2"></li>
+                        <li data-target="#carruselInicio" data-slide-to="3"></li>
+                        <li data-target="#carruselInicio" data-slide-to="4"></li>
+                        <li data-target="#carruselInicio" data-slide-to="5"></li>
+                        <li data-target="#carruselInicio" data-slide-to="6"></li>
+                        <li data-target="#carruselInicio" data-slide-to="7"></li>
+                    </ol>
+                    <!-- Carousel items -->
+                    <div class="carousel-inner">
+                        <div class="active item">
+                            <div id="vineta1"></div>
+                            <div class="carousel-caption">
+                                <h4>En el campo de fútbol de la Escuela Santa Catalina</h4>
+                                <p>Se juega un partido muy animado, con presencia de porristas, el Coordinador, el Director, docentes, y chicos y chicas.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div id="vineta2"></div>
+                            <div class="carousel-caption">
+                                <h4>Tres meses antes, en la oficina del Director</h4>
+                                <p>El Coordinador y su Director conversan con preocupación.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div id="vineta3">
+                                <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vineta3.svg">
+                            </div>
+                            <div class="carousel-caption">
+                                <h4>De vuelta en el campo de fútbol</h4>
+                                <p>Chicho, del grado noveno, patea con fuerza y fiereza un balon...</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div id="vineta4">
+                                <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vineta4.svg">
+                            </div>
+                            <div class="carousel-caption">
+                                <h4>El balón sale del campo</h4>
+                                <p>Y va a dar directo en la nariz del Director, rompiéndola.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div id="vineta5">
+                                <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vineta5.svg">
+                            </div>
+                            <div class="carousel-caption">
+                                <h4>El Director cae al piso</h4>
+                                <p>El Coordinador ayuda al Director a incorporarse, mientras éste sangra profusamente.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div id="vineta6">
+                                <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vineta6.svg">
+                            </div>
+                            <div class="carousel-caption">
+                                <h4>En el baño de la escuela</h4>
+                                <p>El Director abre el lavamanos, pero no sale agua.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div id="vineta7">
+                                <a id="Acoso" href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=11">
+                                    <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vineta7.svg">
+                                </a>
+                            </div>
+                            <div class="carousel-caption">
+                                <h4>En el campo de juego hay un nuevo conflicto</h4>
+                                <p>Chicho amenaza a Lucio, un chico gay de octavo.</p>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div id="vineta8">
+                                <a id="DerechosHumanos" href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=14">
+                                    <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vineta8.svg">
+                                </a>
+                            </div>
+                            <div class="carousel-caption">
+                                <h4>Al borde de la cancha</h4>
+                                <p>Alexa y Diana Paola charlan descomplicadamente.</p>
+                            </div>
+                        </div>
+                    </div><!-- /.carousel-inner -->
+                    <!-- Carousel nav -->
+                    <a class="carousel-control left" href="#carruselInicio" data-slide="prev">&lsaquo;</a>
+                    <a class="carousel-control right" href="#carruselInicio" data-slide="next">&rsaquo;</a>
+                </div><!-- /#carruselInicio .carousel .slide -->
+            </div><!-- /.span12 -->
+        </div><!-- /.row-fluid -->
+        
+        <!-- Primera fila de módulos -->
+        <div class="row-fluid">
+            <div class="span4 bloqueModulo modulo1">
+                <h4>Módulo 1: Convivencia</h4>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=10">
+                            La convivencia está presente en toda organización social y por lo tanto los participantes no dejan de convivir.
+                        </a>
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=10">
+                            <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vinetaMod1.svg">
+                        </a>
+                    </div><!-- /.span12 -->
+                </div> <!-- /.row-fluid -->
+            </div><!-- /.span4 .bloqueModulo .modulo1 -->
+            <div class="span4 bloqueModulo modulo2">
+                <h4>Módulo 2: Acoso Escolar</h4>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=11">
+                            ¿Cómo considera que se define el acoso entre compañeros escolares desde el concepto de dignidad humana?
+                        </a>
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=11">
+                            <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vinetaMod2.svg">
+                        </a>
+                    </div><!-- /.span12 -->
+                </div> <!-- /.row-fluid -->
+            </div><!-- /.span4 .bloqueModulo .modulo2 -->
+            <div class="span4 bloqueModulo modulo3">
+                <h4>Módulo 3: Género</h4>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=12">
+                            Uno de esos asuntos emergentes en el ejercicio de la ciudadanía es la importancia de educar para asumir el cuidado del agua como una oportunidad para la permanencia de la vida en este planeta.
+                        </a>                            
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=12">
+                            <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vinetaMod3.svg">
+                        </a>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.span4 .bloqueModulo .modulo3 -->
+        </div><!-- /.row-fluid -->
+        
+        <!-- Segunda fila de módulos -->
+        <div class="row-fluid">
+            <div class="span4 bloqueModulo modulo4">
+                <h4>Módulo 4: Medio Ambiente</h4>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=13">
+                            Uno de esos asuntos emergentes en el ejercicio de la ciudadanía es la importancia de educar para asumir el cuidado del agua como una oportunidad para la permanencia de la vida en este planeta.
+                        </a>
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=13">
+                            <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vinetaMod4.svg">
+                        </a>
+                    </div><!-- /.span12 -->
+                </div> <!-- /.row-fluid -->
+            </div><!-- /.span4 .bloqueModulo .modulo4 -->
+            <div class="span4 bloqueModulo modulo5">
+                <h4>Módulo 5: Derechos Humanos</h4>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=14">
+                            ¿Cómo considera que se define el acoso entre compañeros escolares desde el concepto de dignidad humana?
+                        </a>
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=14">
+                            <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vinetaMod5.svg">
+                        </a>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.span4 .bloqueModulo .modulo5 -->
+            <div class="span4 bloqueModulo modulo6">
+                <h4>Módulo 6: Sistematización de experiencias educativas</h4>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=15">
+                            Uno de esos asuntos emergentes en el ejercicio de la ciudadanía es la importancia de educar para asumir el cuidado del agua como una oportunidad para la permanencia de la vida en este planeta.
+                        </a>
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=15">
+                            <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vinetaMod6.svg">
+                        </a>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.span4 .bloqueModulo .modulo6 -->
+        </div><!-- /.row-fluid -->
+        
+        <!-- Tercera fila de módulos -->
+        <div class="row-fluid">
+            <div class="span4 bloqueModulo modulo7">
+                <h4>Módulo 7: Integración latinoamericana</h4>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=16">
+                            La convivencia está presente en toda organización social y por lo tanto los participantes no dejan de convivir.
+                        </a>
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/hotpot/view.php?id=16">
+                            <img src="http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/vinetaMod7.svg">
+                        </a>
+                    </div><!-- /.span12 -->
+                </div> <!-- /.row-fluid -->
+            </div><!-- /.span4 .bloqueModulo .modulo7 -->
+            <div class="span4 bloqueModulo modulo9">
+                <h4>Acontecimiento ciudadano</h4>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">
+                            La convivencia está presente en toda organización social y por lo tanto los participantes no dejan de convivir.
+                        </a>
+                    </div><!-- /.span12 -->
+                </div> <!-- /.row-fluid -->
+            </div><!-- /.span4 .bloqueModulo .modulo9 -->
+            <div class="span4 bloqueModulo modulo10">
+                <h4>Centro de recursos</h4>
+                <div class="row-fluid">
+                    <div class="span12">
+                        <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=10">
+                            La convivencia está presente en toda organización social y por lo tanto los participantes no dejan de convivir.
+                        </a>
+                    </div><!-- /.span12 -->
+                </div> <!-- /.row-fluid -->
+            </div><!-- /.span4 .bloqueModulo .modulo10 -->
+        </div><!-- /.row-fluid -->
+        
+        
+        <!-- Programación en jQuery para activar la interacción de los SVG -->
+        <script type="text/javascript">
+            var timeoutID;
+            $(function(){
+                cargaVineta(1);
+                cargaDemorada();
+                //cargaVineta(2);
+            });
+            function cargaDemorada() {
+              timeoutID = window.setTimeout(cargaVineta(2), 10000);
+            }
+            function limpiaCargaDemorada() {
+              window.clearTimeout(timeoutID);
+            }
+            function cargaVineta(num){
+                // Adicionar a nombreVineta: http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/curso/
+                var nombreVineta = 'vineta'+num+'.svg';
+                var idVineta = '#vineta'+num;
+                $.get(nombreVineta, function(datos){
+                    $(idVineta).html($(datos).contents('svg'));
+                    calculaAnchoVineta(idVineta);
+                    $(window).resize(function() {
+                        calculaAnchoVineta(idVineta);
+                    });
+                }).done(function(){
+                    switch (num) {
+                        case 1:
+                            $('#vineta1 #DerechosHumanos').tooltip({
+                                title: "Abrir Módulo de Derechos Humanos",
+                                container: 'body'
+                            });
+                            $('#vineta1 #Convivencia').tooltip({
+                               title: "Abrir Módulo de Convivencia",
+                               container: 'body'
+                            });
+                            break;
+                        case 2:
+                            $('#vineta2 #Genero').tooltip({
+                                title: "Abrir Módulo de Género",
+                                container: 'body'
+                            });
+                            $('#vineta2 #Convivencia').tooltip({
+                               title: "Abrir Módulo de Convivencia",
+                               container: 'body'
+                            });
+                            break;
+                        case 7:
+                            $('#vineta7 #Acoso').tooltip({
+                                title: "Abrir Módulo de Acoso Escolar",
+                                container: 'body'
+                            });
+                            break;
+                        case 8:
+                            $('#vineta8 #DerechosHumanos').tooltip({
+                                title: "Abrir Módulo de Derechos Humanos",
+                                container: 'body'
+                            });
+                            break;
+                    }
+                });
+            }
+            function calculaAnchoVineta(vineta) {
+                $(vineta).width($('#carruselInicio').width());
+                $(vineta).height(($('#carruselInicio').width()/630)*375);
+                $('.carousel-inner').width($('#carruselInicio').width());
+                $('.carousel-inner').height(($('#carruselInicio').width()/630)*375); 
+            }
+            function abreConvivencia(evt){
+                var dir = $('.modulo1 a').attr('href');
+                window.location.href = dir;
+            }
+            function abreAcosoEscolar(evt){
+                var dir = $('.modulo2 a').attr('href');
+                window.location.href = dir;
+            }
+            function abreGenero(evt){
+                var dir = $('.modulo3 a').attr('href');
+                window.location.href = dir;
+            }
+            function abreMedioAmbiente(evt){
+                var dir = $('.modulo4 a').attr('href');
+                window.location.href = dir;
+            }
+            function abreDerechosHumanos(evt){
+                var dir = $('.modulo5 a').attr('href');
+                window.location.href = dir;
+            }
+            function abreSistematizacion(evt){
+                var dir = $('.modulo6 a').attr('href');
+                window.location.href = dir;
+            }
+            function abreIntegracion(evt){
+                var dir = $('.modulo7 a').attr('href');
+                window.location.href = dir;
+            }
+        </script>
+        
+        <!-- Fin del cuerpo que hay que pegar en Moodle -->
+        
+        
+    </div><!-- /.container -->
+    
+        
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  </body>
+</html>

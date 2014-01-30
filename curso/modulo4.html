@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CIUDADANÍAS">
+    <meta name="author" content="Oliver Castelblanco M. y Liz Arévalo para CISP">
+    <link rel="shortcut icon" href="ico/favicon.png">
+    <title>CIUDADANÍAS</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.0/holder.js"></script>
+    <style type="text/css">
+        .continuebutton {
+            display:none;
+        }
+        .modal {
+            color: black;
+        }
+        ol.MCAnswers>li {
+            margin-top:10px;
+        }
+        ol.MCAnswers button {
+        }
+        ol.QuizQuestions {
+            list-style-type:none;
+        }
+        .bloqueModulo {
+            margin-bottom: 2em;
+        }
+        .bloqueModulo .span12 a:first-child {
+            font-size: 12px;
+            display: block;
+            float: left;
+            width: 55%;
+            padding-top: 1.5em;
+            padding-left: 5%;
+            padding-right: 5%;
+            height: 15em;
+        }
+        .bloqueModulo .span12 a:last-child {
+            /* Las medidas horizonales se hacen en % y las verticales en em */
+            padding-top: 0.57em; /* Este texto es de 14px */
+            padding-right: 5%;
+            float:left;
+            width: 30%;
+            height: auto;
+        }
+        .bloqueModulo a {
+            color:#FFFFFF;
+        }
+        .bloqueModulo a:hover {
+            text-decoration:none;
+            background-color:#5E7A8C;
+        }
+        .bloqueModulo .row-fluid:hover {
+            background-color:#5E7A8C;
+        }
+        .bloqueModulo .row-fluid {
+            background:#27353e;
+            color:#FFF;
+            overflow: hidden;
+            height: 14em;
+            cursor:pointer;
+        }
+        .bloqueModulo h4 {
+            font-size: 14px;
+            text-transform:none;
+            padding: 1em;
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.57em 0.57em 0px 0px;
+            -moz-border-radius: 0.57em 0.57em 0px 0px;
+            -webkit-border-radius: 0.57em 0.57em 0px 0px;
+            color:#FFF;  
+            overflow: hidden;
+            height: 2em;
+            text-transform:uppercase;
+        }
+        .modulo1 h4 {
+            background-color: #7ac35a;
+        }
+        .modulo2 h4 {
+            background-color: #13b5e4;
+        }
+        .modulo3 h4 {
+            background-color: #e84c3d;
+        }
+        .modulo4 h4 {
+            background-color: #5e1770;
+        }
+        .modulo5 h4 {
+            background-color: #ffc50c;
+        }
+        .modulo6 h4 {
+            background-color: #00aab2;
+        }
+        .modulo7 h4 {
+            background-color: #ec008c;
+        }
+        /* Estilos del menú Acerca De */
+        #tablaIndice {
+            width:100%;
+        }
+        #tablaIndice a {
+            display:block;
+            width:100%;
+            padding-top:1em;
+            padding-bottom:1em;
+            border-bottom:solid 1px #000;
+            color:#fff;
+            opacity:0.65;
+        }
+        #tablaIndice a:hover {
+            opacity:1;
+            background-color:#2f3d46;
+            color:#0088cc;
+        }
+        #tablaIndice span {
+            font-size:12px;
+            display:block;
+            float:left;
+            width:6.5em;
+            padding-left:2em;
+        }
+        #tablaIndice img {
+            width:100%;
+            height:auto;
+        }
+        #tablaIndice a#imagenTablaIndice {
+            display:inline;
+            width:auto;
+            padding-top:0;
+            padding-bottom:0;
+            border-bottom:none;
+            opacity:1;
+        }
+        #tablaIndice a#imagenTablaIndice:hover {
+            opacity:0.75;
+        }
+        /* Estilos para la paginación de los módulos */
+        .pagination ul>.disabled>span,
+        .pagination ul>.disabled>a,
+        .pagination ul>.disabled>a:hover,
+        .pagination ul>.disabled>a:focus {
+            background-color:#dddddd;
+        }
+        .pagination ul>li {
+            display: inline;
+        }
+        /* Estilos del módulo 1 */
+        .contenido1{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        .contenido1 h2{
+            color:#7ac35a;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido1 h3{
+            color:#7ac35a;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }   
+            
+        .contenido1 li{
+            margin: 0 0 0 15px;
+            color:#27353E;
+        }
+        
+        .contenido2 h2{
+            color:#13B5E4;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido2 h3{
+            color:#13B5E4;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido2{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        
+        .contenido3 h2{
+            color:#E84C3D;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido3 h3{
+            color:#E84C3D;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido3{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        .contenido4 h2{
+            color:#5E1770;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido4 h3{
+            color:#5E1770;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido4{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        .contenido5 h2{
+            color:#FFC50C;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido5 h3{
+            color:#FFC50C;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido5{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+    /* Estos estilos ya los trae el tema de Moodle */
+        body {
+            background-color: #2f3d46;
+            color:#FFFFFF;
+        }
+    </style>
+  </head>
+
+  <body onload="StartUp()">
+
+    <div id="InstructionsDiv" style="display: none;" class="StdDiv">
+        <div id="Instructions"></div>
+    </div>
+    <span id="QNumReadout" style="display: none;" class="QNum">&nbsp;</span>
+
+
+        
+        <div class="modal fade" id="respuesta" tabindex="-1" role="dialog" aria-labelledby="Respuesta" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Respuesta</h4>
+              </div>
+              <div class="modal-body">
+                <div class="Feedback" id="FeedbackDiv">
+                    <div class="FeedbackText" id="FeedbackContent"></div>
+                    <button style="display: none;" id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button id="cerrarModal" data-dismiss="modal" type="button" class="btn btn-primary">Cerrar ventana</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+  
+    <div class="container-fluid">
+    <div class="tab-content">
+            <div class="row-fluid">
+                <div class="span12 bloqueModulo modulo3">
+                    <h4>Módulo 3: Medio Ambiente</h4>
+                </div><!-- /.span12 -->
+            </div><!-- ./row-fluid -->
+            <div class="tab-pane active contenido3" id="pag1">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Medio Ambiente y Derecho al Agua</h2>
+                        <p>Las últimas décadas del Siglo XX y lo que va del XXI se han caracterizado por una creciente preocupación mundial por el calentamiento global y la protección del medio ambiente; en este contexto se realizan múltiples eventos internacionales que buscan asignar y dar alcance a responsabilidades de los Estados en la protección del medio ambiente entre los que se incluyen el derecho al agua, la protección del suelo, el saneamiento ambiental tal como se establece en la Declaración de Dublín (1992) que se pronunció sobre el agua y el desarrollo sostenible, estableciendo cuatro principios rectores que reconocen que: </p>
+                        <p><strong>Principio 1.</strong> El agua dulce es un recurso finito y vulnerable, esencial para sostener la vida, el desarrollo y el medio ambiente.</p> 
+                        <p><strong>Principio 2.</strong> El aprovechamiento y la gestión del agua deben inspirarse en un planteamiento basado en la participación de los usuarios, los planificadores y los responsables de las decisiones a todos los niveles.</p> 
+                        <p><strong>Principio 3.</strong> La mujer desempeña un papel fundamental en el abastecimiento, la gestión y la protección del agua.</p> 
+                        <p><strong>Principio 4.</strong> El agua tiene un valor económico en todos sus diversos usos en competencia a los que se destina y debería reconocérsele como un bien económico.</p>
+                        <p>Lo anterior hace evidente la importancia y la necesidad de una parte que los Estados formulen y pongan en marcha políticas públicas que concreten estos principios, de otra que desarrollen las políticas educativas para que la formación ciudadana haga visible la responsabilidad de la ciudadanía, de las organizaciones de la sociedad civil en el cuidado y protección del agua en los términos que las conferencias y convenciones internacionales lo establecen.</p>
+                        <h3>Bienvenida</h3>
+                        <p>Participando de los diferentes módulos, tal vez usted se ha preguntado si existen algunos otros asuntos que hagan parte del ejercicio de la ciudadanía. De entrada queremos responder que sí a esa pregunta. Son muchos los asuntos de los que deben ocuparse los ciudadanos y ciudadanas de esta época de la historia del mundo y de la humanidad. Uno de esos asuntos emergentes en el  ejercicio de la ciudadanía es la importancia de educar para  asumir el cuidado del agua como una oportunidad para la permanencia de la vida en este planeta. ¿Semejante tarea será o no responsabilidad de un ciudadano? ¿Será o no necesario educar para cuidar el agua?
+</p>
+<h3>Introducción</h3>
+<p>A pesar de que ya estamos transitando por la segunda década del siglo XXI, y que nuestros conocimientos tecnológicos facilitan tratar y administrar el agua para el consumo humano, muchos grupos de personas NO cuentan con agua potable para el consumo diario. Así mismo, en muchos lugares donde se cuenta con agua para el consumo diario, esta es altamente costosa.  Para nadie es un secreto que el mal manejo que hacemos de nuestros recursos hídricos (se contaminan, se desperdician, se encarecen) ha generado grandes problemas de contaminación que producen enfermedades y acrecientan el problema del calentamiento global. La posibilidad de vivir dignamente pasa también por ejercer el derecho al agua, ello requiere de los ciudadanos actitudes de cuidado y ahorro que permitan proteger los recursos hídricos y garantizar el derecho al agua.</p>
+<h3>Objetivos o resultados de aprendizaje del módulo</h3>
+<p><strong>General:</strong><br> 
+
+Reconocer el cuidado del agua como un asunto vital para las ciudadanías en formación.<br>
+
+<strong>Específicos:</strong><br>
+
+1. Sensibilizar a los participantes y a las comunidades educativas sobre la importancia de cuidar los recursos hídricos como parte del ejercicio ciudadano.  <br>                                               
+2. Promover la realización de acciones ciudadanas para el cuidado del agua.</p>
+
+<h3>Instrucciones</h3>
+<p><strong>El módulo Ciudadanía del agua</strong>está distribuido en cuatro actividades que le permitirán reflexionar sobre la problemática del agua cuando no se cuenta con ella; la relación entre el derecho al agua y el ejercicio de la ciudadanía, y el compromiso ciudadano en el desarrollo de acciones para la protección de los recursos hídricos.</p>
+<p>El módulo se desarrolla en el marco del curso masivo de formación en ciudadanía. Sin embargo, algunas de sus actividades se llevarán a cabo por medio de la Red Social. Allí podrá compartir las acciones que, como ciudadano, usted realiza para el cuidado del agua, así como aquellas políticas, programas y proyectos relacionados con el tema, entre otros.</p>
+<p>El desarrollo de las actividades requiere del participante un tiempo máximo de dos horas semanales, y el plazo para realizar cada una de ellas es de aproximadamente una semana. El módulo tiene una duración de 4 semanas distribuidas así: </p>
+<p><strong>Semana 1</strong>, reflexión sobre la problemática del agua;<br> 
+<strong>Semana 2</strong>, relación entre derecho al agua y el ejercicio de la ciudadanía (esta semana incluye la participación en un foro sobre políticas y programas educativos sobre el agua);<br> 
+<strong>Semana 3</strong>, acontecimiento ciudadano para el cuidado del agua, <br>
+<strong>Semana 4</strong>, foro sobre acciones ciudadanas para el cuidado del agua. </p>
+
+
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag1 -->
+            
+            <div class="tab-pane contenido3" id="pag2">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2></h2>
+                        <p>…El rector recuerda que debe salir corriendo a una reunión y corre al baño a lavarse. En ese instante cae en cuenta de que el motivo de la reunión es que en el pueblo ¡no hay agua! La reunión será en la Secretaría de Salud para discutir con los comités locales el asunto de la contaminación y el racionamiento del agua, lo cual tiene al municipio ‘viviendo en la mugre’ desde hace dos semanas.  El asunto es que en el barrio/vereda/municipio hay un brote de enfermedad diarreica aguda debido a la alta contaminación del agua. Los estudios de la Secretaría de Salud evidencian que entre las causas de contaminación se encuentra el mal manejo de las aguas servidas por parte de la población, especialmente por los químicos usados en el cultivo de la papa que básicamente sostiene la economía de la región.</p>
+                        <p>¿Encuentra alguna relación entre el <a href="#">acceso al agua potable</a> y el <a href="#">ejercicio de la ciudadanía</a>?
+</p> 
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag2 -->
+            
+            <div class="tab-pane contenido3" id="pag3">
+                <div class="row-fluid">
+                    <div class="span12">                        
+                        <h2>¿Sabía usted que…</h2>
+                        <p>…en el siglo XXI los conocimientos tecnológicos facilitan tratar y administrar el agua para el consumo humano?, no obstante:</p>
+                        <h3>El agua es altamente costosa.</h3>
+                        <p>Debido al  manejo de los recursos hídricos (contaminación, desperdicio, encarecimiento) se generan grandes problemas de contaminación que producen enfermedades.<br>
+                        ¡Muchos grupos humanos no cuentan con agua potable para el consumo diario!<br><br>
+<strong>Por lo anterior:</strong> la dignidad y el ejercicio de la ciudadanía se ven afectados cuando no hay agua.</p>
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag3 -->
+            
+            <div class="tab-pane contenido3" id="pag4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>¿Cómo se ejerce una ciudadanía del agua?:</h2>
+                        <h3>¿Sabía usted que…</h3>
+                        <p>…en América Latina se encuentra el 31% del agua dulce del planeta? Sin embargo, el cambio climático y la pérdida de glaciares harán que el agua escasee y que el suministro se vea más afectado aún. Actualmente, por lo menos la cuarta parte de la población urbana y el 33% de la población rural, no cuentan con servicios de agua potable, agravando los niveles de pobreza y riesgos para la salud en una gran franja de la población.</p>
+                        <p><strong>Actividad:</strong> Según sus conocimientos sobre el derecho al agua, complete las siguientes afirmaciones:</p>
+                        <!-- Ejercicio Hot potato: -->
+<div class="Titles">
+    <h2 class="ExerciseTitle">Como ciudadano/a del agua yo entiendo que...</h2>
+
+    <h3 class="ExerciseSubtitle">Ejercicio de emparejamiento</h3>
+
+
+
+</div>
+<script type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+
+for (var i=0; i<F.length; i++){
+    document.write('<div id="F' + i + '" class="CardStyle"></div>');
+}
+
+for (var i=0; i<D.length; i++){
+    document.write('<div id="D' + i + '" class="CardStyle" onmousedown="beginDrag(event, ' + i + ')"></div>');
+}
+
+//-->
+
+//]]>
+</script>
+                    <h3>Red Social en escenario paralelo a un lado de la pantalla. 
+Post enviado por el telefacilitador: Educando para el cuidado del agua. 
+</h3>
+<p>¿Conoce en su país o localidad alguna política, plan o proyecto para educar en el cuidado del agua? ¿En qué consiste?
+¿Desarrollan en su institución educativa algún proyecto de cuidado y protección del agua?</p>
+<div class="StdDiv" id="CheckButtonDiv">
+<button id="CheckButton1" class="FuncButton" onmouseover="FuncBtnOver(this)" onfocus="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onblur="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="CheckAnswers()">&nbsp;Comprobar respuesta&nbsp;</button>
+</div>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag4 -->
+            
+            <div class="tab-pane contenido3" id="pag5">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Y tú, ¿qué haces para cuidar el agua?</h2>
+                        <p>Señale con una X si conoce o ha desarrollado alguna acción ciudadana para el cuidado del agua: <br>
+                            En casa.<br>
+                            En el trabajo.<br>
+                            En el colegio.<br>
+                            En su barrio/vereda.</p>
+                        <p><a href="#">Acontecimiento ciudadano</a>
+                        <p>Comparta con el curso en qué consiste su acción ciudadana para el cuidado del agua.</p>
+                        <p>Una posibilidad de ampliar el impacto de su acción ciudadana para el cuidado del agua es convocar acciones colectivas que generen el interés o los deseos de expresión de otros miembros de su localidad. Un colectivo de ciudadanía activa en Colombia realiza algunas actividades de este tipo:  <a href="http://100en1dia.com/">100en1dia.com</a></p>
+                        
+                        
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag5 -->
+            
+           
+            
+        </div><!-- /.tab-content -->   
+    
+        <script type="text/javascript">
+            $(function(){
+                $('.FuncButton').html('<i class="fa fa-question"></i>');
+                $('.FuncButton').addClass('btn btn-default');
+                $('.FuncButton').prop("onfocus", null);
+                $('.FuncButton').prop("onblur", null);
+                $('.FuncButton').prop("onmouseover", null);
+                $('.FuncButton').prop("onmouseout", null);
+                $('.FuncButton').prop("onmousedown", null);
+                $('.FuncButton').prop("onmouseup", null);
+                $('.pagination a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+                $('.FuncButton').click(function() {
+                    $('#respuesta').modal();
+                    $(this).html('<i class="fa fa-check"></i>');
+                });
+            });
+        </script>
+    </div><!-- /.container -->
+    
+        
+
+
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+
+
+
+function Client(){
+//if not a DOM browser, hopeless
+    this.min = false; if (document.getElementById){this.min = true;};
+
+    this.ua = navigator.userAgent;
+    this.name = navigator.appName;
+    this.ver = navigator.appVersion;  
+
+//Get data about the browser
+    this.mac = (this.ver.indexOf('Mac') != -1);
+    this.win = (this.ver.indexOf('Windows') != -1);
+
+//Look for Gecko
+    this.gecko = (this.ua.indexOf('Gecko') > 1);
+    if (this.gecko){
+        this.geckoVer = parseInt(this.ua.substring(this.ua.indexOf('Gecko')+6, this.ua.length));
+//      if (this.geckoVer < 20020000){this.min = false;}
+    }
+    
+//Look for Firebird
+    this.firebird = (this.ua.indexOf('Firebird') > 1);
+    
+//Look for Safari
+    this.safari = (this.ua.indexOf('Safari') > 1);
+    if (this.safari){
+        this.gecko = false;
+    }
+    
+//Look for IE
+    this.ie = (this.ua.indexOf('MSIE') > 0);
+    if (this.ie){
+        this.ieVer = parseFloat(this.ua.substring(this.ua.indexOf('MSIE')+5, this.ua.length));
+        if (this.ieVer < 5.5){this.min = false;}
+    }
+    
+//Look for Opera
+    this.opera = (this.ua.indexOf('Opera') > 0);
+    if (this.opera){
+        this.operaVer = parseFloat(this.ua.substring(this.ua.indexOf('Opera')+6, this.ua.length));
+        if (this.operaVer < 7.04){this.min = false;}
+    }
+    if (this.min == false){
+//      alert('Your browser may not be able to handle this page.');
+    }
+    
+//Special case for the horrible ie5mac
+    this.ie5mac = (this.ie&&this.mac&&(this.ieVer<6));
+}
+
+var C = new Client();
+
+//for (prop in C){
+//  alert(prop + ': ' + C[prop]);
+//}
+
+
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+//[strNavBarJS]
+function NavBtnOver(Btn){
+    if (Btn.className != 'NavButtonDown'){Btn.className = 'NavButtonUp';}
+}
+
+function NavBtnOut(Btn){
+    Btn.className = 'NavButton';
+}
+
+function NavBtnDown(Btn){
+    Btn.className = 'NavButtonDown';
+}
+//[/strNavBarJS]
+
+function FuncBtnOver(Btn){
+    if (Btn.className != 'FuncButtonDown'){Btn.className = 'FuncButtonUp';}
+}
+
+function FuncBtnOut(Btn){
+    Btn.className = 'FuncButton';
+}
+
+function FuncBtnDown(Btn){
+    Btn.className = 'FuncButtonDown';
+}
+
+function FocusAButton(){
+    if (document.getElementById('CheckButton1') != null){
+        document.getElementById('CheckButton1').focus();
+    }
+    else{
+        if (document.getElementById('CheckButton2') != null){
+            document.getElementById('CheckButton2').focus();
+        }
+        else{
+            document.getElementsByTagName('button')[0].focus();
+        }
+    }
+}
+
+
+
+
+//CODE FOR HANDLING DISPLAY OF POPUP FEEDBACK BOX
+
+var topZ = 1000;
+
+function ShowMessage(Feedback){
+    var Output = Feedback + '<br /><br />';
+    document.getElementById('FeedbackContent').innerHTML = Output;
+    var FDiv = document.getElementById('FeedbackDiv');
+    topZ++;
+    FDiv.style.zIndex = topZ;
+    FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+
+    FDiv.style.display = 'block';
+
+    ShowElements(false, 'input');
+    ShowElements(false, 'select');
+    ShowElements(false, 'object');
+    ShowElements(true, 'object', 'FeedbackContent');
+
+//Focus the OK button
+    setTimeout("document.getElementById('FeedbackOKButton').focus()", 50);
+    
+//
+}
+
+function ShowElements(Show, TagName, ContainerToReverse){
+// added third argument to allow objects in the feedback box to appear
+//IE bug -- hide all the form elements that will show through the popup
+//FF on Mac bug : doesn't redisplay objects whose visibility is set to visible
+//unless the object's display property is changed
+
+    //get container object (by Id passed in, or use document otherwise)
+    TopNode = document.getElementById(ContainerToReverse);
+    var Els;
+    if (TopNode != null) {
+        Els = TopNode.getElementsByTagName(TagName);
+    } else {
+        Els = document.getElementsByTagName(TagName);
+    }
+
+    for (var i=0; i<Els.length; i++){
+        if (TagName == "object") {
+            //manipulate object elements in all browsers
+            if (Show == true){
+                Els[i].style.visibility = 'visible';
+                //get Mac FireFox to manipulate display, to force screen redraw
+                if (C.mac && C.gecko) {Els[i].style.display = '';}
+            }
+            else{
+                Els[i].style.visibility = 'hidden';
+                if (C.mac && C.gecko) {Els[i].style.display = 'none';}
+            }
+        } 
+        else {
+            // tagName is either input or select (that is, Form Elements)
+            // ie6 has a problem with Form elements, so manipulate those
+            if (C.ie) {
+                if (C.ieVer < 7) {
+                    if (Show == true){
+                        Els[i].style.visibility = 'visible';
+                    }
+                    else{
+                        Els[i].style.visibility = 'hidden';
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+function HideFeedback(){
+    document.getElementById('FeedbackDiv').style.display = 'none';
+    ShowElements(true, 'input');
+    ShowElements(true, 'select');
+    ShowElements(true, 'object');
+    if (Finished == true){
+        Finish();
+    }
+}
+
+
+//GENERAL UTILITY FUNCTIONS AND VARIABLES
+
+//PAGE DIMENSION FUNCTIONS
+function PageDim(){
+//Get the page width and height
+    this.W = 600;
+    this.H = 400;
+    this.W = document.getElementsByTagName('body')[0].clientWidth;
+    this.H = document.getElementsByTagName('body')[0].clientHeight;
+}
+
+var pg = null;
+
+function GetPageXY(El) {
+    var XY = {x: 0, y: 0};
+    while(El){
+        XY.x += El.offsetLeft;
+        XY.y += El.offsetTop;
+        El = El.offsetParent;
+    }
+    return XY;
+}
+
+function GetScrollTop(){
+    if (typeof(window.pageYOffset) == 'number'){
+        return window.pageYOffset;
+    }
+    else{
+        if ((document.body)&&(document.body.scrollTop)){
+            return document.body.scrollTop;
+        }
+        else{
+            if ((document.documentElement)&&(document.documentElement.scrollTop)){
+                return document.documentElement.scrollTop;
+            }
+            else{
+                return 0;
+            }
+        }
+    }
+}
+
+function GetViewportHeight(){
+    if (typeof window.innerHeight != 'undefined'){
+        return window.innerHeight;
+    }
+    else{
+        if (((typeof document.documentElement != 'undefined')&&(typeof document.documentElement.clientHeight !=
+     'undefined'))&&(document.documentElement.clientHeight != 0)){
+            return document.documentElement.clientHeight;
+        }
+        else{
+            return document.getElementsByTagName('body')[0].clientHeight;
+        }
+    }
+}
+
+function TopSettingWithScrollOffset(TopPercent){
+    var T = Math.floor(GetViewportHeight() * (TopPercent/100));
+    return GetScrollTop() + T; 
+}
+
+//CODE FOR AVOIDING LOSS OF DATA WHEN BACKSPACE KEY INVOKES history.back()
+var InTextBox = false;
+
+function SuppressBackspace(e){ 
+    if (InTextBox == true){return;}
+    if (C.ie) {
+        thisKey = window.event.keyCode;
+    }
+    else {
+        thisKey = e.keyCode;
+    }
+
+    var Suppress = false;
+
+    if (thisKey == 8) {
+        Suppress = true;
+    }
+
+    if (Suppress == true){
+        if (C.ie){
+            window.event.returnValue = false;   
+            window.event.cancelBubble = true;
+        }
+        else{
+            e.preventDefault();
+        }
+    }
+}
+
+if (C.ie){
+    document.attachEvent('onkeydown',SuppressBackspace);
+    window.attachEvent('onkeydown',SuppressBackspace);
+}
+else{
+    if (window.addEventListener){
+        window.addEventListener('keypress',SuppressBackspace,false);
+    }
+}
+
+function ReduceItems(InArray, ReduceToSize){
+    var ItemToDump=0;
+    var j=0;
+    while (InArray.length > ReduceToSize){
+        ItemToDump = Math.floor(InArray.length*Math.random());
+        InArray.splice(ItemToDump, 1);
+    }
+}
+
+function Shuffle(InArray){
+    var Num;
+    var Temp = new Array();
+    var Len = InArray.length;
+
+    var j = Len;
+
+    for (var i=0; i<Len; i++){
+        Temp[i] = InArray[i];
+    }
+
+    for (i=0; i<Len; i++){
+        Num = Math.floor(j  *  Math.random());
+        InArray[i] = Temp[Num];
+
+        for (var k=Num; k < (j-1); k++) {
+            Temp[k] = Temp[k+1];
+        }
+        j--;
+    }
+    return InArray;
+}
+
+function WriteToInstructions(Feedback) {
+    document.getElementById('InstructionsDiv').innerHTML = Feedback;
+
+}
+
+
+
+
+function EscapeDoubleQuotes(InString){
+    return InString.replace(/"/g, '&quot;')
+}
+
+function TrimString(InString){
+        var x = 0;
+
+        if (InString.length != 0) {
+                while ((InString.charAt(InString.length - 1) == '\u0020') || (InString.charAt(InString.length - 1) == '\u000A') || (InString.charAt(InString.length - 1) == '\u000D')){
+                        InString = InString.substring(0, InString.length - 1)
+                }
+
+                while ((InString.charAt(0) == '\u0020') || (InString.charAt(0) == '\u000A') || (InString.charAt(0) == '\u000D')){
+                        InString = InString.substring(1, InString.length)
+                }
+
+                while (InString.indexOf('  ') != -1) {
+                        x = InString.indexOf('  ')
+                        InString = InString.substring(0, x) + InString.substring(x+1, InString.length)
+                 }
+
+                return InString;
+        }
+
+        else {
+                return '';
+        }
+}
+
+function FindLongest(InArray){
+    if (InArray.length < 1){return -1;}
+
+    var Longest = 0;
+    for (var i=1; i<InArray.length; i++){
+        if (InArray[i].length > InArray[Longest].length){
+            Longest = i;
+        }
+    }
+    return Longest;
+}
+
+//UNICODE CHARACTER FUNCTIONS
+function IsCombiningDiacritic(CharNum){
+    var Result = (((CharNum >= 0x0300)&&(CharNum <= 0x370))||((CharNum >= 0x20d0)&&(CharNum <= 0x20ff)));
+    Result = Result || (((CharNum >= 0x3099)&&(CharNum <= 0x309a))||((CharNum >= 0xfe20)&&(CharNum <= 0xfe23)));
+    return Result;
+}
+
+function IsCJK(CharNum){
+    return ((CharNum >= 0x3000)&&(CharNum < 0xd800));
+}
+
+//SETUP FUNCTIONS
+//BROWSER WILL REFILL TEXT BOXES FROM CACHE IF NOT PREVENTED
+function ClearTextBoxes(){
+    var NList = document.getElementsByTagName('input');
+    for (var i=0; i<NList.length; i++){
+        if ((NList[i].id.indexOf('Guess') > -1)||(NList[i].id.indexOf('Gap') > -1)){
+            NList[i].value = '';
+        }
+        if (NList[i].id.indexOf('Chk') > -1){
+            NList[i].checked = '';
+        }
+    }
+}
+
+//EXTENSION TO ARRAY OBJECT
+function Array_IndexOf(Input){
+    var Result = -1;
+    for (var i=0; i<this.length; i++){
+        if (this[i] == Input){
+            Result = i;
+        }
+    }
+    return Result;
+}
+Array.prototype.indexOf = Array_IndexOf;
+
+//IE HAS RENDERING BUG WITH BOTTOM NAVBAR
+function RemoveBottomNavBarForIE(){
+    if ((C.ie)&&(document.getElementById('Reading') != null)){
+        if (document.getElementById('BottomNavBar') != null){
+            document.getElementById('TheBody').removeChild(document.getElementById('BottomNavBar'));
+        }
+    }
+}
+
+
+
+
+//HOTPOTNET-RELATED CODE
+
+var HPNStartTime = (new Date()).getTime();
+var SubmissionTimeout = 30000;
+var Detail = ''; //Global that is used to submit tracking data
+
+function Finish(){
+//If there's a form, fill it out and submit it
+    if (document.store != null){
+        Frm = document.store;
+        Frm.starttime.value = HPNStartTime;
+        Frm.endtime.value = (new Date()).getTime();
+        Frm.mark.value = Score;
+        Frm.detail.value = Detail;
+        Frm.submit();
+    }
+}
+
+
+
+function Card(ID, OverlapTolerance){
+    this.elm=document.getElementById(ID);
+    this.name=ID;
+    this.css=this.elm.style;
+    this.elm.style.left = 0 +'px';
+    this.elm.style.top = 0 +'px';
+    this.HomeL = 0;
+    this.HomeT = 0;
+    this.tag=-1;
+    this.index=-1;
+    this.OverlapTolerance = OverlapTolerance;
+}
+
+function CardGetL(){return parseInt(this.css.left)}
+Card.prototype.GetL=CardGetL;
+
+function CardGetT(){return parseInt(this.css.top)}
+Card.prototype.GetT=CardGetT;
+
+function CardGetW(){return parseInt(this.elm.offsetWidth)}
+Card.prototype.GetW=CardGetW;
+
+function CardGetH(){return parseInt(this.elm.offsetHeight)}
+Card.prototype.GetH=CardGetH;
+
+function CardGetB(){return this.GetT()+this.GetH()}
+Card.prototype.GetB=CardGetB;
+
+function CardGetR(){return this.GetL()+this.GetW()}
+Card.prototype.GetR=CardGetR;
+
+function CardSetL(NewL){this.css.left = NewL+'px'}
+Card.prototype.SetL=CardSetL;
+
+function CardSetT(NewT){this.css.top = NewT+'px'}
+Card.prototype.SetT=CardSetT;
+
+function CardSetW(NewW){this.css.width = NewW+'px'}
+Card.prototype.SetW=CardSetW;
+
+function CardSetH(NewH){this.css.height = NewH+'px'}
+Card.prototype.SetH=CardSetH;
+
+function CardInside(X,Y){
+    var Result=false;
+    if(X>=this.GetL()){if(X<=this.GetR()){if(Y>=this.GetT()){if(Y<=this.GetB()){Result=true;}}}}
+    return Result;
+}
+Card.prototype.Inside=CardInside;
+
+function CardSwapColours(){
+    var c=this.css.backgroundColor;
+    this.css.backgroundColor=this.css.color;
+    this.css.color=c;
+}
+Card.prototype.SwapColours=CardSwapColours;
+
+function CardHighlight(){
+    this.css.backgroundColor='#000000';
+    this.css.color='#FFFFFF';
+}
+Card.prototype.Highlight=CardHighlight;
+
+function CardUnhighlight(){
+    this.css.backgroundColor='#FFFFFF';
+    this.css.color='#000000';
+}
+Card.prototype.Unhighlight=CardUnhighlight;
+
+function CardOverlap(OtherCard){
+    var smR=(this.GetR()<(OtherCard.GetR()+this.OverlapTolerance))? this.GetR(): (OtherCard.GetR()+this.OverlapTolerance);
+    var lgL=(this.GetL()>OtherCard.GetL())? this.GetL(): OtherCard.GetL();
+    var HDim=smR-lgL;
+    if (HDim<1){return 0;}
+    var smB=(this.GetB()<OtherCard.GetB())? this.GetB(): OtherCard.GetB();
+    var lgT=(this.GetT()>OtherCard.GetT())? this.GetT(): OtherCard.GetT();
+    var VDim=smB-lgT;
+    if (VDim<1){return 0;}
+    return (HDim*VDim); 
+}
+Card.prototype.Overlap=CardOverlap;
+
+function CardDockToR(OtherCard){
+    this.SetL(OtherCard.GetR() + 5);
+    this.SetT(OtherCard.GetT());
+}
+
+Card.prototype.DockToR=CardDockToR;
+
+function CardSetHome(){
+    this.HomeL=this.GetL();
+    this.HomeT=this.GetT();
+}
+Card.prototype.SetHome=CardSetHome;
+
+function CardGoHome(){
+    this.SetL(this.HomeL);
+    this.SetT(this.HomeT);
+}
+
+Card.prototype.GoHome=CardGoHome;
+
+//Fix for 6.2.5.2: avoid image dragging problem in draggable cards
+function CardSetHTML(HTML){
+    this.elm.innerHTML = HTML;
+    var DragImgs = this.elm.getElementsByTagName('img');
+    if (DragImgs.length > 0){
+        for (var i=0; i<DragImgs.length; i++){
+            DragImgs[i]. onmousedown = function(){return false;}
+        }
+    }
+}
+
+Card.prototype.SetHTML = CardSetHTML;
+
+function doDrag(e) {
+    if (CurrDrag == -1) {return};
+    if (C.ie){var Ev = window.event}else{var Ev = e}
+    var difX = Ev.clientX-window.lastX; 
+    var difY = Ev.clientY-window.lastY; 
+    var newX = DC[CurrDrag].GetL()+difX; 
+    var newY = DC[CurrDrag].GetT()+difY; 
+    DC[CurrDrag].SetL(newX); 
+    DC[CurrDrag].SetT(newY);
+    window.lastX = Ev.clientX; 
+    window.lastY = Ev.clientY; 
+    return false;
+} 
+
+function beginDrag(e, DragNum) { 
+    CurrDrag = DragNum;
+    if (C.ie){
+        var Ev = window.event;
+        document.onmousemove=doDrag;
+        document.onmouseup=endDrag;
+    }
+    else{
+        var Ev = e;
+        window.onmousemove=doDrag; 
+        window.onmouseup=endDrag;
+    } 
+    DC[CurrDrag].Highlight();
+    topZ++;
+    DC[CurrDrag].css.zIndex = topZ;
+    window.lastX=Ev.clientX; 
+    window.lastY=Ev.clientY;
+    return false;  
+} 
+
+function endDrag(e) { 
+    if (CurrDrag == -1) {return};
+    DC[CurrDrag].Unhighlight();
+    if (C.ie){document.onmousemove=null}else{window.onmousemove=null;}
+    onEndDrag();    
+    CurrDrag = -1;
+//Need a bugfix for Opera focus problem here
+    if (C.opera){FocusAButton();}
+    return true;
+} 
+
+var CurrDrag = -1;
+var topZ = 100;
+
+
+
+
+
+
+//JMATCH-SPECIFIC CORE JAVASCRIPT CODE
+
+var CorrectResponse = '&#x00A1;Correcto! Bien hecho';
+var IncorrectResponse = '&#x00A1;Lo sentimos! Respuesta incorrecta. Los elementos err&#x00F3;neos ser&#x00E1;n removidos.';
+var YourScoreIs = 'Su puntuaci&#x00F3;n es ';
+var DivWidth = 600; //default value
+var FeedbackWidth = 200; //default
+var ExBGColor = '#FFFFFF';
+var PageBGColor = '#C0C0C0';
+var TextColor = '#000000';
+var TitleColor = '#000000';
+var Penalties = 0;
+var Score = 0;
+var TimeOver = false;
+var Locked = false;
+var ShuffleQs = false;
+var QsToShow = 5;
+
+var DragWidth = 200;
+var LeftColPos = 100;
+var RightColPos = 500;
+var DragTop = 120;
+var Finished = false;
+var AnswersTried = '';
+
+//Fixed and draggable card arrays
+FC = new Array();
+DC = new Array();
+
+function onEndDrag(){ 
+//Is it dropped on any of the fixed cards?
+    var Docked = false;
+    var DropTarget = DroppedOnFixed(CurrDrag);
+    if (DropTarget > -1){
+//If so, send home any card that is currently docked there
+        for (var i=0; i<DC.length; i++){
+            if (DC[i].tag == DropTarget+1){
+                DC[i].GoHome();
+                DC[i].tag = 0;
+                D[i][2] = 0;
+            }
+        }
+//Dock the dropped card
+        DC[CurrDrag].DockToR(FC[DropTarget]);
+        D[CurrDrag][2] = F[DropTarget][1];
+        DC[CurrDrag].tag = DropTarget+1;
+        Docked = true;
+    }
+
+    if (Docked == false){
+        DC[CurrDrag].GoHome();
+        DC[CurrDrag].tag = 0;
+        D[CurrDrag][2] = 0;
+    }
+} 
+
+function DroppedOnFixed(DNum){
+    var Result = -1;
+    var OverlapArea = 0;
+    var Temp = 0;
+    for (var i=0; i<FC.length; i++){
+        Temp = DC[DNum].Overlap(FC[i]);
+        if (Temp > OverlapArea){
+            OverlapArea = Temp;
+            Result = i;
+        }
+    }
+    return Result;
+}
+
+
+function StartUp(){
+
+
+
+
+
+
+
+//Calculate page dimensions and positions
+    pg = new PageDim();
+    DivWidth = Math.floor((pg.W*4)/5);
+    DragWidth = Math.floor((DivWidth*3)/10);
+    LeftColPos = Math.floor(pg.W/15);
+    RightColPos = pg.W - (DragWidth + LeftColPos);
+    DragTop = parseInt(document.getElementById('CheckButtonDiv').offsetHeight) + parseInt(document.getElementById('CheckButtonDiv').offsetTop) + 10;
+
+    if (C.ie){
+        DragTop += 15;
+    }
+    
+//Reduce array if required
+    if (QsToShow < F.length){
+        ReduceItems2();
+    }
+    
+//Shuffle the left items if required
+    if (ShuffleQs == true){
+        F = Shuffle(F);
+    }
+
+//Shuffle the items on the right
+    D = Shuffle(D);
+
+    var CurrTop = DragTop;
+    var TempInt = 0;
+    var DropHome = 0;
+    var Widest = 0;
+    var CardContent = '';
+    for (var i=0; i<F.length; i++){
+        CardContent = F[i][0];
+        FC[i] = new Card('F' + i, 10);
+        FC[i].elm.innerHTML = CardContent; 
+        if (FC[i].GetW() > Widest){
+            Widest = FC[i].GetW();
+        }
+    }
+    if (Widest > DragWidth){Widest = DragWidth;}
+
+    CurrTop = DragTop;
+
+    DragWidth = Math.floor((DivWidth-Widest)/2) - 24;
+    RightColPos = DivWidth + LeftColPos - (DragWidth + 14);
+    var Highest = 0;
+    var WidestRight = 0;
+
+    for (i=0; i<D.length; i++){
+        DC[i] = new Card('D' + i, 10);
+        CardContent = D[i][0];
+        
+//Fix for 6.2.5.2 problem with dragging images.
+        DC[i].SetHTML(CardContent);
+        //DC[i].elm.innerHTML = CardContent;  //old version
+        if (DC[i].GetW() > DragWidth){DC[i].SetW(DragWidth);}
+        DC[i].css.cursor = 'move';
+        DC[i].css.backgroundColor = '#FFFFFF';
+        DC[i].css.color = '#000000';
+        TempInt = DC[i].GetH();
+        if (TempInt > Highest){Highest = TempInt;}
+        TempInt = DC[i].GetW();
+        if (TempInt > WidestRight){WidestRight = TempInt;}
+    }
+
+//Fix for 6.2: the reduction by 12 seems to be required -- no idea why!
+    var HeightToSet = Highest-12;
+    var WidthToSet = WidestRight-12;
+
+    for (i=0; i<D.length; i++){
+        DC[i].SetT(CurrTop);
+        DC[i].SetL(RightColPos);
+        if (DC[i].GetH() < Highest){
+            DC[i].SetH(HeightToSet);
+        }
+        if (DC[i].GetW() < WidestRight){
+            DC[i].SetW(WidthToSet);
+        }
+        DC[i].SetHome();
+        DC[i].tag = -1;
+        CurrTop = CurrTop + DC[i].GetH() + 5;
+    }
+
+    CurrTop = DragTop;
+
+    for (var i=0; i<F.length; i++){
+        FC[i].SetW(Widest);
+        if (FC[i].GetH() < Highest){
+            FC[i].SetH(HeightToSet);
+        }
+        FC[i].SetT(CurrTop);
+        FC[i].SetL(LeftColPos);
+        FC[i].SetHome();
+        TempInt = FC[i].GetH();
+        CurrTop = CurrTop + TempInt + 5;
+    }
+
+
+//Slide any elements that should be in position over
+    for (i=0; i<D.length; i++){
+        if (D[i][2] > 0){
+            DC[i].tag = D[i][1];
+            D[i][2] = D[i][1];
+            var TopChange = 0;
+//Find the right target element
+            var TargItem = -1;
+            for (var j=0; j<F.length; j++){
+                if (F[j][1] == D[i][1]){
+                    TargItem = j;
+                }
+            }
+            var TargetLeft = FC[TargItem].GetR() + 5;
+            var TargetTop = FC[TargItem].GetT();
+
+            if (TargetTop < DC[i].GetT()){
+                TopChange = -1;
+            }
+            else {
+                if (TargetTop > DC[i].GetT()){
+                    TopChange = 1;
+                }
+            }
+            Slide(i, TargetLeft, TargetTop, TopChange);
+            D[i][2] = F[TargItem][1];
+            DC[i].tag = TargItem+1;
+        }
+    }
+
+
+}
+
+
+function Slide(MoverNum, TargL, TargT, TopChange){
+    var TempInt = DC[MoverNum].GetL();
+    if (TempInt > TargL){
+        DC[MoverNum].SetL(TempInt - 5);
+    }
+    TempInt = DC[MoverNum].GetT();
+    if (TempInt != TargT){
+        DC[MoverNum].SetT(TempInt + TopChange);
+    }
+    if ((DC[MoverNum].GetL() > TargL)||(DC[MoverNum].GetT() != TargT)){
+        setTimeout('Slide('+MoverNum+','+TargL+','+TargT+','+TopChange+')', 1);
+    }
+    else{
+        DC[MoverNum].SetL(TargL);
+    }
+}
+
+
+F = new Array();
+F[0] = new Array();
+F[0][0]='El Derecho Humano al Agua es...';
+F[0][1] = 1;
+F[1] = new Array();
+F[1][0]='Las siguientes son Las siguientes son caracter&#x00ED;sticas del Derecho Humano al Agua: ';
+F[1][1] = 2;
+F[2] = new Array();
+F[2][0]='El acceso al agua es un derecho humano b&#x00E1;sico, por que...';
+F[2][1] = 3;
+F[3] = new Array();
+F[3][0]='La falta de agua potable afecta la Dignidad Humana, ya que...';
+F[3][1] = 4;
+F[4] = new Array();
+F[4][0]='Una forma de ejercer mi ciudadan&#x00ED;a es&#x2026;';
+F[4][1] = 5;
+
+
+D = new Array();
+D[0] = new Array();
+D[0][0]='es indispensable para vivir dignamente y es condici&#x00F3;n previa para la realizaci&#x00F3;n de otros derechos humanos. ';
+D[0][1] = 1;
+D[0][2] = 1;
+D[1] = new Array();
+D[1][0]='Suficiente, Saludable, Aceptable, F&#x00ED;sicamente Accesible y Asequible.';
+D[1][1] = 2;
+D[1][2] = 1;
+D[2] = new Array();
+D[2][0]='Los impactos de no tener agua ni inodoros son devastadores, psicol&#x00F3;gica y culturalmente.';
+D[2][1] = 3;
+D[2][2] = 1;
+D[3] = new Array();
+D[3][0]='Sin agua potable y saneamiento, no hay ciudadan&#x00ED;a real. Sin ellas no hay salud, ni posibilidad de ejercer la ciudadan&#x00ED;a.';
+D[3][1] = 4;
+D[3][2] = 1;
+D[4] = new Array();
+D[4][0]='Cuidando el agua, ya que es un recurso natural limitado y un bien p&#x00FA;blico fundamental para la vida y la salud. ';
+D[4][1] = 5;
+D[4][2] = 1;
+
+
+function ReduceItems2(){
+    var ItemToDump=0;
+    var j=0;
+    while (F.length > QsToShow){
+        ItemToDump = Math.floor(F.length*Math.random());
+        for (j=ItemToDump; j<(F.length-1); j++){
+            F[j] = F[j+1];
+        }
+        for (j=ItemToDump; j<(D.length-1); j++){
+            D[j] = D[j+1];
+        }       
+        F.length = F.length-1;
+        D.length = D.length-1;
+    }
+}
+
+function TimerStartUp(){
+    setTimeout('StartUp()', 300);
+}
+
+function CheckAnswers(){
+    if (Locked == true){return;}
+//Set the default score and response
+    var TotalCorrect = 0;
+    Score = 0;
+    var Feedback = '';
+
+//for each fixed, check to see if the tag value for the draggable is the same as the fixed
+    if (AnswersTried.length > 0){AnswersTried += ' | ';}
+    var i, j;
+    for (i=0; i<D.length; i++){
+        if (i>0){AnswersTried += ',';}
+        AnswersTried += D[i][1] + '.' + D[i][2] + '';
+        if ((D[i][2] == D[i][1])&&(D[i][2] > 0)){
+            TotalCorrect++;
+        }
+        else{
+//Change made for version 6.0.3.41: don't send wrong items home, 
+//show them in a more conspicuous way.
+//          DC[i].GoHome();
+                DC[i].SetL(DC[i].GetL() + 10);
+                DC[i].Highlight();
+        }
+    }
+
+    Score = Math.floor((100*(TotalCorrect-Penalties))/F.length);
+
+    var AllDone = false;
+
+    if (TotalCorrect == F.length) {
+        AllDone = true;
+    }
+
+    if (AllDone == true){
+        Feedback = YourScoreIs + ' ' + Score + '%.';
+        ShowMessage(Feedback + '<br />' + CorrectResponse);
+    }
+    else {
+        Feedback = YourScoreIs + ' ' + Score + '%.' + '<br />' + IncorrectResponse;
+        ShowMessage(Feedback);
+        Penalties++; // Penalty for inaccurate check
+    }
+//If the exercise is over, deal with that
+    if ((AllDone == true)||(TimeOver == true)){
+
+
+        TimeOver = true;
+        Locked = true;
+        Finished = true;
+        setTimeout('Finish()', SubmissionTimeout);
+        WriteToInstructions(Feedback);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+//-->
+
+//]]>
+
+</script>
+
+
+
+
+
+</body>
+</html> 

@@ -1,0 +1,252 @@
+@import url(http://fonts.googleapis.com/css?family=Walter+Turncoat);
+
+/* Estilos de la pantalla inicial del curso */
+#Convivencia,
+#DerechosHumanos,
+#Genero,
+#Acoso {
+    cursor:pointer;
+}
+#Convivencia:hover,
+#DerechosHumanos:hover,
+#Genero:hover,
+#Acoso:hover {
+    opacity:0.75;
+}
+.carousel-inner {
+    background-image: url("http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/pix/ajax-loader.gif");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.bloqueModulo {
+    margin-bottom: 2em;
+}
+.bloqueModulo .span12 a:first-child {
+    font-size: 12px;
+    display: block;
+    float: left;
+    width: 55%;
+    padding-top: 1.5em;
+    padding-left: 5%;
+    padding-right: 5%;
+    height: 15em;
+}
+.bloqueModulo .span12 a:last-child {
+    /* Las medidas horizonales se hacen en % y las verticales en em */
+    padding-top: 0.57em; /* Este texto es de 14px */
+    padding-right: 5%;
+    float:left;
+    width: 30%;
+    height: auto;
+}
+.modulo9 .span12 a:last-child,
+.modulo10 .span12 a:last-child {
+    /* Las medidas horizonales se hacen en % y las verticales en em */
+    width: 90%;
+}
+.bloqueModulo a {
+    color:#FFFFFF;
+}
+.bloqueModulo a:hover {
+    text-decoration:none;
+    background-color:#5E7A8C;
+}
+.bloqueModulo .row-fluid:hover {
+    background-color:#5E7A8C;
+}
+.bloqueModulo .row-fluid {
+    background:#27353e;
+    color:#FFF;
+    overflow: hidden;
+    height: 14em;
+    cursor:pointer;
+}
+.bloqueModulo h4 {
+    font-size: 14px;
+    text-transform:none;
+    padding: 1em;
+    margin-top: 0;
+    margin-bottom: 0;
+    border-radius: 0.57em 0.57em 0px 0px;
+    -moz-border-radius: 0.57em 0.57em 0px 0px;
+    -webkit-border-radius: 0.57em 0.57em 0px 0px;
+    color:#FFF;  
+    overflow: hidden;
+    height: 2em;
+    text-transform:uppercase;
+}
+.modulo1 h4 {
+    background-color: #7ac35a;
+}
+.modulo2 h4 {
+    background-color: #13b5e4;
+}
+.modulo3 h4 {
+    background-color: #e84c3d;
+}
+.modulo4 h4 {
+    background-color: #5e1770;
+}
+.modulo5 h4 {
+    background-color: #ffc50c;
+}
+.modulo6 h4 {
+    background-color: #00aab2;
+}
+.modulo7 h4 {
+    background-color: #ec008c;
+}
+.modulo8 h4, 
+.modulo9 h4,
+.modulo10 h4 {
+    background-color: #3469af;
+}
+/* Estilos del menú Acerca De */
+#tablaIndice {
+    width:100%;
+}
+#tablaIndice a {
+    display:block;
+    width:100%;
+    padding-top:1em;
+    padding-bottom:1em;
+    border-bottom:solid 1px #000;
+    color:#fff;
+    opacity:0.65;
+}
+#tablaIndice a:hover {
+    opacity:1;
+    background-color:#2f3d46;
+    color:#0088cc;
+}
+#tablaIndice span {
+    font-size:12px;
+    display:block;
+    float:left;
+    width:6.5em;
+    padding-left:2em;
+}
+#tablaIndice span.texto-largo {
+    width: 75%;
+    line-height: 1em;
+}
+#tablaIndice img {
+    width:100%;
+    height:auto;
+}
+#tablaIndice a#imagenTablaIndice {
+    display:inline;
+    width:auto;
+    padding-top:0;
+    padding-bottom:0;
+    border-bottom:none;
+    opacity:1;
+}
+#tablaIndice a#imagenTablaIndice:hover {
+    opacity:0.75;
+}
+/* Estilos para la paginación de los módulos */
+.pagination ul>.disabled>span,
+.pagination ul>.disabled>a,
+.pagination ul>.disabled>a:hover,
+.pagination ul>.disabled>a:focus {
+    background-color:#dddddd;
+}
+.pagination ul>li {
+    display: inline;
+}
+/* Estilos de los módulos */
+.contenido1,
+.contenido2,
+.contenido3,
+.contenido4,
+.contenido5,
+.contenido6,
+.contenido7,
+.contenido8,
+.contenido9,
+.contenido10 {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #27353E;
+    margin: -30px 0 0;
+    padding: 0 25px 25px;
+}
+.contenido1 h2,
+.contenido2 h2,
+.contenido3 h2,
+.contenido4 h2,
+.contenido5 h2,
+.contenido6 h2,
+.contenido7 h2,
+.contenido8 h2,
+.contenido9 h2,
+.contenido10 h2 {
+    font-size:18px;
+    font-weight:normal;
+}
+.contenido1 h3,
+.contenido2 h3,
+.contenido3 h3,
+.contenido4 h3,
+.contenido5 h3,
+.contenido6 h3,
+.contenido7 h3,
+.contenido8 h3,
+.contenido9 h3,
+.contenido10 h3 {
+    font-size:14px;
+    font-weight:normal;
+}
+.contenido1 li,
+.contenido2 li,
+.contenido3 li,
+.contenido4 li,
+.contenido5 li,
+.contenido6 li,
+.contenido7 li,
+.contenido8 li,
+.contenido9 li,
+.contenido10 li {
+    margin: 0 0 0 15px;
+    color:#27353E;
+}
+.contenido1 h3,
+.contenido1 h2 {
+    color:#7ac35a;
+}
+.contenido1 h3,
+.contenido1 h2 {
+    color:#7ac35a;
+}
+.contenido2 h3,
+.contenido2 h2 {
+    color:#13b5e4;
+}
+.contenido3 h3,
+.contenido3 h2 {
+    color:#e84c3d;
+}
+.contenido4 h3,
+.contenido4 h2 {
+    color:#5e1770;
+}
+.contenido5 h3,
+.contenido5 h2 {
+    color:#ffc50c;
+}
+.contenido6 h3,
+.contenido6 h2 {
+    color:#00aab2;
+}
+.contenido7 h3,
+.contenido7 h2 {
+    color:#ec008c;
+}
+.contenido8 h3,
+.contenido8 h2, 
+.contenido9 h3,
+.contenido9 h2,
+.contenido10 h3,
+.contenido10 h2 {
+    color:#3469af;
+}

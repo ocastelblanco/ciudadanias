@@ -1,0 +1,1508 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CIUDADANÍAS">
+    <meta name="author" content="Oliver Castelblanco M. y Liz Arévalo para CISP">
+    <link rel="shortcut icon" href="ico/favicon.png">
+    <title>CIUDADANÍAS</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.0/holder.js"></script>
+    <style type="text/css">
+        .continuebutton {
+            display:none;
+        }
+        .modal {
+            color: black;
+        }
+        ol.MCAnswers>li {
+            margin-top:10px;
+        }
+        ol.MCAnswers button {
+        }
+        ol.QuizQuestions {
+            list-style-type:none;
+        }
+        .bloqueModulo {
+            margin-bottom: 2em;
+        }
+        .bloqueModulo .span12 a:first-child {
+            font-size: 12px;
+            display: block;
+            float: left;
+            width: 55%;
+            padding-top: 1.5em;
+            padding-left: 5%;
+            padding-right: 5%;
+            height: 15em;
+        }
+        .bloqueModulo .span12 a:last-child {
+            /* Las medidas horizonales se hacen en % y las verticales en em */
+            padding-top: 0.57em; /* Este texto es de 14px */
+            padding-right: 5%;
+            float:left;
+            width: 30%;
+            height: auto;
+        }
+        .bloqueModulo a {
+            color:#FFFFFF;
+        }
+        .bloqueModulo a:hover {
+            text-decoration:none;
+            background-color:#5E7A8C;
+        }
+        .bloqueModulo .row-fluid:hover {
+            background-color:#5E7A8C;
+        }
+        .bloqueModulo .row-fluid {
+            background:#27353e;
+            color:#FFF;
+            overflow: hidden;
+            height: 14em;
+            cursor:pointer;
+        }
+        .bloqueModulo h4 {
+            font-size: 14px;
+            text-transform:none;
+            padding: 1em;
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.57em 0.57em 0px 0px;
+            -moz-border-radius: 0.57em 0.57em 0px 0px;
+            -webkit-border-radius: 0.57em 0.57em 0px 0px;
+            color:#FFF;  
+            overflow: hidden;
+            height: 2em;
+            text-transform:uppercase;
+        }
+        .modulo1 h4 {
+            background-color: #7ac35a;
+        }
+        .modulo2 h4 {
+            background-color: #13b5e4;
+        }
+        .modulo3 h4 {
+            background-color: #e84c3d;
+        }
+        .modulo4 h4 {
+            background-color: #5e1770;
+        }
+        .modulo5 h4 {
+            background-color: #ffc50c;
+        }
+        .modulo6 h4 {
+            background-color: #00aab2;
+        }
+        .modulo7 h4 {
+            background-color: #ec008c;
+        }
+        /* Estilos del menú Acerca De */
+        #tablaIndice {
+            width:100%;
+        }
+        #tablaIndice a {
+            display:block;
+            width:100%;
+            padding-top:1em;
+            padding-bottom:1em;
+            border-bottom:solid 1px #000;
+            color:#fff;
+            opacity:0.65;
+        }
+        #tablaIndice a:hover {
+            opacity:1;
+            background-color:#2f3d46;
+            color:#0088cc;
+        }
+        #tablaIndice span {
+            font-size:12px;
+            display:block;
+            float:left;
+            width:6.5em;
+            padding-left:2em;
+        }
+        #tablaIndice img {
+            width:100%;
+            height:auto;
+        }
+        #tablaIndice a#imagenTablaIndice {
+            display:inline;
+            width:auto;
+            padding-top:0;
+            padding-bottom:0;
+            border-bottom:none;
+            opacity:1;
+        }
+        #tablaIndice a#imagenTablaIndice:hover {
+            opacity:0.75;
+        }
+        /* Estilos para la paginación de los módulos */
+        .pagination ul>.disabled>span,
+        .pagination ul>.disabled>a,
+        .pagination ul>.disabled>a:hover,
+        .pagination ul>.disabled>a:focus {
+            background-color:#dddddd;
+        }
+        .pagination ul>li {
+            display: inline;
+        }
+        /* Estilos del módulo 1 */
+        .contenido1{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        .contenido1 h2{
+            color:#7ac35a;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido1 h3{
+            color:#7ac35a;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }   
+            
+        .contenido1 li{
+            margin: 0 0 0 15px;
+            color:#27353E;
+        }
+        
+        .contenido2 h2{
+            color:#13B5E4;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido2 h3{
+            color:#13B5E4;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido2{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        
+        .contenido3 h2{
+            color:#E84C3D;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido3 h3{
+            color:#E84C3D;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido3{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        .contenido4 h2{
+            color:#5E1770;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido4 h3{
+            color:#5E1770;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido4{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        .contenido5 h2{
+            color:#FFC50C;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido5 h3{
+            color:#FFC50C;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido5{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+    /* Estos estilos ya los trae el tema de Moodle */
+        body {
+            background-color: #2f3d46;
+            color:#FFFFFF;
+        }
+    </style>
+  </head>
+
+  <body onload="StartUp()">
+
+    <div id="InstructionsDiv" style="display: none;" class="StdDiv">
+        <div id="Instructions"></div>
+    </div>
+    <span id="QNumReadout" style="display: none;" class="QNum">&nbsp;</span>
+
+
+        
+        <div class="modal fade" id="respuesta" tabindex="-1" role="dialog" aria-labelledby="Respuesta" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Respuesta</h4>
+              </div>
+              <div class="modal-body">
+                <div class="Feedback" id="FeedbackDiv">
+                    <div class="FeedbackText" id="FeedbackContent"></div>
+                    <button style="display: none;" id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button id="cerrarModal" data-dismiss="modal" type="button" class="btn btn-primary">Cerrar ventana</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+  
+    <div class="container-fluid">
+        <div class="tab-content">
+            <div class="row-fluid">
+                <div class="span12 bloqueModulo modulo1">
+                    <h4>Módulo 1: Convivencia</h4>
+                </div><!-- /.span12 -->
+            </div><!-- ./row-fluid -->
+            <div class="tab-pane active contenido1" id="pag1">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Actividad 1 – ¿Y qué es convivencia escolar?</h2>
+                        <p>Es posible que haya escuchado alguna de estas frases en su escuela:<br> 
+                            - “la convivencia en este salón es pésima, siempre hay conflictos”, dice un docente a su colega;<br> 
+                            - “la próxima semana tenemos programada una convivencia”, dice un estudiante a sus padres;<br>
+                            - “tenemos que resolver este problema de convivencia”, dice alguien en la sala de profesores.</p>
+                        <p>Escuchando estas frases se entendería que la convivencia se refiere a un mal suceso que ocurre entre personas de la comunidad educativa, o que la convivencia es la ausencia de conflictos. Puede entenderse también que la convivencia es algo problemático, o que ocurre en espacios de esparcimiento por fuera de los escenarios escolares. Según esto, los acontecimientos normales que hacen parte de la vida en la escuela, y que permiten cumplir sus objetivos, están por fuera de la convivencia.</p> 
+                        <p>Sin embargo, es importante resaltar que los establecimientos educativos, al reunir a diversas personas y organizarlas para cumplir unos objetivos, hacen que se encuentren permanentemente en un proceso de convivencia. La convivencia está presente en toda organización social y por lo tanto los participantes no dejan de convivir. El principio de los establecimientos educativos es que las personas, estudiantes, docentes y padres de familia, se organicen e interactúen de forma permanente.</p> 
+                        <p>Partiendo de la idea que aquí se expone, diríjase a la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a> y en un ambiente de solidaridad y camaradería intente construir con sus compañeros de curso un concepto contemporáneo de convivencia escolar. ¿Y qué es la convivencia escolar?</p> 
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag1 -->
+            
+            <div class="tab-pane contenido1" id="pag2">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Actividad 2 – Situaciones de convivencia, oportunidades para la formación en ciudadanía.</h2>
+                        <p>En la actividad anterior se hicieron aportes para definir un concepto de convivencia, ahora revisaremos algunas situaciones que podrían ocurrir en diversos escenarios.</p><br>
+                        <p>Intentaremos identificar posibles acciones/respuestas para abordar las situaciones, intervenirlas o resolverlas desde un enfoque que permita la apropiación de actitudes y responsabilidades para la formación en ciudadanía por parte de los actores de la comunidad educativa.</p> 
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag2 -->
+            
+            <div class="tab-pane contenido1" id="pag3">
+                <div class="row-fluid">
+                    <div class="span12">                        
+                        <h2>Caso 1: Iván y el profesor.</h2>
+                        <p>Iván es estudiante de sexto grado y es evangélico. Él y su familia asisten al templo todos los domingos. Ayer, el profesor Álvaro, en la mitad de la clase de español, y a raíz de un texto que se encontraban leyendo, expresó que aquellas personas que no son católicas son malas y van al infierno. En el recreo, Beatriz y Camilo comenzaron a burlarse de Iván, diciéndole que era un niño malo. Mónica, la directora del curso de Iván, oyó lo ocurrido y ahora reflexiona sobre la mejor manera de intervenir en esta situación que está afectando a Iván.</p><br>
+                        <!-- Hot potatoes -->
+                        <p>
+                            <div id="MainDiv" class="StdDiv">
+                                <ol class="QuizQuestions" id="Questions">
+                                    <li class="QuizQuestion" id="Q_0">
+                                        <div class="QuestionText">
+                                            Lo mejor que podr&#x00ED;a hacer la profesora M&#x00F3;nica es:
+                                        </div>
+                                        <ol class="MCAnswers">
+                                            <li id="Q_0_0">
+                                                <button class="FuncButton btn btn-default" id="Q_0_0_Btn" onclick="CheckMCAnswer(0,0,this)">
+                                                    <i class="fa fa-question"></i>
+                                                </button>
+                                                &nbsp;&nbsp;Hablar con Beatriz y Camilo para que no contin&#x00FA;en las burlas que afectan a Iv&#x00E1;n.
+                                            </li>
+                                            <li id="Q_0_1">
+                                                <button class="FuncButton btn btn-default" id="Q_0_1_Btn" onclick="CheckMCAnswer(0,1,this)">
+                                                    <i class="fa fa-question"></i>
+                                                </button>
+                                                &nbsp;&nbsp;Conversar con el profesor &#x00C1;lvaro sobre la situaci&#x00F3;n de Iv&#x00E1;n, la cual es consecuencia de algunos comentarios que &#x00E9;l hizo en su clase.
+                                            </li>
+                                            <li id="Q_0_2">
+                                                <button class="FuncButton btn btn-default" id="Q_0_2_Btn" onclick="CheckMCAnswer(0,2,this)">
+                                                    <i class="fa fa-question"></i>
+                                                </button>
+                                                &nbsp;&nbsp;No involucrarse en la situaci&#x00F3;n pues todos los seres humanos deben aprender a defenderse solos e Iv&#x00E1;n no siempre tendr&#x00E1; a una persona a su lado que se ocupe de resolver sus problemas.
+                                            </li>
+                                            <li id="Q_0_3">
+                                                <button class="FuncButton btn btn-default" id="Q_0_3_Btn" onclick="CheckMCAnswer(0,3,this)">
+                                                    <i class="fa fa-question"></i>
+                                                </button>
+                                                &nbsp;&nbsp;Conversar con Iv&#x00E1;n sobre la situaci&#x00F3;n.
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </ol>
+                            </div>
+                        </p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag3 -->
+            
+            <div class="tab-pane contenido1" id="pag4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Caso 2: Julio, el ‘emo’.</h2>
+                        <p>Esta mañana, cuando Julio se levantó de la cama, nunca pensó que lo que comenzó como un día de colegio normal, se convertiría en el peor día de su vida. Desde hacía varios días, Freddy, un niño de su salón, le estaba buscando pelea porque, según él, eso de ser ‘emo’ es para las niñas. Sin embargo, Julio se considera un integrante más de esa tribu juvenil llamada ‘Emo’ porque se identifica con su forma de vestir, de pensar y sobretodo le encanta la música que los identifica. Por este motivo, las continuas burlas de Freddy y sus dos aliados normalmente no lo afectan. Sin embargo, este día Julio salió con su amiga María al recreo y fueron directo a la tienda a comprar algo de comer. En ese momento se acercaron Freddy, Mario y Jhon, el ‘combo malicia’, como lo llaman en la escuela, y le regaron la gaseosa a María y le pegaron una cachetada a Julio, seguida de la siguiente frase: “Parece una niña. Es que eso de ser ‘Emo’ es tenaz. Yo de usted desde mañana me empiezo a vestir como hombrecito”.</p>
+                        <p>¡Y ahí fue!, Julio no pudo más y le pegó un puño a Freddy. Seguido de esto, Mario y Jhon se metieron en la pelea y le pegaron a María.</p>
+                        <!-- Ejercicio Hot potatoes -->
+                        <p>
+                            <div id="MainDiv" class="StdDiv">
+                                <ol class="QuizQuestions" id="Questions">
+                                <li class="QuizQuestion" id="Q_1"><div class="QuestionText">Dentro de la comunidad educativa, &#x00BF;qui&#x00E9;nes deben aportar a la soluci&#x00F3;n de esta situaci&#x00F3;n?</div><ol class="MCAnswers"><li id="Q_1_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Los padres de Julio, ellos viven con &#x00E9;l y en el colegio saben que no tienen ninguna objeci&#x00F3;n con que sea &#x2018;emo&#x2019;.</li><li id="Q_1_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;La profesora directora de grupo, ella es la responsable de la convivencia en el aula.</li><li id="Q_1_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_2_Btn" onclick="CheckMCAnswer(1,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Los compa&#x00F1;eros de clase de Julio, quienes podr&#x00ED;an movilizarse y hacer respetar sus derechos.</li><li id="Q_1_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_3_Btn" onclick="CheckMCAnswer(1,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Solo Julio, &#x00E9;l puede hacerse respetar.</li></ol></li>
+                                </ol>
+                            </div>
+                        </p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag4 -->
+            
+            <div class="tab-pane contenido1" id="pag5">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Caso 3: Johana está embarazada.</h2>
+                        <p>Johana tiene 15 años y es estudiante de octavo grado. Le encanta la música y tiene dos mejores amigas, María y Adriana. Hace seis meses se cuadró con Milton, quien tiene 17 años y que también está en octavo. Johana y Milton se enamoraron desde el primer momento en que se vieron y decidieron ser novios. Dos meses después comenzaron a tener relaciones sexuales y, aunque Johana estaba planificando, hace poco se enteró de que estaba embarazada. Las únicas que sabían de su embarazo eran sus dos mejores amigas, pero hace 3 días, Julia, quien cuenta todo lo que ve o escucha, se dio cuenta e inmediatamente le contó al Coordinador de disciplina, el profesor Tulio. El Coordinador llamó a Johana y le pidió que viniera mañana con sus padres para solucionar esta situación. Luego de este encuentro, Johana volvió al salón llorando y contó lo sucedido a sus amigas, expresando su preocupación porque la iban a sacar de la escuela. María enfrenta a Julia, quien parece indiferente a sus comentarios. En este momento llega la profesora Amelia, quien es la directora del grado séptimo.</p>
+                        <!-- Ejercicio Hot potatoes -->
+                        <p>
+                            <div id="MainDiv" class="StdDiv">
+                                <ol class="QuizQuestions" id="Questions">
+                                <li class="QuizQuestion" id="Q_2"><div class="QuestionText">&#x00BF;Si usted fuera Amelia qu&#x00E9; har&#x00ED;a?</div><ol class="MCAnswers"><li id="Q_2_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_2_0_Btn" onclick="CheckMCAnswer(2,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Dejar que la situaci&#x00F3;n siga el curso que tom&#x00F3; y que el Coordinador de disciplina se encargue del caso con los padres de Johana, pues la educaci&#x00F3;n en estos casos viene de casa y ellos deben hacerse responsables.</li><li id="Q_2_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_2_1_Btn" onclick="CheckMCAnswer(2,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Llamar a Johana, a Julia y a Mar&#x00ED;a en diferentes momentos para entender qu&#x00E9; y c&#x00F3;mo ocurrieron los hechos y as&#x00ED; poder abordar la situaci&#x00F3;n y proponer alternativas para su manejo.</li><li id="Q_2_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_2_2_Btn" onclick="CheckMCAnswer(2,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Proponer un debate con todo el curso y discutir sobre el tema del embarazo y lo que implica para el futuro de las personas.</li><li id="Q_2_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_2_3_Btn" onclick="CheckMCAnswer(2,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Hablar con Johana y explicarle que las relaciones sexuales tiene un momento y que ella se ha adelantado. Adem&#x00E1;s, recordarle que en el colegio se le ha dado much&#x00ED;sima informaci&#x00F3;n sobre educaci&#x00F3;n sexual y planificaci&#x00F3;n, y que ella debi&#x00F3; prever esta situaci&#x00F3;n.</li></ol></li>
+                                </ol>
+                            </div>
+                        </p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag5 -->
+            
+            <div class="tab-pane contenido1" id="pag6">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Actividad en Red Social</h2>
+                        <p>Hemos visto y analizado diferentes casos o situaciones que con frecuencia ocurren alrededor de la convivencia escolar. Cada uno de estos despierta distintas reacciones, sensaciones y emociones. En este espacio, cuéntenos alguna experiencia personal (similar a las anteriores) que le haya permitido fortalecer o mejorar la convivencia escolar desde su rol dentro de la comunidad educativa (docente, estudiante, padre de familia, rector, etc.).</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag6 -->
+            
+            <div class="tab-pane contenido1" id="pag7">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Actividad 3 – Mi acontecimiento ciudadano.</h2>
+                        <p>En uno de los casos anteriores, Amelia fue protagonista de un acontecimiento ciudadano cuando decidió involucrarse en la situación de Johana y sus compañeras; en otro, el papa de Julio, el ‘emo’, fue protagonista de un acontecimiento ciudadano cuando decidió respetar la decisión de su hijo de unirse a la tribu juvenil, finalmente, Mónica fue protagonista de un acontecimiento ciudadano cuando habló con el profesor Álvaro invitándolo a reflexionar sobre su rol en el establecimiento educativo y su responsabilidad como garante de los derechos de los niños y niñas que asisten a su clase de español. Todos estos personajes participan en la dinámica de la convivencia y, con sus acciones, contribuyen a que las interacciones permanentes que allí se dan generen bienestar para la comunidad.</p>
+                        <p>A continuación encontrará otros ejemplos de acontecimientos ciudadanos desarrollados por estudiantes, padres de familia y docentes que, como CIUDADANOS, han participado en diferentes iniciativas para hacer de los espacios de interacción mejores lugares para vivir y convivir.</p>
+                        <h3>Actividad en Red social</h3>
+                        <p>Consulte al menos 3 casos del <a href="http://100en1dia.com/" target="_blank">Colectivo 100 en 1 día</a></p>
+                        <ol>
+                            <li>Identifique y traiga a la plataforma una idea de acontecimiento ciudadano en el que usted pueda ser el protagonista y compártala con sus compañeros.</li>
+                            <li>Cuéntenos cómo y cuándo lo hará. </li>
+                            <li>Cuando ya haya desarrollado su acontecimiento cuéntenos cómo le fue y, en lo posible, compártanos evidencias de esta acción como fotos, relatos, testimonios, etc.</li>
+                        </ol>
+                        <p>A continuación realice la actividad <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">Acontecimiento Ciudadano.</a></p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag7 -->
+            
+        </div><!-- /.tab-content -->
+        
+        <div class="pagination">
+            <ul>
+                <li class="active"><a href="#pag1">1</a></li>
+                <li><a href="#pag2">2</a></li>
+                <li><a href="#pag3">3</a></li>
+                <li><a href="#pag4">4</a></li>
+                <li><a href="#pag5">5</a></li>
+                <li><a href="#pag6">6</a></li>
+                <li><a href="#pag7">7</a></li>
+            </ul>
+        </div><!-- /.pagination -->
+    
+        <script type="text/javascript">
+            $(function(){
+                $('.FuncButton').html('<i class="fa fa-question"></i>');
+                $('.FuncButton').addClass('btn btn-default');
+                $('.FuncButton').prop("onfocus", null);
+                $('.FuncButton').prop("onblur", null);
+                $('.FuncButton').prop("onmouseover", null);
+                $('.FuncButton').prop("onmouseout", null);
+                $('.FuncButton').prop("onmousedown", null);
+                $('.FuncButton').prop("onmouseup", null);
+                $('.pagination a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+                $('.FuncButton').click(function() {
+                    $('#respuesta').modal();
+                    $(this).html('<i class="fa fa-check"></i>');
+                });
+            });
+        </script>
+    </div><!-- /.container -->
+    
+        
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+
+
+
+function Client(){
+//if not a DOM browser, hopeless
+    this.min = false; if (document.getElementById){this.min = true;};
+
+    this.ua = navigator.userAgent;
+    this.name = navigator.appName;
+    this.ver = navigator.appVersion;  
+
+//Get data about the browser
+    this.mac = (this.ver.indexOf('Mac') != -1);
+    this.win = (this.ver.indexOf('Windows') != -1);
+
+//Look for Gecko
+    this.gecko = (this.ua.indexOf('Gecko') > 1);
+    if (this.gecko){
+        this.geckoVer = parseInt(this.ua.substring(this.ua.indexOf('Gecko')+6, this.ua.length));
+//      if (this.geckoVer < 20020000){this.min = false;}
+    }
+    
+//Look for Firebird
+    this.firebird = (this.ua.indexOf('Firebird') > 1);
+    
+//Look for Safari
+    this.safari = (this.ua.indexOf('Safari') > 1);
+    if (this.safari){
+        this.gecko = false;
+    }
+    
+//Look for IE
+    this.ie = (this.ua.indexOf('MSIE') > 0);
+    if (this.ie){
+        this.ieVer = parseFloat(this.ua.substring(this.ua.indexOf('MSIE')+5, this.ua.length));
+        if (this.ieVer < 5.5){this.min = false;}
+    }
+    
+//Look for Opera
+    this.opera = (this.ua.indexOf('Opera') > 0);
+    if (this.opera){
+        this.operaVer = parseFloat(this.ua.substring(this.ua.indexOf('Opera')+6, this.ua.length));
+        if (this.operaVer < 7.04){this.min = false;}
+    }
+    if (this.min == false){
+//      alert('Your browser may not be able to handle this page.');
+    }
+    
+//Special case for the horrible ie5mac
+    this.ie5mac = (this.ie&&this.mac&&(this.ieVer<6));
+}
+
+var C = new Client();
+
+//for (prop in C){
+//  alert(prop + ': ' + C[prop]);
+//}
+
+
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+//[strNavBarJS]
+function NavBtnOver(Btn){
+    if (Btn.className != 'NavButtonDown'){Btn.className = 'NavButtonUp';}
+}
+
+function NavBtnOut(Btn){
+    Btn.className = 'NavButton';
+}
+
+function NavBtnDown(Btn){
+    Btn.className = 'NavButtonDown';
+}
+//[/strNavBarJS]
+
+function FuncBtnOver(Btn){
+    if (Btn.className != 'FuncButtonDown'){Btn.className = 'FuncButtonUp';}
+}
+
+function FuncBtnOut(Btn){
+    Btn.className = 'FuncButton';
+}
+
+function FuncBtnDown(Btn){
+    Btn.className = 'FuncButtonDown';
+}
+
+function FocusAButton(){
+    if (document.getElementById('CheckButton1') != null){
+        document.getElementById('CheckButton1').focus();
+    }
+    else{
+        if (document.getElementById('CheckButton2') != null){
+            document.getElementById('CheckButton2').focus();
+        }
+        else{
+            document.getElementsByTagName('button')[0].focus();
+        }
+    }
+}
+
+
+
+
+//CODE FOR HANDLING DISPLAY OF POPUP FEEDBACK BOX
+
+var topZ = 1000;
+
+function ShowMessage(Feedback){
+    var Output = Feedback + '<br /><br />';
+    document.getElementById('FeedbackContent').innerHTML = Output;
+    var FDiv = document.getElementById('FeedbackDiv');
+    topZ++;
+    FDiv.style.zIndex = topZ;
+    FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+
+    FDiv.style.display = 'block';
+
+    ShowElements(false, 'input');
+    ShowElements(false, 'select');
+    ShowElements(false, 'object');
+    ShowElements(true, 'object', 'FeedbackContent');
+
+//Focus the OK button
+    setTimeout("document.getElementById('FeedbackOKButton').focus()", 50);
+    
+//
+}
+
+function ShowElements(Show, TagName, ContainerToReverse){
+// added third argument to allow objects in the feedback box to appear
+//IE bug -- hide all the form elements that will show through the popup
+//FF on Mac bug : doesn't redisplay objects whose visibility is set to visible
+//unless the object's display property is changed
+
+    //get container object (by Id passed in, or use document otherwise)
+    TopNode = document.getElementById(ContainerToReverse);
+    var Els;
+    if (TopNode != null) {
+        Els = TopNode.getElementsByTagName(TagName);
+    } else {
+        Els = document.getElementsByTagName(TagName);
+    }
+
+    for (var i=0; i<Els.length; i++){
+        if (TagName == "object") {
+            //manipulate object elements in all browsers
+            if (Show == true){
+                Els[i].style.visibility = 'visible';
+                //get Mac FireFox to manipulate display, to force screen redraw
+                if (C.mac && C.gecko) {Els[i].style.display = '';}
+            }
+            else{
+                Els[i].style.visibility = 'hidden';
+                if (C.mac && C.gecko) {Els[i].style.display = 'none';}
+            }
+        } 
+        else {
+            // tagName is either input or select (that is, Form Elements)
+            // ie6 has a problem with Form elements, so manipulate those
+            if (C.ie) {
+                if (C.ieVer < 7) {
+                    if (Show == true){
+                        Els[i].style.visibility = 'visible';
+                    }
+                    else{
+                        Els[i].style.visibility = 'hidden';
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+function HideFeedback(){
+    document.getElementById('FeedbackDiv').style.display = 'none';
+    ShowElements(true, 'input');
+    ShowElements(true, 'select');
+    ShowElements(true, 'object');
+    if (Finished == true){
+        Finish();
+    }
+}
+
+
+//GENERAL UTILITY FUNCTIONS AND VARIABLES
+
+//PAGE DIMENSION FUNCTIONS
+function PageDim(){
+//Get the page width and height
+    this.W = 600;
+    this.H = 400;
+    this.W = document.getElementsByTagName('body')[0].clientWidth;
+    this.H = document.getElementsByTagName('body')[0].clientHeight;
+}
+
+var pg = null;
+
+function GetPageXY(El) {
+    var XY = {x: 0, y: 0};
+    while(El){
+        XY.x += El.offsetLeft;
+        XY.y += El.offsetTop;
+        El = El.offsetParent;
+    }
+    return XY;
+}
+
+function GetScrollTop(){
+    if (typeof(window.pageYOffset) == 'number'){
+        return window.pageYOffset;
+    }
+    else{
+        if ((document.body)&&(document.body.scrollTop)){
+            return document.body.scrollTop;
+        }
+        else{
+            if ((document.documentElement)&&(document.documentElement.scrollTop)){
+                return document.documentElement.scrollTop;
+            }
+            else{
+                return 0;
+            }
+        }
+    }
+}
+
+function GetViewportHeight(){
+    if (typeof window.innerHeight != 'undefined'){
+        return window.innerHeight;
+    }
+    else{
+        if (((typeof document.documentElement != 'undefined')&&(typeof document.documentElement.clientHeight !=
+     'undefined'))&&(document.documentElement.clientHeight != 0)){
+            return document.documentElement.clientHeight;
+        }
+        else{
+            return document.getElementsByTagName('body')[0].clientHeight;
+        }
+    }
+}
+
+function TopSettingWithScrollOffset(TopPercent){
+    var T = Math.floor(GetViewportHeight() * (TopPercent/100));
+    return GetScrollTop() + T; 
+}
+
+//CODE FOR AVOIDING LOSS OF DATA WHEN BACKSPACE KEY INVOKES history.back()
+var InTextBox = false;
+
+function SuppressBackspace(e){ 
+    if (InTextBox == true){return;}
+    if (C.ie) {
+        thisKey = window.event.keyCode;
+    }
+    else {
+        thisKey = e.keyCode;
+    }
+
+    var Suppress = false;
+
+    if (thisKey == 8) {
+        Suppress = true;
+    }
+
+    if (Suppress == true){
+        if (C.ie){
+            window.event.returnValue = false;   
+            window.event.cancelBubble = true;
+        }
+        else{
+            e.preventDefault();
+        }
+    }
+}
+
+if (C.ie){
+    document.attachEvent('onkeydown',SuppressBackspace);
+    window.attachEvent('onkeydown',SuppressBackspace);
+}
+else{
+    if (window.addEventListener){
+        window.addEventListener('keypress',SuppressBackspace,false);
+    }
+}
+
+function ReduceItems(InArray, ReduceToSize){
+    var ItemToDump=0;
+    var j=0;
+    while (InArray.length > ReduceToSize){
+        ItemToDump = Math.floor(InArray.length*Math.random());
+        InArray.splice(ItemToDump, 1);
+    }
+}
+
+function Shuffle(InArray){
+    var Num;
+    var Temp = new Array();
+    var Len = InArray.length;
+
+    var j = Len;
+
+    for (var i=0; i<Len; i++){
+        Temp[i] = InArray[i];
+    }
+
+    for (i=0; i<Len; i++){
+        Num = Math.floor(j  *  Math.random());
+        InArray[i] = Temp[Num];
+
+        for (var k=Num; k < (j-1); k++) {
+            Temp[k] = Temp[k+1];
+        }
+        j--;
+    }
+    return InArray;
+}
+
+function WriteToInstructions(Feedback) {
+    document.getElementById('InstructionsDiv').innerHTML = Feedback;
+
+}
+
+
+
+
+function EscapeDoubleQuotes(InString){
+    return InString.replace(/"/g, '&quot;')
+}
+
+function TrimString(InString){
+        var x = 0;
+
+        if (InString.length != 0) {
+                while ((InString.charAt(InString.length - 1) == '\u0020') || (InString.charAt(InString.length - 1) == '\u000A') || (InString.charAt(InString.length - 1) == '\u000D')){
+                        InString = InString.substring(0, InString.length - 1)
+                }
+
+                while ((InString.charAt(0) == '\u0020') || (InString.charAt(0) == '\u000A') || (InString.charAt(0) == '\u000D')){
+                        InString = InString.substring(1, InString.length)
+                }
+
+                while (InString.indexOf('  ') != -1) {
+                        x = InString.indexOf('  ')
+                        InString = InString.substring(0, x) + InString.substring(x+1, InString.length)
+                 }
+
+                return InString;
+        }
+
+        else {
+                return '';
+        }
+}
+
+function FindLongest(InArray){
+    if (InArray.length < 1){return -1;}
+
+    var Longest = 0;
+    for (var i=1; i<InArray.length; i++){
+        if (InArray[i].length > InArray[Longest].length){
+            Longest = i;
+        }
+    }
+    return Longest;
+}
+
+//UNICODE CHARACTER FUNCTIONS
+function IsCombiningDiacritic(CharNum){
+    var Result = (((CharNum >= 0x0300)&&(CharNum <= 0x370))||((CharNum >= 0x20d0)&&(CharNum <= 0x20ff)));
+    Result = Result || (((CharNum >= 0x3099)&&(CharNum <= 0x309a))||((CharNum >= 0xfe20)&&(CharNum <= 0xfe23)));
+    return Result;
+}
+
+function IsCJK(CharNum){
+    return ((CharNum >= 0x3000)&&(CharNum < 0xd800));
+}
+
+//SETUP FUNCTIONS
+//BROWSER WILL REFILL TEXT BOXES FROM CACHE IF NOT PREVENTED
+function ClearTextBoxes(){
+    var NList = document.getElementsByTagName('input');
+    for (var i=0; i<NList.length; i++){
+        if ((NList[i].id.indexOf('Guess') > -1)||(NList[i].id.indexOf('Gap') > -1)){
+            NList[i].value = '';
+        }
+        if (NList[i].id.indexOf('Chk') > -1){
+            NList[i].checked = '';
+        }
+    }
+}
+
+//EXTENSION TO ARRAY OBJECT
+function Array_IndexOf(Input){
+    var Result = -1;
+    for (var i=0; i<this.length; i++){
+        if (this[i] == Input){
+            Result = i;
+        }
+    }
+    return Result;
+}
+Array.prototype.indexOf = Array_IndexOf;
+
+//IE HAS RENDERING BUG WITH BOTTOM NAVBAR
+function RemoveBottomNavBarForIE(){
+    if ((C.ie)&&(document.getElementById('Reading') != null)){
+        if (document.getElementById('BottomNavBar') != null){
+            document.getElementById('TheBody').removeChild(document.getElementById('BottomNavBar'));
+        }
+    }
+}
+
+
+
+
+//HOTPOTNET-RELATED CODE
+
+var HPNStartTime = (new Date()).getTime();
+var SubmissionTimeout = 30000;
+var Detail = ''; //Global that is used to submit tracking data
+
+function Finish(){
+//If there's a form, fill it out and submit it
+    if (document.store != null){
+        Frm = document.store;
+        Frm.starttime.value = HPNStartTime;
+        Frm.endtime.value = (new Date()).getTime();
+        Frm.mark.value = Score;
+        Frm.detail.value = Detail;
+        Frm.submit();
+    }
+}
+
+
+
+
+
+//JQUIZ CORE JAVASCRIPT CODE
+
+var CurrQNum = 0;
+var CorrectIndicator = '<i class="fa fa-check"></i>';
+var IncorrectIndicator = '<i class="fa fa-times"></i>';
+var YourScoreIs = 'Su puntaje es ';
+
+//New for 6.2.2.0
+var CompletedSoFar = 'Preguntas completadas: ';
+var ExerciseCompleted = 'Ha completado el ejercicio.';
+var ShowCompletedSoFar = true;
+
+var ContinuousScoring = true;
+var CorrectFirstTime = 'Preguntas respondidas correctamente la primera vez: ';
+var ShowCorrectFirstTime = true;
+var ShuffleQs = false;
+var ShuffleAs = false;
+var DefaultRight = '¡Correcto!';
+var DefaultWrong = '¡Lo siento! Intente de nuevo.';
+var QsToShow = 3;
+var Score = 0;
+var Finished = false;
+var Qs = null;
+var QArray = new Array();
+var ShowingAllQuestions = false;
+var ShowAllQuestionsCaption = 'Mostrar todas las preguntas';
+var ShowOneByOneCaption = 'Mostrar preguntas una a una';
+var State = new Array();
+var Feedback = '';
+var TimeOver = false;
+var strInstructions = '';
+var Locked = false;
+
+//The following variable can be used to add a message explaining that
+//the question is finished, so no further marking will take place.
+var strQuestionFinished = '';
+
+function CompleteEmptyFeedback(){
+    var QNum, ANum;
+    for (QNum=0; QNum<I.length; QNum++){
+//Only do this if not multi-select
+        if (I[QNum][2] != '3'){
+        for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+            if (I[QNum][3][ANum][1].length < 1){
+                if (I[QNum][3][ANum][2] > 0){
+                    I[QNum][3][ANum][1] = DefaultRight;
+                }
+                else{
+                    I[QNum][3][ANum][1] = DefaultWrong;
+                }
+            }
+        }
+        }
+    }
+}
+
+function SetUpQuestions(){
+    var AList = new Array(); 
+    var QList = new Array();
+    var i, j;
+    Qs = document.getElementById('Questions');
+    while (Qs.getElementsByTagName('li').length > 0){
+        QList.push(Qs.removeChild(Qs.getElementsByTagName('li')[0]));
+    }
+    var DumpItem = 0;
+    if (QsToShow > QList.length){
+        QsToShow = QList.length;
+    }
+    while (QsToShow < QList.length){
+        DumpItem = Math.floor(QList.length*Math.random());
+        for (j=DumpItem; j<(QList.length-1); j++){
+            QList[j] = QList[j+1];
+        }
+        QList.length = QList.length-1;
+    }
+    if (ShuffleQs == true){
+        QList = Shuffle(QList);
+    }
+    if (ShuffleAs == true){
+        var As;
+        for (var i=0; i<QList.length; i++){
+            As = QList[i].getElementsByTagName('ol')[0];
+            if (As != null){
+            AList.length = 0;
+                while (As.getElementsByTagName('li').length > 0){
+                    AList.push(As.removeChild(As.getElementsByTagName('li')[0]));
+                }
+                AList = Shuffle(AList);
+                for (j=0; j<AList.length; j++){
+                    As.appendChild(AList[j]);
+                }
+            }
+        }
+    }
+    
+    for (i=0; i<QList.length; i++){
+        Qs.appendChild(QList[i]);
+        QArray[QArray.length] = QList[i];
+    }
+
+//Show the first item
+    QArray[0].style.display = '';
+    
+//Now hide all except the first item
+    for (i=1; i<QArray.length; i++){
+        QArray[i].style.display = 'none';
+    }       
+    SetQNumReadout();
+    
+    SetFocusToTextbox();
+}
+
+function SetFocusToTextbox(){
+//if there's a textbox, set the focus in it
+    if (QArray[CurrQNum].getElementsByTagName('input')[0] != null){
+        QArray[CurrQNum].getElementsByTagName('input')[0].focus();
+//and show a keypad if there is one
+        if (document.getElementById('CharacterKeypad') != null){
+            document.getElementById('CharacterKeypad').style.display = 'block';
+        }
+    }
+    else{
+    if (QArray[CurrQNum].getElementsByTagName('textarea')[0] != null){
+        QArray[CurrQNum].getElementsByTagName('textarea')[0].focus();   
+//and show a keypad if there is one
+            if (document.getElementById('CharacterKeypad') != null){
+                document.getElementById('CharacterKeypad').style.display = 'block';
+            }
+        }
+//This added for 6.0.4.11: hide accented character buttons if no textbox
+        else{
+            if (document.getElementById('CharacterKeypad') != null){
+                document.getElementById('CharacterKeypad').style.display = 'none';
+            }
+        }
+    }
+}
+
+function ChangeQ(ChangeBy){
+//The following line prevents moving to another question until the current
+//question is answered correctly. Uncomment it to enable this behaviour. 
+//  if (State[CurrQNum][0] == -1){return;}
+    if (((CurrQNum + ChangeBy) < 0)||((CurrQNum + ChangeBy) >= QArray.length)){return;}
+    QArray[CurrQNum].style.display = 'none';
+    CurrQNum += ChangeBy;
+    QArray[CurrQNum].style.display = '';
+//Undocumented function added 10/12/2004
+    ShowSpecialReadingForQuestion();
+    SetQNumReadout();
+    SetFocusToTextbox();
+}
+
+var HiddenReadingShown = false;
+function ShowSpecialReadingForQuestion(){
+//Undocumented function for showing specific reading text elements which change with each question
+//Added on 10/12/2004
+    if (document.getElementById('ReadingDiv') != null){
+        if (HiddenReadingShown == true){
+            document.getElementById('ReadingDiv').innerHTML = '';
+        }
+        if (QArray[CurrQNum] != null){
+//Fix for 6.0.4.25
+            var Children = QArray[CurrQNum].getElementsByTagName('div');
+            for (var i=0; i<Children.length; i++){
+            if (Children[i].className=="HiddenReading"){
+                    document.getElementById('ReadingDiv').innerHTML = Children[i].innerHTML;
+                    HiddenReadingShown = true;
+//Hide the ShowAllQuestions button to avoid confusion
+                    if (document.getElementById('ShowMethodButton') != null){
+                        document.getElementById('ShowMethodButton').style.display = 'none';
+                    }
+                }
+            }   
+        }
+    }
+}
+
+function SetQNumReadout(){
+    document.getElementById('QNumReadout').innerHTML = (CurrQNum+1) + ' / ' + QArray.length;
+    if ((CurrQNum+1) >= QArray.length){
+        if (document.getElementById('NextQButton') != null){
+            document.getElementById('NextQButton').style.visibility = 'hidden';
+        }
+    }
+    else{
+        if (document.getElementById('NextQButton') != null){
+            document.getElementById('NextQButton').style.visibility = 'visible';
+        }
+    }
+    if (CurrQNum <= 0){
+        if (document.getElementById('PrevQButton') != null){
+            document.getElementById('PrevQButton').style.visibility = 'hidden';
+        }
+    }
+    else{
+        if (document.getElementById('PrevQButton') != null){
+            document.getElementById('PrevQButton').style.visibility = 'visible';
+        }
+    }
+}
+
+var I=new Array();
+I[0]=new Array();I[0][0]=100;
+I[0][1]='';
+I[0][2]='0';
+I[0][3]=new Array();
+I[0][3][0]=new Array('Hablar con Beatriz y Camilo para que no contin\u00FAen las burlas que afectan a Iv\u00E1n.','Soluci\u00F3n moment\u00E1nea. Si los comentarios del profesor \u00C1lvaro persisten otros estudiantes tambi\u00E9n podr\u00EDan verse afectados.',1,100,1);
+I[0][3][1]=new Array('Conversar con el profesor \u00C1lvaro sobre la situaci\u00F3n de Iv\u00E1n, la cual es consecuencia de algunos comentarios que \u00E9l hizo en su clase.','Soluci\u00F3n correcta, sentido de responsabilidad. Esta actitud de la profesora M\u00F3nica abre un espacio para la reflexi\u00F3n sobre la labor docente y la responsabilidad de los docentes como garantes de los derechos de los estudiantes.',1,100,1);
+I[0][3][2]=new Array('No involucrarse en la situaci\u00F3n pues todos los seres humanos deben aprender a defenderse solos e Iv\u00E1n no siempre tendr\u00E1 a una persona a su lado que se ocupe de resolver sus problemas.','Soluci\u00F3n moment\u00E1nea. Los docentes son garantes de los derechos de los ni\u00F1os, ni\u00F1as y adolescentes. Cuando la profesora M\u00F3nica decide no involucrarse en la situaci\u00F3n est\u00E1 evadiendo una responsabilidad adquirida al vincularse a la comunidad educativa.',1,100,1);
+I[0][3][3]=new Array('Conversar con Iv\u00E1n sobre la situaci\u00F3n.','Soluci\u00F3n correcta, sentido de responsabilidad. Esta actitud de la profesora M\u00F3nica responde a su responsabilidad como garante de derechos y motiva al estudiante hacia su auto-aceptaci\u00F3n y empoderamiento.',1,100,1);
+I[1]=new Array();I[1][0]=100;
+I[1][1]='';
+I[1][2]='0';
+I[1][3]=new Array();
+I[1][3][0]=new Array('Los padres de Julio, ellos viven con \u00E9l y en el colegio saben que no tienen ninguna objeci\u00F3n con que sea \u2018emo\u2019.','Cualquier miembro de la comunidad educativa deber\u00EDa intervenir en esta situaci\u00F3n, especialmente cuando hay derechos vulnerados y acciones agresivas. Cuando nos identificamos como actores de una comunidad tambi\u00E9n nos entendemos como corresponsables.',1,100,1);
+I[1][3][1]=new Array('La profesora directora de grupo, ella es la responsable de la convivencia en el aula.','Cualquier miembro de la comunidad educativa deber\u00EDa intervenir en esta situaci\u00F3n, especialmente cuando hay derechos vulnerados y acciones agresivas. Cuando nos identificamos como actores de una comunidad tambi\u00E9n nos entendemos como corresponsables.',1,100,1);
+I[1][3][2]=new Array('Los compa\u00F1eros de clase de Julio, quienes podr\u00EDan movilizarse y hacer respetar sus derechos.','Cualquier miembro de la comunidad educativa deber\u00EDa intervenir en esta situaci\u00F3n, especialmente cuando hay derechos vulnerados y acciones agresivas. Cuando nos identificamos como actores de una comunidad tambi\u00E9n nos entendemos como corresponsables.',1,100,1);
+I[1][3][3]=new Array('Solo Julio, \u00E9l puede hacerse respetar.','Cualquier miembro de la comunidad educativa deber\u00EDa intervenir en esta situaci\u00F3n, especialmente cuando hay derechos vulnerados y acciones agresivas. Cuando nos identificamos como actores de una comunidad tambi\u00E9n nos entendemos como corresponsables.',1,100,1);
+I[2]=new Array();I[2][0]=100;
+I[2][1]='';
+I[2][2]='0';
+I[2][3]=new Array();
+I[2][3][0]=new Array('Dejar que la situaci\u00F3n siga el curso que tom\u00F3 y que el Coordinador de disciplina se encargue del caso con los padres de Johana, pues la educaci\u00F3n en estos casos viene de casa y ellos deben hacerse responsables.','Hasta este momento la profesora Amalia no conoce los detalles de la situaci\u00F3n, por este motivo debe intervenir entre las estudiantes y, despu\u00E9s, en caso de ser necesario, entregar el caso a la persona encargada dentro del establecimiento educativo.',1,100,1);
+I[2][3][1]=new Array('Llamar a Johana, a Julia y a Mar\u00EDa en diferentes momentos para entender qu\u00E9 y c\u00F3mo ocurrieron los hechos y as\u00ED poder abordar la situaci\u00F3n y proponer alternativas para su manejo.','Soluci\u00F3n correcta. La profesora Amalia no sabe c\u00F3mo ocurri\u00F3 la situaci\u00F3n, escuchar a las personas implicadas en distintos momentos es una forma de abordar la situaci\u00F3n en condiciones de igualdad para todos.',1,100,1);
+I[2][3][2]=new Array('Proponer un debate con todo el curso y discutir sobre el tema del embarazo y lo que implica para el futuro de las personas.','La profesora Amalia no conoce los detalles de la situaci\u00F3n entre las estudiantes. Por este motivo, es importante escuchar las posiciones y argumentos que cada una tiene. Organizar un debate para discutir un tema que involucra la vida privada de una estudiante es violentar sus derechos y exponerla a la cr\u00EDtica de sus compa\u00F1eros.',1,100,1);
+I[2][3][3]=new Array('Hablar con Johana y explicarle que las relaciones sexuales tiene un momento y que ella se ha adelantado. Adem\u00E1s, recordarle que en el colegio se le ha dado much\u00EDsima informaci\u00F3n sobre educaci\u00F3n sexual y planificaci\u00F3n, y que ella debi\u00F3 prever esta situaci\u00F3n.','Si bien el embarazo adolescente es un problema frecuente en algunos establecimientos educativos, en esta situaci\u00F3n lo que Amelia debe resolver es la situaci\u00F3n entre las estudiantes.',1,100,1);
+
+
+function StartUp(){
+    RemoveBottomNavBarForIE();
+
+//If there's only one question, no need for question navigation controls
+    if (QsToShow < 2){
+        document.getElementById('QNav').style.display = 'none';
+    }
+    
+//Stash the instructions so they can be redisplayed
+    strInstructions = document.getElementById('InstructionsDiv').innerHTML;
+    
+
+    
+
+    
+
+    
+    CompleteEmptyFeedback();
+
+    SetUpQuestions();
+    ClearTextBoxes();
+    CreateStatusArray();
+    
+
+    
+//Check search string for q parameter
+    if (document.location.search.length > 0){
+        if (ShuffleQs == false){
+            var JumpTo = parseInt(document.location.search.substring(1,document.location.search.length))-1;
+            if (JumpTo <= QsToShow){
+                ChangeQ(JumpTo);
+            }
+        }
+    }
+//Undocumented function added 10/12/2004
+    ShowSpecialReadingForQuestion();
+}
+
+function ShowHideQuestions(){
+    FuncBtnOut(document.getElementById('ShowMethodButton'));
+    document.getElementById('ShowMethodButton').style.display = 'none';
+    if (ShowingAllQuestions == false){
+        for (var i=0; i<QArray.length; i++){
+                QArray[i].style.display = '';
+            }
+        document.getElementById('Questions').style.listStyleType = 'decimal';
+        document.getElementById('OneByOneReadout').style.display = 'none';
+        document.getElementById('ShowMethodButton').innerHTML = ShowOneByOneCaption;
+        ShowingAllQuestions = true;
+    }
+    else{
+        for (var i=0; i<QArray.length; i++){
+                if (i != CurrQNum){
+                    QArray[i].style.display = 'none';
+                }
+            }
+        document.getElementById('Questions').style.listStyleType = 'none';
+        document.getElementById('OneByOneReadout').style.display = '';
+        document.getElementById('ShowMethodButton').innerHTML = ShowAllQuestionsCaption;
+        ShowingAllQuestions = false;    
+    }
+    document.getElementById('ShowMethodButton').style.display = 'inline';
+}
+
+function CreateStatusArray(){
+    var QNum, ANum;
+//For each item in the item array
+    for (QNum=0; QNum<I.length; QNum++){
+//Check if the question still exists (hasn't been nuked by showing a random selection)
+        if (document.getElementById('Q_' + QNum) != null){
+            State[QNum] = new Array();
+            State[QNum][0] = -1; //Score for this q; -1 shows question not done yet
+            State[QNum][1] = new Array(); //answers
+            for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+                State[QNum][1][ANum] = 0; //answer not chosen yet; when chosen, will store its position in the series of choices
+            }
+            State[QNum][2] = 0; //tries at this q so far
+            State[QNum][3] = 0; //incrementing percent-correct values of selected answers
+            State[QNum][4] = 0; //penalties incurred for hints
+            State[QNum][5] = ''; //Sequence of answers chosen by number
+        }
+        else{
+            State[QNum] = null;
+        }
+    }
+}
+
+
+
+function CheckMCAnswer(QNum, ANum, Btn){
+//if question doesn't exist, bail
+    if (State[QNum].length < 1){return;}
+    
+//Get the feedback
+    Feedback = I[QNum][3][ANum][1];
+    
+//Now show feedback and bail if question already complete
+    if (State[QNum][0] > -1){
+//Add an extra message explaining that the question
+// is finished if defined by the user
+        if (strQuestionFinished.length > 0){Feedback += '<br />' + strQuestionFinished;}
+//Show the feedback
+        ShowMessage(Feedback);
+//New for 6.2.2.1: If you want to mark an answer as correct even when it's the final choice, uncomment this line.
+//      if (I[QNum][3][ANum][2] >= 1){Btn.innerHTML = CorrectIndicator;}else{Btn.innerHTML = IncorrectIndicator;}   
+        return;
+    }
+    
+//Hide the button while processing
+    Btn.style.display = 'none';
+
+//Increment the number of tries
+    State[QNum][2]++;
+    
+//Add the percent-correct value of this answer
+    State[QNum][3] += I[QNum][3][ANum][3];
+    
+//Store the try number in the answer part of the State array, for tracking purposes
+    State[QNum][1][ANum] = State[QNum][2];
+    if (State[QNum][5].length > 0){State[QNum][5] += ' | ';}
+    State[QNum][5] += String.fromCharCode(65+ANum);
+    
+//Should this answer be accepted as correct?
+    if (I[QNum][3][ANum][2] < 1){
+//It's wrong
+
+//Mark the answer
+        Btn.innerHTML = IncorrectIndicator;
+        
+//Remove any previous score unless exercise is finished (6.0.3.8+)
+        if (Finished == false){
+            WriteToInstructions(strInstructions);
+        }   
+        
+//Check whether this leaves just one MC answer unselected, in which case the Q is terminated
+        var RemainingAnswer = FinalAnswer(QNum);
+        if (RemainingAnswer > -1){
+//Behave as if the last answer had been selected, but give no credit for it
+//Increment the number of tries
+            State[QNum][2]++;       
+        
+//Calculate the score for this question
+            CalculateMCQuestionScore(QNum);
+            
+//Get the overall score and add it to the feedback
+            CalculateOverallScore();
+//New for 6.2.2.1
+            var QsDone = CheckQuestionsCompleted();
+            if ((ContinuousScoring == true)||(Finished == true)){
+                Feedback += '<br />' + YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone;
+                WriteToInstructions(YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone);
+            }
+            else{
+                WriteToInstructions(QsDone);
+            }
+        }
+    }
+    else{
+//It's right
+//Mark the answer
+        Btn.innerHTML = CorrectIndicator;
+                
+//Calculate the score for this question
+        CalculateMCQuestionScore(QNum);
+        
+//New for 6.2.2.0
+        var QsDone = CheckQuestionsCompleted();
+
+//Get the overall score and add it to the feedback
+        if (ContinuousScoring == true){
+            CalculateOverallScore();
+            if ((ContinuousScoring == true)||(Finished == true)){
+                Feedback += '<br />' + YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone;
+                WriteToInstructions(YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone);
+            }
+        }
+        else{
+            WriteToInstructions(QsDone);
+        }
+    }
+    
+//Show the button again
+    Btn.style.display = 'inline';
+    
+//Finally, show the feedback    
+    ShowMessage(Feedback);
+    
+//Check whether all questions are now done
+    CheckFinished();
+}
+
+function CalculateMCQuestionScore(QNum){
+    var Tries = State[QNum][2] + State[QNum][4]; //include tries and hint penalties
+    var PercentCorrect = State[QNum][3];
+    var TotAns = GetTotalMCAnswers(QNum);
+    var HintPenalties = State[QNum][4];
+    
+//Make sure it's not already complete
+
+    if (State[QNum][0] < 0){
+//Allow for Hybrids
+        if (HintPenalties >= 1){
+            State[QNum][0] = 0;
+        }
+        else{
+//This line calculates the score for this question
+            if (TotAns == 1){
+                State[QNum][0] = 1;
+            }
+            else{
+                State[QNum][0] = ((TotAns-((Tries*100)/State[QNum][3]))/(TotAns-1));
+            }
+        }
+//Fix for Safari bug added for version 6.0.3.42 (negative infinity problem)
+        if ((State[QNum][0] < 0)||(State[QNum][0] == Number.NEGATIVE_INFINITY)){
+            State[QNum][0] = 0;
+        }
+    }
+}
+
+function GetTotalMCAnswers(QNum){
+    var Result = 0;
+    for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+        if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+            Result++;
+        }
+    }
+    return Result;
+}
+
+function FinalAnswer(QNum){
+    var UnchosenAnswers = 0;
+    var FinalAnswer = -1;
+    for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+        if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+            if (State[QNum][1][ANum] < 1){ //This answer hasn't been chosen yet
+                UnchosenAnswers++;
+                FinalAnswer = ANum;
+            }
+        }
+    }
+    if (UnchosenAnswers == 1){
+        return FinalAnswer;
+    }
+    else{
+        return -1;
+    }
+}
+
+
+
+
+
+function CalculateOverallScore(){
+    var TotalWeighting = 0;
+    var TotalScore = 0;
+    
+    for (var QNum=0; QNum<State.length; QNum++){
+        if (State[QNum] != null){
+            if (State[QNum][0] > -1){
+                TotalWeighting += I[QNum][0];
+                TotalScore += (I[QNum][0] * State[QNum][0]);
+            }
+        }
+    }
+    if (TotalWeighting > 0){
+        Score = Math.floor((TotalScore/TotalWeighting)*100);
+    }
+    else{
+//if TotalWeighting is 0, no questions so far have any value, so 
+//no penalty should be shown.
+        Score = 100; 
+    }
+}
+
+//New for 6.2.2.0
+function CheckQuestionsCompleted(){
+    if (ShowCompletedSoFar == false){return '';}
+    var QsCompleted = 0;
+    for (var QNum=0; QNum<State.length; QNum++){
+        if (State[QNum] != null){
+            if (State[QNum][0] >= 0){
+                QsCompleted++;
+            }
+        }
+    }
+//Fixes for 6.2.2.2
+    if (QsCompleted >= QArray.length){
+        return ExerciseCompleted;
+    }
+    else{
+        return CompletedSoFar + ' ' + QsCompleted + '/' + QArray.length + '.';
+    }
+}
+
+function CheckFinished(){
+    var FB = '';
+    var AllDone = true;
+    for (var QNum=0; QNum<State.length; QNum++){
+        if (State[QNum] != null){
+            if (State[QNum][0] < 0){
+                AllDone = false;
+            }
+        }
+    }
+    if (AllDone == true){
+    
+//Report final score and submit if necessary
+        CalculateOverallScore();
+        FB = YourScoreIs + ' ' + Score + '%.';
+        if (ShowCorrectFirstTime == true){
+            var CFT = 0;
+            for (QNum=0; QNum<State.length; QNum++){
+                if (State[QNum] != null){
+                    if (State[QNum][0] >= 1){
+                        CFT++;
+                    }
+                }
+            }
+            FB += '<br />' + CorrectFirstTime + ' ' + CFT + '/' + QsToShow;
+        }
+        
+//New for 6.2.2.0
+        FB += '<br />' + ExerciseCompleted;
+        
+        WriteToInstructions(FB);
+        
+        Finished == true;
+
+
+
+
+        TimeOver = true;
+        Locked = true;
+        
+
+
+        Finished = true;
+        Detail = '<?xml version="1.0"?><hpnetresult><fields>';
+        for (QNum=0; QNum<State.length; QNum++){
+            if (State[QNum] != null){
+                if (State[QNum][5].length > 0){
+                    Detail += '<field><fieldname>Question #' + (QNum+1) + '</fieldname><fieldtype>question-tracking</fieldtype><fieldlabel>Q ' + (QNum+1) + '</fieldlabel><fieldlabelid>QuestionTrackingField</fieldlabelid><fielddata>' + State[QNum][5] + '</fielddata></field>';
+                }
+            }
+        }
+        Detail += '</fields></hpnetresult>';
+        setTimeout('Finish()', SubmissionTimeout);
+    }
+
+}
+//-->
+
+//]]>
+
+</script>
+  </body>
+</html> 

@@ -1,0 +1,99 @@
+/* Estilos propios de la plantilla */
+.fgroup_id_buttonar,
+#fgroup_id_buttonar {
+    background-color: #2f3d46;
+}
+legend,
+.mform legend a,
+.mform legend a:hover,
+legend a,
+legend a:hover {
+    color: #FFFFFF;
+}
+.course-content .current {
+    background-color: #2f3d46;
+}
+.course-content ul li.section.main {
+    border: none;
+}
+.course-content>.topics>li#section-1,
+.course-content>.topics>li#section-2,
+.course-content>.topics>li#section-3,
+.course-content>.topics>li#section-4,
+.course-content>.topics>li#section-5,
+.course-content>.topics>li#section-6,
+.course-content>.topics>li#section-7,
+.course-content>.topics>li#section-8,
+.course-content>.topics>li#section-9,
+.course-content>.topics>li#section-10,
+.course-content>.topics>li#section-11,
+.course-content>.topics>li#section-12,
+.course-content>.topics>li#section-13,
+.course-content>.topics>li#section-14,
+.course-content>.topics>li#section-15,
+.course-content>.topics>li#section-16,
+.course-content>.topics>li#section-17,
+.course-content>.topics>li#section-18,
+.course-content>.topics>li#section-19 {
+    display: none;
+}
+.course-content>ul.topics>li:last-child {
+    display: none;
+}
+/* ----------------------------------------------------------------------------->> */
+.single-section ul.topics>li {
+    display: block;
+}
+.course-content>.single-section>.section-navigation.navigationtitle,
+.course-content>.single-section>.section-navigation.mdl-bottom {
+    display: none;
+}
+.section .activity .contentwithoutlink,
+.section .activity .activityinstance,
+.mod-indent-outer {
+    display: block;
+}
+.userenrolment .col_role .addrole {
+    background-color: #25323b;
+}
+table#explaincaps tbody>tr:nth-child(odd)>td,
+table#defineroletable tbody>tr:nth-child(odd)>td,
+table.grading-report tbody>tr:nth-child(odd)>td,
+table#listdirectories tbody>tr:nth-child(odd)>td,
+table.rolecaps tbody>tr:nth-child(odd)>td,
+table.userenrolment tbody>tr:nth-child(odd)>td,
+table#form tbody>tr:nth-child(odd)>td,
+form#movecourses table tbody>tr:nth-child(odd)>td,
+#page-admin-course-index .editcourse tbody>tr:nth-child(odd)>td,
+.forumheaderlist tbody>tr:nth-child(odd)>td,
+table.flexible tbody>tr:nth-child(odd)>td,
+.generaltable tbody>tr:nth-child(odd)>td,
+table#explaincaps tbody>tr:nth-child(odd)>th,
+table#defineroletable tbody>tr:nth-child(odd)>th,
+table.grading-report tbody>tr:nth-child(odd)>th,
+table#listdirectories tbody>tr:nth-child(odd)>th,
+table.rolecaps tbody>tr:nth-child(odd)>th,
+table.userenrolment tbody>tr:nth-child(odd)>th,
+table#form tbody>tr:nth-child(odd)>th,
+form#movecourses table tbody>tr:nth-child(odd)>th,
+#page-admin-course-index .editcourse tbody>tr:nth-child(odd)>th,
+.forumheaderlist tbody>tr:nth-child(odd)>th,
+table.flexible tbody>tr:nth-child(odd)>th,
+.generaltable tbody>tr:nth-child(odd)>th {
+    background-color: #25323b;    
+}
+li#section-0.section.main>div.left.side,
+li#section-0.section.main>div.right.side {
+    display: none;
+}
+.course-content ul.section.img-text {
+    margin-top:0;
+}
+/* ---------------------------------- Estilos para los contenidos administrativos ------------------- */
+.user-grade td.oddd1, .user-grade th.oddd1 {
+    background-color: rgb(47, 61, 70);
+}
+/* ---------------------------------- Estilos para los contenidos hotpotatoes ------------------- */
+body#page-mod-hotpot-attempt div.continuebutton {
+    display:none;
+}

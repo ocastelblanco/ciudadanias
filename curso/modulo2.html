@@ -1,0 +1,1598 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CIUDADANÍAS">
+    <meta name="author" content="Oliver Castelblanco M. y Liz Arévalo para CISP">
+    <link rel="shortcut icon" href="ico/favicon.png">
+    <title>CIUDADANÍAS</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.0/holder.js"></script>
+    <style type="text/css">
+        .continuebutton {
+            display:none;
+        }
+        .modal {
+            color: black;
+        }
+        ol.MCAnswers>li {
+            margin-top:10px;
+        }
+        ol.MCAnswers button {
+        }
+        ol.QuizQuestions {
+            list-style-type:none;
+        }
+        .bloqueModulo {
+            margin-bottom: 2em;
+        }
+        .bloqueModulo .span12 a:first-child {
+            font-size: 12px;
+            display: block;
+            float: left;
+            width: 55%;
+            padding-top: 1.5em;
+            padding-left: 5%;
+            padding-right: 5%;
+            height: 15em;
+        }
+        .bloqueModulo .span12 a:last-child {
+            /* Las medidas horizonales se hacen en % y las verticales en em */
+            padding-top: 0.57em; /* Este texto es de 14px */
+            padding-right: 5%;
+            float:left;
+            width: 30%;
+            height: auto;
+        }
+        .bloqueModulo a {
+            color:#FFFFFF;
+        }
+        .bloqueModulo a:hover {
+            text-decoration:none;
+            background-color:#5E7A8C;
+        }
+        .bloqueModulo .row-fluid:hover {
+            background-color:#5E7A8C;
+        }
+        .bloqueModulo .row-fluid {
+            background:#27353e;
+            color:#FFF;
+            overflow: hidden;
+            height: 14em;
+            cursor:pointer;
+        }
+        .bloqueModulo h4 {
+            font-size: 14px;
+            text-transform:none;
+            padding: 1em;
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.57em 0.57em 0px 0px;
+            -moz-border-radius: 0.57em 0.57em 0px 0px;
+            -webkit-border-radius: 0.57em 0.57em 0px 0px;
+            color:#FFF;  
+            overflow: hidden;
+            height: 2em;
+            text-transform:uppercase;
+        }
+        .modulo1 h4 {
+            background-color: #7ac35a;
+        }
+        .modulo2 h4 {
+            background-color: #13b5e4;
+        }
+        .modulo3 h4 {
+            background-color: #e84c3d;
+        }
+        .modulo4 h4 {
+            background-color: #5e1770;
+        }
+        .modulo5 h4 {
+            background-color: #ffc50c;
+        }
+        .modulo6 h4 {
+            background-color: #00aab2;
+        }
+        .modulo7 h4 {
+            background-color: #ec008c;
+        }
+        /* Estilos del menú Acerca De */
+        #tablaIndice {
+            width:100%;
+        }
+        #tablaIndice a {
+            display:block;
+            width:100%;
+            padding-top:1em;
+            padding-bottom:1em;
+            border-bottom:solid 1px #000;
+            color:#fff;
+            opacity:0.65;
+        }
+        #tablaIndice a:hover {
+            opacity:1;
+            background-color:#2f3d46;
+            color:#0088cc;
+        }
+        #tablaIndice span {
+            font-size:12px;
+            display:block;
+            float:left;
+            width:6.5em;
+            padding-left:2em;
+        }
+        #tablaIndice img {
+            width:100%;
+            height:auto;
+        }
+        #tablaIndice a#imagenTablaIndice {
+            display:inline;
+            width:auto;
+            padding-top:0;
+            padding-bottom:0;
+            border-bottom:none;
+            opacity:1;
+        }
+        #tablaIndice a#imagenTablaIndice:hover {
+            opacity:0.75;
+        }
+        /* Estilos para la paginación de los módulos */
+        .pagination ul>.disabled>span,
+        .pagination ul>.disabled>a,
+        .pagination ul>.disabled>a:hover,
+        .pagination ul>.disabled>a:focus {
+            background-color:#dddddd;
+        }
+        .pagination ul>li {
+            display: inline;
+        }
+        /* Estilos del módulo 1 */
+        .contenido1{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        .contenido1 h2{
+            color:#7ac35a;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido1 h3{
+            color:#7ac35a;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }   
+            
+        .contenido1 li{
+            margin: 0 0 0 15px;
+            color:#27353E;
+        }
+        
+        .contenido2 h2{
+            color:#13B5E4;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido2 h3{
+            color:#13B5E4;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido2{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        
+        .contenido3 h2{
+            color:#E84C3D;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido3 h3{
+            color:#E84C3D;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido3{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        .contenido4 h2{
+            color:#5E1770;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido4 h3{
+            color:#5E1770;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido4{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        .contenido5 h2{
+            color:#FFC50C;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido5 h3{
+            color:#FFC50C;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido5{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+    /* Estos estilos ya los trae el tema de Moodle */
+        body {
+            background-color: #2f3d46;
+            color:#FFFFFF;
+        }
+    </style>
+  </head>
+
+  <body onload="StartUp()">
+
+    <div id="InstructionsDiv" style="display: none;" class="StdDiv">
+        <div id="Instructions"></div>
+    </div>
+    <span id="QNumReadout" style="display: none;" class="QNum">&nbsp;</span>
+
+
+        
+        <div class="modal fade" id="respuesta" tabindex="-1" role="dialog" aria-labelledby="Respuesta" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Respuesta</h4>
+              </div>
+              <div class="modal-body">
+                <div class="Feedback" id="FeedbackDiv">
+                    <div class="FeedbackText" id="FeedbackContent"></div>
+                    <button style="display: none;" id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button id="cerrarModal" data-dismiss="modal" type="button" class="btn btn-primary">Cerrar ventana</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+  
+   <div class="container-fluid">
+
+        <div class="tab-content">
+            <div class="row-fluid">
+                <div class="span12 bloqueModulo modulo2">
+                    <h4>Módulo 2: Prevención del acoso escolar.</h4>
+                </div><!-- /.span12 -->
+            </div><!-- ./row-fluid -->
+            <div class="tab-pane active contenido2" id="pag1">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2></h2>
+                        <p>Pepe, un acosador del grado once, molesta a Raúl, de noveno, porque este es gay. En la historieta vemos cómo al principio, Pepe molestaba a Raúl en privado, pero después vemos a Pepe y a sus amigos intimidando a Raúl en el patio de recreo o en los baños. Luego, Pepe ve a Raúl al borde de la cancha de fútbol e intenta darle un balonazo en la cara; pero le pega al rector y no a Raúl. </p>
+                        <p>Supongamos que Raúl es de mayor estatura, peso y fuerza que Pepe; supongamos que a Raúl no le gusta el futbol, que incluso lo odia por su rudeza física. Supongamos que Raúl hace a Pepe la vida imposible con empujones, frases agresivas, burlas e insultos relacionados con el gusto que Pepe tiene por el fútbol.</p>
+                        <p>
+                            <div id="MainDiv" class="StdDiv">
+                                <ol class="QuizQuestions" id="Questions">
+                                <li class="QuizQuestion" id="Q_0"><div class="QuestionText">Usted dir&#x00ED;a que: <br /></div><ol class="MCAnswers"><li id="Q_0_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_0_Btn" onclick="CheckMCAnswer(0,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Ra&#x00FA;l tiene derecho a agredir a Pepe porque el f&#x00FA;tbol es un deporte muy rudo y a Pepe le gusta esa rudeza.</li><li id="Q_0_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_1_Btn" onclick="CheckMCAnswer(0,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Ra&#x00FA;l s&#x00F3;lo est&#x00E1; teniendo una conducta pasajera de adolescente en busca de identidad.</li><li id="Q_0_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_2_Btn" onclick="CheckMCAnswer(0,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Si Pepe hubiera protestado a la primera agresi&#x00F3;n las cosas no habr&#x00ED;an pasado a mayores.</li><li id="Q_0_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_3_Btn" onclick="CheckMCAnswer(0,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;La sociedad deber&#x00ED;a hacer respetar a Pepe.</li><li id="Q_0_4"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_4_Btn" onclick="CheckMCAnswer(0,4,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Ra&#x00FA;l no respeta las diferencias.</li></ol></li>
+                                </ol>
+                            </div>
+                        </p>
+                        <br><br>
+                        <p>¿Qué harían ustedes como maestros en cada uno de estos dos casos? Por favor enviar sus comentarios a la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a>. </p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag1 -->
+            
+            <div class="tab-pane contenido2" id="pag2">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Recursos</h2>
+                        <p>Por favor leer y reflexionar sobre estos recursos disponibles en internet: </p>
+                        <h3>Recurso A:</h3>
+                        <p><a href="https://es.wikipedia.org/wiki/Dignidad" target="_blank">Dignidad - Wikipedia, la enciclopedia libre</a></p>
+                        <h3>Recurso B:</h3>
+                        <p><a href="http://www.slideshare.net/grupopxndx904/la-dignidad-humana" target="_blank">La Dignidad Humana - Slideshare</a></p>
+                        <h3>Recurso C:</h3>
+                        <p><a href="http://www.youtube.com/watch?v=idXmsM2UVGg" target="_blank">Principios de la Dignidad Humana - Youtube</a></p>
+                        <h3>Recurso D:</h3>
+                        <p><a href="http://www.corteconstitucional.gov.co/relatoria/2002/t-881-02.htm" target="_blank">Principios de la Dignidad Humana - Corte Constitucional de Colombia</a></p>
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag2 -->
+            
+            <div class="tab-pane contenido2" id="pag3">
+                <div class="row-fluid">
+                    <div class="span12">   
+                    <!-- Hot potato -->
+                        <p>
+                            <div id="MainDiv" class="StdDiv">
+                                <ol class="QuizQuestions" id="Questions">
+                                <li class="QuizQuestion" id="Q_1"><div class="QuestionText">La dignidad humana es:</div><ol class="MCAnswers"><li id="Q_1_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Sentirse respetado y bien tratado.</li><li id="Q_1_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Tener oportunidades para realizar sus sue&#x00F1;os.</li><li id="Q_1_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_2_Btn" onclick="CheckMCAnswer(1,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;No dejarse agredir de nadie.</li><li id="Q_1_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_3_Btn" onclick="CheckMCAnswer(1,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Tener el afecto de la gente cercana.</li><li id="Q_1_4"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_4_Btn" onclick="CheckMCAnswer(1,4,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Que haya paz.</li></ol></li>
+                                </ol>
+                            </div>
+                        </p>
+                        <br><br>
+                        <p>
+                            Hemos visto algunos videos; conocido algunas definiciones sobre el concepto de dignidad humana, y conversado sobre nuestras reacciones ante sucesos violentos, agresivos, preocupantes e indignantes que suceden en las comunidades educativas.
+                            <br>
+                            Ahora, ¿cómo considera que se define el acoso entre compañeros escolares desde  el concepto de dignidad humana?
+                        </p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag3 -->
+            
+            <div class="tab-pane contenido2" id="pag4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <iframe src="//player.vimeo.com/video/52340045" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/52340045">Real Time - Humana</a> from <a href="http://vimeo.com/emanuelecolombo">Emanuele Colombo</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+                        <p>Como todos los ejercicios de valoración, este test tiene provee retroalimentaciones para cada opción, tanto para las “correctas” como para las “incorrectas”. </p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag4 -->
+            
+            <div class="tab-pane contenido2" id="pag5">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>¿Qué es acoso escolar o bullying?</h2>
+                        <p>Definición de acoso escolar tal como aparece en la ley 159 de 2012, llamada <a href="http://servoaspr.imprenta.gov.co:7778/gacetap/gaceta.mostrar_documento?p_tipo=123&p_numero=159&p_consec=35101" target="_blank">Ley de Convivencia.</a></p>
+                        <p>Acoso escolar o bullying: “Conducta negativa, intencional metódica y sistemática de agresión, intimidación, humillación, ridiculización, difamación, coacción, aislamiento deliberado, amenaza o incitación a la violencia o cualquier forma de maltrato psicológico, verbal, físico o por medios electrónicos contra un niño, niña o adolescente, por parte de un estudiante o varios de sus pares con quienes mantiene una relación de poder asimétrica que se presenta  de forma reiterada o a lo largo de un tiempo determinado. También puede ocurrir por parte de docentes contra estudiantes, o por parte de estudiantes contra docentes, ante la indiferencia o complicidad de su entorno”. </p>
+                        <p>A continuación se desglosa la definición para facilitar su comprensión:</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag5 -->
+            
+            <div class="tab-pane contenido2" id="pag6">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Conducta intencional: </h3>
+                        <p>Aunque en situaciones de acoso escolar muchos niños, niñas y adolescentes explican que “era por molestar”, con frecuencia se observa que han maltratado, ridiculizado o molestado intencionalmente a sus pares o a quien someten a la intimidación. </p>
+                       
+                       
+                        <h3>Testimonio 1.</h3>
+                        
+                        <p>"Empieza desde una sola persona o de un grupo... empiezan a atacar a alguien ya sea física o verbalmente por X razón... cuando molestar a tal persona se vuelve más continuo, ya empieza más gente a unirse, hasta que ya se vuelve un grupo más grande, que puede ser todo un salón contra una persona...". </p>  
+                        <p>“A la gente muy pequeña o a la gente muy alta les empiezan a decir cosas… o a la gente que tiene, por ejemplo, algo raro”.</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag6 -->
+            
+            <div class="tab-pane contenido2" id="pag7">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Metódica y sistemática:</h3>
+                        <p>El intimidador o los intimidadores encuentran una forma de maltratar a la víctima y la utilizan en los mismos espacios y tiempos, de tal forma que la situación de acoso escolar se da a través de un proceso planificado.</p>
+                       
+                       
+                        <h3>Testimonio 2.</h3>
+                        
+                        <p>
+                           "Me empujan, me dicen 'gafufo', me dicen 'patas de gallina' porque tengo las piernas delgadas, me dicen 'lupa' porque cuando hay sol brillan las gafas y dicen que voy quemando el papel. Me duele mucho que me hagan eso. A veces me siento inferior...  una vez lloré y fue peor: me dijeron 'nena'". Niño de 9 años, segundo primario.</p>  
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag7 -->
+            
+            <div class="tab-pane contenido2" id="pag8">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Agresión o maltrato:</h3>
+                        <p>La agresión ha sido definida como la acción que tiene la intención de hacerle daño a otra persona. El acoso escolar siempre implica maltrato.</p>
+                       
+                       
+                        <h3>Testimonio 3.</h3>
+                        
+                        <p> “A veces lo empujamos o algo y hacemos como si le fuéramos a pegar pero no lo hacemos… entonces él salta”. Testimonio de un adolescente identificado como intimidador por sus compañeros de curso.</p>  
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag8 -->
+            
+            <div class="tab-pane contenido2" id="pag9">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Relación de poder asimétrica o desbalance de poder: </h3>
+                        <p>Por características personales o por estatus en el grupo, los intimidadores tienen más poder que las víctimas. Las víctimas tienen menos poder personal o social, y esto las hace vulnerables en la situación de acoso escolar. </p>
+                       
+                       
+                        <h3>Testimonio 4.</h3>
+                        
+                        <p>“Él es un poco infantil, entonces a él los estudiantes no lo comprenden y empiezan a montársela y a fregarlo por todo”. Estudiante de sexto grado.</p>  
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag9 -->
+            
+             <div class="tab-pane contenido2" id="pag10">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Repetido: </h3>
+                        <p>El acoso escolar no es una situación ocasional o de un solo momento. Se presenta durante un período de tiempo determinado, en muchas ocasiones puede pasar del preescolar a la primaria o de la primaria al bachillerato, dirigido hacía una misma víctima o víctimas.</p>
+                       
+                       
+                        <h3>Testimonio 5.</h3>
+                        
+                        <p>“En primero las agresiones no eran tan graves… pero fueron creciendo… empezaron a ser más crueles… ya lanzan comentarios tan feos que hacen que la persona llegue un punto en el que se desespera y empieza a llorar o algo”.</p>  
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag10 -->
+            
+            <div class="tab-pane contenido2" id="pag11">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>Desde estas precisiones que hace la teoría sobre el acoso escolar y considerando el concepto de la dignidad humana, ¿cómo cree que se pueden aplicar estos elementos para responder a las dos situaciones de caso que hemos visto en esta sección del curso? </p>
+                        <p>Discuta en la <a href="http://ciudadanos.ning.com" target="_blank">Red Social</a></p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag11 -->
+            
+             <div class="tab-pane contenido2" id="pag12">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>El conocer las circunstancias de acoso escolar deja en las personas ‘sensaciones’ de impotencia pero, ya lo hemos dicho, son ‘sensaciones’. Siempre es posible hacer algo para prevenir o frenar el acoso escolar. En ello también se expresa el ejercicio de la ciudadanía.</p>  
+                        <p>Una experiencia de acción ciudadana es la que nos propone el <a href="http://100en1dia.com/" target="_blank">Colectivo 100 en 1 día</a>, otras son acciones que usted seguramente ha realizado en alguna ocasión, o que seguramente adelanta ahora, en este año lectivo:</p>
+                        <p>
+                            <li>En una entidad educativa.</li> 
+                            <li>Con su familia. </li>
+                            <li>En el barrio donde vive.</li>
+                            <li>En la entidad donde trabaja.</li>
+                        </p>
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag12 -->
+            
+            
+             <div class="tab-pane contenido2" id="pag13">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>Comparta con otros usuarios del curso las causas del acoso escolar que conoció, la acción que realizó, la estrategia que utilizó y los resultados que obtuvo:</p>
+                        <p>Participe en la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a>.</p>
+                        
+                    </div><!-- /.span13 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag13 -->
+            
+             <div class="tab-pane contenido2" id="pag14">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Participe en la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a></h3>
+                        <p>¿Cómo cree usted que el acoso escolar afecta la dignidad de las personas?</p>
+                        <p>¿Cómo el acoso escolar afecta el ejercicio de la ciudadanía?</p>
+                        <p>¿Qué estrategias exitosas para resolver el acoso escolar conoce usted?</p>  
+                        <p>Teniendo en cuenta la decisión tomada por la  mesa de la sentencia T905/11, en la cual participó el Ministerio de Educación Nacional, se decidió utilizar la palabra acoso escolar en vez de intimidación escolar o bullying.</p>
+                        <p>A continuación realice la actividad <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">Acontecimiento Ciudadano.</a></p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag14 -->
+            
+            
+            
+            
+        </div><!-- /.tab-content -->
+        
+        <div class="pagination">
+            <ul>
+                <li class="active"><a href="#pag1">1</a></li>
+                <li><a href="#pag2">2</a></li>
+                <li><a href="#pag3">3</a></li>
+                <li><a href="#pag4">4</a></li>
+                <li><a href="#pag5">5</a></li>
+                <li><a href="#pag6">6</a></li>
+                <li><a href="#pag7">7</a></li>
+                <li><a href="#pag8">8</a></li>
+                <li><a href="#pag9">9</a></li>
+                <li><a href="#pag10">10</a></li>
+                <li><a href="#pag11">11</a></li>
+                <li><a href="#pag12">12</a></li>
+                <li><a href="#pag13">13</a></li>
+                <li><a href="#pag14">14</a></li>
+            </ul>
+        </div><!-- /.pagination -->
+        
+    </div><!-- /.container -->
+    
+        <script type="text/javascript">
+            $(function(){
+                $('.FuncButton').html('<i class="fa fa-question"></i>');
+                $('.FuncButton').addClass('btn btn-default');
+                $('.FuncButton').prop("onfocus", null);
+                $('.FuncButton').prop("onblur", null);
+                $('.FuncButton').prop("onmouseover", null);
+                $('.FuncButton').prop("onmouseout", null);
+                $('.FuncButton').prop("onmousedown", null);
+                $('.FuncButton').prop("onmouseup", null);
+                $('.pagination a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+                $('.FuncButton').click(function() {
+                    $('#respuesta').modal();
+                    $(this).html('<i class="fa fa-check"></i>');
+                });
+            });
+        </script>
+    
+        
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    
+    
+<script type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+
+
+
+function Client(){
+//if not a DOM browser, hopeless
+    this.min = false; if (document.getElementById){this.min = true;};
+
+    this.ua = navigator.userAgent;
+    this.name = navigator.appName;
+    this.ver = navigator.appVersion;  
+
+//Get data about the browser
+    this.mac = (this.ver.indexOf('Mac') != -1);
+    this.win = (this.ver.indexOf('Windows') != -1);
+
+//Look for Gecko
+    this.gecko = (this.ua.indexOf('Gecko') > 1);
+    if (this.gecko){
+        this.geckoVer = parseInt(this.ua.substring(this.ua.indexOf('Gecko')+6, this.ua.length));
+//      if (this.geckoVer < 20020000){this.min = false;}
+    }
+    
+//Look for Firebird
+    this.firebird = (this.ua.indexOf('Firebird') > 1);
+    
+//Look for Safari
+    this.safari = (this.ua.indexOf('Safari') > 1);
+    if (this.safari){
+        this.gecko = false;
+    }
+    
+//Look for IE
+    this.ie = (this.ua.indexOf('MSIE') > 0);
+    if (this.ie){
+        this.ieVer = parseFloat(this.ua.substring(this.ua.indexOf('MSIE')+5, this.ua.length));
+        if (this.ieVer < 5.5){this.min = false;}
+    }
+    
+//Look for Opera
+    this.opera = (this.ua.indexOf('Opera') > 0);
+    if (this.opera){
+        this.operaVer = parseFloat(this.ua.substring(this.ua.indexOf('Opera')+6, this.ua.length));
+        if (this.operaVer < 7.04){this.min = false;}
+    }
+    if (this.min == false){
+//      alert('Your browser may not be able to handle this page.');
+    }
+    
+//Special case for the horrible ie5mac
+    this.ie5mac = (this.ie&&this.mac&&(this.ieVer<6));
+}
+
+var C = new Client();
+
+//for (prop in C){
+//  alert(prop + ': ' + C[prop]);
+//}
+
+
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+//[strNavBarJS]
+function NavBtnOver(Btn){
+    if (Btn.className != 'NavButtonDown'){Btn.className = 'NavButtonUp';}
+}
+
+function NavBtnOut(Btn){
+    Btn.className = 'NavButton';
+}
+
+function NavBtnDown(Btn){
+    Btn.className = 'NavButtonDown';
+}
+//[/strNavBarJS]
+
+function FuncBtnOver(Btn){
+    if (Btn.className != 'FuncButtonDown'){Btn.className = 'FuncButtonUp';}
+}
+
+function FuncBtnOut(Btn){
+    Btn.className = 'FuncButton';
+}
+
+function FuncBtnDown(Btn){
+    Btn.className = 'FuncButtonDown';
+}
+
+function FocusAButton(){
+    if (document.getElementById('CheckButton1') != null){
+        document.getElementById('CheckButton1').focus();
+    }
+    else{
+        if (document.getElementById('CheckButton2') != null){
+            document.getElementById('CheckButton2').focus();
+        }
+        else{
+            document.getElementsByTagName('button')[0].focus();
+        }
+    }
+}
+
+
+
+
+//CODE FOR HANDLING DISPLAY OF POPUP FEEDBACK BOX
+
+var topZ = 1000;
+
+function ShowMessage(Feedback){
+    var Output = Feedback + '<br /><br />';
+    document.getElementById('FeedbackContent').innerHTML = Output;
+    var FDiv = document.getElementById('FeedbackDiv');
+    topZ++;
+    FDiv.style.zIndex = topZ;
+    FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+
+    FDiv.style.display = 'block';
+
+    ShowElements(false, 'input');
+    ShowElements(false, 'select');
+    ShowElements(false, 'object');
+    ShowElements(true, 'object', 'FeedbackContent');
+
+//Focus the OK button
+    setTimeout("document.getElementById('FeedbackOKButton').focus()", 50);
+    
+//
+}
+
+function ShowElements(Show, TagName, ContainerToReverse){
+// added third argument to allow objects in the feedback box to appear
+//IE bug -- hide all the form elements that will show through the popup
+//FF on Mac bug : doesn't redisplay objects whose visibility is set to visible
+//unless the object's display property is changed
+
+    //get container object (by Id passed in, or use document otherwise)
+    TopNode = document.getElementById(ContainerToReverse);
+    var Els;
+    if (TopNode != null) {
+        Els = TopNode.getElementsByTagName(TagName);
+    } else {
+        Els = document.getElementsByTagName(TagName);
+    }
+
+    for (var i=0; i<Els.length; i++){
+        if (TagName == "object") {
+            //manipulate object elements in all browsers
+            if (Show == true){
+                Els[i].style.visibility = 'visible';
+                //get Mac FireFox to manipulate display, to force screen redraw
+                if (C.mac && C.gecko) {Els[i].style.display = '';}
+            }
+            else{
+                Els[i].style.visibility = 'hidden';
+                if (C.mac && C.gecko) {Els[i].style.display = 'none';}
+            }
+        } 
+        else {
+            // tagName is either input or select (that is, Form Elements)
+            // ie6 has a problem with Form elements, so manipulate those
+            if (C.ie) {
+                if (C.ieVer < 7) {
+                    if (Show == true){
+                        Els[i].style.visibility = 'visible';
+                    }
+                    else{
+                        Els[i].style.visibility = 'hidden';
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+function HideFeedback(){
+    document.getElementById('FeedbackDiv').style.display = 'none';
+    ShowElements(true, 'input');
+    ShowElements(true, 'select');
+    ShowElements(true, 'object');
+    if (Finished == true){
+        Finish();
+    }
+}
+
+
+//GENERAL UTILITY FUNCTIONS AND VARIABLES
+
+//PAGE DIMENSION FUNCTIONS
+function PageDim(){
+//Get the page width and height
+    this.W = 600;
+    this.H = 400;
+    this.W = document.getElementsByTagName('body')[0].clientWidth;
+    this.H = document.getElementsByTagName('body')[0].clientHeight;
+}
+
+var pg = null;
+
+function GetPageXY(El) {
+    var XY = {x: 0, y: 0};
+    while(El){
+        XY.x += El.offsetLeft;
+        XY.y += El.offsetTop;
+        El = El.offsetParent;
+    }
+    return XY;
+}
+
+function GetScrollTop(){
+    if (typeof(window.pageYOffset) == 'number'){
+        return window.pageYOffset;
+    }
+    else{
+        if ((document.body)&&(document.body.scrollTop)){
+            return document.body.scrollTop;
+        }
+        else{
+            if ((document.documentElement)&&(document.documentElement.scrollTop)){
+                return document.documentElement.scrollTop;
+            }
+            else{
+                return 0;
+            }
+        }
+    }
+}
+
+function GetViewportHeight(){
+    if (typeof window.innerHeight != 'undefined'){
+        return window.innerHeight;
+    }
+    else{
+        if (((typeof document.documentElement != 'undefined')&&(typeof document.documentElement.clientHeight !=
+     'undefined'))&&(document.documentElement.clientHeight != 0)){
+            return document.documentElement.clientHeight;
+        }
+        else{
+            return document.getElementsByTagName('body')[0].clientHeight;
+        }
+    }
+}
+
+function TopSettingWithScrollOffset(TopPercent){
+    var T = Math.floor(GetViewportHeight() * (TopPercent/100));
+    return GetScrollTop() + T; 
+}
+
+//CODE FOR AVOIDING LOSS OF DATA WHEN BACKSPACE KEY INVOKES history.back()
+var InTextBox = false;
+
+function SuppressBackspace(e){ 
+    if (InTextBox == true){return;}
+    if (C.ie) {
+        thisKey = window.event.keyCode;
+    }
+    else {
+        thisKey = e.keyCode;
+    }
+
+    var Suppress = false;
+
+    if (thisKey == 8) {
+        Suppress = true;
+    }
+
+    if (Suppress == true){
+        if (C.ie){
+            window.event.returnValue = false;   
+            window.event.cancelBubble = true;
+        }
+        else{
+            e.preventDefault();
+        }
+    }
+}
+
+if (C.ie){
+    document.attachEvent('onkeydown',SuppressBackspace);
+    window.attachEvent('onkeydown',SuppressBackspace);
+}
+else{
+    if (window.addEventListener){
+        window.addEventListener('keypress',SuppressBackspace,false);
+    }
+}
+
+function ReduceItems(InArray, ReduceToSize){
+    var ItemToDump=0;
+    var j=0;
+    while (InArray.length > ReduceToSize){
+        ItemToDump = Math.floor(InArray.length*Math.random());
+        InArray.splice(ItemToDump, 1);
+    }
+}
+
+function Shuffle(InArray){
+    var Num;
+    var Temp = new Array();
+    var Len = InArray.length;
+
+    var j = Len;
+
+    for (var i=0; i<Len; i++){
+        Temp[i] = InArray[i];
+    }
+
+    for (i=0; i<Len; i++){
+        Num = Math.floor(j  *  Math.random());
+        InArray[i] = Temp[Num];
+
+        for (var k=Num; k < (j-1); k++) {
+            Temp[k] = Temp[k+1];
+        }
+        j--;
+    }
+    return InArray;
+}
+
+function WriteToInstructions(Feedback) {
+    document.getElementById('InstructionsDiv').innerHTML = Feedback;
+
+}
+
+
+
+
+function EscapeDoubleQuotes(InString){
+    return InString.replace(/"/g, '&quot;')
+}
+
+function TrimString(InString){
+        var x = 0;
+
+        if (InString.length != 0) {
+                while ((InString.charAt(InString.length - 1) == '\u0020') || (InString.charAt(InString.length - 1) == '\u000A') || (InString.charAt(InString.length - 1) == '\u000D')){
+                        InString = InString.substring(0, InString.length - 1)
+                }
+
+                while ((InString.charAt(0) == '\u0020') || (InString.charAt(0) == '\u000A') || (InString.charAt(0) == '\u000D')){
+                        InString = InString.substring(1, InString.length)
+                }
+
+                while (InString.indexOf('  ') != -1) {
+                        x = InString.indexOf('  ')
+                        InString = InString.substring(0, x) + InString.substring(x+1, InString.length)
+                 }
+
+                return InString;
+        }
+
+        else {
+                return '';
+        }
+}
+
+function FindLongest(InArray){
+    if (InArray.length < 1){return -1;}
+
+    var Longest = 0;
+    for (var i=1; i<InArray.length; i++){
+        if (InArray[i].length > InArray[Longest].length){
+            Longest = i;
+        }
+    }
+    return Longest;
+}
+
+//UNICODE CHARACTER FUNCTIONS
+function IsCombiningDiacritic(CharNum){
+    var Result = (((CharNum >= 0x0300)&&(CharNum <= 0x370))||((CharNum >= 0x20d0)&&(CharNum <= 0x20ff)));
+    Result = Result || (((CharNum >= 0x3099)&&(CharNum <= 0x309a))||((CharNum >= 0xfe20)&&(CharNum <= 0xfe23)));
+    return Result;
+}
+
+function IsCJK(CharNum){
+    return ((CharNum >= 0x3000)&&(CharNum < 0xd800));
+}
+
+//SETUP FUNCTIONS
+//BROWSER WILL REFILL TEXT BOXES FROM CACHE IF NOT PREVENTED
+function ClearTextBoxes(){
+    var NList = document.getElementsByTagName('input');
+    for (var i=0; i<NList.length; i++){
+        if ((NList[i].id.indexOf('Guess') > -1)||(NList[i].id.indexOf('Gap') > -1)){
+            NList[i].value = '';
+        }
+        if (NList[i].id.indexOf('Chk') > -1){
+            NList[i].checked = '';
+        }
+    }
+}
+
+//EXTENSION TO ARRAY OBJECT
+function Array_IndexOf(Input){
+    var Result = -1;
+    for (var i=0; i<this.length; i++){
+        if (this[i] == Input){
+            Result = i;
+        }
+    }
+    return Result;
+}
+Array.prototype.indexOf = Array_IndexOf;
+
+//IE HAS RENDERING BUG WITH BOTTOM NAVBAR
+function RemoveBottomNavBarForIE(){
+    if ((C.ie)&&(document.getElementById('Reading') != null)){
+        if (document.getElementById('BottomNavBar') != null){
+            document.getElementById('TheBody').removeChild(document.getElementById('BottomNavBar'));
+        }
+    }
+}
+
+
+
+
+//HOTPOTNET-RELATED CODE
+
+var HPNStartTime = (new Date()).getTime();
+var SubmissionTimeout = 30000;
+var Detail = ''; //Global that is used to submit tracking data
+
+function Finish(){
+//If there's a form, fill it out and submit it
+    if (document.store != null){
+        Frm = document.store;
+        Frm.starttime.value = HPNStartTime;
+        Frm.endtime.value = (new Date()).getTime();
+        Frm.mark.value = Score;
+        Frm.detail.value = Detail;
+        Frm.submit();
+    }
+}
+
+
+
+
+
+//JQUIZ CORE JAVASCRIPT CODE
+
+var CurrQNum = 0;
+var CorrectIndicator = '<i class="fa fa-check"></i>';
+var IncorrectIndicator = '<i class="fa fa-times"></i>';
+var YourScoreIs = 'Su puntaje es ';
+
+//New for 6.2.2.0
+var CompletedSoFar = 'Preguntas completadas: ';
+var ExerciseCompleted = 'Ejercicio completado.';
+var ShowCompletedSoFar = true;
+
+var ContinuousScoring = true;
+var CorrectFirstTime = 'Respuestas correctas al primer intento: ';
+var ShowCorrectFirstTime = false;
+var ShuffleQs = false;
+var ShuffleAs = false;
+var DefaultRight = '&#x00A1;Correcto!';
+var DefaultWrong = '&#x00A1;Lo sentimos! Intente de nuevo.';
+var QsToShow = 2;
+var Score = 0;
+var Finished = false;
+var Qs = null;
+var QArray = new Array();
+var ShowingAllQuestions = false;
+var ShowAllQuestionsCaption = 'Show all questions';
+var ShowOneByOneCaption = 'Show questions one by one';
+var State = new Array();
+var Feedback = '';
+var TimeOver = false;
+var strInstructions = '';
+var Locked = false;
+
+//The following variable can be used to add a message explaining that
+//the question is finished, so no further marking will take place.
+var strQuestionFinished = '';
+
+function CompleteEmptyFeedback(){
+    var QNum, ANum;
+    for (QNum=0; QNum<I.length; QNum++){
+//Only do this if not multi-select
+        if (I[QNum][2] != '3'){
+        for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+            if (I[QNum][3][ANum][1].length < 1){
+                if (I[QNum][3][ANum][2] > 0){
+                    I[QNum][3][ANum][1] = DefaultRight;
+                }
+                else{
+                    I[QNum][3][ANum][1] = DefaultWrong;
+                }
+            }
+        }
+        }
+    }
+}
+
+function SetUpQuestions(){
+    var AList = new Array(); 
+    var QList = new Array();
+    var i, j;
+    Qs = document.getElementById('Questions');
+    while (Qs.getElementsByTagName('li').length > 0){
+        QList.push(Qs.removeChild(Qs.getElementsByTagName('li')[0]));
+    }
+    var DumpItem = 0;
+    if (QsToShow > QList.length){
+        QsToShow = QList.length;
+    }
+    while (QsToShow < QList.length){
+        DumpItem = Math.floor(QList.length*Math.random());
+        for (j=DumpItem; j<(QList.length-1); j++){
+            QList[j] = QList[j+1];
+        }
+        QList.length = QList.length-1;
+    }
+    if (ShuffleQs == true){
+        QList = Shuffle(QList);
+    }
+    if (ShuffleAs == true){
+        var As;
+        for (var i=0; i<QList.length; i++){
+            As = QList[i].getElementsByTagName('ol')[0];
+            if (As != null){
+            AList.length = 0;
+                while (As.getElementsByTagName('li').length > 0){
+                    AList.push(As.removeChild(As.getElementsByTagName('li')[0]));
+                }
+                AList = Shuffle(AList);
+                for (j=0; j<AList.length; j++){
+                    As.appendChild(AList[j]);
+                }
+            }
+        }
+    }
+    
+    for (i=0; i<QList.length; i++){
+        Qs.appendChild(QList[i]);
+        QArray[QArray.length] = QList[i];
+    }
+
+//Show the first item
+    QArray[0].style.display = '';
+    
+//Now hide all except the first item
+    for (i=1; i<QArray.length; i++){
+        QArray[i].style.display = 'none';
+    }       
+    SetQNumReadout();
+    
+    SetFocusToTextbox();
+}
+
+function SetFocusToTextbox(){
+//if there's a textbox, set the focus in it
+    if (QArray[CurrQNum].getElementsByTagName('input')[0] != null){
+        QArray[CurrQNum].getElementsByTagName('input')[0].focus();
+//and show a keypad if there is one
+        if (document.getElementById('CharacterKeypad') != null){
+            document.getElementById('CharacterKeypad').style.display = 'block';
+        }
+    }
+    else{
+    if (QArray[CurrQNum].getElementsByTagName('textarea')[0] != null){
+        QArray[CurrQNum].getElementsByTagName('textarea')[0].focus();   
+//and show a keypad if there is one
+            if (document.getElementById('CharacterKeypad') != null){
+                document.getElementById('CharacterKeypad').style.display = 'block';
+            }
+        }
+//This added for 6.0.4.11: hide accented character buttons if no textbox
+        else{
+            if (document.getElementById('CharacterKeypad') != null){
+                document.getElementById('CharacterKeypad').style.display = 'none';
+            }
+        }
+    }
+}
+
+function ChangeQ(ChangeBy){
+//The following line prevents moving to another question until the current
+//question is answered correctly. Uncomment it to enable this behaviour. 
+//  if (State[CurrQNum][0] == -1){return;}
+    if (((CurrQNum + ChangeBy) < 0)||((CurrQNum + ChangeBy) >= QArray.length)){return;}
+    QArray[CurrQNum].style.display = 'none';
+    CurrQNum += ChangeBy;
+    QArray[CurrQNum].style.display = '';
+//Undocumented function added 10/12/2004
+    ShowSpecialReadingForQuestion();
+    SetQNumReadout();
+    SetFocusToTextbox();
+}
+
+var HiddenReadingShown = false;
+function ShowSpecialReadingForQuestion(){
+//Undocumented function for showing specific reading text elements which change with each question
+//Added on 10/12/2004
+    if (document.getElementById('ReadingDiv') != null){
+        if (HiddenReadingShown == true){
+            document.getElementById('ReadingDiv').innerHTML = '';
+        }
+        if (QArray[CurrQNum] != null){
+//Fix for 6.0.4.25
+            var Children = QArray[CurrQNum].getElementsByTagName('div');
+            for (var i=0; i<Children.length; i++){
+            if (Children[i].className=="HiddenReading"){
+                    document.getElementById('ReadingDiv').innerHTML = Children[i].innerHTML;
+                    HiddenReadingShown = true;
+//Hide the ShowAllQuestions button to avoid confusion
+                    if (document.getElementById('ShowMethodButton') != null){
+                        document.getElementById('ShowMethodButton').style.display = 'none';
+                    }
+                }
+            }   
+        }
+    }
+}
+
+function SetQNumReadout(){
+    document.getElementById('QNumReadout').innerHTML = (CurrQNum+1) + ' / ' + QArray.length;
+    if ((CurrQNum+1) >= QArray.length){
+        if (document.getElementById('NextQButton') != null){
+            document.getElementById('NextQButton').style.visibility = 'hidden';
+        }
+    }
+    else{
+        if (document.getElementById('NextQButton') != null){
+            document.getElementById('NextQButton').style.visibility = 'visible';
+        }
+    }
+    if (CurrQNum <= 0){
+        if (document.getElementById('PrevQButton') != null){
+            document.getElementById('PrevQButton').style.visibility = 'hidden';
+        }
+    }
+    else{
+        if (document.getElementById('PrevQButton') != null){
+            document.getElementById('PrevQButton').style.visibility = 'visible';
+        }
+    }
+}
+
+var I=new Array();
+I[0]=new Array();I[0][0]=100;
+I[0][1]='';
+I[0][2]='0';
+I[0][3]=new Array();
+I[0][3][0]=new Array('Ra\u00FAl tiene derecho a agredir a Pepe porque el f\u00FAtbol es un deporte muy rudo y a Pepe le gusta esa rudeza.','Retroalimentaci\u00F3n.',1,100,1);
+I[0][3][1]=new Array('Ra\u00FAl s\u00F3lo est\u00E1 teniendo una conducta pasajera de adolescente en busca de identidad.','Retroalimentaci\u00F3n.',1,100,1);
+I[0][3][2]=new Array('Si Pepe hubiera protestado a la primera agresi\u00F3n las cosas no habr\u00EDan pasado a mayores.','Retroalimentaci\u00F3n.',1,100,1);
+I[0][3][3]=new Array('La sociedad deber\u00EDa hacer respetar a Pepe.','Retroalimentaci\u00F3n.',1,100,1);
+I[0][3][4]=new Array('Ra\u00FAl no respeta las diferencias.','Retroalimentaci\u00F3n.',1,100,1);
+I[1]=new Array();I[1][0]=100;
+I[1][1]='';
+I[1][2]='0';
+I[1][3]=new Array();
+I[1][3][0]=new Array('Sentirse respetado y bien tratado.','Retroalimentaci\u00F3n.',1,100,1);
+I[1][3][1]=new Array('Tener oportunidades para realizar sus sue\u00F1os.','Retroalimentaci\u00F3n.',1,100,1);
+I[1][3][2]=new Array('No dejarse agredir de nadie.','Retroalimentaci\u00F3n.',1,100,1);
+I[1][3][3]=new Array('Tener el afecto de la gente cercana.','Retroalimentaci\u00F3n.',1,100,1);
+I[1][3][4]=new Array('Que haya paz.','Retroalimentaci\u00F3n.',1,100,1);
+
+
+function StartUp(){
+    RemoveBottomNavBarForIE();
+
+//If there's only one question, no need for question navigation controls
+    if (QsToShow < 2){
+        document.getElementById('QNav').style.display = 'none';
+    }
+    
+//Stash the instructions so they can be redisplayed
+    strInstructions = document.getElementById('InstructionsDiv').innerHTML;
+    
+
+    
+
+    
+
+    
+    CompleteEmptyFeedback();
+
+    SetUpQuestions();
+    ClearTextBoxes();
+    CreateStatusArray();
+    
+
+    
+//Check search string for q parameter
+    if (document.location.search.length > 0){
+        if (ShuffleQs == false){
+            var JumpTo = parseInt(document.location.search.substring(1,document.location.search.length))-1;
+            if (JumpTo <= QsToShow){
+                ChangeQ(JumpTo);
+            }
+        }
+    }
+//Undocumented function added 10/12/2004
+    ShowSpecialReadingForQuestion();
+}
+
+function ShowHideQuestions(){
+    FuncBtnOut(document.getElementById('ShowMethodButton'));
+    document.getElementById('ShowMethodButton').style.display = 'none';
+    if (ShowingAllQuestions == false){
+        for (var i=0; i<QArray.length; i++){
+                QArray[i].style.display = '';
+            }
+        document.getElementById('Questions').style.listStyleType = 'decimal';
+        document.getElementById('OneByOneReadout').style.display = 'none';
+        document.getElementById('ShowMethodButton').innerHTML = ShowOneByOneCaption;
+        ShowingAllQuestions = true;
+    }
+    else{
+        for (var i=0; i<QArray.length; i++){
+                if (i != CurrQNum){
+                    QArray[i].style.display = 'none';
+                }
+            }
+        document.getElementById('Questions').style.listStyleType = 'none';
+        document.getElementById('OneByOneReadout').style.display = '';
+        document.getElementById('ShowMethodButton').innerHTML = ShowAllQuestionsCaption;
+        ShowingAllQuestions = false;    
+    }
+    document.getElementById('ShowMethodButton').style.display = 'inline';
+}
+
+function CreateStatusArray(){
+    var QNum, ANum;
+//For each item in the item array
+    for (QNum=0; QNum<I.length; QNum++){
+//Check if the question still exists (hasn't been nuked by showing a random selection)
+        if (document.getElementById('Q_' + QNum) != null){
+            State[QNum] = new Array();
+            State[QNum][0] = -1; //Score for this q; -1 shows question not done yet
+            State[QNum][1] = new Array(); //answers
+            for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+                State[QNum][1][ANum] = 0; //answer not chosen yet; when chosen, will store its position in the series of choices
+            }
+            State[QNum][2] = 0; //tries at this q so far
+            State[QNum][3] = 0; //incrementing percent-correct values of selected answers
+            State[QNum][4] = 0; //penalties incurred for hints
+            State[QNum][5] = ''; //Sequence of answers chosen by number
+        }
+        else{
+            State[QNum] = null;
+        }
+    }
+}
+
+
+
+function CheckMCAnswer(QNum, ANum, Btn){
+//if question doesn't exist, bail
+    if (State[QNum].length < 1){return;}
+    
+//Get the feedback
+    Feedback = I[QNum][3][ANum][1];
+    
+//Now show feedback and bail if question already complete
+    if (State[QNum][0] > -1){
+//Add an extra message explaining that the question
+// is finished if defined by the user
+        if (strQuestionFinished.length > 0){Feedback += '<br />' + strQuestionFinished;}
+//Show the feedback
+        ShowMessage(Feedback);
+//New for 6.2.2.1: If you want to mark an answer as correct even when it's the final choice, uncomment this line.
+//      if (I[QNum][3][ANum][2] >= 1){Btn.innerHTML = CorrectIndicator;}else{Btn.innerHTML = IncorrectIndicator;}   
+        return;
+    }
+    
+//Hide the button while processing
+    Btn.style.display = 'none';
+
+//Increment the number of tries
+    State[QNum][2]++;
+    
+//Add the percent-correct value of this answer
+    State[QNum][3] += I[QNum][3][ANum][3];
+    
+//Store the try number in the answer part of the State array, for tracking purposes
+    State[QNum][1][ANum] = State[QNum][2];
+    if (State[QNum][5].length > 0){State[QNum][5] += ' | ';}
+    State[QNum][5] += String.fromCharCode(65+ANum);
+    
+//Should this answer be accepted as correct?
+    if (I[QNum][3][ANum][2] < 1){
+//It's wrong
+
+//Mark the answer
+        Btn.innerHTML = IncorrectIndicator;
+        
+//Remove any previous score unless exercise is finished (6.0.3.8+)
+        if (Finished == false){
+            WriteToInstructions(strInstructions);
+        }   
+        
+//Check whether this leaves just one MC answer unselected, in which case the Q is terminated
+        var RemainingAnswer = FinalAnswer(QNum);
+        if (RemainingAnswer > -1){
+//Behave as if the last answer had been selected, but give no credit for it
+//Increment the number of tries
+            State[QNum][2]++;       
+        
+//Calculate the score for this question
+            CalculateMCQuestionScore(QNum);
+            
+//Get the overall score and add it to the feedback
+            CalculateOverallScore();
+//New for 6.2.2.1
+            var QsDone = CheckQuestionsCompleted();
+            if ((ContinuousScoring == true)||(Finished == true)){
+                Feedback += '<br />' + YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone;
+                WriteToInstructions(YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone);
+            }
+            else{
+                WriteToInstructions(QsDone);
+            }
+        }
+    }
+    else{
+//It's right
+//Mark the answer
+        Btn.innerHTML = CorrectIndicator;
+                
+//Calculate the score for this question
+        CalculateMCQuestionScore(QNum);
+        
+//New for 6.2.2.0
+        var QsDone = CheckQuestionsCompleted();
+
+//Get the overall score and add it to the feedback
+        if (ContinuousScoring == true){
+            CalculateOverallScore();
+            if ((ContinuousScoring == true)||(Finished == true)){
+                Feedback += '<br />' + YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone;
+                WriteToInstructions(YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone);
+            }
+        }
+        else{
+            WriteToInstructions(QsDone);
+        }
+    }
+    
+//Show the button again
+    Btn.style.display = 'inline';
+    
+//Finally, show the feedback    
+    ShowMessage(Feedback);
+    
+//Check whether all questions are now done
+    CheckFinished();
+}
+
+function CalculateMCQuestionScore(QNum){
+    var Tries = State[QNum][2] + State[QNum][4]; //include tries and hint penalties
+    var PercentCorrect = State[QNum][3];
+    var TotAns = GetTotalMCAnswers(QNum);
+    var HintPenalties = State[QNum][4];
+    
+//Make sure it's not already complete
+
+    if (State[QNum][0] < 0){
+//Allow for Hybrids
+        if (HintPenalties >= 1){
+            State[QNum][0] = 0;
+        }
+        else{
+//This line calculates the score for this question
+            if (TotAns == 1){
+                State[QNum][0] = 1;
+            }
+            else{
+                State[QNum][0] = ((TotAns-((Tries*100)/State[QNum][3]))/(TotAns-1));
+            }
+        }
+//Fix for Safari bug added for version 6.0.3.42 (negative infinity problem)
+        if ((State[QNum][0] < 0)||(State[QNum][0] == Number.NEGATIVE_INFINITY)){
+            State[QNum][0] = 0;
+        }
+    }
+}
+
+function GetTotalMCAnswers(QNum){
+    var Result = 0;
+    for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+        if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+            Result++;
+        }
+    }
+    return Result;
+}
+
+function FinalAnswer(QNum){
+    var UnchosenAnswers = 0;
+    var FinalAnswer = -1;
+    for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+        if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+            if (State[QNum][1][ANum] < 1){ //This answer hasn't been chosen yet
+                UnchosenAnswers++;
+                FinalAnswer = ANum;
+            }
+        }
+    }
+    if (UnchosenAnswers == 1){
+        return FinalAnswer;
+    }
+    else{
+        return -1;
+    }
+}
+
+
+
+
+
+function CalculateOverallScore(){
+    var TotalWeighting = 0;
+    var TotalScore = 0;
+    
+    for (var QNum=0; QNum<State.length; QNum++){
+        if (State[QNum] != null){
+            if (State[QNum][0] > -1){
+                TotalWeighting += I[QNum][0];
+                TotalScore += (I[QNum][0] * State[QNum][0]);
+            }
+        }
+    }
+    if (TotalWeighting > 0){
+        Score = Math.floor((TotalScore/TotalWeighting)*100);
+    }
+    else{
+//if TotalWeighting is 0, no questions so far have any value, so 
+//no penalty should be shown.
+        Score = 100; 
+    }
+}
+
+//New for 6.2.2.0
+function CheckQuestionsCompleted(){
+    if (ShowCompletedSoFar == false){return '';}
+    var QsCompleted = 0;
+    for (var QNum=0; QNum<State.length; QNum++){
+        if (State[QNum] != null){
+            if (State[QNum][0] >= 0){
+                QsCompleted++;
+            }
+        }
+    }
+//Fixes for 6.2.2.2
+    if (QsCompleted >= QArray.length){
+        return ExerciseCompleted;
+    }
+    else{
+        return CompletedSoFar + ' ' + QsCompleted + '/' + QArray.length + '.';
+    }
+}
+
+function CheckFinished(){
+    var FB = '';
+    var AllDone = true;
+    for (var QNum=0; QNum<State.length; QNum++){
+        if (State[QNum] != null){
+            if (State[QNum][0] < 0){
+                AllDone = false;
+            }
+        }
+    }
+    if (AllDone == true){
+    
+//Report final score and submit if necessary
+        CalculateOverallScore();
+        FB = YourScoreIs + ' ' + Score + '%.';
+        if (ShowCorrectFirstTime == true){
+            var CFT = 0;
+            for (QNum=0; QNum<State.length; QNum++){
+                if (State[QNum] != null){
+                    if (State[QNum][0] >= 1){
+                        CFT++;
+                    }
+                }
+            }
+            FB += '<br />' + CorrectFirstTime + ' ' + CFT + '/' + QsToShow;
+        }
+        
+//New for 6.2.2.0
+        FB += '<br />' + ExerciseCompleted;
+        
+        WriteToInstructions(FB);
+        
+        Finished == true;
+
+
+
+
+        TimeOver = true;
+        Locked = true;
+        
+
+
+        Finished = true;
+        Detail = '<?xml version="1.0"?><hpnetresult><fields>';
+        for (QNum=0; QNum<State.length; QNum++){
+            if (State[QNum] != null){
+                if (State[QNum][5].length > 0){
+                    Detail += '<field><fieldname>Question #' + (QNum+1) + '</fieldname><fieldtype>question-tracking</fieldtype><fieldlabel>Q ' + (QNum+1) + '</fieldlabel><fieldlabelid>QuestionTrackingField</fieldlabelid><fielddata>' + State[QNum][5] + '</fielddata></field>';
+                }
+            }
+        }
+        Detail += '</fields></hpnetresult>';
+        setTimeout('Finish()', SubmissionTimeout);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+//-->
+
+//]]>
+
+</script>
+
+    
+    
+  </body>
+</html> 

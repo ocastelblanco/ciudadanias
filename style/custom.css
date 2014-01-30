@@ -1,0 +1,90 @@
+/* Custom CSS
+-------------------------*/
+a.logo {
+    background: url([[setting:logo]]) no-repeat 0 0;
+    display: block;
+    float: left;
+    height: 75px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.dir-rtl a.logo {
+    background: url([[setting:logo]]) no-repeat 100% 0;
+    display: block;
+    float: right;
+}
+
+body {
+    background-color: #2f3d46;
+    color: white;
+}
+#encabezado {
+    padding-top: 20px;
+    background-color: #2f3d46;
+}
+#barraSuperior {
+    background-color: #25323b;
+    background-image: none;
+}
+#page {
+    margin-top: 20px;
+}
+.breadcrumb {
+    background-color: #2f3d46;
+}
+.breadcrumb a {
+    color: white;
+}
+.breadcrumb>li {
+    text-shadow: none;
+}
+#page-footer {
+    color: white;
+}
+#page-footer .footerCiudadanias>div>div:first-child {
+    margin-top: 40px;
+}
+#page-footer .footerCiudadanias>div>div img {
+    margin-left: 5%;
+    width: 25%;
+    height: auto;
+}
+.block {
+    background-color: #25323b;
+    border: 1px solid #25323b;
+    padding-top: 0;
+}
+.block .title {
+    background-color: #3469af;
+    text-align: center;
+}
+.block .header .title h2,
+.block h3 {
+    color: #FFFFFF; 
+    text-shadow: none;   
+}
+.block h2.eventtitle {
+    color:#000000;
+}
+.fgroup_id_buttonar {
+    background-color: #2f3d46;
+}
+legend,
+.mform legend a,
+.mform legend a:hover {
+    color: #FFFFFF;
+}
+.course-content .current {
+    background-color: #2f3d46;
+}
+.navbar-inverse .nav li.dropdown>.dropdown-toggle .caret {
+    margin-top:15px;
+}
+aside#block-region-side-pre {
+    margin-top:15px;
+}
+/* Custom CSS Settings
+-------------------------*/
+[[setting:customcss]]

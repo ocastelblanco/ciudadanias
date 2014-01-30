@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CIUDADANÍAS">
+    <meta name="author" content="Oliver Castelblanco M. y Liz Arévalo para CISP">
+    <link rel="shortcut icon" href="ico/favicon.png">
+    <title>CIUDADANÍAS</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.0/holder.js"></script>
+    <style type="text/css">
+        i.clic {
+            font-size: 16px;
+            cursor:pointer;
+        }
+        i.clic:hover {
+            font-size:18px;
+        }
+        .LeftItem {
+            text-align: right;
+        }
+        .continuebutton {
+            display:none;
+        }
+        .modal {
+            color: black;
+        }
+        ol.MCAnswers>li {
+            margin-top:10px;
+        }
+        ol.MCAnswers button {
+        }
+        ol.QuizQuestions {
+            list-style-type:none;
+        }
+        .bloqueModulo {
+            margin-bottom: 2em;
+        }
+        .bloqueModulo .span12 a:first-child {
+            font-size: 12px;
+            display: block;
+            float: left;
+            width: 55%;
+            padding-top: 1.5em;
+            padding-left: 5%;
+            padding-right: 5%;
+            height: 15em;
+        }
+        .bloqueModulo .span12 a:last-child {
+            /* Las medidas horizonales se hacen en % y las verticales en em */
+            padding-top: 0.57em; /* Este texto es de 14px */
+            padding-right: 5%;
+            float:left;
+            width: 30%;
+            height: auto;
+        }
+        .bloqueModulo a {
+            color:#FFFFFF;
+        }
+        .bloqueModulo a:hover {
+            text-decoration:none;
+            background-color:#5E7A8C;
+        }
+        .bloqueModulo .row-fluid:hover {
+            background-color:#5E7A8C;
+        }
+        .bloqueModulo .row-fluid {
+            background:#27353e;
+            color:#FFF;
+            overflow: hidden;
+            height: 14em;
+            cursor:pointer;
+        }
+        .bloqueModulo h4 {
+            font-size: 14px;
+            text-transform:none;
+            padding: 1em;
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.57em 0.57em 0px 0px;
+            -moz-border-radius: 0.57em 0.57em 0px 0px;
+            -webkit-border-radius: 0.57em 0.57em 0px 0px;
+            color:#FFF;  
+            overflow: hidden;
+            height: 2em;
+            text-transform:uppercase;
+        }
+        .modulo1 h4 {
+            background-color: #7ac35a;
+        }
+        .modulo2 h4 {
+            background-color: #13b5e4;
+        }
+        .modulo3 h4 {
+            background-color: #e84c3d;
+        }
+        .modulo4 h4 {
+            background-color: #5e1770;
+        }
+        .modulo5 h4 {
+            background-color: #ffc50c;
+        }
+        .modulo6 h4 {
+            background-color: #00aab2;
+        }
+        .modulo7 h4 {
+            background-color: #ec008c;
+        }
+        /* Estilos del menú Acerca De */
+        #tablaIndice {
+            width:100%;
+        }
+        #tablaIndice a {
+            display:block;
+            width:100%;
+            padding-top:1em;
+            padding-bottom:1em;
+            border-bottom:solid 1px #000;
+            color:#fff;
+            opacity:0.65;
+        }
+        #tablaIndice a:hover {
+            opacity:1;
+            background-color:#2f3d46;
+            color:#0088cc;
+        }
+        #tablaIndice span {
+            font-size:12px;
+            display:block;
+            float:left;
+            width:6.5em;
+            padding-left:2em;
+        }
+        #tablaIndice img {
+            width:100%;
+            height:auto;
+        }
+        #tablaIndice a#imagenTablaIndice {
+            display:inline;
+            width:auto;
+            padding-top:0;
+            padding-bottom:0;
+            border-bottom:none;
+            opacity:1;
+        }
+        #tablaIndice a#imagenTablaIndice:hover {
+            opacity:0.75;
+        }
+        /* Estilos para la paginación de los módulos */
+        .pagination ul>.disabled>span,
+        .pagination ul>.disabled>a,
+        .pagination ul>.disabled>a:hover,
+        .pagination ul>.disabled>a:focus {
+            background-color:#dddddd;
+        }
+        .pagination ul>li {
+            display: inline;
+        }
+        /* Estilos del módulo 1 */
+        .contenido1{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        .contenido1 h2{
+            color:#7ac35a;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido1 h3{
+            color:#7ac35a;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }   
+            
+        .contenido1 li{
+            margin: 0 0 0 15px;
+            color:#27353E;
+        }
+        
+        .contenido2 h2{
+            color:#13B5E4;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido2 h3{
+            color:#13B5E4;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido2{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        
+        .contenido3 h2{
+            color:#E84C3D;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido3 h3{
+            color:#E84C3D;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido3{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        .contenido4 h2{
+            color:#5E1770;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido4 h3{
+            color:#5E1770;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido4{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        .contenido5 h2{
+            color:#FFC50C;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido5 h3{
+            color:#FFC50C;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido5{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+    /* Estos estilos ya los trae el tema de Moodle */
+        body {
+            background-color: #2f3d46;
+            color:#FFFFFF;
+        }
+    </style>
+  </head>
+
+  <body onload="StartUp()">
+
+        
+    <div id="InstructionsDiv" style="display: none;" class="StdDiv">
+        <div id="Instructions"></div>
+    </div>
+    <span id="QNumReadout" style="display: none;" class="QNum">&nbsp;</span>
+
+
+        
+        <div class="modal fade" id="respuesta" tabindex="-1" role="dialog" aria-labelledby="Respuesta" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Respuesta</h4>
+              </div>
+              <div class="modal-body">
+                <div class="Feedback" id="FeedbackDiv">
+                    <div class="FeedbackText" id="FeedbackContent"></div>
+                    <button style="display: none;" id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button id="cerrarModal" data-dismiss="modal" type="button" class="btn btn-primary">Cerrar ventana</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+  
+    <div class="container-fluid">
+ <div class="tab-content">
+            <div class="row-fluid">
+                <div class="span12 bloqueModulo modulo5">
+                    <h4>Módulo 5: Derechos Humanos</h4>
+                </div><!-- /.span12 -->
+            </div><!-- ./row-fluid -->
+            <div class="tab-pane active contenido5" id="pag1">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Los Derechos Humanos y la trata de personas</h2>
+                        <p>Uno de los aspectos que concretan el sentido de la Dignidad Humana es la Integridad (física, psíquica y moral) de las personas, es decir el no ser sometido a tratos crueles, inhumanos y degradantes, el no ser sometido a humillaciones de ningún tipo. Este sentido de la Dignidad es el fundamento de los Derechos Humanos, pues desde sus dimensiones éticas, jurídicas y políticas, los Derechos Humanos dan alcance a la realización de la Dignidad Humana. Considerando la anterior aclaración es necesario reconocer que la esclavitud moderna que se realiza a través de la trata de personas, atenta contra la Dignidad y el ejercicio de los Derechos Humanos de millones de niños, niñas y jóvenes en todo el mundo, quienes a través de múltiples medios son engañados por los traficantes de personas. La trata de personas impide el ejercicio de los derechos y la ciudadanía pues entre los múltiples mecanismos para obligar a las personas que lo padecen a realizar actividades que van contra su Dignidad (por ej: ESCNNA, labores domésticas, tráfico de drogas y armas, vinculación al conflictos armados, retención de documentos personales) con lo cual se impide el acceso a bienes servicios y oportunidades.</p>
+                        <p>Los Estados han identificado la necesidad de realizar acciones preventivas (información, rutas de atención y denuncia) y de promoción de capacidades, de autocuidado para evitar que niños, niñas y jóvenes sean víctimas de este tipo de esclavitud.  El autocuidado implica que los niños, niñas, jóvenes y sus familias hagan un buen ejercicio de la autonomía, se fortalezcan criterios para la toma de decisiones y se construya confianza para reconocer quienes los pueden proteger, donde se puede denunciar en circunstancias donde la trata de personas puede ser un riesgo.</p>                        
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag1 -->
+            
+            <div class="tab-pane contenido5" id="pag2">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Bienvenida.</h2>
+                        <p>Estamos viviendo nuevas épocas; nuevas formas de expresión han aparecido; de comprender y habitar el mundo; de conocer gente, de acercarnos a otros y de compartir con ellos; nuevas formas de construir compromisos y proyectos; de darle sentido a la existencia y al progreso, nuevas formas de trabajo…. En fin, en este mundo cambiante aparecen también circunstancias que ponen a prueba nuestros criterios, nuestros referentes éticos, nuestra capacidad de cuidado propio y de los nuestros. Una de estas circunstancias es la trata de personas que afecta a millones de personas en el mundo. Por ello, es necesario fortalecer nuestros criterios y la capacidad para tomar perspectiva y decisiones sobre nuestra vida, y a veces la de los otros; con las que se podamos garantizar el ejercicio de la dignidad, de la libertad y de la autonomía. Le invitamos a reflexionar sobre este asunto y a considerar algunos mecanismos para protegerse y para proteger a los suyos de circunstancias que puedan afectar su dignidad y el ejercicio de una ciudadanía plena.</p>
+                        <h3>Objetivos del módulo.</h3>
+                        <p><strong>General: </strong>Comprender que en el marco del ejercicio de os derechos humanos, la trata de personas afecta el ejercicio de la ciudadanía.</p>
+                        <strong>Específicos:</strong>
+                        <ul>
+                            <li>Reconocer circunstancias en las que un individuo puede ser víctima de la trata de personas. </li> 
+                            <li>Promover el ejercicio de la autonomía como mecanismo para evitar ser víctima de este tipo de acciones.</li>                                                  
+                            <li>Promover la construcción de confianza en el entorno familiar y escolar como mecanismo para evitar ser víctima del tráfico de personas.</li>
+                        </ul>                        
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag2 -->
+            
+            <div class="tab-pane contenido5" id="pag3">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Instrucciones</h2>
+                <p>
+Una invitación al participante: ¿Qué piensa usted de esto?:  Aparecen cuatro viñetas sucesivas<br>
+<strong>Viñeta 1:</strong> Una adolescente conociendo a un señor en una heladería.<br>
+<strong>Viñeta 2: </strong>El señor haciendo un halago o invitación extraña a la joven. <br>
+<strong>Viñeta 3: </strong> La joven pensando con extrañeza en lo dicho por el señor.<br> 
+<strong>Viñeta 4: </strong>La joven se va molesta o asustada y deja al señor sentado.<br>
+<strong>Opcional: </strong>debajo de las viñetas poner la primera oración del caso: Este señor es un mentiroso y abusivo. ¡Uf, me salvé de milagro!... (Sugerencia: debajo de la viñeta 4).
+Las viñetas y el texto sugestivo son un campo único sobre el cual puede se puede hacer clic.<br>
+Una pregunta al participante: ¿Qué sucedió? La persona interesada hará clic en ese campo.  El clic lleva al texto narrativo. 
+</p>  
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag3 -->
+            
+            <div class="tab-pane contenido5" id="pag4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>En la página de Facebook ‘Santa Catalina 4ever’, los alumnos de 9º y 10º apoyan a sus equipos. Todos los días montan fotos de los miembros del equipo, carteles de apoyo, videos editados de partidos anteriores y, por supuesto, uno que otro insulto contra el equipo contrario. Diana y su combo de amigas ‘mUñEkitAx hErMosHas’ decidieron organizarse para apoyar al equipo de su curso: compraron uniformes de porristas y papel confitado, e inventaron barras y canciones para el día del partido. ¡La idea les ha encantado a sus compañeras! ¡Todas las chicas quieren participar y apoyar este evento! Todas están muy emocionadas con su debut como porristas y han comenzado a montar fotos de sus uniformes y videos de los ensayos de la coreografía.  Por supuesto, los chicos del curso no son indiferentes y han comenzado a coquetear con ellas por medio de Facebook. Una de ellas, Lady Camila, ha sido la que más “me gusta” ha obtenido con sus fotos. Muchos de sus contactos le envían piropos pero hay uno de ellos que es particularmente especial. Lady no lo conoce, él dice que se llama Maicol. Eso a Lady no le importa: ¡Maicol es un divino! ¡Escribe muy bonito y le envía canciones preciosas! </p>
+                        <p>Hoy, como todos los días, Lady inicia sesión en su cuenta de Facebook y ve un mensaje de Maicol invitándola a comer helado en un parque bastante retirado de su casa. Maicol le pide que vaya sola porque le da pena que se den cuenta de que está nervioso por encontrarse con “lA prInXeZa mAx herMoOoxtHa de tOoO el MuNDo!”. Lady no hace sino sonreír, aunque no lo conoce, Maicol le gusta muchísimo. Así que decide dejar el miedo a un lado y aceptar la invitación…</p>
+                        <p>Cuando de TRATA se TRATA… </p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag4 -->
+            
+            <div class="tab-pane contenido5" id="pag5">
+                <div class="row-fluid">
+                    <div class="span12">                    
+                        <h2>¿De qué se trata la trata?</h2>
+                        <h3>Sabía usted que…</h3>
+                        <p>…millones de personas en América Latina son víctimas de la ‘esclavitud del siglo XXI’: la trata de personas. Esta forma de esclavitud consiste en engañar u obligar a una persona, especialmente mujeres, niños y niñas, a desplazarse hacia otros lugares (generalmente el extranjero) con fines de explotación sexual, comercio de órganos, o realización de cualquier tipo de trabajos en contra de su voluntad; lo que afecta especialmente su dignidad, su integridad (física, emocional y sicológica) y el ejercicio de la ciudadanía. <br>
+Pero, ¿por qué la trata de personas afecta el ejercicio de la ciudadanía? Veamos:</p>
+                        <p>Aclaración de conceptos. (El ejercicio contiene dos columnas con ideas u oraciones que se complementan, debe emparejar las ideas de la columna de la izquierda con las de la derecha).</p>
+
+
+<div id="MainDiv" class="StdDiv">
+
+<div id="MatchDiv" style="text-align: center;">
+
+<form id="QForm" method="post" action="" onsubmit="return false;">
+<table border="0" style="margin: 2em auto 2em auto;"><tbody id="Questions">
+
+<tr><td class="LeftItem">La trata de personas (esclavitud del siglo XXI) va en contra de la dignidad humana&#x2026; </td><td class="RightItem"><select id="s0_0"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">La dignidad humana es real cuando podemos&#x2026; </td><td class="RightItem"><select id="s1_1"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">Seg&#x00FA;n los pactos y tratados internacionales sobre derechos humanos&#x2026; </td><td class="RightItem"><select id="s2_2"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">Cuando un ser humano padece tratos crueles, inhumanos y degradantes&#x2026; </td><td class="RightItem"><select id="s3_3"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">Corresponde al estado, a las autoridades y a la familia&#x2026; </td><td class="RightItem"><select id="s4_4"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">La confianza y la comunicaci&#x00F3;n con los hijos ayudan a&#x2026; </td><td class="RightItem"><select id="s5_5"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">Una forma de ejercer mi ciudadan&#x00ED;a es&#x2026; </td><td class="RightItem"><select id="s6_6"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr>
+
+</tbody></table>
+</form>
+</div>
+
+<button id="CheckButton2" class="FuncButton" onmouseover="FuncBtnOver(this)" onfocus="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onblur="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="CheckAnswers()">&nbsp;Comprobar respuesta&nbsp;</button>
+
+</div>
+
+
+                    <h3>Abra la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a> y responda las siguientes preguntas:</h3>
+<p>¿Conoce en su país o localidad alguna política, plan o proyecto de prevención, educación, protección o sanción relacionada con el tráfico de personas? ¿En qué consiste?</p>
+<p>¿Desarrollan en su institución educativa algún proyecto de difusión, educación y protección para prevenir la trata de personas?</p>
+
+
+
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag5 -->
+            
+            <div class="tab-pane contenido5" id="pag6">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Puede informarse sobre la trata y el tráfico de personas en los siguientes enlaces:</h3>
+                        <p><a href="http://www.elespectador.com/noticias/judicial/sentencian-mujer-15-anos-de-prision-trata-de-personas-articulo-437656" target="_blank"> http://www.elespectador.com/noticias/judicial/sentencian-mujer-15-anos-de-prision-trata-de-personas-articulo-437656</a></p>  
+                        <p><a href="http://www.eltiempo.com/entretenimiento/teatro/vctimas-de-trata-de-personas-llevan-su-historia-a-escena_12948415-4">http://www.eltiempo.com/entretenimiento/teatro/vctimas-de-trata-de-personas-llevan-su-historia-a-escena_12948415-4</a> </p> 
+                        <p><a href="http://www.eltiempo.com/politica/el-quid-cmo-opera-la-trata-de-personas-en-colombia_12941618-4" target="_blank"> http://www.eltiempo.com/politica/el-quid-cmo-opera-la-trata-de-personas-en-colombia_12941618-4</a></p>
+                        <p><a href="http://www.eltiempo.com/justicia/piden-ms-acciones-contra-trata-de-personas_12933549-" target="_blank"> http://www.eltiempo.com/justicia/piden-ms-acciones-contra-trata-de-personas_12933549-</a></p>
+                        <p>Algunos hechos que muestran la gravedad del problema de la trata y el tráfico de personas:  <a href="http://www.unodc.org/documents/colombia/2013/Julio/CongresoTratadepersonas.pdf" target="_blank">http://www.unodc.org/documents/colombia/2013/Julio/CongresoTratadepersonas.pdf</a></p>  
+                        <p>Cali y Pereira: primera y segunda ciudad en casos de trata:  <a href="http://www.latarde.com/noticias/risaralda/118726-pereira-la-segunda-ciudad-con-mas-casos-de-trata-de-personas" target="_blank">http://www.latarde.com/noticias/risaralda/118726-pereira-la-segunda-ciudad-con-mas-casos-de-trata-de-personas </a>
+</p>
+                        <p>¿Cómo prevenir la trata de personas?:  <a href="http://www.savethechildren.org.gt/index.php?option=com_content&view=article&id=49&Itemid=25" target="_blank">http://www.savethechildren.org.gt/index.php?option=com_content&view=article&id=49&Itemid=25 </a> </p>
+                        <p>Manual - Derechos Humanos y trata de personas: <a href="http://www.catedradh.unesco.unam.mx/BibliotecaV2/Documentos/Trata/Libros/manual_trata_dh.pdf" target="_blank">http://www.catedradh.unesco.unam.mx/BibliotecaV2/Documentos/Trata/Libros/manual_trata_dh.pdf </a></p> 
+                        <h3>Reflexión de grupo: </h3> 
+                        <p>Después de leer algunos de los anteriores artículos, comparta sus hallazgos con otros participantes del curso. ¿Encuentra coincidencias?, ¿difiere de algunas opiniones?, ¿hay algo de lo que se menciona que usted no conocía?</p>           
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag6 -->
+            
+            <div class="tab-pane contenido5" id="pag7">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Le invitamos a profundizar en esta reflexión sobre la trata de personas y la formación en ciudadanía.</h2>
+                        <p>¿Qué relación encuentra usted entre dignidad humana y trata de personas?<br>
+¿Cómo afecta la trata de personas el ejercicio de la ciudadanía?<br>
+¿Educar para el ejercicio de la ciudadanía ayuda a prevenir la trata de personas? ¿Por qué? </p>
+                        <p>Puede responder haciendo clic sobre alguna de las anteriores preguntas. El participante escoge una pregunta y responde haciendo clic sobre ella. El clic lo lleva a una caja de texto. </p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag7 -->
+            
+            <div class="tab-pane contenido5" id="pag8">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Una historia, muchos desenlaces…</h2>
+                        <p>Cuando leemos estas historias es común que nuestra reacción sea pensar ‘como se hubiera hecho mejor’. Conociendo la historia de Leydi con ‘Maicol’, y teniendo en cuenta una parte de la realidad sobre la trata de personas y cómo ésta afecta la dignidad, los derechos humanos y el ejercicio de la ciudadanía, ¿qué final daría usted a esta historia? Para responder puede tener en cuenta las siguientes preguntas generadoras:</p>
+                        <ul>
+                            <li>¿Cómo supo Leidy que el señor le mintió?</li>
+                            <li>¿Cómo llegó Leidy a la decisión de dejar al señor plantado?</li>
+                        </ul>
+                        <p>Puede también incorporar, en el final que usted propone, la ausencia o presencia las siguientes competencias ciudadanas:</p>
+                        <ul>
+                            <li>Toma de perspectiva.</li>
+                            <li>Pensamiento crítico.</li>
+                            <li>Interpretación de intenciones.</li>
+                            <li>Consideración de consecuencias.</li>
+                            <li>Escucha activa.</li>
+                            <li>Asertividad.</li>
+                        </ul>
+<p>A continuación cuenta con dos opciones para construir su propio relato, elija aquella que más le guste.</p>
+
+<p><strong>Opción 1:</strong> Caja de texto para construir un relato escrito.</p>
+<p><strong>Opción 2:</strong> Herramientas para construir un cómic.</p>
+
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag8 -->
+            
+            <div class="tab-pane contenido5" id="pag9">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Y en la vida real, ¿qué hace para cuidarse y cuidar a los suyos?</h3>
+                        <p>Ya propuso un final para la historia de Leidy, ahora cuéntenos cómo lo hace usted en la vida real, con los suyos, sus hijos, hermanos, estudiantes, y la gente de su entorno: </p>
+                       <p> Señale con una X si conoce o ha desarrollado alguna acción ciudadana para informar o educar sobre la trata de personas, prevenirla o denunciarla:<br><br>
+                          <i class="clic fa fa-square-o"></i> En casa.<br>
+                          <i class="clic fa fa-square-o"></i> En el trabajo.<br>
+                          <i class="clic fa fa-square-o"></i> En el colegio.<br>
+                          <i class="clic fa fa-square-o"></i> En su barrio/vereda.<br>
+                       </p>
+                       
+                       <p>Comparta con el curso en qué consiste su acción ciudadana sobre la trata de personas. </p>
+                       <p>Una posibilidad de ampliar el impacto de su acción ciudadana para la prevención de la trata de personas es convocar acciones colectivas que generen el interés o el deseo de expresarse de otros miembros de su localidad. Un colectivo de ciudadanía activa en Colombia realiza algunas actividades de este tipo:  <a href="http://100en1dia.com/" target="_blank"> http://100en1dia.com </a></p>
+                       
+                       <h3>Comente en la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a> la siguiente pregunta:</h3>
+
+<p>A su juicio, ¿qué tipo de acciones ciudadanas contra la trata de personas generan mayor impacto? </p>
+<p>Las que tienen un énfasis puesto en…<br>
+…la educación y la información.<br>
+…el fortalecimiento de la autonomía y la autoestima.<br>
+…el control sobre las relaciones y amistades de niños, niñas y jóvenes.<br>
+…el manejo del acceso a las redes sociales.<br>
+…las rutas legales para la denuncia y la judicialización.<br>
+Otras<br>
+¿Por qué?</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag9 -->
+            
+          
+            
+            
+        </div><!-- /.tab-content -->
+        
+        <div class="pagination">
+            <ul>
+                <li class="active"><a href="#pag1">1</a></li>
+                <li><a href="#pag2">2</a></li>
+                <li><a href="#pag3">3</a></li>
+                <li><a href="#pag4">4</a></li>
+                <li><a href="#pag5">5</a></li>
+                <li><a href="#pag6">6</a></li>
+                <li><a href="#pag6">7</a></li>
+                <li><a href="#pag6">8</a></li>
+                <li><a href="#pag6">9</a></li>
+                
+            </ul>
+        </div><!-- /.pagination -->
+    
+        <script type="text/javascript">
+            $(function(){
+                //$('.FuncButton').html('<i class="fa fa-question"></i>');
+                $('.FuncButton').addClass('btn btn-default');
+                $('.FuncButton').prop("onfocus", null);
+                $('.FuncButton').prop("onblur", null);
+                $('.FuncButton').prop("onmouseover", null);
+                $('.FuncButton').prop("onmouseout", null);
+                $('.FuncButton').prop("onmousedown", null);
+                $('.FuncButton').prop("onmouseup", null);
+                $('.pagination a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                });
+                $('.FuncButton').click(function() {
+                    $('#respuesta').modal();
+                    //$(this).html('<i class="fa fa-check"></i>');
+                });
+                $('i.clic').click(function() {
+                    $(this).removeClass('fa-square-o');
+                    $(this).addClass('fa-check-square-o');
+                });
+            });
+        </script>
+    </div><!-- /.container -->
+    
+        
+
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+
+
+
+function Client(){
+//if not a DOM browser, hopeless
+    this.min = false; if (document.getElementById){this.min = true;};
+
+    this.ua = navigator.userAgent;
+    this.name = navigator.appName;
+    this.ver = navigator.appVersion;  
+
+//Get data about the browser
+    this.mac = (this.ver.indexOf('Mac') != -1);
+    this.win = (this.ver.indexOf('Windows') != -1);
+
+//Look for Gecko
+    this.gecko = (this.ua.indexOf('Gecko') > 1);
+    if (this.gecko){
+        this.geckoVer = parseInt(this.ua.substring(this.ua.indexOf('Gecko')+6, this.ua.length));
+//      if (this.geckoVer < 20020000){this.min = false;}
+    }
+    
+//Look for Firebird
+    this.firebird = (this.ua.indexOf('Firebird') > 1);
+    
+//Look for Safari
+    this.safari = (this.ua.indexOf('Safari') > 1);
+    if (this.safari){
+        this.gecko = false;
+    }
+    
+//Look for IE
+    this.ie = (this.ua.indexOf('MSIE') > 0);
+    if (this.ie){
+        this.ieVer = parseFloat(this.ua.substring(this.ua.indexOf('MSIE')+5, this.ua.length));
+        if (this.ieVer < 5.5){this.min = false;}
+    }
+    
+//Look for Opera
+    this.opera = (this.ua.indexOf('Opera') > 0);
+    if (this.opera){
+        this.operaVer = parseFloat(this.ua.substring(this.ua.indexOf('Opera')+6, this.ua.length));
+        if (this.operaVer < 7.04){this.min = false;}
+    }
+    if (this.min == false){
+//      alert('Your browser may not be able to handle this page.');
+    }
+    
+//Special case for the horrible ie5mac
+    this.ie5mac = (this.ie&&this.mac&&(this.ieVer<6));
+}
+
+var C = new Client();
+
+//for (prop in C){
+//  alert(prop + ': ' + C[prop]);
+//}
+
+
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+//[strNavBarJS]
+function NavBtnOver(Btn){
+    if (Btn.className != 'NavButtonDown'){Btn.className = 'NavButtonUp';}
+}
+
+function NavBtnOut(Btn){
+    Btn.className = 'NavButton';
+}
+
+function NavBtnDown(Btn){
+    Btn.className = 'NavButtonDown';
+}
+//[/strNavBarJS]
+
+function FuncBtnOver(Btn){
+    if (Btn.className != 'FuncButtonDown'){Btn.className = 'FuncButtonUp';}
+}
+
+function FuncBtnOut(Btn){
+    Btn.className = 'FuncButton';
+}
+
+function FuncBtnDown(Btn){
+    Btn.className = 'FuncButtonDown';
+}
+
+function FocusAButton(){
+    if (document.getElementById('CheckButton1') != null){
+        document.getElementById('CheckButton1').focus();
+    }
+    else{
+        if (document.getElementById('CheckButton2') != null){
+            document.getElementById('CheckButton2').focus();
+        }
+        else{
+            document.getElementsByTagName('button')[0].focus();
+        }
+    }
+}
+
+
+
+
+//CODE FOR HANDLING DISPLAY OF POPUP FEEDBACK BOX
+
+var topZ = 1000;
+
+function ShowMessage(Feedback){
+    var Output = Feedback + '<br /><br />';
+    document.getElementById('FeedbackContent').innerHTML = Output;
+    var FDiv = document.getElementById('FeedbackDiv');
+    topZ++;
+    FDiv.style.zIndex = topZ;
+    FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+
+    FDiv.style.display = 'block';
+
+    ShowElements(false, 'input');
+    ShowElements(false, 'select');
+    ShowElements(false, 'object');
+    ShowElements(true, 'object', 'FeedbackContent');
+
+//Focus the OK button
+    setTimeout("document.getElementById('FeedbackOKButton').focus()", 50);
+    
+//
+}
+
+function ShowElements(Show, TagName, ContainerToReverse){
+// added third argument to allow objects in the feedback box to appear
+//IE bug -- hide all the form elements that will show through the popup
+//FF on Mac bug : doesn't redisplay objects whose visibility is set to visible
+//unless the object's display property is changed
+
+    //get container object (by Id passed in, or use document otherwise)
+    TopNode = document.getElementById(ContainerToReverse);
+    var Els;
+    if (TopNode != null) {
+        Els = TopNode.getElementsByTagName(TagName);
+    } else {
+        Els = document.getElementsByTagName(TagName);
+    }
+
+    for (var i=0; i<Els.length; i++){
+        if (TagName == "object") {
+            //manipulate object elements in all browsers
+            if (Show == true){
+                Els[i].style.visibility = 'visible';
+                //get Mac FireFox to manipulate display, to force screen redraw
+                if (C.mac && C.gecko) {Els[i].style.display = '';}
+            }
+            else{
+                Els[i].style.visibility = 'hidden';
+                if (C.mac && C.gecko) {Els[i].style.display = 'none';}
+            }
+        } 
+        else {
+            // tagName is either input or select (that is, Form Elements)
+            // ie6 has a problem with Form elements, so manipulate those
+            if (C.ie) {
+                if (C.ieVer < 7) {
+                    if (Show == true){
+                        Els[i].style.visibility = 'visible';
+                    }
+                    else{
+                        Els[i].style.visibility = 'hidden';
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+function HideFeedback(){
+    document.getElementById('FeedbackDiv').style.display = 'none';
+    ShowElements(true, 'input');
+    ShowElements(true, 'select');
+    ShowElements(true, 'object');
+    if (Finished == true){
+        Finish();
+    }
+}
+
+
+//GENERAL UTILITY FUNCTIONS AND VARIABLES
+
+//PAGE DIMENSION FUNCTIONS
+function PageDim(){
+//Get the page width and height
+    this.W = 600;
+    this.H = 400;
+    this.W = document.getElementsByTagName('body')[0].clientWidth;
+    this.H = document.getElementsByTagName('body')[0].clientHeight;
+}
+
+var pg = null;
+
+function GetPageXY(El) {
+    var XY = {x: 0, y: 0};
+    while(El){
+        XY.x += El.offsetLeft;
+        XY.y += El.offsetTop;
+        El = El.offsetParent;
+    }
+    return XY;
+}
+
+function GetScrollTop(){
+    if (typeof(window.pageYOffset) == 'number'){
+        return window.pageYOffset;
+    }
+    else{
+        if ((document.body)&&(document.body.scrollTop)){
+            return document.body.scrollTop;
+        }
+        else{
+            if ((document.documentElement)&&(document.documentElement.scrollTop)){
+                return document.documentElement.scrollTop;
+            }
+            else{
+                return 0;
+            }
+        }
+    }
+}
+
+function GetViewportHeight(){
+    if (typeof window.innerHeight != 'undefined'){
+        return window.innerHeight;
+    }
+    else{
+        if (((typeof document.documentElement != 'undefined')&&(typeof document.documentElement.clientHeight !=
+     'undefined'))&&(document.documentElement.clientHeight != 0)){
+            return document.documentElement.clientHeight;
+        }
+        else{
+            return document.getElementsByTagName('body')[0].clientHeight;
+        }
+    }
+}
+
+function TopSettingWithScrollOffset(TopPercent){
+    var T = Math.floor(GetViewportHeight() * (TopPercent/100));
+    return GetScrollTop() + T; 
+}
+
+//CODE FOR AVOIDING LOSS OF DATA WHEN BACKSPACE KEY INVOKES history.back()
+var InTextBox = false;
+
+function SuppressBackspace(e){ 
+    if (InTextBox == true){return;}
+    if (C.ie) {
+        thisKey = window.event.keyCode;
+    }
+    else {
+        thisKey = e.keyCode;
+    }
+
+    var Suppress = false;
+
+    if (thisKey == 8) {
+        Suppress = true;
+    }
+
+    if (Suppress == true){
+        if (C.ie){
+            window.event.returnValue = false;   
+            window.event.cancelBubble = true;
+        }
+        else{
+            e.preventDefault();
+        }
+    }
+}
+
+if (C.ie){
+    document.attachEvent('onkeydown',SuppressBackspace);
+    window.attachEvent('onkeydown',SuppressBackspace);
+}
+else{
+    if (window.addEventListener){
+        window.addEventListener('keypress',SuppressBackspace,false);
+    }
+}
+
+function ReduceItems(InArray, ReduceToSize){
+    var ItemToDump=0;
+    var j=0;
+    while (InArray.length > ReduceToSize){
+        ItemToDump = Math.floor(InArray.length*Math.random());
+        InArray.splice(ItemToDump, 1);
+    }
+}
+
+function Shuffle(InArray){
+    var Num;
+    var Temp = new Array();
+    var Len = InArray.length;
+
+    var j = Len;
+
+    for (var i=0; i<Len; i++){
+        Temp[i] = InArray[i];
+    }
+
+    for (i=0; i<Len; i++){
+        Num = Math.floor(j  *  Math.random());
+        InArray[i] = Temp[Num];
+
+        for (var k=Num; k < (j-1); k++) {
+            Temp[k] = Temp[k+1];
+        }
+        j--;
+    }
+    return InArray;
+}
+
+function WriteToInstructions(Feedback) {
+    document.getElementById('InstructionsDiv').innerHTML = Feedback;
+
+}
+
+
+
+
+function EscapeDoubleQuotes(InString){
+    return InString.replace(/"/g, '&quot;')
+}
+
+function TrimString(InString){
+        var x = 0;
+
+        if (InString.length != 0) {
+                while ((InString.charAt(InString.length - 1) == '\u0020') || (InString.charAt(InString.length - 1) == '\u000A') || (InString.charAt(InString.length - 1) == '\u000D')){
+                        InString = InString.substring(0, InString.length - 1)
+                }
+
+                while ((InString.charAt(0) == '\u0020') || (InString.charAt(0) == '\u000A') || (InString.charAt(0) == '\u000D')){
+                        InString = InString.substring(1, InString.length)
+                }
+
+                while (InString.indexOf('  ') != -1) {
+                        x = InString.indexOf('  ')
+                        InString = InString.substring(0, x) + InString.substring(x+1, InString.length)
+                 }
+
+                return InString;
+        }
+
+        else {
+                return '';
+        }
+}
+
+function FindLongest(InArray){
+    if (InArray.length < 1){return -1;}
+
+    var Longest = 0;
+    for (var i=1; i<InArray.length; i++){
+        if (InArray[i].length > InArray[Longest].length){
+            Longest = i;
+        }
+    }
+    return Longest;
+}
+
+//UNICODE CHARACTER FUNCTIONS
+function IsCombiningDiacritic(CharNum){
+    var Result = (((CharNum >= 0x0300)&&(CharNum <= 0x370))||((CharNum >= 0x20d0)&&(CharNum <= 0x20ff)));
+    Result = Result || (((CharNum >= 0x3099)&&(CharNum <= 0x309a))||((CharNum >= 0xfe20)&&(CharNum <= 0xfe23)));
+    return Result;
+}
+
+function IsCJK(CharNum){
+    return ((CharNum >= 0x3000)&&(CharNum < 0xd800));
+}
+
+//SETUP FUNCTIONS
+//BROWSER WILL REFILL TEXT BOXES FROM CACHE IF NOT PREVENTED
+function ClearTextBoxes(){
+    var NList = document.getElementsByTagName('input');
+    for (var i=0; i<NList.length; i++){
+        if ((NList[i].id.indexOf('Guess') > -1)||(NList[i].id.indexOf('Gap') > -1)){
+            NList[i].value = '';
+        }
+        if (NList[i].id.indexOf('Chk') > -1){
+            NList[i].checked = '';
+        }
+    }
+}
+
+//EXTENSION TO ARRAY OBJECT
+function Array_IndexOf(Input){
+    var Result = -1;
+    for (var i=0; i<this.length; i++){
+        if (this[i] == Input){
+            Result = i;
+        }
+    }
+    return Result;
+}
+Array.prototype.indexOf = Array_IndexOf;
+
+//IE HAS RENDERING BUG WITH BOTTOM NAVBAR
+function RemoveBottomNavBarForIE(){
+    if ((C.ie)&&(document.getElementById('Reading') != null)){
+        if (document.getElementById('BottomNavBar') != null){
+            document.getElementById('TheBody').removeChild(document.getElementById('BottomNavBar'));
+        }
+    }
+}
+
+
+
+
+//HOTPOTNET-RELATED CODE
+
+var HPNStartTime = (new Date()).getTime();
+var SubmissionTimeout = 30000;
+var Detail = ''; //Global that is used to submit tracking data
+
+function Finish(){
+//If there's a form, fill it out and submit it
+    if (document.store != null){
+        Frm = document.store;
+        Frm.starttime.value = HPNStartTime;
+        Frm.endtime.value = (new Date()).getTime();
+        Frm.mark.value = Score;
+        Frm.detail.value = Detail;
+        Frm.submit();
+    }
+}
+
+
+
+
+
+//JMATCH CORE JAVASCRIPT CODE
+
+var CorrectIndicator = '<i class="fa fa-check"></i>';
+var IncorrectIndicator = '<i class="fa fa-times"></i>';
+var YourScoreIs = 'Su puntuaci&#x00F3;n es ';
+var CorrectResponse = '&#x00A1;Correcto! Bien hecho';
+var IncorrectResponse = '&#x00A1;Lo sentimos! Respuesta incorrecta. Los elementos err&#x00F3;neos han sido marcado.';
+var TotalUnfixedLeftItems = 0;
+var TotCorrectChoices = 0;
+var Penalties = 0;
+var Finished = false;
+var TimeOver = false;
+
+var Score = 0;
+var Locked = false;
+var ShuffleQs = false;
+var QsToShow = 7;
+
+
+function StartUp(){
+    RemoveBottomNavBarForIE();
+
+
+    
+
+
+
+
+    SetUpItems(ShuffleQs,QsToShow);
+
+    TotalUnfixedLeftItems = document.getElementById('MatchDiv').getElementsByTagName('select').length;
+
+//Create arrays
+    CreateStatusArrays();
+
+
+}
+
+Status = new Array();
+
+
+function CreateStatusArrays(){
+    var Selects = document.getElementById('Questions').getElementsByTagName('select');
+    for (var x=0; x<Selects.length; x++){
+        Status[x] = new Array();
+        Status[x][0] = 0; // Item not matched correctly yet
+        Status[x][1] = 0; //Tries at this item so far
+        Status[x][2] = Selects[x].id; //Store a ref to the original drop-down
+        Status[x][3] = new Array(); //Sequence of guesses for this item
+    }
+}
+
+function GetKeyFromSelectContainer(Container){
+    var Result = -1;
+    if (Container.getElementsByTagName('select').length > 0){
+        var Select = Container.getElementsByTagName('select')[0];
+        if (Select != null){
+            Result = parseInt(Select.id.substring(1, Select.id.length));
+        }
+    }
+    return Result;
+}
+
+function GetKeyFromSelect(Select){
+    var Result = -1;
+    if (Select != null){
+        Result = parseInt(Select.id.substring(1, Select.id.length));
+    }
+    return Result;
+}
+
+var OriginalKeys = new Array();
+var ReducedKeys = new Array();
+
+function GetUniqueKeys(Container, TargetArray){
+    TargetArray.length = 0;
+    var x = -1;
+    var SList = Container.getElementsByTagName('select');
+    if (SList.length > 0){
+        for (var i=0; i<SList.length; i++){
+            x = GetKeyFromSelect(SList[i]);
+            if (TargetArray.indexOf(x) < 0){
+                TargetArray.push(x);
+            }
+        }
+    }
+}
+
+function SetUpItems(ShuffleQs, ReduceTo){
+    var QList = new Array();
+    var i, j, k, Selects, Options;
+
+//Remove all the table rows and put them in an array for processing
+    var Qs = document.getElementById('Questions');
+    
+//First, get a list of keys
+    GetUniqueKeys(Qs, OriginalKeys);
+
+//Remove the table rows to an array
+    while (Qs.getElementsByTagName('tr').length > 0){
+        QList.push(Qs.removeChild(Qs.getElementsByTagName('tr')[0]));
+    }
+
+    var Reducing = (QList.length > ReduceTo);
+    
+//If required, select random rows to delete
+    if (Reducing == true){
+        var DumpItem = 0;
+        while (ReduceTo < QList.length){
+    
+//Get a number to delete from the array
+            DumpItem = Math.floor(QList.length*Math.random());
+            for (i=DumpItem; i<(QList.length-1); i++){
+                QList[i] = QList[i+1];
+            }
+            QList.length = QList.length-1;
+        }
+    }
+//Shuffle the rows if necessary
+    if (ShuffleQs == true){
+        QList = Shuffle(QList);
+    }
+
+    TotalUnfixedLeftItems = QList.length;
+    
+//Write the rows back to the table body
+    for (i=0; i<QList.length; i++){
+        Qs.appendChild(QList[i]);
+    }
+    
+//Now we need to remove any drop-down options that no longer have associated select items
+    if (Reducing == true){
+        GetUniqueKeys(Qs, ReducedKeys);
+        
+        Selects = Qs.getElementsByTagName('select');
+        for (i=0; i<Selects.length; i++){
+            Options = Selects[i].getElementsByTagName('option');
+            for (j=Options.length-1; j>=0; j--){
+                if (OptionRequired(Options[j].value) == false){
+                    Selects[i].removeChild(Options[j]);
+                }
+            }
+        }
+    }
+}
+
+function OptionRequired(Key){
+    if (ReducedKeys.indexOf(Key) > -1){
+        return true;
+    }
+    else{
+        if (OriginalKeys.indexOf(Key) > -1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+}
+
+function CheckAnswers(){
+    if (Locked == true){return;}
+    var Select = null;
+    var Key = -1;
+    var Parent = null;
+    var Answer = null;
+    var AnsText = '';
+    var AllDone = true;
+    TotCorrectChoices = 0;
+    
+//for each item not fixed or a distractor
+    for (var i=0; i<Status.length; i++){
+    
+//if it hasn't been answered correctly yet
+        if (Status[i][0] < 1){
+        
+//Add one to the number of tries for this item
+            Status[i][1]++;
+            
+//Get a pointer to the drop-down
+            Select = document.getElementById(Status[i][2]);
+            Key = GetKeyFromSelect(Select);
+//Save the answer given
+            Status[i][3].push(Select.options[Select.selectedIndex].value);
+            
+//Check the answer
+            if (Select.options[Select.selectedIndex].value == Key){
+                    Status[i][0] = 1;
+                    AnsText = Select.options[Select.selectedIndex].innerHTML;
+                    Parent = Select.parentNode;
+                    Parent.removeChild(Select);
+                    Parent.innerHTML = AnsText;
+                    Parent.nextSibling.innerHTML = CorrectIndicator;
+            } 
+            else{
+                AllDone = false;
+                Parent = Select.parentNode;
+                Parent.nextSibling.innerHTML = IncorrectIndicator;
+            }
+        }
+        else{
+//Add a copy of the last (correct) answer.
+            Status[i][3].push(Status[i][3][Status[i][3].length-1]);
+        }
+//If it's correct, count it
+        if (Status[i][0] == 1){
+            TotCorrectChoices++;
+        }
+    }
+//Calculate the score
+    Score = Math.floor(((TotCorrectChoices-Penalties)/TotalUnfixedLeftItems)*100);
+    if (Score<0){Score = 0;}
+    var Feedback = '';
+
+//Build the feedback
+    if (AllDone == true){
+        Feedback = YourScoreIs + ' ' + Score + '%.' + '<br />' + CorrectResponse;
+    }
+    else{
+        Feedback = YourScoreIs + ' ' + Score + '%.' + '<br />' + IncorrectResponse;
+//Penalty for incorrect check
+        Penalties++;
+    }
+
+//If the exercise is over, deal with that
+    if ((AllDone == true)||(TimeOver == true)){
+
+
+        TimeOver = true;
+        Locked = true;
+        Finished = true;
+        setTimeout('Finish()', SubmissionTimeout);
+        WriteToInstructions(Feedback);
+    }
+
+//Show the feedback
+    ShowMessage(Feedback);
+    
+
+}
+
+
+
+
+
+
+
+
+
+//-->
+
+//]]>
+
+</script>
+
+
+
+
+
+</body>
+</html> 

@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CIUDADANÍAS">
+    <meta name="author" content="Oliver Castelblanco M. y Liz Arévalo para CISP">
+    <link rel="shortcut icon" href="ico/favicon.png">
+    <title>CIUDADANÍAS</title>
+    <!-- Bootstrap core CSS -->
+    <!--link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.0/holder.js"></script>
+    <style type="text/css">
+        .continuebutton {
+            display:none;
+        }
+        .modal {
+            color: black;
+        }
+        ol.MCAnswers>li {
+            margin-top:10px;
+        }
+        ol.MCAnswers button {
+        }
+        ol.QuizQuestions {
+            list-style-type:none;
+        }
+        .bloqueModulo {
+            margin-bottom: 2em;
+        }
+        .bloqueModulo .span12 a:first-child {
+            font-size: 12px;
+            display: block;
+            float: left;
+            width: 55%;
+            padding-top: 1.5em;
+            padding-left: 5%;
+            padding-right: 5%;
+            height: 15em;
+        }
+        .bloqueModulo .span12 a:last-child {
+            /* Las medidas horizonales se hacen en % y las verticales en em */
+            padding-top: 0.57em; /* Este texto es de 14px */
+            padding-right: 5%;
+            float:left;
+            width: 30%;
+            height: auto;
+        }
+        .bloqueModulo a {
+            color:#FFFFFF;
+        }
+        .bloqueModulo a:hover {
+            text-decoration:none;
+            background-color:#5E7A8C;
+        }
+        .bloqueModulo .row-fluid:hover {
+            background-color:#5E7A8C;
+        }
+        .bloqueModulo .row-fluid {
+            background:#27353e;
+            color:#FFF;
+            overflow: hidden;
+            height: 14em;
+            cursor:pointer;
+        }
+        .bloqueModulo h4 {
+            font-size: 14px;
+            text-transform:none;
+            padding: 1em;
+            margin-top: 0;
+            margin-bottom: 0;
+            border-radius: 0.57em 0.57em 0px 0px;
+            -moz-border-radius: 0.57em 0.57em 0px 0px;
+            -webkit-border-radius: 0.57em 0.57em 0px 0px;
+            color:#FFF;  
+            overflow: hidden;
+            height: 2em;
+            text-transform:uppercase;
+        }
+        .modulo1 h4 {
+            background-color: #7ac35a;
+        }
+        .modulo2 h4 {
+            background-color: #13b5e4;
+        }
+        .modulo3 h4 {
+            background-color: #e84c3d;
+        }
+        .modulo4 h4 {
+            background-color: #5e1770;
+        }
+        .modulo5 h4 {
+            background-color: #ffc50c;
+        }
+        .modulo6 h4 {
+            background-color: #00aab2;
+        }
+        .modulo7 h4 {
+            background-color: #ec008c;
+        }
+        /* Estilos del menú Acerca De */
+        #tablaIndice {
+            width:100%;
+        }
+        #tablaIndice a {
+            display:block;
+            width:100%;
+            padding-top:1em;
+            padding-bottom:1em;
+            border-bottom:solid 1px #000;
+            color:#fff;
+            opacity:0.65;
+        }
+        #tablaIndice a:hover {
+            opacity:1;
+            background-color:#2f3d46;
+            color:#0088cc;
+        }
+        #tablaIndice span {
+            font-size:12px;
+            display:block;
+            float:left;
+            width:6.5em;
+            padding-left:2em;
+        }
+        #tablaIndice img {
+            width:100%;
+            height:auto;
+        }
+        #tablaIndice a#imagenTablaIndice {
+            display:inline;
+            width:auto;
+            padding-top:0;
+            padding-bottom:0;
+            border-bottom:none;
+            opacity:1;
+        }
+        #tablaIndice a#imagenTablaIndice:hover {
+            opacity:0.75;
+        }
+        /* Estilos para la paginación de los módulos */
+        .pagination ul>.disabled>span,
+        .pagination ul>.disabled>a,
+        .pagination ul>.disabled>a:hover,
+        .pagination ul>.disabled>a:focus {
+            background-color:#dddddd;
+        }
+        .pagination ul>li {
+            display: inline;
+        }
+        /* Estilos del módulo 1 */
+        .contenido1{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        .contenido1 h2{
+            color:#7ac35a;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido1 h3{
+            color:#7ac35a;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }   
+            
+        .contenido1 li{
+            margin: 0 0 0 15px;
+            color:#27353E;
+        }
+        
+        .contenido2 h2{
+            color:#13B5E4;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido2 h3{
+            color:#13B5E4;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido2{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        
+        .contenido3 h2{
+            color:#E84C3D;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido3 h3{
+            color:#E84C3D;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido3{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        .contenido4 h2{
+            color:#5E1770;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido4 h3{
+            color:#5E1770;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido4{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+        
+        .contenido5 h2{
+            color:#FFC50C;
+            font-size:18px;
+            font-weight:normal;
+        }
+        .contenido5 h3{
+            color:#FFC50C;
+            font-size:14px;
+            font-weight:normal;
+            line-height:normal;
+        }  
+        .contenido5{
+            background: none repeat scroll 0 0 #FFFFFF;
+            color: #27353E;
+            margin: -30px 0 0;
+            padding: 0 25px 25px;
+        }
+    /* Estos estilos ya los trae el tema de Moodle */
+        body {
+            background-color: #2f3d46;
+            color:#FFFFFF;
+        }
+    </style>
+  </head>
+
+  <body onload="StartUp()">
+
+    <div id="InstructionsDiv" style="display: none;" class="StdDiv">
+        <div id="Instructions"></div>
+    </div>
+    <span id="QNumReadout" style="display: none;" class="QNum">&nbsp;</span>
+
+
+        
+        <div class="modal fade" id="respuesta" tabindex="-1" role="dialog" aria-labelledby="Respuesta" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Respuesta</h4>
+              </div>
+              <div class="modal-body">
+                <div class="Feedback" id="FeedbackDiv">
+                    <div class="FeedbackText" id="FeedbackContent"></div>
+                    <button style="display: none;" id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button id="cerrarModal" data-dismiss="modal" type="button" class="btn btn-primary">Cerrar ventana</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+  
+    <div class="container-fluid">
+
+        <div class="tab-content">
+            <div class="row-fluid">
+                <div class="span12 bloqueModulo modulo3">
+                    <h4>Módulo 3: Género</h4>
+                </div><!-- /.span12 -->
+            </div><!-- ./row-fluid -->
+            <div class="tab-pane active contenido3" id="pag1">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Objetivos o resultados de aprendizaje del módulo.</h2>
+                        <h3>Objetivo general:</h3>
+                        <p>Identificar y transformar situaciones, imaginarios y prácticas de exclusión y discriminación basadas en roles de género.</p>
+                        <h3>Objetivos específicos:</h3>
+                        <p>Identificar la relación entre el enfoque de género y la formación para la ciudadanía.</p>
+                        <p>Hacer evidentes los imaginarios, situaciones y acciones de la cotidianidad que propician situaciones de exclusión y discriminación.</p>
+                        <p>Analizar y transformar las relaciones de poder en los espacios cotidianos.</p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag1 -->
+            
+            <div class="tab-pane contenido3" id="pag2">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Partido de fútbol.</h2>
+                        <p>Viñeta 1: mujeres y hombres que hacen parte de los equipos que disputan el partido.</p>
+                        <p>Viñeta 2: acciones normales de juego (forcejeos, pases, remates). </p>
+                        <p>Viñeta 3: una niña haciendo un gol. </p>
+                        <p>Viñeta 4: dos profesores hablando sobre la presencia de niñas en el partido. Uno de ellos asegura que las niñas se verían mejor como porristas, animando, y no jugando fútbol. En el último cuadro el otro profesor pregunta “¿por qué lo dice?”, y el otro le responde “Pues en mi casa siempre fue así, los hombres jugábamos futbol y las mujeres animaban”. (Situación que establece un punto de entrada al tema de roles de género).</p>
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag2 -->
+            
+            <div class="tab-pane contenido3" id="pag3">
+                <div class="row-fluid">
+                    <div class="span12">   
+                    <!-- Hot potato -->                     
+                        <h2>Recurso: animación. </h2>
+                        <p>Posteriormente, aparece el profesor que preguntó “¿por qué lo dice?” caminando hacia su casa y pensando en la conversación que tuvo con su amigo. Mediante una animación, se ve lo que pasa por su cabeza (preguntas acompañadas de imágenes).</p>
+                        <p>El profesor piensa en su niñez e intenta recordar si en su casa había actividades exclusivas para hombres o mujeres .<br>
+                        ¿Quién se encargaba de preparar la comida en la casa? <br>
+                        ¿Quién se encargaba de las labores domésticas? <br>
+                        ¿Quién era responsable del sustento económico? <br>
+                        ¿Qué tipo de ropa usaba en su niñez? <br>
+                        ¿Cómo eran sus juguetes?</p>
+                        <p>La animación termina con la pregunta: ¿Por qué existen formas de comportarse para mujeres y para hombres?</p>
+                        <h3>Participe en la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a>.</h3>
+                        <p>¿Cómo se dieron cuenta de que eran hombres o mujeres?</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag3 -->
+            
+            <div class="tab-pane contenido3" id="pag4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>¿Por qué las mujeres y los hombres nos comportamos distinto?</h3>
+                        <p>¿Cree usted que existen normas, actitudes, valores, expectativas o roles naturales que determinan cómo nos comportamos las mujeres y los hombres? Por favor responda Si o No, la plataforma retroalimentará su respuesta.</p>
+                        <h3>Actividad 1: Cuestionario.</h3>
+                        
+                        
+                            <div id="MainDiv" class="StdDiv">
+                                <ol class="QuizQuestions" id="Questions">
+                                    <li class="QuizQuestion" id="Q_0"><div class="QuestionText">1. &#x00BF;Existen formas determinadas de comportarse para hombres y mujeres y estas son naturales?</div><ol class="MCAnswers"><li id="Q_0_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_0_Btn" onclick="CheckMCAnswer(0,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;No</li><li id="Q_0_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_1_Btn" onclick="CheckMCAnswer(0,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Si</li></ol></li>
+                                    <li class="QuizQuestion" id="Q_1"><div class="QuestionText">2. &#x00BF;Cree usted que las formas de comportarse de hombres y mujeres se determinan por sus caracter&#x00ED;sticas biol&#x00F3;gicas, es decir, por su sexo? <br /></div><ol class="MCAnswers"><li id="Q_1_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;No</li><li id="Q_1_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Si</li></ol></li>
+                                    <li class="QuizQuestion" id="Q_2"><div class="QuestionText">3. &#x00BF;Siente que ha tenido que asumir alg&#x00FA;n rol o comportamiento determinado por ser mujer u hombre?<br />Por favor responda Si o No.</div><ol class="MCAnswers"><li id="Q_2_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_2_0_Btn" onclick="CheckMCAnswer(2,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;No</li><li id="Q_2_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_2_1_Btn" onclick="CheckMCAnswer(2,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Si</li></ol></li>
+                                    <li class="QuizQuestion" id="Q_3"><div class="QuestionText">4. Para las mujeres: &#x00BF;Cree que ese rol o comportamiento puede realizarlo un hombre? <br />Para los hombres &#x00BF;Cree que ese rol o comportamiento puede realizarlo una mujer?<br /></div><ol class="MCAnswers"><li id="Q_3_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_3_0_Btn" onclick="CheckMCAnswer(3,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Si</li><li id="Q_3_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_3_1_Btn" onclick="CheckMCAnswer(3,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;No</li></ol></li>
+                                    <li class="QuizQuestion" id="Q_4"><div class="QuestionText">5. &#x00BF;Cree usted que en la sociedad se esperan comportamientos o se asumen roles determinados, exclusivos o excluyentes para los hombres y para las mujeres?</div><ol class="MCAnswers"><li id="Q_4_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_4_0_Btn" onclick="CheckMCAnswer(4,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Si</li><li id="Q_4_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_4_1_Btn" onclick="CheckMCAnswer(4,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;No</li></ol></li>
+                                </ol>
+                            </div>
+                        <p>Este ejercicio busca generar una reflexión sobre los roles o comportamientos que la sociedad espera que asuman hombres y mujeres. La perspectiva de género plantea que no se derivan de características biológicas: los roles o comportamientos de género son una construcción social que determina y que es definida por relaciones específicas de poder.</p>                  
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag4 -->
+            
+            <div class="tab-pane contenido3" id="pag5">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Si no es lo biológico…</h2>
+                        <p>Reconociendo que el aspecto biológico es una base limitada para comprender las diversas formas de comportamiento según el género, ¿qué otro factor cree usted que podría influir en su construcción?</p>
+                        <p>Para ampliar esta perspectiva, lo invitamos a que se tome un momento para reflexionar sobre ciertos momentos de su vida y algunos interrogantes: En su niñez, ¿qué tipo de juguetes tenía?, ¿qué tipo de ropa usaba? En su casa, ¿quién se encargaba de las labores domésticas o de preparar la comida?, ¿quién era responsable del sustento económico? En su adolescencia, ¿cómo eran los permisos para salir con sus amigos?, ¿estos permisos eran iguales para sus hermanas o hermanos? En el ámbito laboral, ¿cree que hay profesiones más adecuadas para hombres o para mujeres? </p>
+                        <p>Se muestran imágenes (o segmentos) de la animación inicial acompañando cada una de las preguntas. Se ubica una caja de texto para que los participantes anoten sus respuestas (no para que sean contestadas, sino para que tengan presente lo que contestan).</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag5 -->
+            
+            <div class="tab-pane contenido3" id="pag6">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Lo social y lo cultural.</h3>
+                        <p>Mediante las anteriores reflexiones hemos visto cómo los diferentes entornos de aprendizaje y socialización influyen y ‘moldean’ las relaciones entre personas. En otras palabras, la sociedad establece formas de comportarse que responden a los imaginarios que la cultura construye sobre la noción de sexo, asignando unos roles a las mujeres y otros a los hombres. En suma, hemos abordado algunos componentes del concepto de género, el cual podemos definir de la siguiente manera:</p>
+                        <p>“El género es una construcción social –no natural- que define el conjunto de normas, actitudes, valores, expectativas y roles que la cultura asigna a las personas a partir de sus características físicas - hombres o mujeres-, que configuran diferentes formas de comportarse” (Vargas Trujillo, 2007). </p>
+                        <p>La concepción o la asignación de roles de género estructura la realidad de todas las personas: define las relaciones entre los seres humanos asignándoles diversos papeles denominados roles de género. Para profundizar en este tema, le sugerimos revisar los siguientes textos:</p>
+                        <p><a href="1-GeneroPerspectiva.pdf" target="_blank">Género y perspectiva de género</a></p>
+                        <p><a href="2-QueEsElGenero.pdf" target="_blank">¿Qué es el género?</a></p>
+                        <p>Comente en la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a>: <br>¿Qué diferencia hay entre sexo y género?</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag6 -->
+            
+            <div class="tab-pane contenido3" id="pag7">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Actividad 2: Roles de género </h3>
+                        <p>¿En dónde se pueden identificar roles de género? Les proponemos el siguiente ejercicio para hacernos una idea más clara sobre el tema.</p>
+                        <p>Observen los siguientes comerciales:</p>
+                        <h3>Comercial 1 </h3>
+                        <p><a href="http://www.youtube.com/watch?v=NeZoHzO9wCk" target="_blank">http://www.youtube.com/watch?v=NeZoHzO9wCk (multimujer)</a></p> 
+                        <h3>Comercial 2</h3>
+                        <p><a href="http://www.youtube.com/watch?v=KlbE8S3s3Ac" target="_blank">http://www.youtube.com/watch?v=KlbE8S3s3Ac (AXE2)</a></p>
+                        <h3>Comercial 3</h3>
+                        <p><a href="http://www.youtube.com/watch?v=jI_VLaWM_eE" target="_blank"> http://www.youtube.com/watch?v=jI_VLaWM_eE (Son mías)</a></p>
+                        <h3>Comercial 4</h3>
+                        <p><a href="http://www.youtube.com/watch?v=NTxUWQ2IE6s" target="_blank"> http://www.youtube.com/watch?v=NTxUWQ2IE6s (Despierta ecuador)</a></p>
+                        <p>Después de ver los videos por favor abran la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a> y participen en esta discusión sobre atributos y nociones de lo masculino y lo femenino.</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag7 -->
+            
+            <div class="tab-pane contenido3" id="pag8">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>Partiendo de algunas nociones básicas del enfoque de género, en la anterior actividad se analizaron varios ejemplos que permiten comprender de manera más clara dónde y cómo se expresan algunos atributos o roles que la sociedad ha asignado a lo femenino y lo masculino. Con el ánimo de seguir ubicando estas nociones en un nivel más concreto, los invitamos a responder estas preguntas relacionadas con su cotidianidad:</p>
+                        <ul>
+                            <li>¿Cómo aprendió en su familia lo que es masculino y femenino? ¿Qué opina de las nociones allí aprendidas? </li>
+                            <li>¿Cree que estas nociones y estos aprendizajes influyen en la forma en que se relaciona con los otros? ¿Cómo?</li>
+                            <li>Si quisiera modificar alguna de estas nociones o estos roles, ¿cómo lo haría? </li>
+                        </ul>
+                        <p>Tómese el tiempo que necesite para contestar estas preguntas. Le sugerimos que tome nota de sus respuestas antes de continuar. Si necesita volver a ver estas preguntas puede encontrarlas aquí. Abra la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a>.</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag8 -->
+            
+             <div class="tab-pane contenido3" id="pag9">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Género y ciudadanía.</h3>
+                        <p>¿Qué tiene que ver todo lo anterior con la ciudadanía? El enfoque de género es importante en formación para la ciudadanía porque permite evidenciar situaciones, imaginarios y prácticas excluyentes basadas en los roles de género. Estas situaciones pueden considerarse naturales y se reflejan en las relaciones interpersonales, tanto en el ámbito público como el privado, en la familia, en el trabajo, en el colegio, etc. De igual forma, el enfoque de género abre debates sobre la forma cómo se estructuran las relaciones sociales y cómo pueden transformarse haciendo énfasis en la construcción de identidades personales y colectivas. Además, el enfoque de género ayuda a hacer efectivos los principios democráticos como la igualdad, la equidad, o la participación para grupos o colectivos que históricamente han sido objeto de discriminación y exclusión.</p>
+                        <p>Sobre este último aspecto queremos proponerle un ejercicio ‘investigativo’ denominado Línea de tiempo.</p> 
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag9 -->
+            
+            <div class="tab-pane contenido3" id="pag10">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Actividad 3. Línea de tiempo.</h2>
+                        <h3>Objetivo:</h3>
+                        <p>Identificar acciones que han contribuido a superar situaciones de exclusión y discriminación.</p>
+                        <h3>Mecánica:</h3>
+                        <p>El ejercicio consiste en realizar dos líneas de tiempo. Una línea se construirá sobre las reivindicaciones de los derechos de las mujeres que históricamente han logrado algunos grupos o colectivos. La segunda línea de tiempo será sobre las reivindicaciones de los derechos de algún otro grupo que haya sido discriminado o excluido, este es de libre elección. Cuentan con una semana para realizar esta actividad. 
+Para realizar las líneas de tiempo se debe hacer lo siguiente:</p>
+                        <ol>
+                            <li>Investigar en la red mínimo 5 hitos o logros alcanzados por los grupos mencionados.</li>
+                            <li>Cuando se tengan identificados los hitos o logros, ingresar a <a href="http://www.timetoast.com/" target="_blank">http://www.timetoast.com/</a></li>
+                            <li>Crear una cuenta. Tendrán a su disposición un tutorial para el manejo de esta página.</li>
+                            <li>Ubicar los logros o hitos en una línea de tiempo por cada grupo seleccionado (mujeres y otro).</li>
+                            <li>Enviar el enlace de sus líneas de tiempo a la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a></li>
+                        </ol>                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag10 -->
+            
+             <div class="tab-pane contenido3" id="pag11">
+                <div class="row-fluid">
+                    <div class="span12">
+                      <h3>Síntesis y cierre del módulo. </h3>
+                      <p>Las actividades realizadas nos han permitido reconocer en la cotidianidad prácticas, imaginarios y situaciones asociadas al enfoque de género, y la relación que estas tienen con la formación para la ciudadanía. Es importante recordar que:</p>
+                        <blockquote><p>El enfoque de género es importante en formación para la ciudadanía porque permite evidenciar situaciones, imaginarios y prácticas excluyentes basadas en los roles de género. Estas situaciones pueden considerarse naturales y se reflejan en las relaciones interpersonales, tanto en el ámbito público como el privado, en la familia, en el trabajo, en el colegio, etc. De igual forma, el enfoque de género abre debates sobre la forma cómo se estructuran las relaciones sociales y cómo pueden transformarse haciendo énfasis en la construcción de identidades personales y colectivas.</p></blockquote>
+                    <p>Para finalizar el módulo lo invitamos a que responda estas preguntas:</p>
+                    <ul>
+                        <li>En su cotidianidad, ¿conoce alguna situación, práctica o imaginario relacionado con roles de género que genere exclusión o discriminación?</li>  
+                        <li>¿Qué puede hacer para transformarlo?</li>
+                    </ul>
+                    <p>Teniendo en cuenta sus respuestas, ahora puede realizar la última actividad del módulo denominada ‘Acontecimiento ciudadano’. Puede recurrir a las lecturas y materiales vistos. Así mismo le sugerimos recursos adicionales para consultar.</p>
+                    <ul>
+                        <li>Género en educación. Consulte la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a></li>
+                        <li>Enfoque diferencial. Consulte la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a></li>
+                        <li>Nuevas masculinidades. Consulte la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a></li>
+                    </ul>                
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag11 -->
+            
+            
+             <div class="tab-pane contenido3" id="pag12">
+                <div class="row-fluid">
+                    <div class="span12">
+                       <h3>No hay que olvidar:</h3> 
+                        <blockquote><p>“Cuando hablamos de ciudadanía también lo estamos haciendo, necesariamente, de democracia; una cosa y la otra, aunque no sean exactamente lo mismo, resultan inseparables. Ambos términos tienen unas características activas, dinámicas, potenciales, en el sentido de que deben ponerse en juego constantemente; mientras que la ciudadanía es algo que a cada momento se está jugando, la democracia tampoco es un estado inmóvil y consumado, sino algo en continua transformación” (Horrach Millares, 2009).</p></blockquote>
+                        <p>A continuación realice la actividad <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">Acontecimiento Ciudadano.</a></p>
+                        <p>Gracias por su participación.</p>
+                    </div><!-- /.span13 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag12 -->            
+            
+            
+            
+        </div><!-- /.tab-content -->
+        
+        <div class="pagination">
+            <ul>
+                <li class="active"><a href="#pag1">1</a></li>
+                <li><a href="#pag2">2</a></li>
+                <li><a href="#pag3">3</a></li>
+                <li><a href="#pag4">4</a></li>
+                <li><a href="#pag5">5</a></li>
+                <li><a href="#pag6">6</a></li>
+                <li><a href="#pag7">7</a></li>
+                <li><a href="#pag8">8</a></li>
+                <li><a href="#pag9">9</a></li>
+                <li><a href="#pag10">10</a></li>
+                <li><a href="#pag11">11</a></li>
+                <li><a href="#pag12">12</a></li>
+            </ul>
+        </div><!-- /.pagination -->
+
+        
+    </div><!-- /.container -->
+    
+        <script type="text/javascript">
+            $(function(){
+                $('.FuncButton').html('<i class="fa fa-question"></i>');
+                $('.FuncButton').addClass('btn btn-default');
+                $('.FuncButton').prop("onfocus", null);
+                $('.FuncButton').prop("onblur", null);
+                $('.FuncButton').prop("onmouseover", null);
+                $('.FuncButton').prop("onmouseout", null);
+                $('.FuncButton').prop("onmousedown", null);
+                $('.FuncButton').prop("onmouseup", null);
+                $('.pagination a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                    $('.QuizQuestion').css('display', 'list-item');
+                });
+                $('.FuncButton').click(function() {
+                    $('#respuesta').modal();
+                    $(this).html('<i class="fa fa-check"></i>');
+                });
+            });
+        </script>
+    
+
+
+<script type="text/javascript">
+
+//<![CDATA[
+
+<!--
+
+
+
+
+function Client(){
+//if not a DOM browser, hopeless
+    this.min = false; if (document.getElementById){this.min = true;};
+
+    this.ua = navigator.userAgent;
+    this.name = navigator.appName;
+    this.ver = navigator.appVersion;  
+
+//Get data about the browser
+    this.mac = (this.ver.indexOf('Mac') != -1);
+    this.win = (this.ver.indexOf('Windows') != -1);
+
+//Look for Gecko
+    this.gecko = (this.ua.indexOf('Gecko') > 1);
+    if (this.gecko){
+        this.geckoVer = parseInt(this.ua.substring(this.ua.indexOf('Gecko')+6, this.ua.length));
+//      if (this.geckoVer < 20020000){this.min = false;}
+    }
+    
+//Look for Firebird
+    this.firebird = (this.ua.indexOf('Firebird') > 1);
+    
+//Look for Safari
+    this.safari = (this.ua.indexOf('Safari') > 1);
+    if (this.safari){
+        this.gecko = false;
+    }
+    
+//Look for IE
+    this.ie = (this.ua.indexOf('MSIE') > 0);
+    if (this.ie){
+        this.ieVer = parseFloat(this.ua.substring(this.ua.indexOf('MSIE')+5, this.ua.length));
+        if (this.ieVer < 5.5){this.min = false;}
+    }
+    
+//Look for Opera
+    this.opera = (this.ua.indexOf('Opera') > 0);
+    if (this.opera){
+        this.operaVer = parseFloat(this.ua.substring(this.ua.indexOf('Opera')+6, this.ua.length));
+        if (this.operaVer < 7.04){this.min = false;}
+    }
+    if (this.min == false){
+//      alert('Your browser may not be able to handle this page.');
+    }
+    
+//Special case for the horrible ie5mac
+    this.ie5mac = (this.ie&&this.mac&&(this.ieVer<6));
+}
+
+var C = new Client();
+
+//for (prop in C){
+//  alert(prop + ': ' + C[prop]);
+//}
+
+
+
+//CODE FOR HANDLING NAV BUTTONS AND FUNCTION BUTTONS
+
+//[strNavBarJS]
+function NavBtnOver(Btn){
+    if (Btn.className != 'NavButtonDown'){Btn.className = 'NavButtonUp';}
+}
+
+function NavBtnOut(Btn){
+    Btn.className = 'NavButton';
+}
+
+function NavBtnDown(Btn){
+    Btn.className = 'NavButtonDown';
+}
+//[/strNavBarJS]
+
+function FuncBtnOver(Btn){
+    if (Btn.className != 'FuncButtonDown'){Btn.className = 'FuncButtonUp';}
+}
+
+function FuncBtnOut(Btn){
+    Btn.className = 'FuncButton';
+}
+
+function FuncBtnDown(Btn){
+    Btn.className = 'FuncButtonDown';
+}
+
+function FocusAButton(){
+    if (document.getElementById('CheckButton1') != null){
+        document.getElementById('CheckButton1').focus();
+    }
+    else{
+        if (document.getElementById('CheckButton2') != null){
+            document.getElementById('CheckButton2').focus();
+        }
+        else{
+            document.getElementsByTagName('button')[0].focus();
+        }
+    }
+}
+
+
+
+
+//CODE FOR HANDLING DISPLAY OF POPUP FEEDBACK BOX
+
+var topZ = 1000;
+
+function ShowMessage(Feedback){
+    var Output = Feedback + '<br /><br />';
+    document.getElementById('FeedbackContent').innerHTML = Output;
+    var FDiv = document.getElementById('FeedbackDiv');
+    topZ++;
+    FDiv.style.zIndex = topZ;
+    FDiv.style.top = TopSettingWithScrollOffset(30) + 'px';
+
+    FDiv.style.display = 'block';
+
+    ShowElements(false, 'input');
+    ShowElements(false, 'select');
+    ShowElements(false, 'object');
+    ShowElements(true, 'object', 'FeedbackContent');
+
+//Focus the OK button
+    setTimeout("document.getElementById('FeedbackOKButton').focus()", 50);
+    
+//
+}
+
+function ShowElements(Show, TagName, ContainerToReverse){
+// added third argument to allow objects in the feedback box to appear
+//IE bug -- hide all the form elements that will show through the popup
+//FF on Mac bug : doesn't redisplay objects whose visibility is set to visible
+//unless the object's display property is changed
+
+    //get container object (by Id passed in, or use document otherwise)
+    TopNode = document.getElementById(ContainerToReverse);
+    var Els;
+    if (TopNode != null) {
+        Els = TopNode.getElementsByTagName(TagName);
+    } else {
+        Els = document.getElementsByTagName(TagName);
+    }
+
+    for (var i=0; i<Els.length; i++){
+        if (TagName == "object") {
+            //manipulate object elements in all browsers
+            if (Show == true){
+                Els[i].style.visibility = 'visible';
+                //get Mac FireFox to manipulate display, to force screen redraw
+                if (C.mac && C.gecko) {Els[i].style.display = '';}
+            }
+            else{
+                Els[i].style.visibility = 'hidden';
+                if (C.mac && C.gecko) {Els[i].style.display = 'none';}
+            }
+        } 
+        else {
+            // tagName is either input or select (that is, Form Elements)
+            // ie6 has a problem with Form elements, so manipulate those
+            if (C.ie) {
+                if (C.ieVer < 7) {
+                    if (Show == true){
+                        Els[i].style.visibility = 'visible';
+                    }
+                    else{
+                        Els[i].style.visibility = 'hidden';
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+function HideFeedback(){
+    document.getElementById('FeedbackDiv').style.display = 'none';
+    ShowElements(true, 'input');
+    ShowElements(true, 'select');
+    ShowElements(true, 'object');
+    if (Finished == true){
+        Finish();
+    }
+}
+
+
+//GENERAL UTILITY FUNCTIONS AND VARIABLES
+
+//PAGE DIMENSION FUNCTIONS
+function PageDim(){
+//Get the page width and height
+    this.W = 600;
+    this.H = 400;
+    this.W = document.getElementsByTagName('body')[0].clientWidth;
+    this.H = document.getElementsByTagName('body')[0].clientHeight;
+}
+
+var pg = null;
+
+function GetPageXY(El) {
+    var XY = {x: 0, y: 0};
+    while(El){
+        XY.x += El.offsetLeft;
+        XY.y += El.offsetTop;
+        El = El.offsetParent;
+    }
+    return XY;
+}
+
+function GetScrollTop(){
+    if (typeof(window.pageYOffset) == 'number'){
+        return window.pageYOffset;
+    }
+    else{
+        if ((document.body)&&(document.body.scrollTop)){
+            return document.body.scrollTop;
+        }
+        else{
+            if ((document.documentElement)&&(document.documentElement.scrollTop)){
+                return document.documentElement.scrollTop;
+            }
+            else{
+                return 0;
+            }
+        }
+    }
+}
+
+function GetViewportHeight(){
+    if (typeof window.innerHeight != 'undefined'){
+        return window.innerHeight;
+    }
+    else{
+        if (((typeof document.documentElement != 'undefined')&&(typeof document.documentElement.clientHeight !=
+     'undefined'))&&(document.documentElement.clientHeight != 0)){
+            return document.documentElement.clientHeight;
+        }
+        else{
+            return document.getElementsByTagName('body')[0].clientHeight;
+        }
+    }
+}
+
+function TopSettingWithScrollOffset(TopPercent){
+    var T = Math.floor(GetViewportHeight() * (TopPercent/100));
+    return GetScrollTop() + T; 
+}
+
+//CODE FOR AVOIDING LOSS OF DATA WHEN BACKSPACE KEY INVOKES history.back()
+var InTextBox = false;
+
+function SuppressBackspace(e){ 
+    if (InTextBox == true){return;}
+    if (C.ie) {
+        thisKey = window.event.keyCode;
+    }
+    else {
+        thisKey = e.keyCode;
+    }
+
+    var Suppress = false;
+
+    if (thisKey == 8) {
+        Suppress = true;
+    }
+
+    if (Suppress == true){
+        if (C.ie){
+            window.event.returnValue = false;   
+            window.event.cancelBubble = true;
+        }
+        else{
+            e.preventDefault();
+        }
+    }
+}
+
+if (C.ie){
+    document.attachEvent('onkeydown',SuppressBackspace);
+    window.attachEvent('onkeydown',SuppressBackspace);
+}
+else{
+    if (window.addEventListener){
+        window.addEventListener('keypress',SuppressBackspace,false);
+    }
+}
+
+function ReduceItems(InArray, ReduceToSize){
+    var ItemToDump=0;
+    var j=0;
+    while (InArray.length > ReduceToSize){
+        ItemToDump = Math.floor(InArray.length*Math.random());
+        InArray.splice(ItemToDump, 1);
+    }
+}
+
+function Shuffle(InArray){
+    var Num;
+    var Temp = new Array();
+    var Len = InArray.length;
+
+    var j = Len;
+
+    for (var i=0; i<Len; i++){
+        Temp[i] = InArray[i];
+    }
+
+    for (i=0; i<Len; i++){
+        Num = Math.floor(j  *  Math.random());
+        InArray[i] = Temp[Num];
+
+        for (var k=Num; k < (j-1); k++) {
+            Temp[k] = Temp[k+1];
+        }
+        j--;
+    }
+    return InArray;
+}
+
+function WriteToInstructions(Feedback) {
+    document.getElementById('InstructionsDiv').innerHTML = Feedback;
+
+}
+
+
+
+
+function EscapeDoubleQuotes(InString){
+    return InString.replace(/"/g, '&quot;')
+}
+
+function TrimString(InString){
+        var x = 0;
+
+        if (InString.length != 0) {
+                while ((InString.charAt(InString.length - 1) == '\u0020') || (InString.charAt(InString.length - 1) == '\u000A') || (InString.charAt(InString.length - 1) == '\u000D')){
+                        InString = InString.substring(0, InString.length - 1)
+                }
+
+                while ((InString.charAt(0) == '\u0020') || (InString.charAt(0) == '\u000A') || (InString.charAt(0) == '\u000D')){
+                        InString = InString.substring(1, InString.length)
+                }
+
+                while (InString.indexOf('  ') != -1) {
+                        x = InString.indexOf('  ')
+                        InString = InString.substring(0, x) + InString.substring(x+1, InString.length)
+                 }
+
+                return InString;
+        }
+
+        else {
+                return '';
+        }
+}
+
+function FindLongest(InArray){
+    if (InArray.length < 1){return -1;}
+
+    var Longest = 0;
+    for (var i=1; i<InArray.length; i++){
+        if (InArray[i].length > InArray[Longest].length){
+            Longest = i;
+        }
+    }
+    return Longest;
+}
+
+//UNICODE CHARACTER FUNCTIONS
+function IsCombiningDiacritic(CharNum){
+    var Result = (((CharNum >= 0x0300)&&(CharNum <= 0x370))||((CharNum >= 0x20d0)&&(CharNum <= 0x20ff)));
+    Result = Result || (((CharNum >= 0x3099)&&(CharNum <= 0x309a))||((CharNum >= 0xfe20)&&(CharNum <= 0xfe23)));
+    return Result;
+}
+
+function IsCJK(CharNum){
+    return ((CharNum >= 0x3000)&&(CharNum < 0xd800));
+}
+
+//SETUP FUNCTIONS
+//BROWSER WILL REFILL TEXT BOXES FROM CACHE IF NOT PREVENTED
+function ClearTextBoxes(){
+    var NList = document.getElementsByTagName('input');
+    for (var i=0; i<NList.length; i++){
+        if ((NList[i].id.indexOf('Guess') > -1)||(NList[i].id.indexOf('Gap') > -1)){
+            NList[i].value = '';
+        }
+        if (NList[i].id.indexOf('Chk') > -1){
+            NList[i].checked = '';
+        }
+    }
+}
+
+//EXTENSION TO ARRAY OBJECT
+function Array_IndexOf(Input){
+    var Result = -1;
+    for (var i=0; i<this.length; i++){
+        if (this[i] == Input){
+            Result = i;
+        }
+    }
+    return Result;
+}
+Array.prototype.indexOf = Array_IndexOf;
+
+//IE HAS RENDERING BUG WITH BOTTOM NAVBAR
+function RemoveBottomNavBarForIE(){
+    if ((C.ie)&&(document.getElementById('Reading') != null)){
+        if (document.getElementById('BottomNavBar') != null){
+            document.getElementById('TheBody').removeChild(document.getElementById('BottomNavBar'));
+        }
+    }
+}
+
+
+
+
+//HOTPOTNET-RELATED CODE
+
+var HPNStartTime = (new Date()).getTime();
+var SubmissionTimeout = 30000;
+var Detail = ''; //Global that is used to submit tracking data
+
+function Finish(){
+//If there's a form, fill it out and submit it
+    if (document.store != null){
+        Frm = document.store;
+        Frm.starttime.value = HPNStartTime;
+        Frm.endtime.value = (new Date()).getTime();
+        Frm.mark.value = Score;
+        Frm.detail.value = Detail;
+        Frm.submit();
+    }
+}
+
+
+
+
+
+//JQUIZ CORE JAVASCRIPT CODE
+
+var CurrQNum = 0;
+var CorrectIndicator = '<i class="fa fa-check"></i>';
+var IncorrectIndicator = '<i class="fa fa-times"></i>';
+var YourScoreIs = 'Su puntaje es ';
+
+//New for 6.2.2.0
+var CompletedSoFar = 'Preguntas completadas: ';
+var ExerciseCompleted = 'Ejercicio completado.';
+var ShowCompletedSoFar = true;
+
+var ContinuousScoring = true;
+var CorrectFirstTime = 'Respuestas correctas al primer intento: ';
+var ShowCorrectFirstTime = false;
+var ShuffleQs = false;
+var ShuffleAs = false;
+var DefaultRight = '&#x00A1;Correcto!';
+var DefaultWrong = '&#x00A1;Lo sentimos! Intente de nuevo.';
+var QsToShow = 5;
+var Score = 0;
+var Finished = false;
+var Qs = null;
+var QArray = new Array();
+var ShowingAllQuestions = false;
+var ShowAllQuestionsCaption = 'Show all questions';
+var ShowOneByOneCaption = 'Show questions one by one';
+var State = new Array();
+var Feedback = '';
+var TimeOver = false;
+var strInstructions = '';
+var Locked = false;
+
+//The following variable can be used to add a message explaining that
+//the question is finished, so no further marking will take place.
+var strQuestionFinished = '';
+
+function CompleteEmptyFeedback(){
+    var QNum, ANum;
+    for (QNum=0; QNum<I.length; QNum++){
+//Only do this if not multi-select
+        if (I[QNum][2] != '3'){
+        for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+            if (I[QNum][3][ANum][1].length < 1){
+                if (I[QNum][3][ANum][2] > 0){
+                    I[QNum][3][ANum][1] = DefaultRight;
+                }
+                else{
+                    I[QNum][3][ANum][1] = DefaultWrong;
+                }
+            }
+        }
+        }
+    }
+}
+
+function SetUpQuestions(){
+    var AList = new Array(); 
+    var QList = new Array();
+    var i, j;
+    Qs = document.getElementById('Questions');
+    while (Qs.getElementsByTagName('li').length > 0){
+        QList.push(Qs.removeChild(Qs.getElementsByTagName('li')[0]));
+    }
+    var DumpItem = 0;
+    if (QsToShow > QList.length){
+        QsToShow = QList.length;
+    }
+    while (QsToShow < QList.length){
+        DumpItem = Math.floor(QList.length*Math.random());
+        for (j=DumpItem; j<(QList.length-1); j++){
+            QList[j] = QList[j+1];
+        }
+        QList.length = QList.length-1;
+    }
+    if (ShuffleQs == true){
+        QList = Shuffle(QList);
+    }
+    if (ShuffleAs == true){
+        var As;
+        for (var i=0; i<QList.length; i++){
+            As = QList[i].getElementsByTagName('ol')[0];
+            if (As != null){
+            AList.length = 0;
+                while (As.getElementsByTagName('li').length > 0){
+                    AList.push(As.removeChild(As.getElementsByTagName('li')[0]));
+                }
+                AList = Shuffle(AList);
+                for (j=0; j<AList.length; j++){
+                    As.appendChild(AList[j]);
+                }
+            }
+        }
+    }
+    
+    for (i=0; i<QList.length; i++){
+        Qs.appendChild(QList[i]);
+        QArray[QArray.length] = QList[i];
+    }
+
+//Show the first item
+    QArray[0].style.display = '';
+    
+//Now hide all except the first item
+    for (i=1; i<QArray.length; i++){
+        QArray[i].style.display = 'none';
+    }       
+    SetQNumReadout();
+    
+    SetFocusToTextbox();
+}
+
+function SetFocusToTextbox(){
+//if there's a textbox, set the focus in it
+    if (QArray[CurrQNum].getElementsByTagName('input')[0] != null){
+        QArray[CurrQNum].getElementsByTagName('input')[0].focus();
+//and show a keypad if there is one
+        if (document.getElementById('CharacterKeypad') != null){
+            document.getElementById('CharacterKeypad').style.display = 'block';
+        }
+    }
+    else{
+    if (QArray[CurrQNum].getElementsByTagName('textarea')[0] != null){
+        QArray[CurrQNum].getElementsByTagName('textarea')[0].focus();   
+//and show a keypad if there is one
+            if (document.getElementById('CharacterKeypad') != null){
+                document.getElementById('CharacterKeypad').style.display = 'block';
+            }
+        }
+//This added for 6.0.4.11: hide accented character buttons if no textbox
+        else{
+            if (document.getElementById('CharacterKeypad') != null){
+                document.getElementById('CharacterKeypad').style.display = 'none';
+            }
+        }
+    }
+}
+
+function ChangeQ(ChangeBy){
+//The following line prevents moving to another question until the current
+//question is answered correctly. Uncomment it to enable this behaviour. 
+//  if (State[CurrQNum][0] == -1){return;}
+    if (((CurrQNum + ChangeBy) < 0)||((CurrQNum + ChangeBy) >= QArray.length)){return;}
+    QArray[CurrQNum].style.display = 'none';
+    CurrQNum += ChangeBy;
+    QArray[CurrQNum].style.display = '';
+//Undocumented function added 10/12/2004
+    ShowSpecialReadingForQuestion();
+    SetQNumReadout();
+    SetFocusToTextbox();
+}
+
+var HiddenReadingShown = false;
+function ShowSpecialReadingForQuestion(){
+//Undocumented function for showing specific reading text elements which change with each question
+//Added on 10/12/2004
+    if (document.getElementById('ReadingDiv') != null){
+        if (HiddenReadingShown == true){
+            document.getElementById('ReadingDiv').innerHTML = '';
+        }
+        if (QArray[CurrQNum] != null){
+//Fix for 6.0.4.25
+            var Children = QArray[CurrQNum].getElementsByTagName('div');
+            for (var i=0; i<Children.length; i++){
+            if (Children[i].className=="HiddenReading"){
+                    document.getElementById('ReadingDiv').innerHTML = Children[i].innerHTML;
+                    HiddenReadingShown = true;
+//Hide the ShowAllQuestions button to avoid confusion
+                    if (document.getElementById('ShowMethodButton') != null){
+                        document.getElementById('ShowMethodButton').style.display = 'none';
+                    }
+                }
+            }   
+        }
+    }
+}
+
+function SetQNumReadout(){
+    document.getElementById('QNumReadout').innerHTML = (CurrQNum+1) + ' / ' + QArray.length;
+    if ((CurrQNum+1) >= QArray.length){
+        if (document.getElementById('NextQButton') != null){
+            document.getElementById('NextQButton').style.visibility = 'hidden';
+        }
+    }
+    else{
+        if (document.getElementById('NextQButton') != null){
+            document.getElementById('NextQButton').style.visibility = 'visible';
+        }
+    }
+    if (CurrQNum <= 0){
+        if (document.getElementById('PrevQButton') != null){
+            document.getElementById('PrevQButton').style.visibility = 'hidden';
+        }
+    }
+    else{
+        if (document.getElementById('PrevQButton') != null){
+            document.getElementById('PrevQButton').style.visibility = 'visible';
+        }
+    }
+}
+
+var I=new Array();
+I[0]=new Array();I[0][0]=100;
+I[0][1]='';
+I[0][2]='0';
+I[0][3]=new Array();
+I[0][3][0]=new Array('No','Si estas formas de comportamiento no son naturales, es decir, no se basan en caracter\u00EDsticas biol\u00F3gicas como el sexo, \u00BFc\u00F3mo se construyen?, \u00BFde d\u00F3nde surgen? Estas preguntas ser\u00E1n retomadas en la siguiente actividad.',1,100,1);
+I[0][3][1]=new Array('Si','Analicemos de manera m\u00E1s profunda esta afirmaci\u00F3n. Por favor responda Si o No a la siguiente pregunta.',1,100,1);
+I[1]=new Array();I[1][0]=100;
+I[1][1]='';
+I[1][2]='0';
+I[1][3]=new Array();
+I[1][3][0]=new Array('No','Si no son naturales, es decir, si no est\u00E1n basadas en las caracter\u00EDsticas biol\u00F3gicas \u00BFqu\u00E9 determina estas formas de comportarse? Estas preguntas ser\u00E1n retomadas en la siguiente actividad.',1,100,1);
+I[1][3][1]=new Array('Si','Basado en sus aprendizajes, experiencias y conocimientos, usted considera que debido a las caracter\u00EDsticas biol\u00F3gicas, es decir, al sexo, cada persona debe asumir ciertos comportamientos y ciertos roles en la sociedad. De acuerdo con lo anterior y desde su propia experiencia, lo invitamos a responder la siguiente pregunta.',1,100,1);
+I[2]=new Array();I[2][0]=100;
+I[2][1]='';
+I[2][2]='0';
+I[2][3]=new Array();
+I[2][3][0]=new Array('No','Respuesta para mujeres: \u00BFC\u00F3mo se ha definido que ese rol o comportamiento s\u00F3lo puede ser asumido por mujeres?  Respuesta para hombres: \u00BFC\u00F3mo se ha definido que ese rol o comportamiento s\u00F3lo puede ser asumido por hombres? \u00BFDe qu\u00E9 manera se construyen esas expectativas, normas, actitudes, valores y roles? \u00BFDe d\u00F3nde surgen? Estas preguntas ser\u00E1n retomadas en la siguiente actividad.',1,100,1);
+I[2][3][1]=new Array('Si','En alg\u00FAn momento de su vida y en un \u00E1mbito determinado usted ha tenido que asumir un rol o un comportamiento determinado por ser mujer u hombre. Por favor recuerde ese comportamiento o ese rol, escr\u00EDbalo y t\u00E9ngalo presente para responder a la siguiente pregunta.',1,100,1);
+I[3]=new Array();I[3][0]=100;
+I[3][1]='';
+I[3][2]='0';
+I[3][3]=new Array();
+I[3][3][0]=new Array('Si','Respuesta para mujeres: Entonces, \u00BFpor qu\u00E9 se espera que este comportamiento o rol sea asumido por las mujeres y no por los hombres? Respuesta para hombres: Entonces, \u00BFpor qu\u00E9 se espera que este comportamiento o rol sea asumido por los hombres y no por las mujeres? \u00BFDe qu\u00E9 manera se construyen estos roles y comportamientos? \u00BFDe d\u00F3nde surgen? Estas preguntas ser\u00E1n retomadas en la siguiente actividad.',1,100,1);
+I[3][3][1]=new Array('No','De acuerdo con sus experiencias y aprendizajes, usted no ha tenido que asumir un rol o comportamiento por ser hombre o mujer. Lo invitamos a responder una \u00FAltima pregunta.',1,100,1);
+I[4]=new Array();I[4][0]=100;
+I[4][1]='';
+I[4][2]='0';
+I[4][3]=new Array();
+I[4][3][0]=new Array('Si','Seg\u00FAn sus respuestas, existen roles y comportamientos para los hombres y para las mujeres, pero estos no se basan en sus caracter\u00EDsticas biol\u00F3gicas. \u00BFDe qu\u00E9 manera se construyen estos roles y comportamientos? \u00BFDe d\u00F3nde surgen? Estas preguntas ser\u00E1n retomadas en la siguiente actividad.',1,100,1);
+I[4][3][1]=new Array('No','Este ejercicio busca generar una reflexi\u00F3n sobre los roles o comportamientos que la sociedad espera que asuman hombres y mujeres. La perspectiva de g\u00E9nero plantea que no se derivan de caracter\u00EDsticas biol\u00F3gicas: los roles o comportamientos de g\u00E9nero son una construcci\u00F3n social que determina y que es definida por relaciones espec\u00EDficas de poder',1,100,1);
+
+
+function StartUp(){
+    RemoveBottomNavBarForIE();
+
+//If there's only one question, no need for question navigation controls
+    if (QsToShow < 2){
+        document.getElementById('QNav').style.display = 'none';
+    }
+    
+//Stash the instructions so they can be redisplayed
+    strInstructions = document.getElementById('InstructionsDiv').innerHTML;
+    
+
+    
+
+    
+
+    
+    CompleteEmptyFeedback();
+
+    SetUpQuestions();
+    ClearTextBoxes();
+    CreateStatusArray();
+    
+
+    
+//Check search string for q parameter
+    if (document.location.search.length > 0){
+        if (ShuffleQs == false){
+            var JumpTo = parseInt(document.location.search.substring(1,document.location.search.length))-1;
+            if (JumpTo <= QsToShow){
+                ChangeQ(JumpTo);
+            }
+        }
+    }
+//Undocumented function added 10/12/2004
+    ShowSpecialReadingForQuestion();
+}
+
+function ShowHideQuestions(){
+    FuncBtnOut(document.getElementById('ShowMethodButton'));
+    document.getElementById('ShowMethodButton').style.display = 'none';
+    if (ShowingAllQuestions == false){
+        for (var i=0; i<QArray.length; i++){
+                QArray[i].style.display = '';
+            }
+        document.getElementById('Questions').style.listStyleType = 'decimal';
+        document.getElementById('OneByOneReadout').style.display = 'none';
+        document.getElementById('ShowMethodButton').innerHTML = ShowOneByOneCaption;
+        ShowingAllQuestions = true;
+    }
+    else{
+        for (var i=0; i<QArray.length; i++){
+                if (i != CurrQNum){
+                    QArray[i].style.display = 'none';
+                }
+            }
+        document.getElementById('Questions').style.listStyleType = 'none';
+        document.getElementById('OneByOneReadout').style.display = '';
+        document.getElementById('ShowMethodButton').innerHTML = ShowAllQuestionsCaption;
+        ShowingAllQuestions = false;    
+    }
+    document.getElementById('ShowMethodButton').style.display = 'inline';
+}
+
+function CreateStatusArray(){
+    var QNum, ANum;
+//For each item in the item array
+    for (QNum=0; QNum<I.length; QNum++){
+//Check if the question still exists (hasn't been nuked by showing a random selection)
+        if (document.getElementById('Q_' + QNum) != null){
+            State[QNum] = new Array();
+            State[QNum][0] = -1; //Score for this q; -1 shows question not done yet
+            State[QNum][1] = new Array(); //answers
+            for (ANum = 0; ANum<I[QNum][3].length; ANum++){
+                State[QNum][1][ANum] = 0; //answer not chosen yet; when chosen, will store its position in the series of choices
+            }
+            State[QNum][2] = 0; //tries at this q so far
+            State[QNum][3] = 0; //incrementing percent-correct values of selected answers
+            State[QNum][4] = 0; //penalties incurred for hints
+            State[QNum][5] = ''; //Sequence of answers chosen by number
+        }
+        else{
+            State[QNum] = null;
+        }
+    }
+}
+
+
+
+function CheckMCAnswer(QNum, ANum, Btn){
+//if question doesn't exist, bail
+    if (State[QNum].length < 1){return;}
+    
+//Get the feedback
+    Feedback = I[QNum][3][ANum][1];
+    
+//Now show feedback and bail if question already complete
+    if (State[QNum][0] > -1){
+//Add an extra message explaining that the question
+// is finished if defined by the user
+        if (strQuestionFinished.length > 0){Feedback += '<br />' + strQuestionFinished;}
+//Show the feedback
+        ShowMessage(Feedback);
+//New for 6.2.2.1: If you want to mark an answer as correct even when it's the final choice, uncomment this line.
+//      if (I[QNum][3][ANum][2] >= 1){Btn.innerHTML = CorrectIndicator;}else{Btn.innerHTML = IncorrectIndicator;}   
+        return;
+    }
+    
+//Hide the button while processing
+    Btn.style.display = 'none';
+
+//Increment the number of tries
+    State[QNum][2]++;
+    
+//Add the percent-correct value of this answer
+    State[QNum][3] += I[QNum][3][ANum][3];
+    
+//Store the try number in the answer part of the State array, for tracking purposes
+    State[QNum][1][ANum] = State[QNum][2];
+    if (State[QNum][5].length > 0){State[QNum][5] += ' | ';}
+    State[QNum][5] += String.fromCharCode(65+ANum);
+    
+//Should this answer be accepted as correct?
+    if (I[QNum][3][ANum][2] < 1){
+//It's wrong
+
+//Mark the answer
+        Btn.innerHTML = IncorrectIndicator;
+        
+//Remove any previous score unless exercise is finished (6.0.3.8+)
+        if (Finished == false){
+            WriteToInstructions(strInstructions);
+        }   
+        
+//Check whether this leaves just one MC answer unselected, in which case the Q is terminated
+        var RemainingAnswer = FinalAnswer(QNum);
+        if (RemainingAnswer > -1){
+//Behave as if the last answer had been selected, but give no credit for it
+//Increment the number of tries
+            State[QNum][2]++;       
+        
+//Calculate the score for this question
+            CalculateMCQuestionScore(QNum);
+            
+//Get the overall score and add it to the feedback
+            CalculateOverallScore();
+//New for 6.2.2.1
+            var QsDone = CheckQuestionsCompleted();
+            if ((ContinuousScoring == true)||(Finished == true)){
+                Feedback += '<br />' + YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone;
+                WriteToInstructions(YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone);
+            }
+            else{
+                WriteToInstructions(QsDone);
+            }
+        }
+    }
+    else{
+//It's right
+//Mark the answer
+        Btn.innerHTML = CorrectIndicator;
+                
+//Calculate the score for this question
+        CalculateMCQuestionScore(QNum);
+        
+//New for 6.2.2.0
+        var QsDone = CheckQuestionsCompleted();
+
+//Get the overall score and add it to the feedback
+        if (ContinuousScoring == true){
+            CalculateOverallScore();
+            if ((ContinuousScoring == true)||(Finished == true)){
+                Feedback += '<br />' + YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone;
+                WriteToInstructions(YourScoreIs + ' ' + Score + '%.' + '<br />' + QsDone);
+            }
+        }
+        else{
+            WriteToInstructions(QsDone);
+        }
+    }
+    
+//Show the button again
+    Btn.style.display = 'inline';
+    
+//Finally, show the feedback    
+    ShowMessage(Feedback);
+    
+//Check whether all questions are now done
+    CheckFinished();
+}
+
+function CalculateMCQuestionScore(QNum){
+    var Tries = State[QNum][2] + State[QNum][4]; //include tries and hint penalties
+    var PercentCorrect = State[QNum][3];
+    var TotAns = GetTotalMCAnswers(QNum);
+    var HintPenalties = State[QNum][4];
+    
+//Make sure it's not already complete
+
+    if (State[QNum][0] < 0){
+//Allow for Hybrids
+        if (HintPenalties >= 1){
+            State[QNum][0] = 0;
+        }
+        else{
+//This line calculates the score for this question
+            if (TotAns == 1){
+                State[QNum][0] = 1;
+            }
+            else{
+                State[QNum][0] = ((TotAns-((Tries*100)/State[QNum][3]))/(TotAns-1));
+            }
+        }
+//Fix for Safari bug added for version 6.0.3.42 (negative infinity problem)
+        if ((State[QNum][0] < 0)||(State[QNum][0] == Number.NEGATIVE_INFINITY)){
+            State[QNum][0] = 0;
+        }
+    }
+}
+
+function GetTotalMCAnswers(QNum){
+    var Result = 0;
+    for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+        if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+            Result++;
+        }
+    }
+    return Result;
+}
+
+function FinalAnswer(QNum){
+    var UnchosenAnswers = 0;
+    var FinalAnswer = -1;
+    for (var ANum=0; ANum<I[QNum][3].length; ANum++){
+        if (I[QNum][3][ANum][4] == 1){ //This is an MC answer
+            if (State[QNum][1][ANum] < 1){ //This answer hasn't been chosen yet
+                UnchosenAnswers++;
+                FinalAnswer = ANum;
+            }
+        }
+    }
+    if (UnchosenAnswers == 1){
+        return FinalAnswer;
+    }
+    else{
+        return -1;
+    }
+}
+
+
+
+
+
+function CalculateOverallScore(){
+    var TotalWeighting = 0;
+    var TotalScore = 0;
+    
+    for (var QNum=0; QNum<State.length; QNum++){
+        if (State[QNum] != null){
+            if (State[QNum][0] > -1){
+                TotalWeighting += I[QNum][0];
+                TotalScore += (I[QNum][0] * State[QNum][0]);
+            }
+        }
+    }
+    if (TotalWeighting > 0){
+        Score = Math.floor((TotalScore/TotalWeighting)*100);
+    }
+    else{
+//if TotalWeighting is 0, no questions so far have any value, so 
+//no penalty should be shown.
+        Score = 100; 
+    }
+}
+
+//New for 6.2.2.0
+function CheckQuestionsCompleted(){
+    if (ShowCompletedSoFar == false){return '';}
+    var QsCompleted = 0;
+    for (var QNum=0; QNum<State.length; QNum++){
+        if (State[QNum] != null){
+            if (State[QNum][0] >= 0){
+                QsCompleted++;
+            }
+        }
+    }
+//Fixes for 6.2.2.2
+    if (QsCompleted >= QArray.length){
+        return ExerciseCompleted;
+    }
+    else{
+        return CompletedSoFar + ' ' + QsCompleted + '/' + QArray.length + '.';
+    }
+}
+
+function CheckFinished(){
+    var FB = '';
+    var AllDone = true;
+    for (var QNum=0; QNum<State.length; QNum++){
+        if (State[QNum] != null){
+            if (State[QNum][0] < 0){
+                AllDone = false;
+            }
+        }
+    }
+    if (AllDone == true){
+    
+//Report final score and submit if necessary
+        CalculateOverallScore();
+        FB = YourScoreIs + ' ' + Score + '%.';
+        if (ShowCorrectFirstTime == true){
+            var CFT = 0;
+            for (QNum=0; QNum<State.length; QNum++){
+                if (State[QNum] != null){
+                    if (State[QNum][0] >= 1){
+                        CFT++;
+                    }
+                }
+            }
+            FB += '<br />' + CorrectFirstTime + ' ' + CFT + '/' + QsToShow;
+        }
+        
+//New for 6.2.2.0
+        FB += '<br />' + ExerciseCompleted;
+        
+        WriteToInstructions(FB);
+        
+        Finished == true;
+
+
+
+
+        TimeOver = true;
+        Locked = true;
+        
+
+
+        Finished = true;
+        Detail = '<?xml version="1.0"?><hpnetresult><fields>';
+        for (QNum=0; QNum<State.length; QNum++){
+            if (State[QNum] != null){
+                if (State[QNum][5].length > 0){
+                    Detail += '<field><fieldname>Question #' + (QNum+1) + '</fieldname><fieldtype>question-tracking</fieldtype><fieldlabel>Q ' + (QNum+1) + '</fieldlabel><fieldlabelid>QuestionTrackingField</fieldlabelid><fielddata>' + State[QNum][5] + '</fielddata></field>';
+                }
+            }
+        }
+        Detail += '</fields></hpnetresult>';
+        setTimeout('Finish()', SubmissionTimeout);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+//-->
+
+//]]>
+
+</script>
+
+
+
+
+ 
+  </body>
+</html> 
