@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="ico/favicon.png">
     <title>CIUDADANÍAS</title>
     <!-- Bootstrap core CSS -->
-    <!--link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -264,6 +264,16 @@
             margin: -30px 0 0;
             padding: 0 25px 25px;
         }
+        .carousel-inner>.item>img,
+        .carousel-inner>.item>a>img {
+            width: 100%;
+        }
+        td.LeftItem {
+            text-align: right;
+        }
+        td.RightItem {
+            text-align: left;
+        }
     /* Estos estilos ya los trae el tema de Moodle */
         body {
             background-color: #2f3d46;
@@ -304,7 +314,7 @@
 
   
     <div class="container-fluid">
- <div class="tab-content">
+        <div class="tab-content">
             <div class="row-fluid">
                 <div class="span12 bloqueModulo modulo5">
                     <h4>Módulo 5: Derechos Humanos</h4>
@@ -340,17 +350,44 @@
             <div class="tab-pane contenido5" id="pag3">
                 <div class="row-fluid">
                     <div class="span12">
-                        <h2>Instrucciones</h2>
-                <p>
-Una invitación al participante: ¿Qué piensa usted de esto?:  Aparecen cuatro viñetas sucesivas<br>
-<strong>Viñeta 1:</strong> Una adolescente conociendo a un señor en una heladería.<br>
-<strong>Viñeta 2: </strong>El señor haciendo un halago o invitación extraña a la joven. <br>
-<strong>Viñeta 3: </strong> La joven pensando con extrañeza en lo dicho por el señor.<br> 
-<strong>Viñeta 4: </strong>La joven se va molesta o asustada y deja al señor sentado.<br>
-<strong>Opcional: </strong>debajo de las viñetas poner la primera oración del caso: Este señor es un mentiroso y abusivo. ¡Uf, me salvé de milagro!... (Sugerencia: debajo de la viñeta 4).
-Las viñetas y el texto sugestivo son un campo único sobre el cual puede se puede hacer clic.<br>
-Una pregunta al participante: ¿Qué sucedió? La persona interesada hará clic en ese campo.  El clic lleva al texto narrativo. 
-</p>  
+                        <h2>Cómic</h2>
+                        <p>¿Qué piensa usted de esto?</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+                        
+                <div class="row-fluid">
+                    <div class="span2">&nbsp;</div>
+                    <div class="span8">
+                        <!-- Carrusel de viñetas - 3 -->
+                        <div id="carruselDDHH" class="carousel slide" data-interval="10000" >
+                            <ol class="carousel-indicators">
+                                <li data-target="#carruselDDHH" data-slide-to="0" class="active"></li>
+                                <li data-target="#carruselDDHH" data-slide-to="1"></li>
+                                <li data-target="#carruselDDHH" data-slide-to="2"></li>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="active item">
+                                    <img src="ddhh01.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="ddhh02.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="ddhh03.svg">
+                                </div>
+                            </div><!-- /.carousel-inner -->
+                            <!-- Carousel nav -->
+                            <a class="carousel-control left" href="#carruselDDHH" data-slide="prev">&lsaquo;</a>
+                            <a class="carousel-control right" href="#carruselDDHH" data-slide="next">&rsaquo;</a>
+                        </div><!-- /#carruselAgua .carousel .slide -->
+                    </div>
+                    <div class="span2">&nbsp;</div>
+                </div><!-- /.row-fluid -->
+                
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>¿Qué sucedió?</p>  
                     </div><!-- /.span12 -->
                 </div><!-- ./row-fluid -->
             </div><!-- /.tab-pane #pag3 -->
@@ -444,8 +481,9 @@ Pero, ¿por qué la trata de personas afecta el ejercicio de la ciudadanía? Vea
 </form>
 </div>
 
-<button id="CheckButton2" class="FuncButton" onmouseover="FuncBtnOver(this)" onfocus="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onblur="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="CheckAnswers()">&nbsp;Comprobar respuesta&nbsp;</button>
-
+    <div style="margin: auto; width: 200px;">
+        <button id="CheckButton2" class="FuncButton" onmouseover="FuncBtnOver(this)" onfocus="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onblur="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="CheckAnswers()">&nbsp;Comprobar respuesta&nbsp;</button>
+    </div>
 </div>
 
 
@@ -486,7 +524,7 @@ Pero, ¿por qué la trata de personas afecta el ejercicio de la ciudadanía? Vea
                         <p>¿Qué relación encuentra usted entre dignidad humana y trata de personas?<br>
 ¿Cómo afecta la trata de personas el ejercicio de la ciudadanía?<br>
 ¿Educar para el ejercicio de la ciudadanía ayuda a prevenir la trata de personas? ¿Por qué? </p>
-                        <p>Puede responder haciendo clic sobre alguna de las anteriores preguntas. El participante escoge una pregunta y responde haciendo clic sobre ella. El clic lo lleva a una caja de texto. </p>
+                        <p>Responda y comente en la <a target="_blank" href="http://ciudadanos.ning.com">Red Social</a></p>
                     </div><!-- /.span12 -->
                 </div><!-- /.row-fluid -->
             </div><!-- /.tab-pane #pag7 -->
@@ -509,11 +547,7 @@ Pero, ¿por qué la trata de personas afecta el ejercicio de la ciudadanía? Vea
                             <li>Escucha activa.</li>
                             <li>Asertividad.</li>
                         </ul>
-<p>A continuación cuenta con dos opciones para construir su propio relato, elija aquella que más le guste.</p>
-
-<p><strong>Opción 1:</strong> Caja de texto para construir un relato escrito.</p>
-<p><strong>Opción 2:</strong> Herramientas para construir un cómic.</p>
-
+                        <p>Construya su propio relato en la <a target="_blank" href="http://ciudadanos.ning.com">Red Social</a></p>
                     </div><!-- /.span12 -->
                 </div><!-- /.row-fluid -->
             </div><!-- /.tab-pane #pag8 -->
@@ -548,6 +582,16 @@ Otras<br>
                 </div><!-- /.row-fluid -->
             </div><!-- /.tab-pane #pag9 -->
             
+             <div class="tab-pane contenido5" id="pag10">
+                <div class="row-fluid">
+                    <div class="span12">
+                       <h2>Acontecimiento ciudadano:</h2> 
+                        <p>A continuación realice la actividad <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">Acontecimiento Ciudadano.</a></p>
+                        <p>Gracias por su participación.</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag8 --> 
+            
           
             
             
@@ -561,10 +605,10 @@ Otras<br>
                 <li><a href="#pag4">4</a></li>
                 <li><a href="#pag5">5</a></li>
                 <li><a href="#pag6">6</a></li>
-                <li><a href="#pag6">7</a></li>
-                <li><a href="#pag6">8</a></li>
-                <li><a href="#pag6">9</a></li>
-                
+                <li><a href="#pag7">7</a></li>
+                <li><a href="#pag8">8</a></li>
+                <li><a href="#pag9">9</a></li>
+                <li><a href="#pag10">10</a></li>
             </ul>
         </div><!-- /.pagination -->
     
@@ -581,14 +625,14 @@ Otras<br>
                 $('.pagination a').click(function (e) {
                     e.preventDefault();
                     $(this).tab('show');
+                    window.scrollTo(0, 0);
                 });
                 $('.FuncButton').click(function() {
                     $('#respuesta').modal();
                     //$(this).html('<i class="fa fa-check"></i>');
                 });
                 $('i.clic').click(function() {
-                    $(this).removeClass('fa-square-o');
-                    $(this).addClass('fa-check-square-o');
+                    $(this).removeClass('fa-square-o').addClass('fa-check-square-o');
                 });
             });
         </script>

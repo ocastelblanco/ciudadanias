@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="ico/favicon.png">
     <title>CIUDADANÍAS</title>
     <!-- Bootstrap core CSS -->
-    <!--link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -254,6 +254,10 @@
             margin: -30px 0 0;
             padding: 0 25px 25px;
         }
+        .carousel-inner>.item>img,
+        .carousel-inner>.item>a>img {
+            width: 100%;
+        }
     /* Estos estilos ya los trae el tema de Moodle */
         body {
             background-color: #2f3d46;
@@ -300,26 +304,82 @@
                     <h4>Módulo 2: Prevención del acoso escolar.</h4>
                 </div><!-- /.span12 -->
             </div><!-- ./row-fluid -->
-            <div class="tab-pane active contenido2" id="pag1">
+            
+            
+            <div class="tab-pane active contenido1" id="pag1">
+                <div class="row-fluid">
+                    <div class="span2">&nbsp;</div>
+                    <div class="span8">
+                        <div id="vinetas" class="carousel slide" data-interval="false">
+                            <ol class="carousel-indicators">
+                                <li data-target="#vinetas" data-slide-to="0" class="active"></li>
+                                <li data-target="#vinetas" data-slide-to="1"></li>
+                                <li data-target="#vinetas" data-slide-to="2"></li>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="active item">
+                                    <img src="acoso01.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="acoso02.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="acoso03.svg">
+                                </div>
+                            </div>
+                            <!-- Carousel nav -->
+                            <a class="carousel-control left" href="#vinetas" data-slide="prev">&lsaquo;</a>
+                            <a class="carousel-control right" href="#vinetas" data-slide="next">&rsaquo;</a>
+                        </div><!-- /#vinetas -->
+                    </div><!-- /.span8 -->                    
+                    <div class="span2">&nbsp;</div>
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag1 -->
+            
+            
+            <div class="tab-pane contenido2" id="pag2">
                 <div class="row-fluid">
                     <div class="span12">
-                        <h2></h2>
-                        <p>Pepe, un acosador del grado once, molesta a Raúl, de noveno, porque este es gay. En la historieta vemos cómo al principio, Pepe molestaba a Raúl en privado, pero después vemos a Pepe y a sus amigos intimidando a Raúl en el patio de recreo o en los baños. Luego, Pepe ve a Raúl al borde de la cancha de fútbol e intenta darle un balonazo en la cara; pero le pega al rector y no a Raúl. </p>
-                        <p>Supongamos que Raúl es de mayor estatura, peso y fuerza que Pepe; supongamos que a Raúl no le gusta el futbol, que incluso lo odia por su rudeza física. Supongamos que Raúl hace a Pepe la vida imposible con empujones, frases agresivas, burlas e insultos relacionados con el gusto que Pepe tiene por el fútbol.</p>
+                        <h2>Actividad interactiva</h2>
+                        <p>Pepe es un  futbolista furibundo de mayor estatura, peso y fuerza que Ra&#x00fa;l. Ra&#x00fa;l odia el futbol por su rudeza f&#x00ed;sica. Pepe hace a Ra&#x00fa;l la vida imposible con empujones, frases agresivas, burlas e insultos.</p>
                         <p>
                             <div id="MainDiv" class="StdDiv">
                                 <ol class="QuizQuestions" id="Questions">
-                                <li class="QuizQuestion" id="Q_0"><div class="QuestionText">Usted dir&#x00ED;a que: <br /></div><ol class="MCAnswers"><li id="Q_0_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_0_Btn" onclick="CheckMCAnswer(0,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Ra&#x00FA;l tiene derecho a agredir a Pepe porque el f&#x00FA;tbol es un deporte muy rudo y a Pepe le gusta esa rudeza.</li><li id="Q_0_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_1_Btn" onclick="CheckMCAnswer(0,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Ra&#x00FA;l s&#x00F3;lo est&#x00E1; teniendo una conducta pasajera de adolescente en busca de identidad.</li><li id="Q_0_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_2_Btn" onclick="CheckMCAnswer(0,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Si Pepe hubiera protestado a la primera agresi&#x00F3;n las cosas no habr&#x00ED;an pasado a mayores.</li><li id="Q_0_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_3_Btn" onclick="CheckMCAnswer(0,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;La sociedad deber&#x00ED;a hacer respetar a Pepe.</li><li id="Q_0_4"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_0_4_Btn" onclick="CheckMCAnswer(0,4,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Ra&#x00FA;l no respeta las diferencias.</li></ol></li>
+                                    <li class="QuizQuestion" id="Q_0"><div class="QuestionText">Usted dir&#x00ED;a que: <br /></div>
+                                        <ol class="MCAnswers">
+                                            <li id="Q_0_0">
+                                            <button class="FuncButton"  onfocus="FuncBtnOver(this)"  onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)"  onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)"  onmouseup="FuncBtnOut(this)"  id="Q_0_0_Btn"  onclick="CheckMCAnswer(0,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Pepe puede agredir a Ra&#x00fa;l porque el f&#x00fa;tbol es un deporte muy rudo y a Pepe le gusta esa rudeza. 
+                                            </li>
+                                            <li id="Q_0_1">
+                                            <button class="FuncButton"  onfocus="FuncBtnOver(this)"  onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)"  onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)"  onmouseup="FuncBtnOut(this)"  id="Q_0_1_Btn"  onclick="CheckMCAnswer(0,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Pepe s&#x00f3;lo est&#x00e1; teniendo una conducta pasajera de adolescente en busca de identidad. 
+                                            </li>
+                                            <li id="Q_0_2">
+                                            <button class="FuncButton"  onfocus="FuncBtnOver(this)"  onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)"  onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)"  onmouseup="FuncBtnOut(this)"  id="Q_0_2_Btn"  onclick="CheckMCAnswer(0,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;La sociedad deber&#x00ed;a hacer respetar a Ra&#x00fa;l. 
+                                            </li>
+                                            <li id="Q_0_3">
+                                            <button class="FuncButton"  onfocus="FuncBtnOver(this)"  onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)"  onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)"  onmouseup="FuncBtnOut(this)"  id="Q_0_3_Btn"  onclick="CheckMCAnswer(0,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Si Ra&#x00fa;l hubiera protestado a la primera agresi&#x00f3;n las cosas no habr&#x00ed;an pasado a mayores. 
+                                            </li>
+                                            <li id="Q_0_4">
+                                            <button class="FuncButton"  onfocus="FuncBtnOver(this)"  onblur="FuncBtnOut(this)"  onmouseover="FuncBtnOver(this)"  onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)"  onmouseup="FuncBtnOut(this)"  id="Q_0_4_Btn"  onclick="CheckMCAnswer(0,4,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Pepe no respeta las diferencias.
+                                            </li>
+                                        </ol>
+                                    </li>
                                 </ol>
+
+
+
+
+
                             </div>
                         </p>
                         <br><br>
                         <p>¿Qué harían ustedes como maestros en cada uno de estos dos casos? Por favor enviar sus comentarios a la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a>. </p>
                     </div><!-- /.span12 -->
                 </div><!-- ./row-fluid -->
-            </div><!-- /.tab-pane #pag1 -->
+            </div><!-- /.tab-pane #pag2 -->
             
-            <div class="tab-pane contenido2" id="pag2">
+            <div class="tab-pane contenido2" id="pag3">
                 <div class="row-fluid">
                     <div class="span12">
                         <h2>Recursos</h2>
@@ -335,16 +395,24 @@
                         
                     </div><!-- /.span12 -->
                 </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag2 -->
+            </div><!-- /.tab-pane #pag3 -->
             
-            <div class="tab-pane contenido2" id="pag3">
+            <div class="tab-pane contenido2" id="pag4">
                 <div class="row-fluid">
                     <div class="span12">   
                     <!-- Hot potato -->
                         <p>
                             <div id="MainDiv" class="StdDiv">
                                 <ol class="QuizQuestions" id="Questions">
-                                <li class="QuizQuestion" id="Q_1"><div class="QuestionText">La dignidad humana es:</div><ol class="MCAnswers"><li id="Q_1_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Sentirse respetado y bien tratado.</li><li id="Q_1_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Tener oportunidades para realizar sus sue&#x00F1;os.</li><li id="Q_1_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_2_Btn" onclick="CheckMCAnswer(1,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;No dejarse agredir de nadie.</li><li id="Q_1_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_3_Btn" onclick="CheckMCAnswer(1,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Tener el afecto de la gente cercana.</li><li id="Q_1_4"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_4_Btn" onclick="CheckMCAnswer(1,4,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Que haya paz.</li></ol></li>
+                                <li class="QuizQuestion" id="Q_1"><div class="QuestionText">La dignidad humana es:</div>
+                                    <ol class="MCAnswers">
+                                        <li id="Q_1_0"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_0_Btn" onclick="CheckMCAnswer(1,0,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Sentirse respetado y bien tratado.</li>
+                                        <li id="Q_1_1"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_1_Btn" onclick="CheckMCAnswer(1,1,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Tener oportunidades para realizar sus sue&#x00F1;os.</li>
+                                        <li id="Q_1_2"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_2_Btn" onclick="CheckMCAnswer(1,2,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;No dejarse agredir de nadie.</li>
+                                        <li id="Q_1_3"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_3_Btn" onclick="CheckMCAnswer(1,3,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Tener el afecto de la gente cercana.</li>
+                                        <li id="Q_1_4"><button class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)"  onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" id="Q_1_4_Btn" onclick="CheckMCAnswer(1,4,this)">&nbsp;&nbsp;?&nbsp;&nbsp;</button>&nbsp;&nbsp;Que haya paz.</li>
+                                        </ol>
+                                    </li>
                                 </ol>
                             </div>
                         </p>
@@ -354,15 +422,6 @@
                             <br>
                             Ahora, ¿cómo considera que se define el acoso entre compañeros escolares desde  el concepto de dignidad humana?
                         </p>
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag3 -->
-            
-            <div class="tab-pane contenido2" id="pag4">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <iframe src="//player.vimeo.com/video/52340045" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="http://vimeo.com/52340045">Real Time - Humana</a> from <a href="http://vimeo.com/emanuelecolombo">Emanuele Colombo</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
-                        <p>Como todos los ejercicios de valoración, este test tiene provee retroalimentaciones para cada opción, tanto para las “correctas” como para las “incorrectas”. </p>
                     </div><!-- /.span12 -->
                 </div><!-- /.row-fluid -->
             </div><!-- /.tab-pane #pag4 -->
@@ -486,7 +545,7 @@
                         <p>Comparta con otros usuarios del curso las causas del acoso escolar que conoció, la acción que realizó, la estrategia que utilizó y los resultados que obtuvo:</p>
                         <p>Participe en la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a>.</p>
                         
-                    </div><!-- /.span13 -->
+                    </div><!-- /.span12 -->
                 </div><!-- /.row-fluid -->
             </div><!-- /.tab-pane #pag13 -->
             
@@ -542,6 +601,7 @@
                 $('.pagination a').click(function (e) {
                     e.preventDefault();
                     $(this).tab('show');
+                    window.scrollTo(0, 0);
                 });
                 $('.FuncButton').click(function() {
                     $('#respuesta').modal();
@@ -1205,24 +1265,29 @@ function SetQNumReadout(){
 }
 
 var I=new Array();
-I[0]=new Array();I[0][0]=100;
-I[0][1]='';
-I[0][2]='0';
-I[0][3]=new Array();
-I[0][3][0]=new Array('Ra\u00FAl tiene derecho a agredir a Pepe porque el f\u00FAtbol es un deporte muy rudo y a Pepe le gusta esa rudeza.','Retroalimentaci\u00F3n.',1,100,1);
-I[0][3][1]=new Array('Ra\u00FAl s\u00F3lo est\u00E1 teniendo una conducta pasajera de adolescente en busca de identidad.','Retroalimentaci\u00F3n.',1,100,1);
-I[0][3][2]=new Array('Si Pepe hubiera protestado a la primera agresi\u00F3n las cosas no habr\u00EDan pasado a mayores.','Retroalimentaci\u00F3n.',1,100,1);
-I[0][3][3]=new Array('La sociedad deber\u00EDa hacer respetar a Pepe.','Retroalimentaci\u00F3n.',1,100,1);
-I[0][3][4]=new Array('Ra\u00FAl no respeta las diferencias.','Retroalimentaci\u00F3n.',1,100,1);
-I[1]=new Array();I[1][0]=100;
+
+I[0] = new Array();
+I[0][0] = 100;
+I[0][1] = '';
+I[0][2] = '0';
+I[0][3] = new Array();
+I[0][3][0] = new Array('Pepe puede agredir a Ra\u00fal porque el f\u00fatbol es un deporte muy rudo y a Pepe le gusta esa rudeza. ','\u00bfDir\u00eda usted que alguien que gusta del futbol puede agredir a alguien s\u00f3lo porque odia el futbol ?  ',0,0,1);
+I[0][3][1] = new Array('Pepe s\u00f3lo est\u00e1 teniendo una conducta pasajera de adolescente en busca de identidad. ','\u00bfSe justifica que Pepe utilice a Ra\u00fal como cabeza de turco en su "busca de identidad"? ',0,0,1);
+I[0][3][2] = new Array('La sociedad deber\u00eda hacer respetar a Ra\u00fal. ','El entorno escolar debe proteger a todos sus estudiantes; sin importar sus gustos o sus preferencias sexuales. ',1,100,1);
+I[0][3][3] = new Array('Si Ra\u00fal hubiera protestado a la primera agresi\u00f3n las cosas no habr\u00edan pasado a mayores. ','Las personas vulnerables o m\u00e1s d\u00e9biles  deben recibir apoyo y proteccci\u00f3n. ',0,0,1);
+I[0][3][4] = new Array('Pepe no respeta las diferencias.','Agredir a las personas diferentes es una conducta que vulnera sus derecho a la diversidad y degrada la convivencia en la escuela.   ',1,100,1);
+
+
+I[1]=new Array();
+I[1][0]=100;
 I[1][1]='';
 I[1][2]='0';
 I[1][3]=new Array();
-I[1][3][0]=new Array('Sentirse respetado y bien tratado.','Retroalimentaci\u00F3n.',1,100,1);
-I[1][3][1]=new Array('Tener oportunidades para realizar sus sue\u00F1os.','Retroalimentaci\u00F3n.',1,100,1);
-I[1][3][2]=new Array('No dejarse agredir de nadie.','Retroalimentaci\u00F3n.',1,100,1);
-I[1][3][3]=new Array('Tener el afecto de la gente cercana.','Retroalimentaci\u00F3n.',1,100,1);
-I[1][3][4]=new Array('Que haya paz.','Retroalimentaci\u00F3n.',1,100,1);
+I[1][3][0]=new Array('Sentirse respetado y bien tratado.','El entorno de la sociedad debe proteger a las personas y permitir que se desarrollen sus capacidades y sus potencias.',1,100,1);
+I[1][3][1]=new Array('Tener oportunidades para realizar sus sue\u00F1os.','La sociedad debe permitir que todas las personas puedan proponerse metas y lograr sus objetivos.',1,100,1);
+I[1][3][2]=new Array('No dejarse agredir de nadie.','El entorno de la sociedad debe proteger a las personas, sin distingos de ninguna clase.',1,100,1);
+I[1][3][3]=new Array('Tener el afecto de la gente cercana.','Las personas deben acompa\u00f1ar y cuidar a sus seres m\u00e1s cercanos, y por extensi\u00f3n a toda la humanidad.',1,100,1);
+I[1][3][4]=new Array('Que haya paz.','La sociedad debe procurar un entorno propicio al desarrollo y protecci\u00f3n de la vida.',1,100,1);
 
 
 function StartUp(){

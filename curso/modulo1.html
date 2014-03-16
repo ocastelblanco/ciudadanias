@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="ico/favicon.png">
     <title>CIUDADANÍAS</title>
     <!-- Bootstrap core CSS -->
-    <!--link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"-->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -17,9 +17,11 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.0/holder.js"></script>
+    
     <style type="text/css">
         .continuebutton {
             display:none;
@@ -254,6 +256,10 @@
             margin: -30px 0 0;
             padding: 0 25px 25px;
         }
+        .carousel-inner>.item>img,
+        .carousel-inner>.item>a>img {
+            width: 100%;
+        }
     /* Estos estilos ya los trae el tema de Moodle */
         body {
             background-color: #2f3d46;
@@ -300,6 +306,34 @@
                 </div><!-- /.span12 -->
             </div><!-- ./row-fluid -->
             <div class="tab-pane active contenido1" id="pag1">
+                <div class="row-fluid">
+                    <div class="span2">&nbsp;</div>
+                    <div class="span8">
+                        <div id="vinetas" class="carousel slide" data-interval="false">
+                            <ol class="carousel-indicators">
+                                <li data-target="#vinetas" data-slide-to="0" class="active"></li>
+                                <li data-target="#vinetas" data-slide-to="1"></li>
+                                <li data-target="#vinetas" data-slide-to="2"></li>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="active item">
+                                    <img src="convivencia01.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="convivencia02.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="convivencia03.svg">
+                                </div>
+                            </div>
+                            <!-- Carousel nav -->
+                            <a class="carousel-control left" href="#vinetas" data-slide="prev">&lsaquo;</a>
+                            <a class="carousel-control right" href="#vinetas" data-slide="next">&rsaquo;</a>
+                        </div><!-- /#vinetas -->
+                    </div><!-- /.span8 -->                    
+                    <div class="span2">&nbsp;</div>
+                </div><!-- /.row-fluid -->
                 <div class="row-fluid">
                     <div class="span12">
                         <h2>Actividad 1 – ¿Y qué es convivencia escolar?</h2>
@@ -460,6 +494,7 @@
                 $('.pagination a').click(function (e) {
                     e.preventDefault();
                     $(this).tab('show');
+                    window.scrollTo(0, 0);
                 });
                 $('.FuncButton').click(function() {
                     $('#respuesta').modal();
@@ -473,6 +508,7 @@
         <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
+    
     <script type="text/javascript">
 
 //<![CDATA[
