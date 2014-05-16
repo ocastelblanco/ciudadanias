@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="ico/favicon.png">
     <title>CIUDADANÍAS</title>
     <!-- Bootstrap core CSS -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!--link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"-->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -20,6 +20,8 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.0/holder.js"></script>
+
+    
     <style type="text/css">
         .continuebutton {
             display:none;
@@ -260,9 +262,17 @@
         }
         td.LeftItem {
             text-align: right;
+            width: 50%;
         }
         td.RightItem {
             text-align: left;
+            width: 50%;
+        }
+        td.RightItem select {
+            width: 100%;
+        }
+        #MainDiv {
+            height: auto;
         }
     /* Estos estilos ya los trae el tema de Moodle */
         body {
@@ -270,304 +280,7 @@
             color:#FFFFFF;
         }
     </style>
-  </head>
-
-  <body onload="StartUp()">
-
-    <div id="InstructionsDiv" style="display: none;" class="StdDiv">
-        <div id="Instructions"></div>
-    </div>
-    <span id="QNumReadout" style="display: none;" class="QNum">&nbsp;</span>
-
-
-        
-        <div class="modal fade" id="respuesta" tabindex="-1" role="dialog" aria-labelledby="Respuesta" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Respuesta</h4>
-              </div>
-              <div class="modal-body">
-                <div class="Feedback" id="FeedbackDiv">
-                    <div class="FeedbackText" id="FeedbackContent"></div>
-                    <button style="display: none;" id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button id="cerrarModal" data-dismiss="modal" type="button" class="btn btn-primary">Cerrar ventana</button>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
   
-    <div class="container-fluid">
-    <div class="tab-content">
-            <div class="row-fluid">
-                <div class="span12 bloqueModulo modulo4">
-                    <h4>Módulo 4: Medio Ambiente</h4>
-                </div><!-- /.span12 -->
-            </div><!-- ./row-fluid -->
-            <div class="tab-pane active contenido4" id="pag1">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>Medio Ambiente y Derecho al Agua</h2>
-                        <p>Las últimas décadas del Siglo XX y lo que va del XXI se han caracterizado por una creciente preocupación mundial por el calentamiento global y la protección del medio ambiente; en este contexto se realizan múltiples eventos internacionales que buscan asignar y dar alcance a responsabilidades de los Estados en la protección del medio ambiente entre los que se incluyen el derecho al agua, la protección del suelo, el saneamiento ambiental tal como se establece en la Declaración de Dublín (1992) que se pronunció sobre el agua y el desarrollo sostenible, estableciendo cuatro principios rectores que reconocen que: </p>
-                        <p><strong>Principio 1.</strong> El agua dulce es un recurso finito y vulnerable, esencial para sostener la vida, el desarrollo y el medio ambiente.</p> 
-                        <p><strong>Principio 2.</strong> El aprovechamiento y la gestión del agua deben inspirarse en un planteamiento basado en la participación de los usuarios, los planificadores y los responsables de las decisiones a todos los niveles.</p> 
-                        <p><strong>Principio 3.</strong> La mujer desempeña un papel fundamental en el abastecimiento, la gestión y la protección del agua.</p> 
-                        <p><strong>Principio 4.</strong> El agua tiene un valor económico en todos sus diversos usos en competencia a los que se destina y debería reconocérsele como un bien económico.</p>
-                        <p>Lo anterior hace evidente la importancia y la necesidad de una parte que los Estados formulen y pongan en marcha políticas públicas que concreten estos principios, de otra que desarrollen las políticas educativas para que la formación ciudadana haga visible la responsabilidad de la ciudadanía, de las organizaciones de la sociedad civil en el cuidado y protección del agua en los términos que las conferencias y convenciones internacionales lo establecen.</p>
-                    </div><!-- /.span12 -->
-                </div><!-- ./row-fluid -->
-            </div><!-- /.tab-pane #pag1 -->
-            
-            
-            <div class="tab-pane contenido4" id="pag2">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>Bienvenida</h2>
-                        <p>Participando de los diferentes módulos, tal vez usted se ha preguntado si existen algunos otros asuntos que hagan parte del ejercicio de la ciudadanía. De entrada queremos responder que sí a esa pregunta. Son muchos los asuntos de los que deben ocuparse los ciudadanos y ciudadanas de esta época de la historia del mundo y de la humanidad. Uno de esos asuntos emergentes en el  ejercicio de la ciudadanía es la importancia de educar para  asumir el cuidado del agua como una oportunidad para la permanencia de la vida en este planeta. ¿Semejante tarea será o no responsabilidad de un ciudadano? ¿Será o no necesario educar para cuidar el agua?
-</p>
-<h3>Introducción</h3>
-<p>A pesar de que ya estamos transitando por la segunda década del siglo XXI, y que nuestros conocimientos tecnológicos facilitan tratar y administrar el agua para el consumo humano, muchos grupos de personas NO cuentan con agua potable para el consumo diario. Así mismo, en muchos lugares donde se cuenta con agua para el consumo diario, esta es altamente costosa.  Para nadie es un secreto que el mal manejo que hacemos de nuestros recursos hídricos (se contaminan, se desperdician, se encarecen) ha generado grandes problemas de contaminación que producen enfermedades y acrecientan el problema del calentamiento global. La posibilidad de vivir dignamente pasa también por ejercer el derecho al agua, ello requiere de los ciudadanos actitudes de cuidado y ahorro que permitan proteger los recursos hídricos y garantizar el derecho al agua.</p>
-                    </div><!-- /.span12 -->
-                </div><!-- ./row-fluid -->
-            </div><!-- /.tab-pane #pag2 -->
-            <div class="tab-pane contenido4" id="pag3">
-                <div class="row-fluid">
-                    <div class="span12">
-<h3>Objetivos o resultados de aprendizaje del módulo</h3>
-<p><strong>General:</strong><br> 
-
-Reconocer el cuidado del agua como un asunto vital para las ciudadanías en formación.<br>
-
-<strong>Específicos:</strong><br>
-
-1. Sensibilizar a los participantes y a las comunidades educativas sobre la importancia de cuidar los recursos hídricos como parte del ejercicio ciudadano.  <br>                                               
-2. Promover la realización de acciones ciudadanas para el cuidado del agua.</p>
-
-<h3>Instrucciones</h3>
-<p><strong>El módulo Ciudadanía del agua</strong>está distribuido en cuatro actividades que le permitirán reflexionar sobre la problemática del agua cuando no se cuenta con ella; la relación entre el derecho al agua y el ejercicio de la ciudadanía, y el compromiso ciudadano en el desarrollo de acciones para la protección de los recursos hídricos.</p>
-<p>El módulo se desarrolla en el marco del curso masivo de formación en ciudadanía. Sin embargo, algunas de sus actividades se llevarán a cabo por medio de la Red Social. Allí podrá compartir las acciones que, como ciudadano, usted realiza para el cuidado del agua, así como aquellas políticas, programas y proyectos relacionados con el tema, entre otros.</p>
-<p>El desarrollo de las actividades requiere del participante un tiempo máximo de dos horas semanales, y el plazo para realizar cada una de ellas es de aproximadamente una semana. El módulo tiene una duración de 4 semanas distribuidas así: </p>
-<p><strong>Semana 1</strong>, reflexión sobre la problemática del agua;<br> 
-<strong>Semana 2</strong>, relación entre derecho al agua y el ejercicio de la ciudadanía (esta semana incluye la participación en un foro sobre políticas y programas educativos sobre el agua);<br> 
-<strong>Semana 3</strong>, acontecimiento ciudadano para el cuidado del agua, <br>
-<strong>Semana 4</strong>, foro sobre acciones ciudadanas para el cuidado del agua. </p>
-                    </div><!-- /.span12 -->
-                </div><!-- ./row-fluid -->
-            </div><!-- /.tab-pane #pag3 -->
-            
-            <div class="tab-pane contenido4" id="pag4">
-                <div class="row-fluid">
-                    <div class="span2">&nbsp;</div>
-                    <div class="span8">
-                        <!-- Carrusel de viñetas - 3 -->
-                        <div id="carruselAgua" class="carousel slide" data-interval="10000" >
-                            <ol class="carousel-indicators">
-                                <li data-target="#carruselAgua" data-slide-to="0" class="active"></li>
-                                <li data-target="#carruselAgua" data-slide-to="1"></li>
-                                <li data-target="#carruselAgua" data-slide-to="2"></li>
-                            </ol>
-                            <!-- Carousel items -->
-                            <div class="carousel-inner">
-                                <div class="active item">
-                                    <img src="agua01.svg">
-                                </div>
-                                <div class="item">
-                                    <img src="agua02.svg">
-                                </div>
-                                <div class="item">
-                                    <img src="agua03.svg">
-                                </div>
-                            </div><!-- /.carousel-inner -->
-                            <!-- Carousel nav -->
-                            <a class="carousel-control left" href="#carruselAgua" data-slide="prev">&lsaquo;</a>
-                            <a class="carousel-control right" href="#carruselAgua" data-slide="next">&rsaquo;</a>
-                        </div><!-- /#carruselAgua .carousel .slide -->
-                    </div>
-                    <div class="span2">&nbsp;</div>
-                </div><!-- /.row-fluid -->
-                <div class="row-fluid">
-                    <div class="span12">
-                        <p>
-                            ¿Encuentra alguna relación entre el acceso al agua potable y el ejercicio de la ciudadanía?
-                        </p> 
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag4 -->
-            
-            <div class="tab-pane contenido4" id="pag5">
-                <div class="row-fluid">
-                    <div class="span12">                        
-                        <h2>¿Sabía usted que…</h2>
-                        <p>…en el siglo XXI los conocimientos tecnológicos facilitan tratar y administrar el agua para el consumo humano?, no obstante:</p>
-                        <h3>El agua es altamente costosa.</h3>
-                        <p>Debido al  manejo de los recursos hídricos (contaminación, desperdicio, encarecimiento) se generan grandes problemas de contaminación que producen enfermedades.<br>
-                        ¡Muchos grupos humanos no cuentan con agua potable para el consumo diario!<br><br>
-<strong>Por lo anterior:</strong> la dignidad y el ejercicio de la ciudadanía se ven afectados cuando no hay agua.</p>
-                        
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag5 -->
-            
-            <div class="tab-pane contenido4" id="pag6">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>¿Cómo se ejerce una ciudadanía del agua?:</h2>
-                        <h3>¿Sabía usted que…</h3>
-                        <p>…en América Latina se encuentra el 31% del agua dulce del planeta? Sin embargo, el cambio climático y la pérdida de glaciares harán que el agua escasee y que el suministro se vea más afectado aún. Actualmente, por lo menos la cuarta parte de la población urbana y el 33% de la población rural, no cuentan con servicios de agua potable, agravando los niveles de pobreza y riesgos para la salud en una gran franja de la población.</p>
-                        <p><strong>Actividad:</strong> Según sus conocimientos sobre el derecho al agua, complete las siguientes afirmaciones:</p>
-                        <!-- Ejercicio Hot potato: -->
-
-<div id="MainDiv" class="StdDiv">
-
-
-<div id="MatchDiv" style="text-align: center;">
-
-<form id="QForm" method="post" action="" onsubmit="return false;">
-<table border="0" style="margin: 2em auto 2em auto;"><tbody id="Questions">
-
-<tr><td class="LeftItem">El Derecho Humano al Agua es...</td><td class="RightItem"><select id="s0_0"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="4">Cuidando el agua, ya que es un recurso natural limitado y un bien p&#x00FA;blico fundamental para la vida y la salud. </option>
-<option value="1">Suficiente, Saludable, Aceptable, F&#x00ED;sicamente Accesible y Asequible.</option>
-<option value="3">Sin agua potable y saneamiento, no hay ciudadan&#x00ED;a real. Sin ellas no hay salud, ni posibilidad de ejercer la ciudadan&#x00ED;a.</option>
-<option value="0">es indispensable para vivir dignamente y es condici&#x00F3;n previa para la realizaci&#x00F3;n de otros derechos humanos. </option>
-<option value="2">Los impactos de no tener agua ni inodoros son devastadores, psicol&#x00F3;gica y culturalmente.</option>
-</select></td><td></td></tr><tr><td class="LeftItem">Las siguientes son caracter&#x00ED;sticas del Derecho Humano al Agua: </td><td class="RightItem"><select id="s1_1"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="4">Cuidando el agua, ya que es un recurso natural limitado y un bien p&#x00FA;blico fundamental para la vida y la salud. </option>
-<option value="1">Suficiente, Saludable, Aceptable, F&#x00ED;sicamente Accesible y Asequible.</option>
-<option value="3">Sin agua potable y saneamiento, no hay ciudadan&#x00ED;a real. Sin ellas no hay salud, ni posibilidad de ejercer la ciudadan&#x00ED;a.</option>
-<option value="0">es indispensable para vivir dignamente y es condici&#x00F3;n previa para la realizaci&#x00F3;n de otros derechos humanos. </option>
-<option value="2">Los impactos de no tener agua ni inodoros son devastadores, psicol&#x00F3;gica y culturalmente.</option>
-</select></td><td></td></tr><tr><td class="LeftItem">El acceso al agua es un derecho humano b&#x00E1;sico, por que...</td><td class="RightItem"><select id="s2_2"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="4">Cuidando el agua, ya que es un recurso natural limitado y un bien p&#x00FA;blico fundamental para la vida y la salud. </option>
-<option value="1">Suficiente, Saludable, Aceptable, F&#x00ED;sicamente Accesible y Asequible.</option>
-<option value="3">Sin agua potable y saneamiento, no hay ciudadan&#x00ED;a real. Sin ellas no hay salud, ni posibilidad de ejercer la ciudadan&#x00ED;a.</option>
-<option value="0">es indispensable para vivir dignamente y es condici&#x00F3;n previa para la realizaci&#x00F3;n de otros derechos humanos. </option>
-<option value="2">Los impactos de no tener agua ni inodoros son devastadores, psicol&#x00F3;gica y culturalmente.</option>
-</select></td><td></td></tr><tr><td class="LeftItem">La falta de agua potable afecta la Dignidad Humana, ya que...</td><td class="RightItem"><select id="s3_3"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="4">Cuidando el agua, ya que es un recurso natural limitado y un bien p&#x00FA;blico fundamental para la vida y la salud. </option>
-<option value="1">Suficiente, Saludable, Aceptable, F&#x00ED;sicamente Accesible y Asequible.</option>
-<option value="3">Sin agua potable y saneamiento, no hay ciudadan&#x00ED;a real. Sin ellas no hay salud, ni posibilidad de ejercer la ciudadan&#x00ED;a.</option>
-<option value="0">es indispensable para vivir dignamente y es condici&#x00F3;n previa para la realizaci&#x00F3;n de otros derechos humanos. </option>
-<option value="2">Los impactos de no tener agua ni inodoros son devastadores, psicol&#x00F3;gica y culturalmente.</option>
-</select></td><td></td></tr><tr><td class="LeftItem">Una forma de ejercer mi ciudadan&#x00ED;a es&#x2026;</td><td class="RightItem"><select id="s4_4"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="4">Cuidando el agua, ya que es un recurso natural limitado y un bien p&#x00FA;blico fundamental para la vida y la salud. </option>
-<option value="1">Suficiente, Saludable, Aceptable, F&#x00ED;sicamente Accesible y Asequible.</option>
-<option value="3">Sin agua potable y saneamiento, no hay ciudadan&#x00ED;a real. Sin ellas no hay salud, ni posibilidad de ejercer la ciudadan&#x00ED;a.</option>
-<option value="0">es indispensable para vivir dignamente y es condici&#x00F3;n previa para la realizaci&#x00F3;n de otros derechos humanos. </option>
-<option value="2">Los impactos de no tener agua ni inodoros son devastadores, psicol&#x00F3;gica y culturalmente.</option>
-</select></td><td></td></tr>
-
-</tbody></table>
-</form>
-</div>
-    <div style="margin: auto; width: 200px;">
-        <button id="CheckButton2" class="FuncButton" onmouseover="FuncBtnOver(this)" onfocus="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onblur="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="CheckAnswers()">&nbsp;Comprobar respuesta&nbsp;</button>
-    </div>  
-</div>
-<br><br><br>
-<p>Puede profundizar sobre estos temas consultado los siguientes links:</p>
-<ul>
-    <li>El agua es un recurso natural limitado y un bien público fundamental para la vida y la salud: 
-        <a target="_blank" href="http://www.escr-net.org/docs/i/428718">http://www.escr-net.org/docs/i/428718</a>
-    </li>
-    <li>¿Qué es el derecho humano al agua?: 
-        <a target="_blank" href="http://www.un.org/spanish/waterforlifedecade/human_right_to_water.shtml"> http://www.un.org/spanish/waterforlifedecade/human_right_to_water.shtml</a>
-    </li>
-    <li>La necesidad vital de agua: 
-        <a target="_blank" href="http://www.pagina12.com.ar/diario/contratapa/13-222553-2013-06-19.html"> http://www.pagina12.com.ar/diario/contratapa/13-222553-2013-06-19.html</a>
-    </li>
-    <li>Educar para cuidar el agua: 
-        <a target="_blank" href="http://www.unesco.org.uy/phi"> http://www.unesco.org.uy/phi</a> 
-        <a href="http://aguasaneamientohigiene.wordpress.com/2013/05/25/curriculo-escolar-en-el-peru-incluira-cuidado-del-agua-a-partir-de-2014/"> http://aguasaneamientohigiene.wordpress.com/2013/05/25/curriculo-escolar-en-el-peru-incluira-cuidado-del-agua-a-partir-de-2014/</a>
-    </li>
-</ul>
-                        
-                        
-    <h3><a href="http://ciudadanos.ning.com" target="_blank">Red Social</a>: Educando para el cuidado del agua.</h3>
-    <p>¿Conoce en su país o localidad alguna política, plan o proyecto para educar en el cuidado del agua?</p>
-    <p>¿En qué consiste?</p>
-    <p>¿Desarrollan en su institución educativa algún proyecto de cuidado y protección del agua?</p>
-
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag6 -->
-            
-            <div class="tab-pane contenido4" id="pag7">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>Y tú, ¿qué haces para cuidar el agua?</h2>
-                        <p>Señale con una X si conoce o ha desarrollado alguna acción ciudadana para el cuidado del agua: </p>
-                        <p><i class="clic fa fa-square-o"></i> En casa.</p>
-                        <p><i class="clic fa fa-square-o"></i> En el trabajo.</p>
-                        <p><i class="clic fa fa-square-o"></i> En el colegio.</p>
-                        <p><i class="clic fa fa-square-o"></i> En su barrio/vereda.</p>
-                        <p><a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">Acontecimiento ciudadano</a>
-                        <p>Comparta con el curso en qué consiste su acción ciudadana para el cuidado del agua.</p>
-                        <p>Una posibilidad de ampliar el impacto de su acción ciudadana para el cuidado del agua es convocar acciones colectivas que generen el interés o los deseos de expresión de otros miembros de su localidad. Un colectivo de ciudadanía activa en Colombia realiza algunas actividades de este tipo:  <a href="http://100en1dia.com/">100en1dia.com</a></p> 
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag7 -->
-            
-             <div class="tab-pane contenido4" id="pag8">
-                <div class="row-fluid">
-                    <div class="span12">
-                       <h2>Acontecimiento ciudadano:</h2> 
-                        <p>A continuación realice la actividad <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">Acontecimiento Ciudadano.</a></p>
-                        <p>Gracias por su participación.</p>
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag8 -->  
-            
-           
-        </div><!-- /.tab-content -->   
-        
-                
-        
-        <div class="pagination">
-            <ul>
-                <li class="active"><a href="#pag1">1</a></li>
-                <li><a href="#pag2">2</a></li>
-                <li><a href="#pag3">3</a></li>
-                <li><a href="#pag4">4</a></li>
-                <li><a href="#pag5">5</a></li>
-                <li><a href="#pag6">6</a></li>
-                <li><a href="#pag7">7</a></li>
-                <li><a href="#pag8">8</a></li>
-            </ul>
-        </div><!-- /.pagination -->
-    
-        <script type="text/javascript">
-            $(function(){
-                //$('.FuncButton').html('<i class="fa fa-question"></i>');
-                $('.FuncButton').addClass('btn btn-default');
-                $('.FuncButton').prop("onfocus", null);
-                $('.FuncButton').prop("onblur", null);
-                $('.FuncButton').prop("onmouseover", null);
-                $('.FuncButton').prop("onmouseout", null);
-                $('.FuncButton').prop("onmousedown", null);
-                $('.FuncButton').prop("onmouseup", null);
-                $('.pagination a').click(function (e) {
-                    e.preventDefault();
-                    $(this).tab('show');
-                    window.scrollTo(0, 0);
-                });
-                $('.FuncButton').click(function() {
-                    $('#respuesta').modal();
-                    //$(this).html('<i class="fa fa-check"></i>');
-                });
-                $('i.clic').click(function() {
-                    $(this).removeClass('fa-square-o').addClass('fa-check-square-o');
-                });
-            });
-        </script>
-    </div><!-- /.container -->
-    
-        
 
 <script type="text/javascript">
 
@@ -1272,8 +985,326 @@ function CheckAnswers(){
 </script>
 
 
+</head>
+
+<body onload="StartUp()" id="TheBody" >
+
+<!-- BeginTopNavButtons -->
+<!-- EndTopNavButtons -->
+
+  
+    <div class="container-fluid">
+        <div class="tab-content">
+            <div class="row-fluid">
+                <div class="span12 bloqueModulo modulo4">
+                    <h4>Módulo 4: Medio Ambiente</h4>
+                </div><!-- /.span12 -->
+            </div><!-- ./row-fluid -->
+            <div class="tab-pane active contenido4" id="pag1">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Medio Ambiente y Derecho al Agua</h2>
+                        <p>Las últimas décadas del Siglo XX y lo que va del XXI se han caracterizado por una creciente preocupación mundial por el calentamiento global y la protección del medio ambiente; en este contexto se realizan múltiples eventos internacionales que buscan asignar y dar alcance a responsabilidades de los Estados en la protección del medio ambiente entre los que se incluyen el derecho al agua, la protección del suelo, el saneamiento ambiental tal como se establece en la Declaración de Dublín (1992) que se pronunció sobre el agua y el desarrollo sostenible, estableciendo cuatro principios rectores que reconocen que: </p>
+                        <p><strong>Principio 1.</strong> El agua dulce es un recurso finito y vulnerable, esencial para sostener la vida, el desarrollo y el medio ambiente.</p> 
+                        <p><strong>Principio 2.</strong> El aprovechamiento y la gestión del agua deben inspirarse en un planteamiento basado en la participación de los usuarios, los planificadores y los responsables de las decisiones a todos los niveles.</p> 
+                        <p><strong>Principio 3.</strong> La mujer desempeña un papel fundamental en el abastecimiento, la gestión y la protección del agua.</p> 
+                        <p><strong>Principio 4.</strong> El agua tiene un valor económico en todos sus diversos usos en competencia a los que se destina y debería reconocérsele como un bien económico.</p>
+                        <p>Lo anterior hace evidente la importancia y la necesidad de una parte que los Estados formulen y pongan en marcha políticas públicas que concreten estos principios, de otra que desarrollen las políticas educativas para que la formación ciudadana haga visible la responsabilidad de la ciudadanía, de las organizaciones de la sociedad civil en el cuidado y protección del agua en los términos que las conferencias y convenciones internacionales lo establecen.</p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag1 -->
+            
+            
+            <div class="tab-pane contenido4" id="pag2">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Bienvenida</h2>
+                        <p>Participando de los diferentes módulos, tal vez usted se ha preguntado si existen algunos otros asuntos que hagan parte del ejercicio de la ciudadanía. De entrada queremos responder que sí a esa pregunta. Son muchos los asuntos de los que deben ocuparse los ciudadanos y ciudadanas de esta época de la historia del mundo y de la humanidad. Uno de esos asuntos emergentes en el  ejercicio de la ciudadanía es la importancia de educar para  asumir el cuidado del agua como una oportunidad para la permanencia de la vida en este planeta. ¿Semejante tarea será o no responsabilidad de un ciudadano? ¿Será o no necesario educar para cuidar el agua?
+</p>
+<h3>Introducción</h3>
+<p>A pesar de que ya estamos transitando por la segunda década del siglo XXI, y que nuestros conocimientos tecnológicos facilitan tratar y administrar el agua para el consumo humano, muchos grupos de personas NO cuentan con agua potable para el consumo diario. Así mismo, en muchos lugares donde se cuenta con agua para el consumo diario, esta es altamente costosa.  Para nadie es un secreto que el mal manejo que hacemos de nuestros recursos hídricos (se contaminan, se desperdician, se encarecen) ha generado grandes problemas de contaminación que producen enfermedades y acrecientan el problema del calentamiento global. La posibilidad de vivir dignamente pasa también por ejercer el derecho al agua, ello requiere de los ciudadanos actitudes de cuidado y ahorro que permitan proteger los recursos hídricos y garantizar el derecho al agua.</p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag2 -->
+            <div class="tab-pane contenido4" id="pag3">
+                <div class="row-fluid">
+                    <div class="span12">
+<h3>Objetivos o resultados de aprendizaje del módulo</h3>
+<p><strong>General:</strong><br> 
+
+Reconocer el cuidado del agua como un asunto vital para las ciudadanías en formación.<br>
+
+<strong>Específicos:</strong><br>
+
+1. Sensibilizar a los participantes y a las comunidades educativas sobre la importancia de cuidar los recursos hídricos como parte del ejercicio ciudadano.  <br>                                               
+2. Promover la realización de acciones ciudadanas para el cuidado del agua.</p>
+
+<h3>Instrucciones</h3>
+<p><strong>El módulo Ciudadanía del agua</strong>está distribuido en cuatro actividades que le permitirán reflexionar sobre la problemática del agua cuando no se cuenta con ella; la relación entre el derecho al agua y el ejercicio de la ciudadanía, y el compromiso ciudadano en el desarrollo de acciones para la protección de los recursos hídricos.</p>
+<p>El módulo se desarrolla en el marco del curso masivo de formación en ciudadanía. Sin embargo, algunas de sus actividades se llevarán a cabo por medio de la Red Social. Allí podrá compartir las acciones que, como ciudadano, usted realiza para el cuidado del agua, así como aquellas políticas, programas y proyectos relacionados con el tema, entre otros.</p>
+<p>El desarrollo de las actividades requiere del participante un tiempo máximo de dos horas semanales, y el plazo para realizar cada una de ellas es de aproximadamente una semana. El módulo tiene una duración de 4 semanas distribuidas así: </p>
+<p><strong>Semana 1</strong>, reflexión sobre la problemática del agua;<br> 
+<strong>Semana 2</strong>, relación entre derecho al agua y el ejercicio de la ciudadanía (esta semana incluye la participación en un foro sobre políticas y programas educativos sobre el agua);<br> 
+<strong>Semana 3</strong>, acontecimiento ciudadano para el cuidado del agua, <br>
+<strong>Semana 4</strong>, foro sobre acciones ciudadanas para el cuidado del agua. </p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag3 -->
+            
+            <div class="tab-pane contenido4" id="pag4">
+                <div class="row-fluid">
+                    <div class="span2">&nbsp;</div>
+                    <div class="span8">
+                        <!-- Carrusel de viñetas - 3 -->
+                        <div id="carruselAgua" class="carousel slide" data-interval="10000" >
+                            <ol class="carousel-indicators">
+                                <li data-target="#carruselAgua" data-slide-to="0" class="active"></li>
+                                <li data-target="#carruselAgua" data-slide-to="1"></li>
+                                <li data-target="#carruselAgua" data-slide-to="2"></li>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="active item">
+                                    <img src="agua01.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="agua02.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="agua03.svg">
+                                </div>
+                            </div><!-- /.carousel-inner -->
+                            <!-- Carousel nav -->
+                            <a class="carousel-control left" href="#carruselAgua" data-slide="prev">&lsaquo;</a>
+                            <a class="carousel-control right" href="#carruselAgua" data-slide="next">&rsaquo;</a>
+                        </div><!-- /#carruselAgua .carousel .slide -->
+                    </div>
+                    <div class="span2">&nbsp;</div>
+                </div><!-- /.row-fluid -->
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>
+                            ¿Encuentra alguna relación entre el acceso al agua potable y el ejercicio de la ciudadanía?
+                        </p> 
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag4 -->
+            
+            <div class="tab-pane contenido4" id="pag5">
+                <div class="row-fluid">
+                    <div class="span12">                        
+                        <h2>¿Sabía usted que…</h2>
+                        <p>…en el siglo XXI los conocimientos tecnológicos facilitan tratar y administrar el agua para el consumo humano?, no obstante:</p>
+                        <h3>El agua es altamente costosa.</h3>
+                        <p>Debido al  manejo de los recursos hídricos (contaminación, desperdicio, encarecimiento) se generan grandes problemas de contaminación que producen enfermedades.<br>
+                        ¡Muchos grupos humanos no cuentan con agua potable para el consumo diario!<br><br>
+<strong>Por lo anterior:</strong> la dignidad y el ejercicio de la ciudadanía se ven afectados cuando no hay agua.</p>
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag5 -->
+            
+            <div class="tab-pane contenido4" id="pag6">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>¿Cómo se ejerce una ciudadanía del agua?:</h2>
+                        <h3>¿Sabía usted que…</h3>
+                        <p>…en América Latina se encuentra el 31% del agua dulce del planeta? Sin embargo, el cambio climático y la pérdida de glaciares harán que el agua escasee y que el suministro se vea más afectado aún. Actualmente, por lo menos la cuarta parte de la población urbana y el 33% de la población rural, no cuentan con servicios de agua potable, agravando los niveles de pobreza y riesgos para la salud en una gran franja de la población.</p>
+                        <p><strong>Actividad:</strong> Según sus conocimientos sobre el derecho al agua, complete las siguientes afirmaciones:</p>
+                        
+<!-- ****************************************** HOTPOTATO **************************************** -->
+<div style="display: none;" class="Titles">
+    <h2 class="ExerciseTitle">Como ciudadano/a del agua yo entiendo que...</h2>
+    <h3 class="ExerciseSubtitle">Ejercicio de emparejamiento</h3>
+</div>
+<div style="display: none;" id="InstructionsDiv" class="StdDiv">
+    <div id="Instructions">Empareje los elementos de la derecha con los de la izquierda</div>
+</div>
+<div id="MainDiv" class="StdDiv">
+<button style="display: none;" id="CheckButton1" class="FuncButton" onmouseover="FuncBtnOver(this)" onfocus="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onblur="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="CheckAnswers()">&nbsp;Comprobar respuesta&nbsp;</button>
+<div id="MatchDiv" style="text-align: center;">
+<form id="QForm" method="post" action="" onsubmit="return false;">
+<table border="0" style="margin: 2em auto 2em auto;"><tbody id="Questions">
+<tr><td class="LeftItem">El Derecho Humano al Agua es...</td><td class="RightItem"><select id="s0_0"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="4">Cuidando el agua, ya que es un recurso natural limitado y un bien p&#x00FA;blico fundamental para la vida y la salud. </option>
+<option value="1">Suficiente, Saludable, Aceptable, F&#x00ED;sicamente Accesible y Asequible.</option>
+<option value="3">Sin agua potable y saneamiento, no hay ciudadan&#x00ED;a real. Sin ellas no hay salud, ni posibilidad de ejercer la ciudadan&#x00ED;a.</option>
+<option value="0">es indispensable para vivir dignamente y es condici&#x00F3;n previa para la realizaci&#x00F3;n de otros derechos humanos. </option>
+<option value="2">Los impactos de no tener agua ni inodoros son devastadores, psicol&#x00F3;gica y culturalmente.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">Las siguientes son Las siguientes son caracter&#x00ED;sticas del Derecho Humano al Agua: </td><td class="RightItem"><select id="s1_1"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="4">Cuidando el agua, ya que es un recurso natural limitado y un bien p&#x00FA;blico fundamental para la vida y la salud. </option>
+<option value="1">Suficiente, Saludable, Aceptable, F&#x00ED;sicamente Accesible y Asequible.</option>
+<option value="3">Sin agua potable y saneamiento, no hay ciudadan&#x00ED;a real. Sin ellas no hay salud, ni posibilidad de ejercer la ciudadan&#x00ED;a.</option>
+<option value="0">es indispensable para vivir dignamente y es condici&#x00F3;n previa para la realizaci&#x00F3;n de otros derechos humanos. </option>
+<option value="2">Los impactos de no tener agua ni inodoros son devastadores, psicol&#x00F3;gica y culturalmente.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">El acceso al agua es un derecho humano b&#x00E1;sico, por que...</td><td class="RightItem"><select id="s2_2"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="4">Cuidando el agua, ya que es un recurso natural limitado y un bien p&#x00FA;blico fundamental para la vida y la salud. </option>
+<option value="1">Suficiente, Saludable, Aceptable, F&#x00ED;sicamente Accesible y Asequible.</option>
+<option value="3">Sin agua potable y saneamiento, no hay ciudadan&#x00ED;a real. Sin ellas no hay salud, ni posibilidad de ejercer la ciudadan&#x00ED;a.</option>
+<option value="0">es indispensable para vivir dignamente y es condici&#x00F3;n previa para la realizaci&#x00F3;n de otros derechos humanos. </option>
+<option value="2">Los impactos de no tener agua ni inodoros son devastadores, psicol&#x00F3;gica y culturalmente.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">La falta de agua potable afecta la Dignidad Humana, ya que...</td><td class="RightItem"><select id="s3_3"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="4">Cuidando el agua, ya que es un recurso natural limitado y un bien p&#x00FA;blico fundamental para la vida y la salud. </option>
+<option value="1">Suficiente, Saludable, Aceptable, F&#x00ED;sicamente Accesible y Asequible.</option>
+<option value="3">Sin agua potable y saneamiento, no hay ciudadan&#x00ED;a real. Sin ellas no hay salud, ni posibilidad de ejercer la ciudadan&#x00ED;a.</option>
+<option value="0">es indispensable para vivir dignamente y es condici&#x00F3;n previa para la realizaci&#x00F3;n de otros derechos humanos. </option>
+<option value="2">Los impactos de no tener agua ni inodoros son devastadores, psicol&#x00F3;gica y culturalmente.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">Una forma de ejercer mi ciudadan&#x00ED;a es&#x2026;</td><td class="RightItem"><select id="s4_4"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="4">Cuidando el agua, ya que es un recurso natural limitado y un bien p&#x00FA;blico fundamental para la vida y la salud. </option>
+<option value="1">Suficiente, Saludable, Aceptable, F&#x00ED;sicamente Accesible y Asequible.</option>
+<option value="3">Sin agua potable y saneamiento, no hay ciudadan&#x00ED;a real. Sin ellas no hay salud, ni posibilidad de ejercer la ciudadan&#x00ED;a.</option>
+<option value="0">es indispensable para vivir dignamente y es condici&#x00F3;n previa para la realizaci&#x00F3;n de otros derechos humanos. </option>
+<option value="2">Los impactos de no tener agua ni inodoros son devastadores, psicol&#x00F3;gica y culturalmente.</option>
+</select></td><td></td></tr>
+</tbody></table>
+</form>
+</div>
+
+    <div style="margin: auto; width: 200px;">
+        <button id="CheckButton2" class="FuncButton" onmouseover="FuncBtnOver(this)" onfocus="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onblur="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="CheckAnswers()">&nbsp;Comprobar respuesta&nbsp;</button>
+    </div> 
+
+</div>
+<!-- ****************************************** HOTPOTATO **************************************** -->
+<br><br><br>
+<p>Puede profundizar sobre estos temas consultado los siguientes links:</p>
+<ul>
+    <li>El agua es un recurso natural limitado y un bien público fundamental para la vida y la salud: 
+        <a target="_blank" href="http://www.escr-net.org/docs/i/428718">http://www.escr-net.org/docs/i/428718</a>
+    </li>
+    <li>¿Qué es el derecho humano al agua?: 
+        <a target="_blank" href="http://www.un.org/spanish/waterforlifedecade/human_right_to_water.shtml"> http://www.un.org/spanish/waterforlifedecade/human_right_to_water.shtml</a>
+    </li>
+    <li>La necesidad vital de agua: 
+        <a target="_blank" href="http://www.pagina12.com.ar/diario/contratapa/13-222553-2013-06-19.html"> http://www.pagina12.com.ar/diario/contratapa/13-222553-2013-06-19.html</a>
+    </li>
+    <li>Educar para cuidar el agua: 
+        <a target="_blank" href="http://www.unesco.org.uy/phi"> http://www.unesco.org.uy/phi</a> 
+        <a href="http://aguasaneamientohigiene.wordpress.com/2013/05/25/curriculo-escolar-en-el-peru-incluira-cuidado-del-agua-a-partir-de-2014/"> http://aguasaneamientohigiene.wordpress.com/2013/05/25/curriculo-escolar-en-el-peru-incluira-cuidado-del-agua-a-partir-de-2014/</a>
+    </li>
+</ul>
+                        
+                        
+    <h3><a href="http://ciudadanos.ning.com" target="_blank">Red Social</a>: Educando para el cuidado del agua.</h3>
+    <p>¿Conoce en su país o localidad alguna política, plan o proyecto para educar en el cuidado del agua?</p>
+    <p>¿En qué consiste?</p>
+    <p>¿Desarrollan en su institución educativa algún proyecto de cuidado y protección del agua?</p>
+
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag6 -->
+            
+            <div class="tab-pane contenido4" id="pag7">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Y tú, ¿qué haces para cuidar el agua?</h2>
+                        <p>Señale con una X si conoce o ha desarrollado alguna acción ciudadana para el cuidado del agua: </p>
+                        <p><i class="clic fa fa-square-o"></i> En casa.</p>
+                        <p><i class="clic fa fa-square-o"></i> En el trabajo.</p>
+                        <p><i class="clic fa fa-square-o"></i> En el colegio.</p>
+                        <p><i class="clic fa fa-square-o"></i> En su barrio/vereda.</p>
+                        <p><a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">Acontecimiento ciudadano</a>
+                        <p>Comparta con el curso en qué consiste su acción ciudadana para el cuidado del agua.</p>
+                        <p>Una posibilidad de ampliar el impacto de su acción ciudadana para el cuidado del agua es convocar acciones colectivas que generen el interés o los deseos de expresión de otros miembros de su localidad. Un colectivo de ciudadanía activa en Colombia realiza algunas actividades de este tipo:  <a href="http://100en1dia.com/">100en1dia.com</a></p> 
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag7 -->
+            
+             <div class="tab-pane contenido4" id="pag8">
+                <div class="row-fluid">
+                    <div class="span12">
+                       <h2>Acontecimiento ciudadano:</h2> 
+                        <p>A continuación realice la actividad <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">Acontecimiento Ciudadano.</a></p>
+                        <p>Gracias por su participación.</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag8 -->  
+            
+            
+            
+            
+        </div><!-- /.tab-content -->   
 
 
 
+        <div class="pagination">
+            <ul>
+                <li class="active"><a href="#pag1">1</a></li>
+                <li><a href="#pag2">2</a></li>
+                <li><a href="#pag3">3</a></li>
+                <li><a href="#pag4">4</a></li>
+                <li><a href="#pag5">5</a></li>
+                <li><a href="#pag6">6</a></li>
+                <li><a href="#pag7">7</a></li>
+                <li><a href="#pag8">8</a></li>
+            </ul>
+        </div><!-- /.pagination -->
+        
+        
+        
+    </div><!-- /.container -->
+
+
+
+        
+        <div class="modal fade" id="respuesta" tabindex="-1" role="dialog" aria-labelledby="Respuesta" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Respuesta</h4>
+              </div>
+              <div class="modal-body">
+
+<div class="Feedback" id="FeedbackDiv">
+<div class="FeedbackText" id="FeedbackContent"></div>
+<button style="display: none;" id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;Correcto&nbsp;</button>
+</div>
+
+              </div>
+              <div class="modal-footer">
+                <button id="cerrarModal" data-dismiss="modal" type="button" class="btn btn-primary">Cerrar ventana</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+
+<!-- BeginBottomNavButtons -->
+
+
+
+<!-- EndBottomNavButtons -->
+
+<!-- BeginSubmissionForm -->
+
+<!-- EndSubmissionForm -->
+        <script type="text/javascript">
+            $(function(){
+                //$('.FuncButton').html('<i class="fa fa-question"></i>');
+                $('.FuncButton').addClass('btn btn-default');
+                $('.FuncButton').prop("onfocus", null);
+                $('.FuncButton').prop("onblur", null);
+                $('.FuncButton').prop("onmouseover", null);
+                $('.FuncButton').prop("onmouseout", null);
+                $('.FuncButton').prop("onmousedown", null);
+                $('.FuncButton').prop("onmouseup", null);
+                $('.pagination a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                    window.scrollTo(0, 0);
+                });
+                $('#MainDiv').attr('style','heigth:auto;');
+                $('.FuncButton').click(function() {
+                    $('#respuesta').modal();
+                    //$(this).html('<i class="fa fa-check"></i>');
+                });
+                $('i.clic').click(function() {
+                    $(this).removeClass('fa-square-o').addClass('fa-check-square-o');
+                });
+            });
+        </script> 
 </body>
-</html> 
+
+</html>

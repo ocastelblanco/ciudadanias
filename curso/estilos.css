@@ -11,12 +11,16 @@
 #DerechosHumanos:hover,
 #Genero:hover,
 #Acoso:hover {
-    opacity:0.75;
+    /*opacity:0.75;*/
 }
 .carousel-inner {
     background-image: url("http://www.redeaprender.org/ciudadanias/moodle/theme/ciudadaniastheme/pix/ajax-loader.gif");
     background-repeat: no-repeat;
     background-position: center center;
+}
+.carousel-inner > .item img {
+    width: 100%;
+    height: auto;
 }
 .bloqueModulo {
     margin-bottom: 2em;

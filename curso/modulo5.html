@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="ico/favicon.png">
     <title>CIUDADANÍAS</title>
     <!-- Bootstrap core CSS -->
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <!--link href="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/css/bootstrap.min.css" rel="stylesheet"-->
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -20,17 +20,10 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/2.3.2/js/bootstrap.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/holder/2.0/holder.js"></script>
+
+
+    
     <style type="text/css">
-        i.clic {
-            font-size: 16px;
-            cursor:pointer;
-        }
-        i.clic:hover {
-            font-size:18px;
-        }
-        .LeftItem {
-            text-align: right;
-        }
         .continuebutton {
             display:none;
         }
@@ -270,9 +263,17 @@
         }
         td.LeftItem {
             text-align: right;
+            width: 50%;
         }
         td.RightItem {
             text-align: left;
+            width: 50%;
+        }
+        td.RightItem select {
+            width: 100%;
+        }
+        #MainDiv {
+            height: auto;
         }
     /* Estos estilos ya los trae el tema de Moodle */
         body {
@@ -280,366 +281,7 @@
             color:#FFFFFF;
         }
     </style>
-  </head>
-
-  <body onload="StartUp()">
-
-        
-    <div id="InstructionsDiv" style="display: none;" class="StdDiv">
-        <div id="Instructions"></div>
-    </div>
-    <span id="QNumReadout" style="display: none;" class="QNum">&nbsp;</span>
-
-
-        
-        <div class="modal fade" id="respuesta" tabindex="-1" role="dialog" aria-labelledby="Respuesta" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title">Respuesta</h4>
-              </div>
-              <div class="modal-body">
-                <div class="Feedback" id="FeedbackDiv">
-                    <div class="FeedbackText" id="FeedbackContent"></div>
-                    <button style="display: none;" id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;OK&nbsp;</button>
-                </div>
-              </div>
-              <div class="modal-footer">
-                <button id="cerrarModal" data-dismiss="modal" type="button" class="btn btn-primary">Cerrar ventana</button>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
-
   
-    <div class="container-fluid">
-        <div class="tab-content">
-            <div class="row-fluid">
-                <div class="span12 bloqueModulo modulo5">
-                    <h4>Módulo 5: Derechos Humanos</h4>
-                </div><!-- /.span12 -->
-            </div><!-- ./row-fluid -->
-            <div class="tab-pane active contenido5" id="pag1">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>Los Derechos Humanos y la trata de personas</h2>
-                        <p>Uno de los aspectos que concretan el sentido de la Dignidad Humana es la Integridad (física, psíquica y moral) de las personas, es decir el no ser sometido a tratos crueles, inhumanos y degradantes, el no ser sometido a humillaciones de ningún tipo. Este sentido de la Dignidad es el fundamento de los Derechos Humanos, pues desde sus dimensiones éticas, jurídicas y políticas, los Derechos Humanos dan alcance a la realización de la Dignidad Humana. Considerando la anterior aclaración es necesario reconocer que la esclavitud moderna que se realiza a través de la trata de personas, atenta contra la Dignidad y el ejercicio de los Derechos Humanos de millones de niños, niñas y jóvenes en todo el mundo, quienes a través de múltiples medios son engañados por los traficantes de personas. La trata de personas impide el ejercicio de los derechos y la ciudadanía pues entre los múltiples mecanismos para obligar a las personas que lo padecen a realizar actividades que van contra su Dignidad (por ej: ESCNNA, labores domésticas, tráfico de drogas y armas, vinculación al conflictos armados, retención de documentos personales) con lo cual se impide el acceso a bienes servicios y oportunidades.</p>
-                        <p>Los Estados han identificado la necesidad de realizar acciones preventivas (información, rutas de atención y denuncia) y de promoción de capacidades, de autocuidado para evitar que niños, niñas y jóvenes sean víctimas de este tipo de esclavitud.  El autocuidado implica que los niños, niñas, jóvenes y sus familias hagan un buen ejercicio de la autonomía, se fortalezcan criterios para la toma de decisiones y se construya confianza para reconocer quienes los pueden proteger, donde se puede denunciar en circunstancias donde la trata de personas puede ser un riesgo.</p>                        
-                    </div><!-- /.span12 -->
-                </div><!-- ./row-fluid -->
-            </div><!-- /.tab-pane #pag1 -->
-            
-            <div class="tab-pane contenido5" id="pag2">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>Bienvenida.</h2>
-                        <p>Estamos viviendo nuevas épocas; nuevas formas de expresión han aparecido; de comprender y habitar el mundo; de conocer gente, de acercarnos a otros y de compartir con ellos; nuevas formas de construir compromisos y proyectos; de darle sentido a la existencia y al progreso, nuevas formas de trabajo…. En fin, en este mundo cambiante aparecen también circunstancias que ponen a prueba nuestros criterios, nuestros referentes éticos, nuestra capacidad de cuidado propio y de los nuestros. Una de estas circunstancias es la trata de personas que afecta a millones de personas en el mundo. Por ello, es necesario fortalecer nuestros criterios y la capacidad para tomar perspectiva y decisiones sobre nuestra vida, y a veces la de los otros; con las que se podamos garantizar el ejercicio de la dignidad, de la libertad y de la autonomía. Le invitamos a reflexionar sobre este asunto y a considerar algunos mecanismos para protegerse y para proteger a los suyos de circunstancias que puedan afectar su dignidad y el ejercicio de una ciudadanía plena.</p>
-                        <h3>Objetivos del módulo.</h3>
-                        <p><strong>General: </strong>Comprender que en el marco del ejercicio de os derechos humanos, la trata de personas afecta el ejercicio de la ciudadanía.</p>
-                        <strong>Específicos:</strong>
-                        <ul>
-                            <li>Reconocer circunstancias en las que un individuo puede ser víctima de la trata de personas. </li> 
-                            <li>Promover el ejercicio de la autonomía como mecanismo para evitar ser víctima de este tipo de acciones.</li>                                                  
-                            <li>Promover la construcción de confianza en el entorno familiar y escolar como mecanismo para evitar ser víctima del tráfico de personas.</li>
-                        </ul>                        
-                    </div><!-- /.span12 -->
-                </div><!-- ./row-fluid -->
-            </div><!-- /.tab-pane #pag2 -->
-            
-            <div class="tab-pane contenido5" id="pag3">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>Cómic</h2>
-                        <p>¿Qué piensa usted de esto?</p>
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-                        
-                <div class="row-fluid">
-                    <div class="span2">&nbsp;</div>
-                    <div class="span8">
-                        <!-- Carrusel de viñetas - 3 -->
-                        <div id="carruselDDHH" class="carousel slide" data-interval="10000" >
-                            <ol class="carousel-indicators">
-                                <li data-target="#carruselDDHH" data-slide-to="0" class="active"></li>
-                                <li data-target="#carruselDDHH" data-slide-to="1"></li>
-                                <li data-target="#carruselDDHH" data-slide-to="2"></li>
-                            </ol>
-                            <!-- Carousel items -->
-                            <div class="carousel-inner">
-                                <div class="active item">
-                                    <img src="ddhh01.svg">
-                                </div>
-                                <div class="item">
-                                    <img src="ddhh02.svg">
-                                </div>
-                                <div class="item">
-                                    <img src="ddhh03.svg">
-                                </div>
-                            </div><!-- /.carousel-inner -->
-                            <!-- Carousel nav -->
-                            <a class="carousel-control left" href="#carruselDDHH" data-slide="prev">&lsaquo;</a>
-                            <a class="carousel-control right" href="#carruselDDHH" data-slide="next">&rsaquo;</a>
-                        </div><!-- /#carruselAgua .carousel .slide -->
-                    </div>
-                    <div class="span2">&nbsp;</div>
-                </div><!-- /.row-fluid -->
-                
-                <div class="row-fluid">
-                    <div class="span12">
-                        <p>¿Qué sucedió?</p>  
-                    </div><!-- /.span12 -->
-                </div><!-- ./row-fluid -->
-            </div><!-- /.tab-pane #pag3 -->
-            
-            <div class="tab-pane contenido5" id="pag4">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <p>En la página de Facebook ‘Santa Catalina 4ever’, los alumnos de 9º y 10º apoyan a sus equipos. Todos los días montan fotos de los miembros del equipo, carteles de apoyo, videos editados de partidos anteriores y, por supuesto, uno que otro insulto contra el equipo contrario. Diana y su combo de amigas ‘mUñEkitAx hErMosHas’ decidieron organizarse para apoyar al equipo de su curso: compraron uniformes de porristas y papel confitado, e inventaron barras y canciones para el día del partido. ¡La idea les ha encantado a sus compañeras! ¡Todas las chicas quieren participar y apoyar este evento! Todas están muy emocionadas con su debut como porristas y han comenzado a montar fotos de sus uniformes y videos de los ensayos de la coreografía.  Por supuesto, los chicos del curso no son indiferentes y han comenzado a coquetear con ellas por medio de Facebook. Una de ellas, Lady Camila, ha sido la que más “me gusta” ha obtenido con sus fotos. Muchos de sus contactos le envían piropos pero hay uno de ellos que es particularmente especial. Lady no lo conoce, él dice que se llama Maicol. Eso a Lady no le importa: ¡Maicol es un divino! ¡Escribe muy bonito y le envía canciones preciosas! </p>
-                        <p>Hoy, como todos los días, Lady inicia sesión en su cuenta de Facebook y ve un mensaje de Maicol invitándola a comer helado en un parque bastante retirado de su casa. Maicol le pide que vaya sola porque le da pena que se den cuenta de que está nervioso por encontrarse con “lA prInXeZa mAx herMoOoxtHa de tOoO el MuNDo!”. Lady no hace sino sonreír, aunque no lo conoce, Maicol le gusta muchísimo. Así que decide dejar el miedo a un lado y aceptar la invitación…</p>
-                        <p>Cuando de TRATA se TRATA… </p>
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag4 -->
-            
-            <div class="tab-pane contenido5" id="pag5">
-                <div class="row-fluid">
-                    <div class="span12">                    
-                        <h2>¿De qué se trata la trata?</h2>
-                        <h3>Sabía usted que…</h3>
-                        <p>…millones de personas en América Latina son víctimas de la ‘esclavitud del siglo XXI’: la trata de personas. Esta forma de esclavitud consiste en engañar u obligar a una persona, especialmente mujeres, niños y niñas, a desplazarse hacia otros lugares (generalmente el extranjero) con fines de explotación sexual, comercio de órganos, o realización de cualquier tipo de trabajos en contra de su voluntad; lo que afecta especialmente su dignidad, su integridad (física, emocional y sicológica) y el ejercicio de la ciudadanía. <br>
-Pero, ¿por qué la trata de personas afecta el ejercicio de la ciudadanía? Veamos:</p>
-                        <p>Aclaración de conceptos. (El ejercicio contiene dos columnas con ideas u oraciones que se complementan, debe emparejar las ideas de la columna de la izquierda con las de la derecha).</p>
-
-
-<div id="MainDiv" class="StdDiv">
-
-<div id="MatchDiv" style="text-align: center;">
-
-<form id="QForm" method="post" action="" onsubmit="return false;">
-<table border="0" style="margin: 2em auto 2em auto;"><tbody id="Questions">
-
-<tr><td class="LeftItem">La trata de personas (esclavitud del siglo XXI) va en contra de la dignidad humana&#x2026; </td><td class="RightItem"><select id="s0_0"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
-<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
-<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
-<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
-<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
-<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
-<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
-</select></td><td></td></tr><tr><td class="LeftItem">La dignidad humana es real cuando podemos&#x2026; </td><td class="RightItem"><select id="s1_1"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
-<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
-<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
-<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
-<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
-<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
-<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
-</select></td><td></td></tr><tr><td class="LeftItem">Seg&#x00FA;n los pactos y tratados internacionales sobre derechos humanos&#x2026; </td><td class="RightItem"><select id="s2_2"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
-<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
-<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
-<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
-<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
-<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
-<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
-</select></td><td></td></tr><tr><td class="LeftItem">Cuando un ser humano padece tratos crueles, inhumanos y degradantes&#x2026; </td><td class="RightItem"><select id="s3_3"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
-<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
-<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
-<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
-<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
-<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
-<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
-</select></td><td></td></tr><tr><td class="LeftItem">Corresponde al estado, a las autoridades y a la familia&#x2026; </td><td class="RightItem"><select id="s4_4"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
-<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
-<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
-<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
-<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
-<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
-<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
-</select></td><td></td></tr><tr><td class="LeftItem">La confianza y la comunicaci&#x00F3;n con los hijos ayudan a&#x2026; </td><td class="RightItem"><select id="s5_5"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
-<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
-<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
-<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
-<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
-<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
-<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
-</select></td><td></td></tr><tr><td class="LeftItem">Una forma de ejercer mi ciudadan&#x00ED;a es&#x2026; </td><td class="RightItem"><select id="s6_6"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
-<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
-<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
-<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
-<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
-<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
-<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
-<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
-</select></td><td></td></tr>
-
-</tbody></table>
-</form>
-</div>
-
-    <div style="margin: auto; width: 200px;">
-        <button id="CheckButton2" class="FuncButton" onmouseover="FuncBtnOver(this)" onfocus="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onblur="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="CheckAnswers()">&nbsp;Comprobar respuesta&nbsp;</button>
-    </div>
-</div>
-
-
-                    <h3>Abra la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a> y responda las siguientes preguntas:</h3>
-<p>¿Conoce en su país o localidad alguna política, plan o proyecto de prevención, educación, protección o sanción relacionada con el tráfico de personas? ¿En qué consiste?</p>
-<p>¿Desarrollan en su institución educativa algún proyecto de difusión, educación y protección para prevenir la trata de personas?</p>
-
-
-
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag5 -->
-            
-            <div class="tab-pane contenido5" id="pag6">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Puede informarse sobre la trata y el tráfico de personas en los siguientes enlaces:</h3>
-                        <p><a href="http://www.elespectador.com/noticias/judicial/sentencian-mujer-15-anos-de-prision-trata-de-personas-articulo-437656" target="_blank"> http://www.elespectador.com/noticias/judicial/sentencian-mujer-15-anos-de-prision-trata-de-personas-articulo-437656</a></p>  
-                        <p><a href="http://www.eltiempo.com/entretenimiento/teatro/vctimas-de-trata-de-personas-llevan-su-historia-a-escena_12948415-4">http://www.eltiempo.com/entretenimiento/teatro/vctimas-de-trata-de-personas-llevan-su-historia-a-escena_12948415-4</a> </p> 
-                        <p><a href="http://www.eltiempo.com/politica/el-quid-cmo-opera-la-trata-de-personas-en-colombia_12941618-4" target="_blank"> http://www.eltiempo.com/politica/el-quid-cmo-opera-la-trata-de-personas-en-colombia_12941618-4</a></p>
-                        <p><a href="http://www.eltiempo.com/justicia/piden-ms-acciones-contra-trata-de-personas_12933549-" target="_blank"> http://www.eltiempo.com/justicia/piden-ms-acciones-contra-trata-de-personas_12933549-</a></p>
-                        <p>Algunos hechos que muestran la gravedad del problema de la trata y el tráfico de personas:  <a href="http://www.unodc.org/documents/colombia/2013/Julio/CongresoTratadepersonas.pdf" target="_blank">http://www.unodc.org/documents/colombia/2013/Julio/CongresoTratadepersonas.pdf</a></p>  
-                        <p>Cali y Pereira: primera y segunda ciudad en casos de trata:  <a href="http://www.latarde.com/noticias/risaralda/118726-pereira-la-segunda-ciudad-con-mas-casos-de-trata-de-personas" target="_blank">http://www.latarde.com/noticias/risaralda/118726-pereira-la-segunda-ciudad-con-mas-casos-de-trata-de-personas </a>
-</p>
-                        <p>¿Cómo prevenir la trata de personas?:  <a href="http://www.savethechildren.org.gt/index.php?option=com_content&view=article&id=49&Itemid=25" target="_blank">http://www.savethechildren.org.gt/index.php?option=com_content&view=article&id=49&Itemid=25 </a> </p>
-                        <p>Manual - Derechos Humanos y trata de personas: <a href="http://www.catedradh.unesco.unam.mx/BibliotecaV2/Documentos/Trata/Libros/manual_trata_dh.pdf" target="_blank">http://www.catedradh.unesco.unam.mx/BibliotecaV2/Documentos/Trata/Libros/manual_trata_dh.pdf </a></p> 
-                        <h3>Reflexión de grupo: </h3> 
-                        <p>Después de leer algunos de los anteriores artículos, comparta sus hallazgos con otros participantes del curso. ¿Encuentra coincidencias?, ¿difiere de algunas opiniones?, ¿hay algo de lo que se menciona que usted no conocía?</p>           
-                        
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag6 -->
-            
-            <div class="tab-pane contenido5" id="pag7">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>Le invitamos a profundizar en esta reflexión sobre la trata de personas y la formación en ciudadanía.</h2>
-                        <p>¿Qué relación encuentra usted entre dignidad humana y trata de personas?<br>
-¿Cómo afecta la trata de personas el ejercicio de la ciudadanía?<br>
-¿Educar para el ejercicio de la ciudadanía ayuda a prevenir la trata de personas? ¿Por qué? </p>
-                        <p>Responda y comente en la <a target="_blank" href="http://ciudadanos.ning.com">Red Social</a></p>
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag7 -->
-            
-            <div class="tab-pane contenido5" id="pag8">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>Una historia, muchos desenlaces…</h2>
-                        <p>Cuando leemos estas historias es común que nuestra reacción sea pensar ‘como se hubiera hecho mejor’. Conociendo la historia de Leydi con ‘Maicol’, y teniendo en cuenta una parte de la realidad sobre la trata de personas y cómo ésta afecta la dignidad, los derechos humanos y el ejercicio de la ciudadanía, ¿qué final daría usted a esta historia? Para responder puede tener en cuenta las siguientes preguntas generadoras:</p>
-                        <ul>
-                            <li>¿Cómo supo Leidy que el señor le mintió?</li>
-                            <li>¿Cómo llegó Leidy a la decisión de dejar al señor plantado?</li>
-                        </ul>
-                        <p>Puede también incorporar, en el final que usted propone, la ausencia o presencia las siguientes competencias ciudadanas:</p>
-                        <ul>
-                            <li>Toma de perspectiva.</li>
-                            <li>Pensamiento crítico.</li>
-                            <li>Interpretación de intenciones.</li>
-                            <li>Consideración de consecuencias.</li>
-                            <li>Escucha activa.</li>
-                            <li>Asertividad.</li>
-                        </ul>
-                        <p>Construya su propio relato en la <a target="_blank" href="http://ciudadanos.ning.com">Red Social</a></p>
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag8 -->
-            
-            <div class="tab-pane contenido5" id="pag9">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Y en la vida real, ¿qué hace para cuidarse y cuidar a los suyos?</h3>
-                        <p>Ya propuso un final para la historia de Leidy, ahora cuéntenos cómo lo hace usted en la vida real, con los suyos, sus hijos, hermanos, estudiantes, y la gente de su entorno: </p>
-                       <p> Señale con una X si conoce o ha desarrollado alguna acción ciudadana para informar o educar sobre la trata de personas, prevenirla o denunciarla:<br><br>
-                          <i class="clic fa fa-square-o"></i> En casa.<br>
-                          <i class="clic fa fa-square-o"></i> En el trabajo.<br>
-                          <i class="clic fa fa-square-o"></i> En el colegio.<br>
-                          <i class="clic fa fa-square-o"></i> En su barrio/vereda.<br>
-                       </p>
-                       
-                       <p>Comparta con el curso en qué consiste su acción ciudadana sobre la trata de personas. </p>
-                       <p>Una posibilidad de ampliar el impacto de su acción ciudadana para la prevención de la trata de personas es convocar acciones colectivas que generen el interés o el deseo de expresarse de otros miembros de su localidad. Un colectivo de ciudadanía activa en Colombia realiza algunas actividades de este tipo:  <a href="http://100en1dia.com/" target="_blank"> http://100en1dia.com </a></p>
-                       
-                       <h3>Comente en la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a> la siguiente pregunta:</h3>
-
-<p>A su juicio, ¿qué tipo de acciones ciudadanas contra la trata de personas generan mayor impacto? </p>
-<p>Las que tienen un énfasis puesto en…<br>
-…la educación y la información.<br>
-…el fortalecimiento de la autonomía y la autoestima.<br>
-…el control sobre las relaciones y amistades de niños, niñas y jóvenes.<br>
-…el manejo del acceso a las redes sociales.<br>
-…las rutas legales para la denuncia y la judicialización.<br>
-Otras<br>
-¿Por qué?</p>
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag9 -->
-            
-             <div class="tab-pane contenido5" id="pag10">
-                <div class="row-fluid">
-                    <div class="span12">
-                       <h2>Acontecimiento ciudadano:</h2> 
-                        <p>A continuación realice la actividad <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">Acontecimiento Ciudadano.</a></p>
-                        <p>Gracias por su participación.</p>
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag8 --> 
-            
-          
-            
-            
-        </div><!-- /.tab-content -->
-        
-        <div class="pagination">
-            <ul>
-                <li class="active"><a href="#pag1">1</a></li>
-                <li><a href="#pag2">2</a></li>
-                <li><a href="#pag3">3</a></li>
-                <li><a href="#pag4">4</a></li>
-                <li><a href="#pag5">5</a></li>
-                <li><a href="#pag6">6</a></li>
-                <li><a href="#pag7">7</a></li>
-                <li><a href="#pag8">8</a></li>
-                <li><a href="#pag9">9</a></li>
-                <li><a href="#pag10">10</a></li>
-            </ul>
-        </div><!-- /.pagination -->
-    
-        <script type="text/javascript">
-            $(function(){
-                //$('.FuncButton').html('<i class="fa fa-question"></i>');
-                $('.FuncButton').addClass('btn btn-default');
-                $('.FuncButton').prop("onfocus", null);
-                $('.FuncButton').prop("onblur", null);
-                $('.FuncButton').prop("onmouseover", null);
-                $('.FuncButton').prop("onmouseout", null);
-                $('.FuncButton').prop("onmousedown", null);
-                $('.FuncButton').prop("onmouseup", null);
-                $('.pagination a').click(function (e) {
-                    e.preventDefault();
-                    $(this).tab('show');
-                    window.scrollTo(0, 0);
-                });
-                $('.FuncButton').click(function() {
-                    $('#respuesta').modal();
-                    //$(this).html('<i class="fa fa-check"></i>');
-                });
-                $('i.clic').click(function() {
-                    $(this).removeClass('fa-square-o').addClass('fa-check-square-o');
-                });
-            });
-        </script>
-    </div><!-- /.container -->
-    
-        
-
 
 <script type="text/javascript">
 
@@ -1094,7 +736,7 @@ var CorrectIndicator = '<i class="fa fa-check"></i>';
 var IncorrectIndicator = '<i class="fa fa-times"></i>';
 var YourScoreIs = 'Su puntuaci&#x00F3;n es ';
 var CorrectResponse = '&#x00A1;Correcto! Bien hecho';
-var IncorrectResponse = '&#x00A1;Lo sentimos! Respuesta incorrecta. Los elementos err&#x00F3;neos han sido marcado.';
+var IncorrectResponse = '&#x00A1;Lo sentimos! Respuesta incorrecta. Los elementos err&#x00F3;neos han sido marcados.';
 var TotalUnfixedLeftItems = 0;
 var TotCorrectChoices = 0;
 var Penalties = 0;
@@ -1104,7 +746,7 @@ var TimeOver = false;
 var Score = 0;
 var Locked = false;
 var ShuffleQs = false;
-var QsToShow = 7;
+var QsToShow = 5;
 
 
 function StartUp(){
@@ -1344,7 +986,386 @@ function CheckAnswers(){
 </script>
 
 
+</head>
 
+<body onload="StartUp()" id="TheBody" >
+
+
+<!-- BeginTopNavButtons -->
+<!-- EndTopNavButtons -->
+
+
+  
+    <div class="container-fluid">
+        <div class="tab-content">
+            <div class="row-fluid">
+                <div class="span12 bloqueModulo modulo5">
+                    <h4>Módulo 5: Derechos Humanos</h4>
+                </div><!-- /.span12 -->
+            </div><!-- ./row-fluid -->
+            <div class="tab-pane active contenido5" id="pag1">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Los Derechos Humanos y la trata de personas</h2>
+                        <p>Uno de los aspectos que concretan el sentido de la Dignidad Humana es la Integridad (física, psíquica y moral) de las personas, es decir el no ser sometido a tratos crueles, inhumanos y degradantes, el no ser sometido a humillaciones de ningún tipo. Este sentido de la Dignidad es el fundamento de los Derechos Humanos, pues desde sus dimensiones éticas, jurídicas y políticas, los Derechos Humanos dan alcance a la realización de la Dignidad Humana. Considerando la anterior aclaración es necesario reconocer que la esclavitud moderna que se realiza a través de la trata de personas, atenta contra la Dignidad y el ejercicio de los Derechos Humanos de millones de niños, niñas y jóvenes en todo el mundo, quienes a través de múltiples medios son engañados por los traficantes de personas. La trata de personas impide el ejercicio de los derechos y la ciudadanía pues entre los múltiples mecanismos para obligar a las personas que lo padecen a realizar actividades que van contra su Dignidad (por ej: ESCNNA, labores domésticas, tráfico de drogas y armas, vinculación al conflictos armados, retención de documentos personales) con lo cual se impide el acceso a bienes servicios y oportunidades.</p>
+                        <p>Los Estados han identificado la necesidad de realizar acciones preventivas (información, rutas de atención y denuncia) y de promoción de capacidades, de autocuidado para evitar que niños, niñas y jóvenes sean víctimas de este tipo de esclavitud.  El autocuidado implica que los niños, niñas, jóvenes y sus familias hagan un buen ejercicio de la autonomía, se fortalezcan criterios para la toma de decisiones y se construya confianza para reconocer quienes los pueden proteger, donde se puede denunciar en circunstancias donde la trata de personas puede ser un riesgo.</p>                        
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag1 -->
+            
+            <div class="tab-pane contenido5" id="pag2">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Bienvenida.</h2>
+                        <p>Estamos viviendo nuevas épocas; nuevas formas de expresión han aparecido; de comprender y habitar el mundo; de conocer gente, de acercarnos a otros y de compartir con ellos; nuevas formas de construir compromisos y proyectos; de darle sentido a la existencia y al progreso, nuevas formas de trabajo…. En fin, en este mundo cambiante aparecen también circunstancias que ponen a prueba nuestros criterios, nuestros referentes éticos, nuestra capacidad de cuidado propio y de los nuestros. Una de estas circunstancias es la trata de personas que afecta a millones de personas en el mundo. Por ello, es necesario fortalecer nuestros criterios y la capacidad para tomar perspectiva y decisiones sobre nuestra vida, y a veces la de los otros; con las que se podamos garantizar el ejercicio de la dignidad, de la libertad y de la autonomía. Le invitamos a reflexionar sobre este asunto y a considerar algunos mecanismos para protegerse y para proteger a los suyos de circunstancias que puedan afectar su dignidad y el ejercicio de una ciudadanía plena.</p>
+                        <h3>Objetivos del módulo.</h3>
+                        <p><strong>General: </strong>Comprender que en el marco del ejercicio de os derechos humanos, la trata de personas afecta el ejercicio de la ciudadanía.</p>
+                        <strong>Específicos:</strong>
+                        <ul>
+                            <li>Reconocer circunstancias en las que un individuo puede ser víctima de la trata de personas. </li> 
+                            <li>Promover el ejercicio de la autonomía como mecanismo para evitar ser víctima de este tipo de acciones.</li>                                                  
+                            <li>Promover la construcción de confianza en el entorno familiar y escolar como mecanismo para evitar ser víctima del tráfico de personas.</li>
+                        </ul>                        
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag2 -->
+            
+            <div class="tab-pane contenido5" id="pag3">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Cómic</h2>
+                        <p>¿Qué piensa usted de esto?</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+                        
+                <div class="row-fluid">
+                    <div class="span2">&nbsp;</div>
+                    <div class="span8">
+                        <!-- Carrusel de viñetas - 3 -->
+                        <div id="carruselDDHH" class="carousel slide" data-interval="10000" >
+                            <ol class="carousel-indicators">
+                                <li data-target="#carruselDDHH" data-slide-to="0" class="active"></li>
+                                <li data-target="#carruselDDHH" data-slide-to="1"></li>
+                                <li data-target="#carruselDDHH" data-slide-to="2"></li>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="active item">
+                                    <img src="ddhh01.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="ddhh02.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="ddhh03.svg">
+                                </div>
+                            </div><!-- /.carousel-inner -->
+                            <!-- Carousel nav -->
+                            <a class="carousel-control left" href="#carruselDDHH" data-slide="prev">&lsaquo;</a>
+                            <a class="carousel-control right" href="#carruselDDHH" data-slide="next">&rsaquo;</a>
+                        </div><!-- /#carruselAgua .carousel .slide -->
+                    </div>
+                    <div class="span2">&nbsp;</div>
+                </div><!-- /.row-fluid -->
+                
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>¿Qué sucedió?</p>  
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag3 -->
+            
+            <div class="tab-pane contenido5" id="pag4">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>En la página de Facebook ‘Santa Catalina 4ever’, los alumnos de 9º y 10º apoyan a sus equipos. Todos los días montan fotos de los miembros del equipo, carteles de apoyo, videos editados de partidos anteriores y, por supuesto, uno que otro insulto contra el equipo contrario. Diana y su combo de amigas ‘mUñEkitAx hErMosHas’ decidieron organizarse para apoyar al equipo de su curso: compraron uniformes de porristas y papel confitado, e inventaron barras y canciones para el día del partido. ¡La idea les ha encantado a sus compañeras! ¡Todas las chicas quieren participar y apoyar este evento! Todas están muy emocionadas con su debut como porristas y han comenzado a montar fotos de sus uniformes y videos de los ensayos de la coreografía.  Por supuesto, los chicos del curso no son indiferentes y han comenzado a coquetear con ellas por medio de Facebook. Una de ellas, Lady Camila, ha sido la que más “me gusta” ha obtenido con sus fotos. Muchos de sus contactos le envían piropos pero hay uno de ellos que es particularmente especial. Lady no lo conoce, él dice que se llama Maicol. Eso a Lady no le importa: ¡Maicol es un divino! ¡Escribe muy bonito y le envía canciones preciosas! </p>
+                        <p>Hoy, como todos los días, Lady inicia sesión en su cuenta de Facebook y ve un mensaje de Maicol invitándola a comer helado en un parque bastante retirado de su casa. Maicol le pide que vaya sola porque le da pena que se den cuenta de que está nervioso por encontrarse con “lA prInXeZa mAx herMoOoxtHa de tOoO el MuNDo!”. Lady no hace sino sonreír, aunque no lo conoce, Maicol le gusta muchísimo. Así que decide dejar el miedo a un lado y aceptar la invitación…</p>
+                        <p>Cuando de TRATA se TRATA… </p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag4 -->
+            
+            <div class="tab-pane contenido5" id="pag5">
+                <div class="row-fluid">
+                    <div class="span12">                    
+                        <h2>¿De qué se trata la trata?</h2>
+                        <h3>Sabía usted que…</h3>
+                        <p>…millones de personas en América Latina son víctimas de la ‘esclavitud del siglo XXI’: la trata de personas. Esta forma de esclavitud consiste en engañar u obligar a una persona, especialmente mujeres, niños y niñas, a desplazarse hacia otros lugares (generalmente el extranjero) con fines de explotación sexual, comercio de órganos, o realización de cualquier tipo de trabajos en contra de su voluntad; lo que afecta especialmente su dignidad, su integridad (física, emocional y sicológica) y el ejercicio de la ciudadanía. <br>
+Pero, ¿por qué la trata de personas afecta el ejercicio de la ciudadanía? Veamos:</p>
+                        <p>Aclaración de conceptos. (El ejercicio contiene dos columnas con ideas u oraciones que se complementan, debe emparejar las ideas de la columna de la izquierda con las de la derecha).</p>
+
+<!-- ****************************************** HOTPOTATO **************************************** -->
+<div style="display: none;" class="Titles">
+    <h2 class="ExerciseTitle">Como ciudadano/a del agua yo entiendo que...</h2>
+    <h3 class="ExerciseSubtitle">Ejercicio de emparejamiento</h3>
+</div>
+<div style="display: none;" id="InstructionsDiv" class="StdDiv">
+    <div id="Instructions">Empareje los elementos de la derecha con los de la izquierda</div>
+</div>
+<div id="MainDiv" class="StdDiv">
+<div id="MatchDiv" style="text-align: center;">
+<form id="QForm" method="post" action="" onsubmit="return false;">
+<table border="0" style="margin: 2em auto 2em auto;"><tbody id="Questions">
+<tr><td class="LeftItem">La trata de personas (esclavitud del siglo XXI) va en contra de la dignidad humana&#x2026; </td><td class="RightItem"><select id="s0_0"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">La dignidad humana es real cuando podemos&#x2026; </td><td class="RightItem"><select id="s1_1"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">Seg&#x00FA;n los pactos y tratados internacionales sobre derechos humanos&#x2026; </td><td class="RightItem"><select id="s2_2"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">Cuando un ser humano padece tratos crueles, inhumanos y degradantes&#x2026; </td><td class="RightItem"><select id="s3_3"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">Corresponde al estado, a las autoridades y a la familia&#x2026; </td><td class="RightItem"><select id="s4_4"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">La confianza y la comunicaci&#x00F3;n con los hijos ayudan a&#x2026; </td><td class="RightItem"><select id="s5_5"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr><tr><td class="LeftItem">Una forma de ejercer mi ciudadan&#x00ED;a es&#x2026; </td><td class="RightItem"><select id="s6_6"><option value="x">SELECCIONE LA RESPUESTA CORRECTA</option>
+<option value="3">pierde en todo sentido su estatus de ciudadano.</option>
+<option value="0">pues impide el ejercicio de la libertad en su aspecto m&#x00E1;s concreto, la autonom&#x00ED;a.</option>
+<option value="4">prevenir y denunciar tratos crueles, inhumanos y degradantes como la trata de personas.</option>
+<option value="1">realizar un proyecto de vida, vivir bien y sin humillaciones. </option>
+<option value="5">prevenir que uno de ellos sea la siguiente v&#x00ED;ctima de la trata de personas&#x2026; fortalecer la autonom&#x00ED;a y tomar decisiones responsables.</option>
+<option value="6">informar a alguien de mi confianza si recibo propuestas extra&#x00F1;as de personas desconocidas. </option>
+<option value="2">la dignidad humana existe y se concreta realmente cuando se goza de integridad f&#x00ED;sica, emocional y sicol&#x00F3;gica.</option>
+</select></td><td></td></tr>
+</tbody></table>
+</form>
+</div>
+
+    <div style="margin: auto; width: 200px;">
+        <button id="CheckButton2" class="FuncButton" onmouseover="FuncBtnOver(this)" onfocus="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onblur="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="CheckAnswers()">&nbsp;Comprobar respuesta&nbsp;</button>
+    </div> 
+
+</div>
+<!-- ****************************************** HOTPOTATO **************************************** -->
+
+                    <h3>Abra la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a> y responda las siguientes preguntas:</h3>
+<p>¿Conoce en su país o localidad alguna política, plan o proyecto de prevención, educación, protección o sanción relacionada con el tráfico de personas? ¿En qué consiste?</p>
+<p>¿Desarrollan en su institución educativa algún proyecto de difusión, educación y protección para prevenir la trata de personas?</p>
+
+
+
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag5 -->
+            
+            <div class="tab-pane contenido5" id="pag6">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Puede informarse sobre la trata y el tráfico de personas en los siguientes enlaces:</h3>
+                        <p><a href="http://www.elespectador.com/noticias/judicial/sentencian-mujer-15-anos-de-prision-trata-de-personas-articulo-437656" target="_blank"> http://www.elespectador.com/noticias/judicial/sentencian-mujer-15-anos-de-prision-trata-de-personas-articulo-437656</a></p>  
+                        <p><a href="http://www.eltiempo.com/entretenimiento/teatro/vctimas-de-trata-de-personas-llevan-su-historia-a-escena_12948415-4">http://www.eltiempo.com/entretenimiento/teatro/vctimas-de-trata-de-personas-llevan-su-historia-a-escena_12948415-4</a> </p> 
+                        <p><a href="http://www.eltiempo.com/politica/el-quid-cmo-opera-la-trata-de-personas-en-colombia_12941618-4" target="_blank"> http://www.eltiempo.com/politica/el-quid-cmo-opera-la-trata-de-personas-en-colombia_12941618-4</a></p>
+                        <p><a href="http://www.eltiempo.com/justicia/piden-ms-acciones-contra-trata-de-personas_12933549-" target="_blank"> http://www.eltiempo.com/justicia/piden-ms-acciones-contra-trata-de-personas_12933549-</a></p>
+                        <p>Algunos hechos que muestran la gravedad del problema de la trata y el tráfico de personas:  <a href="http://www.unodc.org/documents/colombia/2013/Julio/CongresoTratadepersonas.pdf" target="_blank">http://www.unodc.org/documents/colombia/2013/Julio/CongresoTratadepersonas.pdf</a></p>  
+                        <p>Cali y Pereira: primera y segunda ciudad en casos de trata:  <a href="http://www.latarde.com/noticias/risaralda/118726-pereira-la-segunda-ciudad-con-mas-casos-de-trata-de-personas" target="_blank">http://www.latarde.com/noticias/risaralda/118726-pereira-la-segunda-ciudad-con-mas-casos-de-trata-de-personas </a>
+</p>
+                        <p>¿Cómo prevenir la trata de personas?:  <a href="http://www.savethechildren.org.gt/index.php?option=com_content&view=article&id=49&Itemid=25" target="_blank">http://www.savethechildren.org.gt/index.php?option=com_content&view=article&id=49&Itemid=25 </a> </p>
+                        <p>Manual - Derechos Humanos y trata de personas: <a href="http://www.catedradh.unesco.unam.mx/BibliotecaV2/Documentos/Trata/Libros/manual_trata_dh.pdf" target="_blank">http://www.catedradh.unesco.unam.mx/BibliotecaV2/Documentos/Trata/Libros/manual_trata_dh.pdf </a></p> 
+                        <h3>Reflexión de grupo: </h3> 
+                        <p>Después de leer algunos de los anteriores artículos, comparta sus hallazgos con otros participantes del curso. ¿Encuentra coincidencias?, ¿difiere de algunas opiniones?, ¿hay algo de lo que se menciona que usted no conocía?</p>           
+                        
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag6 -->
+            
+            <div class="tab-pane contenido5" id="pag7">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Le invitamos a profundizar en esta reflexión sobre la trata de personas y la formación en ciudadanía.</h2>
+                        <p>¿Qué relación encuentra usted entre dignidad humana y trata de personas?<br>
+¿Cómo afecta la trata de personas el ejercicio de la ciudadanía?<br>
+¿Educar para el ejercicio de la ciudadanía ayuda a prevenir la trata de personas? ¿Por qué? </p>
+                        <p>Responda y comente en la <a target="_blank" href="http://ciudadanos.ning.com">Red Social</a></p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag7 -->
+            
+            <div class="tab-pane contenido5" id="pag8">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Una historia, muchos desenlaces…</h2>
+                        <p>Cuando leemos estas historias es común que nuestra reacción sea pensar ‘como se hubiera hecho mejor’. Conociendo la historia de Leydi con ‘Maicol’, y teniendo en cuenta una parte de la realidad sobre la trata de personas y cómo ésta afecta la dignidad, los derechos humanos y el ejercicio de la ciudadanía, ¿qué final daría usted a esta historia? Para responder puede tener en cuenta las siguientes preguntas generadoras:</p>
+                        <ul>
+                            <li>¿Cómo supo Leidy que el señor le mintió?</li>
+                            <li>¿Cómo llegó Leidy a la decisión de dejar al señor plantado?</li>
+                        </ul>
+                        <p>Puede también incorporar, en el final que usted propone, la ausencia o presencia las siguientes competencias ciudadanas:</p>
+                        <ul>
+                            <li>Toma de perspectiva.</li>
+                            <li>Pensamiento crítico.</li>
+                            <li>Interpretación de intenciones.</li>
+                            <li>Consideración de consecuencias.</li>
+                            <li>Escucha activa.</li>
+                            <li>Asertividad.</li>
+                        </ul>
+                        <p>Construya su propio relato en la <a target="_blank" href="http://ciudadanos.ning.com">Red Social</a></p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag8 -->
+            
+            <div class="tab-pane contenido5" id="pag9">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h3>Y en la vida real, ¿qué hace para cuidarse y cuidar a los suyos?</h3>
+                        <p>Ya propuso un final para la historia de Leidy, ahora cuéntenos cómo lo hace usted en la vida real, con los suyos, sus hijos, hermanos, estudiantes, y la gente de su entorno: </p>
+                       <p> Señale con una X si conoce o ha desarrollado alguna acción ciudadana para informar o educar sobre la trata de personas, prevenirla o denunciarla:<br><br>
+                          <i class="clic fa fa-square-o"></i> En casa.<br>
+                          <i class="clic fa fa-square-o"></i> En el trabajo.<br>
+                          <i class="clic fa fa-square-o"></i> En el colegio.<br>
+                          <i class="clic fa fa-square-o"></i> En su barrio/vereda.<br>
+                       </p>
+                       
+                       <p>Comparta con el curso en qué consiste su acción ciudadana sobre la trata de personas. </p>
+                       <p>Una posibilidad de ampliar el impacto de su acción ciudadana para la prevención de la trata de personas es convocar acciones colectivas que generen el interés o el deseo de expresarse de otros miembros de su localidad. Un colectivo de ciudadanía activa en Colombia realiza algunas actividades de este tipo:  <a href="http://100en1dia.com/" target="_blank"> http://100en1dia.com </a></p>
+                       
+                       <h3>Comente en la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a> la siguiente pregunta:</h3>
+
+<p>A su juicio, ¿qué tipo de acciones ciudadanas contra la trata de personas generan mayor impacto? </p>
+<p>Las que tienen un énfasis puesto en…<br>
+…la educación y la información.<br>
+…el fortalecimiento de la autonomía y la autoestima.<br>
+…el control sobre las relaciones y amistades de niños, niñas y jóvenes.<br>
+…el manejo del acceso a las redes sociales.<br>
+…las rutas legales para la denuncia y la judicialización.<br>
+Otras<br>
+¿Por qué?</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag9 -->
+            
+             <div class="tab-pane contenido5" id="pag10">
+                <div class="row-fluid">
+                    <div class="span12">
+                       <h2>Acontecimiento ciudadano:</h2> 
+                        <p>A continuación realice la actividad <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">Acontecimiento Ciudadano.</a></p>
+                        <p>Gracias por su participación.</p>
+                    </div><!-- /.span12 -->
+                </div><!-- /.row-fluid -->
+            </div><!-- /.tab-pane #pag8 --> 
+            
+          
+           
+            
+            
+            
+        </div><!-- /.tab-content -->   
+
+
+
+        <div class="pagination">
+            <ul>
+                <li class="active"><a href="#pag1">1</a></li>
+                <li><a href="#pag2">2</a></li>
+                <li><a href="#pag3">3</a></li>
+                <li><a href="#pag4">4</a></li>
+                <li><a href="#pag5">5</a></li>
+                <li><a href="#pag6">6</a></li>
+                <li><a href="#pag7">7</a></li>
+                <li><a href="#pag8">8</a></li>
+            </ul>
+        </div><!-- /.pagination -->
+        
+        
+        
+    </div><!-- /.container -->
+
+
+
+        
+        <div class="modal fade" id="respuesta" tabindex="-1" role="dialog" aria-labelledby="Respuesta" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Respuesta</h4>
+              </div>
+              <div class="modal-body">
+
+<div class="Feedback" id="FeedbackDiv">
+<div class="FeedbackText" id="FeedbackContent"></div>
+<button style="display: none;" id="FeedbackOKButton" class="FuncButton" onfocus="FuncBtnOver(this)" onblur="FuncBtnOut(this)" onmouseover="FuncBtnOver(this)" onmouseout="FuncBtnOut(this)" onmousedown="FuncBtnDown(this)" onmouseup="FuncBtnOut(this)" onclick="HideFeedback(); return false;">&nbsp;Correcto&nbsp;</button>
+</div>
+
+              </div>
+              <div class="modal-footer">
+                <button id="cerrarModal" data-dismiss="modal" type="button" class="btn btn-primary">Cerrar ventana</button>
+              </div>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+
+<!-- BeginBottomNavButtons -->
+
+
+
+<!-- EndBottomNavButtons -->
+
+<!-- BeginSubmissionForm -->
+
+<!-- EndSubmissionForm -->
+        <script type="text/javascript">
+            $(function(){
+                //$('.FuncButton').html('<i class="fa fa-question"></i>');
+                $('.FuncButton').addClass('btn btn-default');
+                $('.FuncButton').prop("onfocus", null);
+                $('.FuncButton').prop("onblur", null);
+                $('.FuncButton').prop("onmouseover", null);
+                $('.FuncButton').prop("onmouseout", null);
+                $('.FuncButton').prop("onmousedown", null);
+                $('.FuncButton').prop("onmouseup", null);
+                $('.pagination a').click(function (e) {
+                    e.preventDefault();
+                    $(this).tab('show');
+                    window.scrollTo(0, 0);
+                });
+                $('#MainDiv').attr('style','heigth:auto;');
+                $('.FuncButton').click(function() {
+                    $('#respuesta').modal();
+                    //$(this).html('<i class="fa fa-check"></i>');
+                });
+                $('i.clic').click(function() {
+                    $(this).removeClass('fa-square-o').addClass('fa-check-square-o');
+                });
+            });
+        </script> 
 
 
 </body>
