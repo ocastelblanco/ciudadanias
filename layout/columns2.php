@@ -119,9 +119,9 @@ echo $OUTPUT->doctype() ?>
         echo "      <div class='span2'>2014® CIUDADANÍAS</div>";
         echo "      <div class='span4'>&nbsp;</div>";
         echo "      <div class='span6'>";
-        echo "          <img src='".$CFG->wwwroot."/theme/ciudadaniastheme/pix/logoOEI.jpg'>";
-        echo "          <img src='".$CFG->wwwroot."/theme/ciudadaniastheme/pix/logoMercosur.jpg'>";
-        echo "          <img src='".$CFG->wwwroot."/theme/ciudadaniastheme/pix/logoParlamentoJuvenil2014.jpg'>";
+        echo "          <a href='http://www.oas.org/es/' target='_blank'><img border='0' src='".$CFG->wwwroot."/theme/ciudadaniastheme/pix/logoOEI.jpg'></a>";
+        echo "          <a href='http://www.sic.inep.gov.br/es-ES/' target='_blank'><img border='0' src='".$CFG->wwwroot."/theme/ciudadaniastheme/pix/logoMercosur.jpg'></a>";
+        echo "          <a href='http://parlamentojuvenil.educ.ar/' target='_blank'><img border='0' src='".$CFG->wwwroot."/theme/ciudadaniastheme/pix/logoParlamentoJuvenil2014.jpg'></a>";
         echo "      </div><!-- /.span4 -->";
         echo "   </div><!-- /.row-fluid -->";
         echo "</div><!-- /.footerCiudadanias .container-fluid -->";

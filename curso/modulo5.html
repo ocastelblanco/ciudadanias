@@ -24,6 +24,24 @@
 
     
     <style type="text/css">
+        #hitos {
+            font-size: 10px;
+        }
+        #hitosCont {
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            padding: 10px;
+            margin-top: -20px;
+        }
+        .radio input {
+            margin-top: 4px;
+        }
+        .ventanaIframe {
+            border-style: none;
+            width: 100%;
+            height: 200px;
+        }
         .continuebutton {
             display:none;
         }
@@ -1003,40 +1021,9 @@ function CheckAnswers(){
                     <h4>Módulo 5: Derechos Humanos</h4>
                 </div><!-- /.span12 -->
             </div><!-- ./row-fluid -->
+            
+            
             <div class="tab-pane active contenido5" id="pag1">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>Los Derechos Humanos y la trata de personas</h2>
-                        <p>Uno de los aspectos que concretan el sentido de la Dignidad Humana es la Integridad (física, psíquica y moral) de las personas, es decir el no ser sometido a tratos crueles, inhumanos y degradantes, el no ser sometido a humillaciones de ningún tipo. Este sentido de la Dignidad es el fundamento de los Derechos Humanos, pues desde sus dimensiones éticas, jurídicas y políticas, los Derechos Humanos dan alcance a la realización de la Dignidad Humana. Considerando la anterior aclaración es necesario reconocer que la esclavitud moderna que se realiza a través de la trata de personas, atenta contra la Dignidad y el ejercicio de los Derechos Humanos de millones de niños, niñas y jóvenes en todo el mundo, quienes a través de múltiples medios son engañados por los traficantes de personas. La trata de personas impide el ejercicio de los derechos y la ciudadanía pues entre los múltiples mecanismos para obligar a las personas que lo padecen a realizar actividades que van contra su Dignidad (por ej: ESCNNA, labores domésticas, tráfico de drogas y armas, vinculación al conflictos armados, retención de documentos personales) con lo cual se impide el acceso a bienes servicios y oportunidades.</p>
-                        <p>Los Estados han identificado la necesidad de realizar acciones preventivas (información, rutas de atención y denuncia) y de promoción de capacidades, de autocuidado para evitar que niños, niñas y jóvenes sean víctimas de este tipo de esclavitud.  El autocuidado implica que los niños, niñas, jóvenes y sus familias hagan un buen ejercicio de la autonomía, se fortalezcan criterios para la toma de decisiones y se construya confianza para reconocer quienes los pueden proteger, donde se puede denunciar en circunstancias donde la trata de personas puede ser un riesgo.</p>                        
-                    </div><!-- /.span12 -->
-                </div><!-- ./row-fluid -->
-            </div><!-- /.tab-pane #pag1 -->
-            
-            <div class="tab-pane contenido5" id="pag2">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>Bienvenida.</h2>
-                        <p>Estamos viviendo nuevas épocas; nuevas formas de expresión han aparecido; de comprender y habitar el mundo; de conocer gente, de acercarnos a otros y de compartir con ellos; nuevas formas de construir compromisos y proyectos; de darle sentido a la existencia y al progreso, nuevas formas de trabajo…. En fin, en este mundo cambiante aparecen también circunstancias que ponen a prueba nuestros criterios, nuestros referentes éticos, nuestra capacidad de cuidado propio y de los nuestros. Una de estas circunstancias es la trata de personas que afecta a millones de personas en el mundo. Por ello, es necesario fortalecer nuestros criterios y la capacidad para tomar perspectiva y decisiones sobre nuestra vida, y a veces la de los otros; con las que se podamos garantizar el ejercicio de la dignidad, de la libertad y de la autonomía. Le invitamos a reflexionar sobre este asunto y a considerar algunos mecanismos para protegerse y para proteger a los suyos de circunstancias que puedan afectar su dignidad y el ejercicio de una ciudadanía plena.</p>
-                        <h3>Objetivos del módulo.</h3>
-                        <p><strong>General: </strong>Comprender que en el marco del ejercicio de os derechos humanos, la trata de personas afecta el ejercicio de la ciudadanía.</p>
-                        <strong>Específicos:</strong>
-                        <ul>
-                            <li>Reconocer circunstancias en las que un individuo puede ser víctima de la trata de personas. </li> 
-                            <li>Promover el ejercicio de la autonomía como mecanismo para evitar ser víctima de este tipo de acciones.</li>                                                  
-                            <li>Promover la construcción de confianza en el entorno familiar y escolar como mecanismo para evitar ser víctima del tráfico de personas.</li>
-                        </ul>                        
-                    </div><!-- /.span12 -->
-                </div><!-- ./row-fluid -->
-            </div><!-- /.tab-pane #pag2 -->
-            
-            <div class="tab-pane contenido5" id="pag3">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h2>Cómic</h2>
-                        <p>¿Qué piensa usted de esto?</p>
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
                         
                 <div class="row-fluid">
                     <div class="span2">&nbsp;</div>
@@ -1070,7 +1057,75 @@ function CheckAnswers(){
                 
                 <div class="row-fluid">
                     <div class="span12">
-                        <p>¿Qué sucedió?</p>  
+                        <h2>Introducción.</h2>
+                        <p>Bienvenidos al Módulo Derechos Humanos.</p>
+                        <p>Los derechos humanos(DDHH) son un tema relevante en la escuela, pero es necesario reflexionar sobre la manera cómo educar desde un enfoque de derechos requiere de construir comprensiones sobre temas relevantes que involucran el cuidado del sí mismo y de otros. Por este motivo, en este módulo se reflexiona sobre las opciones metodológicas para operativizar en la escuela el enfoque de derechos y se ubica en el tema de la prevención trata de personas como un ejemplo de posible trabajo desde la escuela. De igual forma, busca ayudar, inspirar y motivar a los participantes  a encontrar nuevas estrategias de enseñanza que sean eficaces para integrar los DDHH en la escuela y la vida cotidiana. </p>
+                        <p>Las reflexiones que se realicen, combinadas con continuos diálogos con el contexto y con otras personas permitirán que cada participante enriquezca su iniciativa pedagógica y construya nuevas comprensiones sobre los derechos humanos en la escuela. Para cumplir con estos propósitos, este módulo cuenta con cuatro actividades generales que le permitirán alcanzar los objetivos de aprendizaje.</p>
+                        <h3>Objetivo general</h3>
+                        <p>Reflexionar sobre qué es educar para el ejercicio de los derechos humanos y la manera cómo se puede trabajar este tema en la escuela.</p>
+                        <h3>Objetivos específicos</h3>
+                        <p>
+                            <ul>
+                                <li>Construir comprensiones sobre qué son los DDHH y qué significa educar para el ejercicio de los DDHH.</li>
+                                <li>Promover el ejercicio de la autonomía y la construcción de confianza como mecanismo para educar desde un enfoque de derechos.                                                  </li>
+                                <li>Reflexionar sobre el tema de la trata de personas como un fenómeno que afecta a la comunidad educativa y sus derechos. </li>
+                                <li>Enriquecer la iniciativa pedagógica propuesta por los participantes.</li>
+                            </ul>
+                        </p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag1 -->
+            
+            <div class="tab-pane contenido5" id="pag2">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Actividad 1. ¿Qué son los DDHH?</h2>
+                        <p>Lo invitamos a ver los siguientes videos para iniciar un proceso de construcción de compresiones sobre los DDHH.</p>
+                        <iframe width="560" height="315" src="//www.youtube.com/embed/4odofaBBDOo" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="//www.youtube.com/embed/aZoMyJmzzIU" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="//www.youtube.com/embed/6lXtFbByI50" frameborder="0" allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="//www.youtube.com/embed/_QeYY-lbiUQ" frameborder="0" allowfullscreen></iframe>
+                        <h3>Oportunidad para innovar</h3>
+                        <p>Le proponemos ver estos video con sus estudiantes, pregúnteles que sienten al verlos, qué piensan al respecto y construyan junto una definición de lo que son los DDHH.</p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag2 -->
+            
+            <div class="tab-pane contenido5" id="pag3">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Construyendo comprensiones.</h2>
+                        <p>Los DDHH tal vez no sean un tema nuevo para usted. Tal vez al ver los video reconoció algunos elementos fundamentales , pero tal vez reflexionó sobre el hecho que a pesar de estar hablando diariamente de DDHH en muchas ocasiones no existen claridades de lo qué son, su importancia y características. Por este motivo, a continuación se plantean algunas definiciones y características que permitirán construir comprensiones al respecto.</p>
+                        <blockquote>
+                            <p>“Los DDHH pueden definirse como los derechos inherentes a nuestra naturaleza, sin los que no podemos vivir como seres humanos. Los DDHH y las libertades fundamentales nos permiten desarrollarnos plenamente y hacer uso de nuestras cualidades humanas, nuestra inteligencia, nuestras aptitudes y nuestra conciencia, así como satisfacer, entre otras, nuestras necesidades espirituales. Los derechos humanos se basan en el deseo, cada vez más extendido en la humanidad, de vivir una vida en la que se respeten y protejan la dignidad y valor inherentes de cada ser humano”.</p>
+                            <small><cite title="(ONU, 2004).">(ONU, 2004).</cite></small>
+                        </blockquote>
+                        <p>Los derechos humanos (DDHH) se vinculan con el reconocimiento de la dignidad intrínseca de cada persona a partir de la cual se construye la libertad, la justicia y la paz en el mundo. Esta relación va en dos direcciones, pues la dignidad se vincula también con el reconocimiento de los derechos fundamentales de todas las personas tales como el derecho a la vida, a la libertad y a la seguridad de las personas (ONU, 2004).  De igual forma, la ausencia de estos derechos no sólo constituye una tragedia individual, sino que también crea condiciones de inestabilidad social y política que se traducen en violencia.</p>
+                        <p>Algunas de las características más importantes de los DDHH son las siguientes:
+                            <ul>
+                                <li>Se fundan en el respeto a la dignidad de las personas.</li>
+                                <li>Son universales. Aplican en igualdad a todas las personas sin discriminación.</li>
+                                <li>Son inalienables. Son derechos que no cabe retirar a ninguna persona, pero pueden limitarse en determinadas situaciones.</li>
+                                <li>Son indivisibles, mutuamente relacionados e interdependientes, porque no basta con respetar algunos de ellos y no otros.</li>
+                            </ul>
+                        </p>
+                        <p>Los DDHH y su historia son producto de los acontecimientos mundiales y la necesidad que tienen las personas de reconocer su dignidad, libertad e igualdad. A pesar de esta importancia, los derechos humanos no se reconocieron oficial y universalmente hasta la Declaración Universal de Derechos Humanos (DUDH), aprobada por la Asamblea General de las Naciones Unidas el 10 de diciembre de 1948 (ONU, 2004). Este proceso de aprobación es un vivo ejemplo que a pesar de las diferencias ideológicas, políticas, culturales, religiosas y económicas, los seres humanos se pueden unir alrededor de aspiraciones y objetivos comunes. Para conocer la DUDH y cuáles son los DDHH <a href="1.DECLARACION.docx" target="_blank">haga clic aquí</a>.</p>
+                        <p>
+                            Luego de revisar la DUDH, se podrían plantear las siguientes grandes categorías en que se agrupar los DDHH (IIDH,1994):
+                            <table class="table table-bordered">
+                                <tr>
+                                    <td>Derechos civiles</td>
+                                    <td>Derechos políticos</td>
+                                    <td>Derechos económicos</td>
+                                </tr>
+                                <tr>
+                                    <td>Derechos culturales</td>
+                                    <td>Derechos de los pueblos</td>
+                                    <td>Derechos sociales</td>
+                                </tr>
+                            </table>
+                        </p>
+                        <p>Partiendo de las ideas que aquí se expone, diríjase a la <a href="http://ciudadanias.net" target="_blank">Red Social Ciudadanías</a> y responda a la siguiente pregunta ¿de qué manera se protegen los DDHH en su país?, ¿cuáles cree que son los DDHH que más de violan en su país?</p>
                     </div><!-- /.span12 -->
                 </div><!-- ./row-fluid -->
             </div><!-- /.tab-pane #pag3 -->
@@ -1078,21 +1133,514 @@ function CheckAnswers(){
             <div class="tab-pane contenido5" id="pag4">
                 <div class="row-fluid">
                     <div class="span12">
-                        <p>En la página de Facebook ‘Santa Catalina 4ever’, los alumnos de 9º y 10º apoyan a sus equipos. Todos los días montan fotos de los miembros del equipo, carteles de apoyo, videos editados de partidos anteriores y, por supuesto, uno que otro insulto contra el equipo contrario. Diana y su combo de amigas ‘mUñEkitAx hErMosHas’ decidieron organizarse para apoyar al equipo de su curso: compraron uniformes de porristas y papel confitado, e inventaron barras y canciones para el día del partido. ¡La idea les ha encantado a sus compañeras! ¡Todas las chicas quieren participar y apoyar este evento! Todas están muy emocionadas con su debut como porristas y han comenzado a montar fotos de sus uniformes y videos de los ensayos de la coreografía.  Por supuesto, los chicos del curso no son indiferentes y han comenzado a coquetear con ellas por medio de Facebook. Una de ellas, Lady Camila, ha sido la que más “me gusta” ha obtenido con sus fotos. Muchos de sus contactos le envían piropos pero hay uno de ellos que es particularmente especial. Lady no lo conoce, él dice que se llama Maicol. Eso a Lady no le importa: ¡Maicol es un divino! ¡Escribe muy bonito y le envía canciones preciosas! </p>
-                        <p>Hoy, como todos los días, Lady inicia sesión en su cuenta de Facebook y ve un mensaje de Maicol invitándola a comer helado en un parque bastante retirado de su casa. Maicol le pide que vaya sola porque le da pena que se den cuenta de que está nervioso por encontrarse con “lA prInXeZa mAx herMoOoxtHa de tOoO el MuNDo!”. Lady no hace sino sonreír, aunque no lo conoce, Maicol le gusta muchísimo. Así que decide dejar el miedo a un lado y aceptar la invitación…</p>
-                        <p>Cuando de TRATA se TRATA… </p>
+                        <h2>Algunas nociones relevantes.</h2>
+                        <p>Es importante reconocer como los DDHH están articulados con la existencia de una naturaleza humana que merece de la protección en sus atributos de autonomía, igualdad, dignidad e integridad (Medina, 2014). Las anteriores nociones son para muchos autores los derechos que incansablemente se convierten en los fundamentales. Por este motivo, a continuación encontrarán las definiciones de estas nociones para profundizar sobre las comprensiones que se están construyendo:</p>
+                        <div class="row-fluid">
+                            <div class="span3"></div>
+                            <div class="span6">
+                                <img src="Modulo5Grafico1.png" style="max-width: 100%; height: auto">
+                            </div>
+                            <div class="span3"></div>
+                        </div><!-- /.row-fluid -->
                     </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
+                </div><!-- ./row-fluid -->
             </div><!-- /.tab-pane #pag4 -->
             
             <div class="tab-pane contenido5" id="pag5">
                 <div class="row-fluid">
-                    <div class="span12">                    
+                    <div class="span12">
+                        <p><strong>Dignidad:</strong> se refiere al derecho que tiene cada ser humano de ser respetado y valorado como ser individual y social, con sus características y condiciones particulares, por el solo hecho de ser persona. Se expresa en la búsqueda de todo ser humano por encontrar su lugar en el mundo y en este sentido se relaciona con la tendencia a hacer algo y tener el poder para hacerlo.</p>
+                        <p><strong>Autonomía:</strong> La libertad es el bien más preciado de la existencia humana y su realidad se concreta en el ejercicio de la autonomía.  La autonomía se puede entender como la posibilidad que tienen las personas para organizar su vida, construir un proyecto vital de acuerdo a sus necesidades particulares y lo que consideran más apropiado para su existencia (Defensoría del Pueblo, 2001).</p>
+                        <p><strong>Igualdad:</strong> Parte del proceso cultural de la humanidad ha sido el de construir formas de interpretar y habitar el mundo, que han dado a las diversas formaciones sociales unas particularidades, unas diferencias y por supuesto unas necesidades.  Buscando satisfacer esas  necesidades una parte de la humanidad ha aprendido a generar desigualdades donde solo encuentra diferencias (p.e. hombre/mujer, niño/adulto, norte/sur, afro/indígena/mestizo), por lo que uno de los grandes logros de la otra parte de la humanidad ha sido la de luchar por igualdad (Defensoría del Pueblo, 2001).</p>
+                        <p><strong>Integridad:</strong> Para vivir dignamente las personas requieren de un conjunto de condiciones que les permita desplegar sus facultades y capacidades físicas, psíquicas y morales. La integridad personal tiene una dimensión física que habla del habla del cuidado y conservación del cuerpo humano, de la protección contra toda forma de agresión: golpes torturas, mutilaciones que afecten su salud, el funcionamiento de sus órganos o le produzca incapacidad. Además tiene una dimensión psíquica se refiere a la importancia de proteger a las personas de la acción u omisión de terceros que puedan afectar el normal funcionamiento de sus facultades mentales: memoria, la razón y el entendimiento; en su dimensión moral se trata que las personas puedan ejercer su autonomía, conservar o transformar sus valores y el respeto a sus decisiones y opiniones (Defensoría del Pueblo, 2001).</p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag5 -->
+            
+            <div class="tab-pane contenido5" id="pag6">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Actividad 2. Poner a prueba lo aprendido</h2>
+                        <p></p>
+                        <h3></h3>
+                        <p>1. El derecho a la libertad de prensa puede restringirse cuando una persona es declarada culpable por un tribunal.
+                            <label class="radio">
+                                <input type="radio" name="p1" id="p1A" value="option1">
+                                    Verdadero
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="p1" id="p1B" value="option2">
+                                    Falso
+                            </label>
+                            <div id="r1A" style="display: none" class="alert alert-success">
+                              <strong>Respuesta correcta.</strong> Aunque el derecho a la libertad de prensa es inalienable como todos los otros derechos humanos, en algunas ocasiones pueden restringirse.
+                            </div>
+                            <div id="r1B" style="display: none" class="alert alert-error">
+                              <strong>Respuesta incorrecta.</strong> Aunque el derecho a la libertad de prensa es inalienable como todos los otros derechos humanos, en algunas ocasiones pueden restringirse.
+                            </div>
+                            <script>
+                                $(function(){
+                                    $('#p1A').click(function() {
+                                        $('#r1A').show();
+                                        $('#r1B').hide();
+                                    });
+                                    $('#p1B').click(function() {
+                                        $('#r1A').hide();
+                                        $('#r1B').show();
+                                    });
+                                });
+                            </script>
+                        </p>
+                        <p>2. La violación de un solo derecho NO incide en el respeto de otros derechos.
+                            <label class="radio">
+                                <input type="radio" name="p2" id="p2A" value="option1">
+                                    Verdadero
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="p2" id="p2B" value="option2">
+                                    Falso
+                            </label>
+                            <div id="r2A" style="display: none" class="alert alert-error">
+                              <strong>Respuesta incorrecta.</strong> En muchas ocasiones la violación de un derecho afecta por asociación el respeto de otros por lo que debe considerarse que todos los derechos humanos tienen igual importancia y esenciales. 
+                            </div>
+                            <div id="r2B" style="display: none" class="alert alert-success">
+                              <strong>Respuesta correcta.</strong> En muchas ocasiones la violación de un derecho afecta por asociación el respeto de otros por lo que debe considerarse que todos los derechos humanos tienen igual importancia y esenciales. 
+                            </div>
+                            <script>
+                                $(function(){
+                                    $('#p2A').click(function() {
+                                        $('#r2A').show();
+                                        $('#r2B').hide();
+                                    });
+                                    $('#p2B').click(function() {
+                                        $('#r2A').hide();
+                                        $('#r2B').show();
+                                    });
+                                });
+                            </script>
+                        </p>
+                        <p>3. Toda persona tiene derechos que corresponden a su propia condición humana.
+                            <label class="radio">
+                                <input type="radio" name="p3" id="p3A" value="option1">
+                                    Verdadero
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="p3" id="p3B" value="option2">
+                                    Falso
+                            </label>
+                            <div id="r3A" style="display: none" class="alert alert-success">
+                              <strong>Respuesta correcta.</strong> Los derechos humanos son universales es decir aplican en igualdad a todas las personas sin discriminación. 
+                            </div>
+                            <div id="r3B" style="display: none" class="alert alert-error">
+                              <strong>Respuesta incorrecta.</strong> Los derechos humanos son universales es decir aplican en igualdad a todas las personas sin discriminación. 
+                            </div>
+                            <script>
+                                $(function(){
+                                    $('#p3A').click(function() {
+                                        $('#r3A').show();
+                                        $('#r3B').hide();
+                                    });
+                                    $('#p3B').click(function() {
+                                        $('#r3A').hide();
+                                        $('#r3B').show();
+                                    });
+                                });
+                            </script>
+                        </p>
+                        <p>4. Para gozar de la libertad de pensamiento, cada persona necesita poder expresarse libremente para poder contrastar, distinguir y manifestar su pensamiento.
+                            <label class="radio">
+                                <input type="radio" name="p4" id="p4A" value="option1">
+                                    Verdadero
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="p4" id="p4B" value="option2">
+                                    Falso
+                            </label>
+                            <div id="r4A" style="display: none" class="alert alert-success">
+                              <strong>Respuesta correcta.</strong> La libertad de pensamiento se refiere al derecho que tienen las personas de poder percibir el mundo desde sus propias comprensiones y expresar sus ideas al respecto. 
+                            </div>
+                            <div id="r4B" style="display: none" class="alert alert-error">
+                              <strong>Respuesta incorrecta.</strong> La libertad de pensamiento se refiere al derecho que tienen las personas de poder percibir el mundo desde sus propias comprensiones y expresar sus ideas al respecto.
+                            </div>
+                            <script>
+                                $(function(){
+                                    $('#p4A').click(function() {
+                                        $('#r4A').show();
+                                        $('#r4B').hide();
+                                    });
+                                    $('#p4B').click(function() {
+                                        $('#r4A').hide();
+                                        $('#r4B').show();
+                                    });
+                                });
+                            </script>
+                        </p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag6 -->
+            
+            <div class="tab-pane contenido5" id="pag7">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Cuestionario 2.</h2>
+                        <p>A pesar de la importancia de los DDHH, en ocasiones de la vida diaria se pueden presentar situaciones que los vulneran y es muy importante poder identificarlas. A continuación encontrará una serie de situaciones que le pedimos por favor leer, decidir si el caso que se presenta vulnera algún DDHH y responder según su análisis (Azkarate, Errasti & Mena, 2000). </p>
+                        <p>En las siguientes situaciones se vulneran los DDHH:</p>
+                        <p>1. Carmen la gerente de un Banco realiza el mismo trabajo que su homólogo Raúl, pero le están pagando un 30% menos.
+                            <label class="radio">
+                                <input type="radio" name="p5" id="p5A" value="option1">
+                                    SI
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="p5" id="p5B" value="option2">
+                                    NO
+                            </label>
+                            <div id="r5A" style="display: none" class="alert alert-success">
+                              <strong>Respuesta correcta.</strong> Se está violando el derecho a la igualdad, específicamente a la equidad de género en el ámbito laboral. 
+                            </div>
+                            <div id="r5B" style="display: none" class="alert alert-error">
+                              <strong>Respuesta incorrecta.</strong> Se está violando el derecho a la igualdad, específicamente a la equidad de género en el ámbito laboral.
+                            </div>
+                            <script>
+                                $(function(){
+                                    $('#p5A').click(function() {
+                                        $('#r5A').show();
+                                        $('#r5B').hide();
+                                    });
+                                    $('#p5B').click(function() {
+                                        $('#r5A').hide();
+                                        $('#r5B').show();
+                                    });
+                                });
+                            </script>
+                        </p>
+                        <p>2. Jazmín una estudiante musulmana acude a clase con el chador (el velo que le cubre la cara y el pelo) cumpliendo las reglas de su religión. El rector de su escuela le pide que no utilice esta prenda porque va en contra del uniforme.
+                            <label class="radio">
+                                <input type="radio" name="p6" id="p6A" value="option1">
+                                    SI
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="p6" id="p6B" value="option2">
+                                    NO
+                            </label>
+                            <div id="r6A" style="display: none" class="alert alert-success">
+                              <strong>Respuesta correcta.</strong> Los DDHH se basan en la igualdad, pero reconocen que esta igualdad significa el respeto a las diferencias. En este caso, se estaría violando el derecho que tiene toda persona a la libertad de pensamiento, de conciencia y de religión, incluyendo las prácticas religiosas involucradas. 
+                            </div>
+                            <div id="r6B" style="display: none" class="alert alert-error">
+                              <strong>Respuesta incorrecta.</strong> Los DDHH se basan en la igualdad, pero reconocen que esta igualdad significa el respeto a las diferencias. En este caso, se estaría violando el derecho que tiene toda persona a la libertad de pensamiento, de conciencia y de religión, incluyendo las prácticas religiosas involucradas.
+                            </div>
+                            <script>
+                                $(function(){
+                                    $('#p6A').click(function() {
+                                        $('#r6A').show();
+                                        $('#r6B').hide();
+                                    });
+                                    $('#p6B').click(function() {
+                                        $('#r6A').hide();
+                                        $('#r6B').show();
+                                    });
+                                });
+                            </script>
+                        </p>
+                        <p>3. Myriam la docente de español entrega las notas de un examen a sus estudiantes. La nota más alta es un 9 y la más baja un 2,5, vulnerando así el principio de igualdad: todos los estudiantes deberían tener un cinco.
+                            <label class="radio">
+                                <input type="radio" name="p7" id="p7A" value="option1">
+                                    SI
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="p7" id="p7B" value="option2">
+                                    NO
+                            </label>
+                            <div id="r7A" style="display: none" class="alert alert-error">
+                              <strong>Respuesta incorrecta.</strong> La igualdad de todo ser humano lo es ante la ley y ante la colectividad que conforma la nación y el estado, pero la igualdad no supone indiferenciación. El ideal de una sociedad es todos los seres humanos realicen plenamente su condición de seres libres, racionales y sociales; al lograrlo las personas serán diferentes en el desarrollo de sus potencialidades, pero a partir de condiciones similares para alcanzarlas. 
+                            </div>
+                            <div id="r7B" style="display: none" class="alert alert-success">
+                              <strong>Respuesta correcta.</strong> La igualdad de todo ser humano lo es ante la ley y ante la colectividad que conforma la nación y el estado, pero la igualdad no supone indiferenciación. El ideal de una sociedad es todos los seres humanos realicen plenamente su condición de seres libres, racionales y sociales; al lograrlo las personas serán diferentes en el desarrollo de sus potencialidades, pero a partir de condiciones similares para alcanzarlas. 
+                            </div>
+                            <script>
+                                $(function(){
+                                    $('#p7A').click(function() {
+                                        $('#r7A').show();
+                                        $('#r7B').hide();
+                                    });
+                                    $('#p7B').click(function() {
+                                        $('#r7A').hide();
+                                        $('#r7B').show();
+                                    });
+                                });
+                            </script>
+                        </p>
+                        <p>4. La Premio Nobel de la Paz de 1991 Aung San Suu Kyi, de Myanmar (antigua Birmania) permaneció casi seis años, de 1989 hasta 1995, en arresto domiciliario por manifestar de manera pacífica su oposición política al régimen militar que gobierna su país.
+                            <label class="radio">
+                                <input type="radio" name="p8" id="p8A" value="option1">
+                                    SI
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="p8" id="p8B" value="option2">
+                                    NO
+                            </label>
+                            <div id="r8A" style="display: none" class="alert alert-success">
+                              <strong>Respuesta correcta.</strong> Todo individuo tiene derecho a la libertad de opinión y de expresión; este derecho incluye el no ser molestado a causa de sus opiniones, el de investigar y recibir informaciones y opiniones, y el de difundirlas, sin limitación de fronteras, por cualquier medio de expresión.   
+                            </div>
+                            <div id="r8B" style="display: none" class="alert alert-error">
+                              <strong>Respuesta incorrecta.</strong> Todo individuo tiene derecho a la libertad de opinión y de expresión; este derecho incluye el no ser molestado a causa de sus opiniones, el de investigar y recibir informaciones y opiniones, y el de difundirlas, sin limitación de fronteras, por cualquier medio de expresión.  
+                            </div>
+                            <script>
+                                $(function(){
+                                    $('#p8A').click(function() {
+                                        $('#r8A').show();
+                                        $('#r8B').hide();
+                                    });
+                                    $('#p8B').click(function() {
+                                        $('#r8A').hide();
+                                        $('#r8B').show();
+                                    });
+                                });
+                            </script> 
+                        </p>
+                        <p>5. Jorge debe ingresar en la cárcel porque le han impuesto una fianza de $100.000 que no puede reunir y, sin embargo, Juan tiene una fianza de 5 millones la paga y sale de la cárcel.
+                            <label class="radio">
+                                <input type="radio" name="p9" id="p9A" value="option1">
+                                    SI
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="p9" id="p9B" value="option2">
+                                    NO
+                            </label>
+                            <div id="r9A" style="display: none" class="alert alert-error">
+                              <strong>Respuesta incorrecta.</strong> La igualdad de todo ser humano lo es ante la ley y ante la colectividad que conforma la nación y el estado, pero la igualdad no supone indiferenciación. El ideal de una sociedad es todos los seres humanos realicen plenamente su condición de seres libres, racionales y sociales; al lograrlo las personas serán diferentes en el desarrollo de sus potencialidades, pero a partir de condiciones similares para alcanzarlas.  
+                            </div>
+                            <div id="r9B" style="display: none" class="alert alert-success">
+                              <strong>Respuesta correcta.</strong> La igualdad de todo ser humano lo es ante la ley y ante la colectividad que conforma la nación y el estado, pero la igualdad no supone indiferenciación. El ideal de una sociedad es todos los seres humanos realicen plenamente su condición de seres libres, racionales y sociales; al lograrlo las personas serán diferentes en el desarrollo de sus potencialidades, pero a partir de condiciones similares para alcanzarlas.  
+                            </div>
+                            <script>
+                                $(function(){
+                                    $('#p9A').click(function() {
+                                        $('#r9A').show();
+                                        $('#r9B').hide();
+                                    });
+                                    $('#p9B').click(function() {
+                                        $('#r9A').hide();
+                                        $('#r9B').show();
+                                    });
+                                });
+                            </script>
+                        </p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag7 -->
+            
+            <div class="tab-pane contenido5" id="pag8">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Actividad 3. Educación para el ejercicio de los DDHH.</h2>
+                        <h3>¿Qué es?</h3>
+                        <p>Los DDHH se promueven desde diferentes mecanismos como por ejemplo grupos de trabajo, comités, construcción de informes, investigación, construcción de políticas públicas, planes y programas. Sin embargo, una de las actividades más importantes para la promoción de los DDHH es la educación para el ejercicio de los DDHH (ONU, 2004). </p>
+                        <p>De esta manera, se puede entender que la educación en la esfera de los DDHH como un proceso educativo en el que se intenta transmitir los valores democráticos como la paz, tolerancia y respeto, desarrollando habilidades que permitan que las todas las personas puedan conocer, ejercer y exigir sus derechos y los de otras personas. La educación para el ejercicio de los  DDHH es un método reconocido internacionalmente de promoción de los DDHH en el ámbito mundial, nacional y local, y entre numerosas partes interesadas pertenecientes a distintas esferas.</p>
+                        <p>En palabras de Amnistía Internacional (2011): </p>
+                        <blockquote>“La educación en derechos humanos se ocupa, entre otras cosas, de informar sobre los instrumentos internacionales de derechos humanos, su objetivo es dar a conocer a las personas las normas legales que existen, su contenido y categoría jurídica. Pero la educación en derechos humanos no se limita a impartir conocimientos sobre derechos humanos. Fundamentalmente trata de cambiar actitudes y comportamientos y desarrollar en las personas nuevas actitudes que les permitan pasar a la acción”.</blockquote>
+                        <h3>¿Por qué hacerlo?</h3>
+                        <p>La escuela como escenario cultural tiene un rol fundamental en la formación de sujetos activos de derechos, lo que hace referencia al reto de la escuela de formar personas que conocen sus derechos, los ejercen y reclaman su protección, defensa y garantía (IEPALA, 2011). De manera corresponsable con la familia, la escuela es un lugar privilegiado para que las personas que conforman la comunidad educativa puedan ejercer sus DDHH en un ambiente propicio para generar pautas culturales y comportamentales que beneficien este ejercicio. Por ejemplo, una escuela con una política clara de no discriminación, donde todas las personas pueden participar de manera democrática en la toma de decisiones y se construyen colectivamente las normas, permite a los estudiantes, docentes y familias reconocer las ventajas de ejercer los DDHH.</p>
+                        <p>De igual manera, la educación para el ejercicio de los derechos humanos es importante porque permite formar ciudadanas y ciudadanos con un desarrollo integral que conviva en paz, participe democráticamente y valore las diferencias.  Lo anterior muestra su potencial para desempeñar una función vital en la creación de estructuras sociales que apoyen las democracias participativas y la resolución de conflictos, y puede ofrecer una idea común de cómo abordar las diferencias políticas y sociales de forma equitativa, además de celebrar la diversidad cultural (Amnistía Internacional, 2011).</p>
+                        <h3>¿Sabía usted que...?</h3>
+                        <p>Diferentes estudios han demostrado que existe una estrecha relación entre una escuela que viva una cultura de respeto a los derechos y los procesos de aprendizaje. Lo anterior se refiere a que en una escuela donde se mantienen mejores relaciones entre estudiantes, docentes, familias y el grupo de directivos docentes, los ambientes en los que se aprende son más participativos e incluyentes, es decir, donde existe un mejor clima escolar, el grupo de estudiantes se siente involucrado en mejores procesos de enseñanza y obtiene mejores resultados académicos  (Marshall, 2003; Arón & Milic, 1999). </p>
+                        <p>Lo invitamos a participar en la <a href="http://ciudadanias.net" target="_blank">Red Social Ciudadanías</a> y construir con sus compañeros reflexiones sobre las siguientes preguntas: ¿Por qué es importante en nuestra región educar para el ejercicio de los derechos humanos?, ¿cuáles considera usted que son los principales retos de la educación para el ejercicio de los DDHH en nuestra región?</p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag8 -->
+            
+            <div class="tab-pane contenido5" id="pag9">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>¿Cómo hacerlo?</h2>
+                        <p>Al reflexionar sobre el significado e importancia de la educación para el ejercicio de los derechos humanos es fundamental plantear algunos elementos que le ayudarán a todas las personas que conforman la comunidad educativa a aportar en la construcción los cómos para realizar este tipo de educación.
+                            <ol>
+                                <li>Una parte importante para la educación para el ejercicio de los DDHH es la corresponsabilidad, es decir que todas las personas involucradas deben hacerse cargo de lo que sucede en el contexto en este tema. Cada quién debe aportar y responder desde su rol a este tipo de educación, convirtiendo en colectivas las responsabilidades (MEN, 2014).</li>
+                                <li>Se pueden identificar dos planos articulados donde se ubican los procesos de enseñanza-aprendizaje dela educación para el ejercicio de los DDHH: el contexto (escuela, entorno), y el desarrollo de habilidades y contenidos (ONU, 2004). Estos planos responden a que el propósito de la enseñanza de los DDHH es un fin educativo que compromete la totalidad de la vida en la escuela (IIDH, 1994).</li>
+                                <li>Reconocer que la enseñanza y aprendizaje de los DDHH además de conocimientos, es práctica, actitud y emociones. Por este motivo la base principal de la educación para el ejercicio de los DDHH es respetar los derechos en el aula y en la escuela. </li>
+                                <li>Si se quiere que el aprendizaje tenga resultados no basta con aprender los conceptos principales, sino ofrecer espacios prácticos donde los estudiantes puedan aprender sobre DDHH en un entorno en el que se respeten estos derechos, donde se construya pensamiento crítico sobre las situaciones de la escuela, donde se ofrezcan espacios de participación inclusivos y donde perciban que los valoran como seres humanos. </li>
+                                <li>Aunque la parte cognitiva es relevante, existen procesos emocionales que se deben tener en  cuenta para diseñar, implementar y evaluar las acciones pedagógicas en el marco de derechos  (IIDH,1994). Lo anterior porque la relación entre DDHH y las personas se asocia con lo que este tema significa para cada persona, la manera cómo se sienten, las actitudes que tienen frente a los DDHH y comunican sus comprensiones, por lo que una educación centrada en los DDHH es algo más que una asignatura. Supone un contexto y una vivencia plena que debe estar presente en la escuela, como debería estarlo en la sociedad (IIDH, 1994). </li>
+                                <li>En este punto vale la pena preguntarse si la manera cómo está organizada la escuela, el aula, el aprendizaje, las relaciones docente-estudiante, es la adecuada para practicar este tipo de educación. Si una relación vertical entre docentes, estudiantes y familias, donde por ejemplo no se tengan en cuenta las opiniones de uno de estos grupos, significa que se favorece una desigualdad que afecta la integración social (IIDH, 1994).</li>
+                            </ol>
+                        </p>
+                        <p>Lo invitamos a participar en la <a href="http://ciudadanias.net" target="_blank">Red Social Ciudadanías</a> y construir con sus compañeros reflexiones sobre las siguientes preguntas: ¿De qué manera las relaciones verticales de autoridad entre docentes y estudiantes afectan la educación para el ejercicio de los DDHH? Por ejemplo en casos donde la autoridad se basa en la sumisión y no en el consenso para conseguir disciplina en el grupo. </p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag9 -->
+            
+            <div class="tab-pane contenido5" id="pag10">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Principios a tener en cuenta.</h2>
+                        <p>Para diseñar acciones, proyectos y procesos es útil tener en cuenta algunos principios pedagógicos para consolidar los procesos de enseñanza-aprendizaje de los DDHH (IIDH, 1994; ONU, 2004):</p>
+                        <p><strong>1. Integralidad: </strong>se debe tener en cuenta y recordar al grupo de estudiantes que los DDHH son un todo integrado e indivisible. En este sentido, las vivencias en las familias, escuela y contexto definen el interés y motivación hacia los DDHH. En la escuela se pueden utilizar paralelamente dos caminos para el conocimiento y valoración de los DDHH:
+                            <ul>
+                                <li>Asignación de un espacio educativo específico dentro del currículo.</li>
+                                <li>Buscando que la comunidad educativa, especialmente los docentes, sepan aprovechar todas las circunstancias como oportunidades pedagógicas.</li>
+                            </ul>
+                        </p>
+                        <p><strong>2. Participación: </strong> la participación es fundamental para la comprensión, aprendizaje y aplicación de los DDHH. En las relaciones escolares es fundamental que esté presente el diálogo en las actividades o trabajos relacionados con los DDHH. Este diálogo debe caracterizarte por habilidades como la escucha activa, empatía, argumentación y valoración de diferentes puntos de vista. </p>
+                        <p><strong>3. Pensamiento crítico: </strong> para comprender las realidades es necesario desarrollar la capacidad para cuestionar y evaluar la validez de cualquier creencia, afirmación o fuente de información. De esta manera se puede cuestionar lo que ocurre en la sociedad e identificar cómo la realidad podría ser distinta a como es actualmente (Chaux, et.al, 2004). Esto es relevante para generar procesos de análisis de las situaciones que le permitan a la persona interpretar hechos relacionados con los DDHH, análisis que se debe hacer desde el desarrollo de la libertad personal y la conciencia de la persona frente al mundo.</p>
+                        <p><strong>4. Respuesta apreciativa: </strong> existe una tendencia a presentar los DDHH desde una perspectiva problematizadora. Si es cierto que en América Latina la violación de algunos DDHH es cotidiana, es necesario que no sólo se problematice la situación, sino que busque soluciones, identificando las acciones positivas que en muchas ocasiones equilibran las circunstancias. Es decir, no es sólo identificar las violaciones de los DDHH en un contexto específico, sino identificar las organizaciones populares, los esfuerzos educativos, siendo una herramienta pedagógica para los estudiantes el investigar y conocer iniciativas de formas de trabajar en la promoción de los DDHH. </p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag10 -->
+            
+            <div class="tab-pane contenido5" id="pag11">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Estrategias y metodologías.</h2>
+                        <h3>Estrategias.</h3>
+                        <p>Existen diversas estrategias para lograr trabajar la educación para el ejercicio de los DDHH en las escuelas como por ejemplo (IIDH, 1994; ONU, 2004):
+                            <ul>
+                                <li>Política pública: incorporar este tipo de enseñanza en las políticas públicas del sector educativo.</li>
+                                <li>Inclusión de la educación para el ejercicio de los DDHH en los programas de estudio y libros de texto. </li>
+                                <li>Incorporación transversal en el currículo: algunas asignaturas ofrecen más facilidad por su contenido temático para relacionarlas con los DDHH, pero es necesario que en otras disciplinas se trabajen los DDHH desde los contenidos, pero sobre todo desde el clima de aula y la construcción de las relaciones sociales. </li>
+                                <li>Formación docente en DDHH y sus metodologías didácticas.</li>
+                                <li>Organización de actividades extracurriculares en la escuela, con las familias y la comunidad en general.</li>
+                                <li>Construcción de material didáctico acorde con la educación para el ejercicio de los DDHH.</li>
+                                <li>Construcción de redes de apoyo de docentes, profesionales de otros sectores, etc.</li>
+                            </ul>
+                        </p>
+                        <h3>Metodologías pedagógicas.</h3>
+                        <p>A continuación se plantean algunas propuestas metodológicas que responden didácticamente a los retos de educar para el ejercicio de los DDHH (ONU, 2004; Chaux et.al, 2004):</p>
+                    </div><!-- /.span12 -->
+                    <div class="row-fluid">
+                        <div class="span3"></div>
+                        <div class="span6">
+                            <img src="Modulo5Grafico2.png" style="max-width: 100%; height: auto">
+                        </div>
+                        <div class="span3"></div>
+                    </div><!-- /.row-fluid -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag11 -->
+            
+            <div class="tab-pane contenido5" id="pag12">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2></h2>
+                        <p><strong>1. Intercambio libre de ideas: </strong>se puede utilizar para buscar soluciones a problemas. Se debe partir del análisis del problema, para luego intercambiar o aportar ideas de cómo solucionarlo. Este tipo de metodología ayuda al trabajo en equipo, la generación creativa de opciones, escucha activa y argumentación. Operativamente se presenta el problema, de manera individual las personas escriben en una hoja todas las soluciones que se le ocurran, luego en grupos se analizan las propuestas sin criticar o rechazar ninguna. Luego, el grupo categoriza, analiza más a fondo, combinan, rechazan o adaptan las soluciones. Por último, el grupo hace recomendaciones y toma decisiones sobre el problema.</p>
+                        <p><strong>2. Estudios de casos: </strong>fomenta el análisis, las habilidades de resolución de problemas, planificación, y trabajo en equipo. Esos estudios de casos pueden utilizarse para organizar debates, diálogos o nuevas investigaciones. Operativamente los participantes se organizan en pequeños grupos se estudian casos reales o ficticios que permiten aplicar las normas de los DDHH. Es relevante que los casos se basen en situaciones verosímiles, con las que los participantes se identifiquen y sean pertinentes. La situación de un estudio puede plantearse en su totalidad al inicio o bien gradualmente.</p>
+                        <p><strong>3. Expresión creativa: </strong>las artes sirven para concretar los conceptos, analizar comprensiones y transformar emociones. Para trabajar DDHH se pueden utilizarse técnicas como por ejemplo narración de relatos, poesía, expresión gráfica, teatro y danzas. No es necesario que sean artistas los participantes, es suficiente con que la tarea sea interesante y se genere un espacio para conocer las creaciones. </p>
+                        <p><strong>4. Debate: </strong>existen diferentes técnicas para estimular los debates en parejas, pequeños grupos o entre toda la clase. Es necesario que antes de empezar el debate se cree un entorno de confianza estableciéndose por ejemplo propias normas o reglas de juego. Los debates pueden estructurarse de diversas formas:
+                            <br><br>
+                            <span style="text-decoration: underline">Debate formal-sistema de la pecera: </span>un pequeño grupo debate un tema mientras que el resto escucha y, después, hace comentarios y preguntas. 
+                            <br><br>
+                            <span style="text-decoration: underline">Diálogo en círculo: </span>se sientan en dos círculos concéntricos, unos mirando hacia dentro y otros mirando hacia fuera. Los participantes dialogan con la persona que tienen enfrente; al cabo de un rato el facilitador pide a los que están sentados en el círculo interior que se desplacen un lugar hacia la derecha y que traten del mismo tema con otra persona. Se recomienda que los temas más personales o emotivos se trabajen en parejas o en pequeños grupos.
+                            <br><br>
+                            <span style="text-decoration: underline">Rueda de preguntas y respuestas: </span>ideal para lograr la participación de toda la clase en la discusión de un tema. Se hace una pregunta en general como “¿qué significa para ti la dignidad?” o bien “me gusta que...” y cada participante  va respondiendo a la pregunta. 
+                            <br><br>
+                            <span style="text-decoration: underline">Trama de diálogo: </span>es una metodología donde se representa gráficamente el debate. Los participantes sentados en círculo y hablan por turnos. Cuando le llega su turno a alguien se le entrega un ovillo de hilo que se va desenrollando a medida que se pasa de uno a otro alumno. Cada persona sujeta el hilo cada vez que el ovillo pasa por sus manos. Al cabo del rato el grupo está interconectado por una malla de hilo donde se puede observar claramente la dirección en que se han mantenido las comunicaciones dentro del grupo.
+                        </p>
+                        <p><strong>5. Juego de roles: </strong>es una actividad que se puede desarrollar en el aula de clases, en una reunión de docentes o en un taller con familias. Las personas participantes se reúnen en parejas o grupos para representar una interacción de un conflicto o un proceso de toma de decisiones. El objetivo de esta actividad es brindar una experiencia de aprendizaje en la que las personas participantes ponen en práctica o vivencian los DDHH y, al asumir su rol, realizan un proceso de ponerse en los zapatos de otra persona (Chaux et al., 2004).</p>
+                        <p><strong>6. Excursiones/Visitas a la comunidad: </strong>es positivo para los estudiantes que la escuela se abra a la comunidad y puedan aprender en los lugares en los que se plantean cuestiones de DDHH (por ejemplo los tribunales, las cárceles, las fronteras internacionales) o donde hay personas que defienden los derechos (por ejemplo organizaciones voluntarias, depósitos de alimentos o ropa para necesitados, consultorios médicos gratuitos, etc.). Debe explicarse con antelación cuál será el objeto de la visita y debe decirse a los estudiantes que presten especial atención y anoten sus observaciones, que luego utilizarán en un debate o en una reflexión por escrito después de la visita.</p>
+                        <p><strong>7. Entrevistas: </strong>sirven para aprender directamente y personalizar temas de interés. Las personas entrevistadas pueden ser personas que conforman sus familias o personas de la comunidad, que estén relacionados con DDHH. Sus relatos orales pueden servir para documentar, comprender y solucionar los problemas de DDHH de la propia comunidad.</p>
+                        <p><strong>8. Proyectos de investigación: </strong>los temas de DDHH dan ocasión de realizar investigaciones independientes. Las investigaciones pueden consistir en estudios de tipo académico, utilizando las bibliotecas o Internet, o bien investigaciones de información basadas en entrevistas, encuestas de opinión o información tomada de los medios de comunicación. Pueden ser proyectos individuales o grupales, que permiten desarrollar la capacidad para pensar independientemente y para analizar los problemas complejos de los DDHH.</p>
+                        <p>En el siguiente espacio plantee cuáles de estas metodologías son más pertinentes para enriquecer su iniciativa pedagógica y trabajar el tema de DDHH.</p>
+                        <iframe style="display: none;" onload="limpiaEncuesta(this);" name="mod5-enc1" id="mod5-enc1" class="ventanaIframe" frameborder="0" border="0" cellspacing="0"  src="http://www.redeaprender.org/ciudadanias/moodle/mod/feedback/complete.php?id=32&courseid&gopage=0"></iframe>
+                        <div class="cargandoEncuesta alert alert-info"><i class="fa fa-spinner fa-spin"></i> Cargando datos, espere un momento...</div>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag12 -->
+            
+            <div class="tab-pane contenido5" id="pag13">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Análisis de caso.</h2>
+                        <p>Teniendo en cuenta las metodologías planteadas anteriormente, lo invitamos a vivenciar una de ellos. A continuación en encontrará un caso real, por favor léalo y responda a las preguntas que se le plantean a continuación:</p>
+                        <table class="table table-bordered">
+                            <tr>
+                                <td>
+                                    <p><strong>Experimento Milgram</strong></p>
+                                    <p>Luego de la Segunda Guerra Mundial el psicólogo norteamericano Stanley Milgram decidió investigar por qué los alemanes habían llegado a cometer durante la guerra tantas violaciones de los DDHH alegando, simplemente, muchos de ellos, que únicamente cumplían órdenes. ¿Acaso eran los alemanes excesivamente obedientes?, ¿tan obedientes que, incluso, obedecían órdenes que iban en contra de los más elementales principios éticos?</p>
+                                    <p>El psicólogo norteamericano ideó el siguiente experimento que puso en práctica, antes que en Alemania en su propio país, en la Universidad donde trabajaba. Consiguió un grupo de estudiantes voluntarios que se pusieron de acuerdo con él para ser de conejillos de indias.</p>
+                                    <p>Los que en realidad serían los sujetos del experimento serían profesores universitarios. A esos profesores, el psicólogo les diría que estaba realizando un experimento sobre cómo mejorar el aprendizaje aplicando castigos.</p>
+                                    <p>A los estudiantes se les harían preguntas sobre un tema, y cuando fallaran, la profesora o profesor accionaría un mecanismo que supuestamente produciría una descarga eléctrica. Los estudiantes fingirían sufrir esa descarga eléctrica. Al profesorado se le explicaría que las descargas iban a ser cada vez de mayor intensidad, hasta un máximo de 150 voltios. (En el que, por cierto, quizás algún estudiante podría sufrir alguna lesión).</p>
+                                    <p>El experimento dio como resultado que muchos profesores decidieron participar y aplicar cada vez mayores castigos. Muchos llegaron al grado máximo de los supuestos 150 voltios. El mismo experimento se practicó en otros países con resultado similares.</p>
+                                    <p>Si prefiere lo audiovisual, a continuación el video de esta historia:</p>
+                                    <iframe width="560" height="315" src="//www.youtube.com/embed/8cAD40ytfoE" frameborder="0" allowfullscreen></iframe>
+                                </td>
+                            </tr>
+                        </table>
+                        <p>¿Crees que es posible convencer a una persona para que aplique a otra una descarga eléctrica?, ¿cómo?</p>
+                        <iframe style="display: none;" onload="limpiaEncuesta(this);" name="mod5-enc2" id="mod5-enc2" class="ventanaIframe" frameborder="0" border="0" cellspacing="0"  src="http://www.redeaprender.org/ciudadanias/moodle/mod/feedback/complete.php?id=33&courseid&gopage=0"></iframe>
+                        <div class="cargandoEncuesta alert alert-info"><i class="fa fa-spinner fa-spin"></i> Cargando datos, espere un momento...</div>
+                        <p>Si un profesor o profesora es capaz de provocar una descarga eléctrica en un estudiante voluntariamente y sólo por participar en un experimento científico, ¿no deberían de ser declarados inocentes militares que cumpliendo órdenes no respetaron algún DDHH?</p>
+                        <iframe style="display: none;" onload="limpiaEncuesta(this);" name="mod5-enc3" id="mod5-enc3" class="ventanaIframe" frameborder="0" border="0" cellspacing="0"  src="http://www.redeaprender.org/ciudadanias/moodle/mod/feedback/complete.php?id=34&courseid&gopage=0"></iframe>
+                        <div class="cargandoEncuesta alert alert-info"><i class="fa fa-spinner fa-spin"></i> Cargando datos, espere un momento...</div>
+                        <p>¿Cómo se podría conseguir que dentro de veinte años, si se repitiera el experimento, casi nadie aceptara participar en él?</p>
+                        <iframe style="display: none;" onload="limpiaEncuesta(this);" name="mod5-enc4" id="mod5-enc4" class="ventanaIframe" frameborder="0" border="0" cellspacing="0"  src="http://www.redeaprender.org/ciudadanias/moodle/mod/feedback/complete.php?id=35&courseid&gopage=0"></iframe>
+                        <div class="cargandoEncuesta alert alert-info"><i class="fa fa-spinner fa-spin"></i> Cargando datos, espere un momento...</div>
+                        <p>Lo invitamos a participar en la <a href="http://ciudadanias.net" target="_blank">Red Social Ciudadanías</a> y compartir con sus compañeros sus reflexiones  las preguntas </p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag13 -->
+            
+            <div class="tab-pane contenido5" id="pag14">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <h2>Actividad 3. La trata de personas.</h2>
+                        <p>Hasta el momento se han realizado precisiones sobre el significado de los DDHH, sus características y se ha reflexionado sobre la educación para el ejercicio de los DDHH. Durante las actividades anteriores, se ha hecho evidente la importancia de tratar temas pertinentes, cotidianos y cercanos para abordar el ejercicio de los DDHH. Por esta razón, en este apartado del módulo se analizará el tema de la trata de personas, como una situación que es relevante de trabajar con la comunidad educativa, especialmente con los estudiantes.  </p>
+                        <p>Lo anterior porque uno de los aspectos que concretan el sentido de la dignidad humana es la integridad (física, psíquica y moral) de las personas, es decir el no ser sometido a tratos crueles, inhumanos y degradantes, el no ser sometido a humillaciones de ningún tipo. Considerando la anterior aclaración es necesario reconocer que la esclavitud moderna que se realiza a través de la trata de personas, atenta contra la dignidad y el ejercicio de los DDHH de millones de niñas, niños y jóvenes en todo el mundo, quienes a través de múltiples medios son engañados por los traficantes de personas. La trata de personas impide el ejercicio de los derechos y la ciudadanía pues entre los múltiples mecanismos para obligar a las personas que lo padecen a realizar actividades que van contra su dignidad (por ej: ESCNNA, labores domésticas, tráfico de drogas y armas, vinculación al conflictos armados, retención de documentos personales).</p>
+                        <p>Los Estados han identificado la necesidad de realizar acciones preventivas (información, rutas de atención y denuncia) y de promoción de capacidades, de autocuidado para evitar que niños, niñas y jóvenes sean víctimas de este tipo de esclavitud.  El autocuidado implica que los niños, niñas, jóvenes y sus familias hagan un buen ejercicio de la autonomía, se fortalezcan criterios para la toma de decisiones y se construya confianza para reconocer quienes los pueden proteger, donde se puede denunciar en circunstancias donde la trata de personas puede ser un riesgo.</p>
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag14 -->
+            
+            <div class="tab-pane contenido5" id="pag15">
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>Recuerde la historieta con la que comenzó este módulo. A continuación encontrará el inicio de esta historia:</p>
+                        <p>En la página de Facebook ‘Santa Catalina 4ever’, los alumnos de 9º y 10º apoyan a sus equipos. Todos los días montan fotos de los miembros del equipo, carteles de apoyo, videos editados de partidos anteriores y, por supuesto, uno que otro insulto contra el equipo contrario. Diana y su combo de amigas ‘mUñEkitAx hErMosHas’ decidieron organizarse para apoyar al equipo de su curso: compraron uniformes de porristas y papel confitado, e inventaron barras y canciones para el día del partido. ¡La idea les ha encantado a sus compañeras! ¡Todas las chicas quieren participar y apoyar este evento! Todas están muy emocionadas con su debut como porristas y han comenzado a montar fotos de sus uniformes y videos de los ensayos de la coreografía.  Por supuesto, los chicos del curso no son indiferentes y han comenzado a coquetear con ellas por medio de Facebook. Una de ellas, Lady Camila, ha sido la que más “me gusta” ha obtenido con sus fotos. Muchos de sus contactos le envían piropos pero hay uno de ellos que es particularmente especial. Lady no lo conoce, él dice que se llama Maicol. Eso a Lady no le importa: ¡Maicol es un divino! ¡Escribe muy bonito y le envía canciones preciosas! </p>
+                        <p>Hoy, como todos los días, Lady inicia sesión en su cuenta de Facebook y ve un mensaje de Maicol invitándola a comer helado en un parque bastante retirado de su casa. Maicol le pide que vaya sola porque le da pena que se den cuenta de que está nervioso por encontrarse con “lA prInXeZa mAx herMoOoxtHa de tOoO el MuNDo!”. Lady no hace sino sonreír, aunque no lo conoce, Maicol le gusta muchísimo. Así que decide dejar el miedo a un lado y aceptar la invitación…</p>                        
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+                            
+                <div class="row-fluid">
+                    <div class="span2">&nbsp;</div>
+                    <div class="span8">
+                        <!-- Carrusel de viñetas - 3 -->
+                        <div id="carruselDDHH1" class="carousel slide" data-interval="10000" >
+                            <ol class="carousel-indicators">
+                                <li data-target="#carruselDDHH1" data-slide-to="0" class="active"></li>
+                                <li data-target="#carruselDDHH1" data-slide-to="1"></li>
+                                <li data-target="#carruselDDHH1" data-slide-to="2"></li>
+                            </ol>
+                            <!-- Carousel items -->
+                            <div class="carousel-inner">
+                                <div class="active item">
+                                    <img src="ddhh01.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="ddhh02.svg">
+                                </div>
+                                <div class="item">
+                                    <img src="ddhh03.svg">
+                                </div>
+                            </div><!-- /.carousel-inner -->
+                            <!-- Carousel nav -->
+                            <a class="carousel-control left" href="#carruselDDHH1" data-slide="prev">&lsaquo;</a>
+                            <a class="carousel-control right" href="#carruselDDHH1" data-slide="next">&rsaquo;</a>
+                        </div><!-- /#carruselAgua .carousel .slide -->
+                    </div>
+                    <div class="span2">&nbsp;</div>
+                </div><!-- /.row-fluid -->
+                
+                <div class="row-fluid">
+                    <div class="span12">
+                        <p>Cuando leemos esta historia es común pensar qué hubiera pasado  si Leydi no toma la decisión de no verse con “Maicol” e inevitablemente acerca la violación de los DDHH a la cotidianidad de los niños, niñas y jóvenes que forman parte de la vida cotidiana. </p>
+                        <p class="text-right"><strong>Cuando de TRATA se TRATA…</strong></p>                       
+                    </div><!-- /.span12 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag15 -->
+            
+            <div class="tab-pane contenido5" id="pag16">
+                <div class="row-fluid">
+                    <div class="span12">
                         <h2>¿De qué se trata la trata?</h2>
-                        <h3>Sabía usted que…</h3>
-                        <p>…millones de personas en América Latina son víctimas de la ‘esclavitud del siglo XXI’: la trata de personas. Esta forma de esclavitud consiste en engañar u obligar a una persona, especialmente mujeres, niños y niñas, a desplazarse hacia otros lugares (generalmente el extranjero) con fines de explotación sexual, comercio de órganos, o realización de cualquier tipo de trabajos en contra de su voluntad; lo que afecta especialmente su dignidad, su integridad (física, emocional y sicológica) y el ejercicio de la ciudadanía. <br>
-Pero, ¿por qué la trata de personas afecta el ejercicio de la ciudadanía? Veamos:</p>
-                        <p>Aclaración de conceptos. (El ejercicio contiene dos columnas con ideas u oraciones que se complementan, debe emparejar las ideas de la columna de la izquierda con las de la derecha).</p>
+                        <p>Estamos viviendo nuevas épocas; nuevas formas de expresión han aparecido; de comprender y habitar el mundo; de conocer gente, de acercarse a otros; nuevas formas de construir compromisos y proyectos; de darle sentido a la existencia y al progreso, nuevas formas de trabajo…. En fin, en este mundo cambiante aparecen también circunstancias que ponen a prueba los criterios, referentes éticos, capacidad de cuidado propio y de los nuestros. Una de estas circunstancias es la trata de personas que afecta a millones de personas en el mundo. Por ello, es necesario fortalecer los criterios y la capacidad para tomar perspectiva y decisiones sobre la vida, y a veces la de los otros; con las que se podamos garantizar el ejercicio de la dignidad, de la libertad y de la autonomía, elementos fundamentales de los DDHH. </p>
+                        <h3>Sabía usted que… </h3>
+                        <p>…millones de personas en América Latina son víctimas de la ‘esclavitud del siglo XXI’: la trata de personas. Esta forma de esclavitud consiste en engañar u obligar a una persona, especialmente mujeres, niños y niñas, a desplazarse hacia otros lugares (generalmente el extranjero) con fines de explotación sexual, comercio de órganos, o realización de cualquier tipo de trabajos en contra de su voluntad; lo que afecta especialmente su dignidad, su integridad (física, emocional y sicológica) y el ejercicio de la ciudadanía. </p>
+                        <p>Pero, ¿por qué la trata de personas afecta el ejercicio de la ciudadanía? Veamos:</p>
 
 <!-- ****************************************** HOTPOTATO **************************************** -->
 <div style="display: none;" class="Titles">
@@ -1173,18 +1721,12 @@ Pero, ¿por qué la trata de personas afecta el ejercicio de la ciudadanía? Vea
 
 </div>
 <!-- ****************************************** HOTPOTATO **************************************** -->
-
-                    <h3>Abra la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a> y responda las siguientes preguntas:</h3>
-<p>¿Conoce en su país o localidad alguna política, plan o proyecto de prevención, educación, protección o sanción relacionada con el tráfico de personas? ¿En qué consiste?</p>
-<p>¿Desarrollan en su institución educativa algún proyecto de difusión, educación y protección para prevenir la trata de personas?</p>
-
-
-
+ 
                     </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag5 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag16 -->
             
-            <div class="tab-pane contenido5" id="pag6">
+            <div class="tab-pane contenido5" id="pag17">
                 <div class="row-fluid">
                     <div class="span12">
                         <h3>Puede informarse sobre la trata y el tráfico de personas en los siguientes enlaces:</h3>
@@ -1193,97 +1735,58 @@ Pero, ¿por qué la trata de personas afecta el ejercicio de la ciudadanía? Vea
                         <p><a href="http://www.eltiempo.com/politica/el-quid-cmo-opera-la-trata-de-personas-en-colombia_12941618-4" target="_blank"> http://www.eltiempo.com/politica/el-quid-cmo-opera-la-trata-de-personas-en-colombia_12941618-4</a></p>
                         <p><a href="http://www.eltiempo.com/justicia/piden-ms-acciones-contra-trata-de-personas_12933549-" target="_blank"> http://www.eltiempo.com/justicia/piden-ms-acciones-contra-trata-de-personas_12933549-</a></p>
                         <p>Algunos hechos que muestran la gravedad del problema de la trata y el tráfico de personas:  <a href="http://www.unodc.org/documents/colombia/2013/Julio/CongresoTratadepersonas.pdf" target="_blank">http://www.unodc.org/documents/colombia/2013/Julio/CongresoTratadepersonas.pdf</a></p>  
-                        <p>Cali y Pereira: primera y segunda ciudad en casos de trata:  <a href="http://www.latarde.com/noticias/risaralda/118726-pereira-la-segunda-ciudad-con-mas-casos-de-trata-de-personas" target="_blank">http://www.latarde.com/noticias/risaralda/118726-pereira-la-segunda-ciudad-con-mas-casos-de-trata-de-personas </a>
-</p>
+                        <p>Cali y Pereira: primera y segunda ciudad en casos de trata:  <a href="http://www.latarde.com/noticias/risaralda/118726-pereira-la-segunda-ciudad-con-mas-casos-de-trata-de-personas" target="_blank">http://www.latarde.com/noticias/risaralda/118726-pereira-la-segunda-ciudad-con-mas-casos-de-trata-de-personas </a></p>
                         <p>¿Cómo prevenir la trata de personas?:  <a href="http://www.savethechildren.org.gt/index.php?option=com_content&view=article&id=49&Itemid=25" target="_blank">http://www.savethechildren.org.gt/index.php?option=com_content&view=article&id=49&Itemid=25 </a> </p>
-                        <p>Manual - Derechos Humanos y trata de personas: <a href="http://www.catedradh.unesco.unam.mx/BibliotecaV2/Documentos/Trata/Libros/manual_trata_dh.pdf" target="_blank">http://www.catedradh.unesco.unam.mx/BibliotecaV2/Documentos/Trata/Libros/manual_trata_dh.pdf </a></p> 
-                        <h3>Reflexión de grupo: </h3> 
-                        <p>Después de leer algunos de los anteriores artículos, comparta sus hallazgos con otros participantes del curso. ¿Encuentra coincidencias?, ¿difiere de algunas opiniones?, ¿hay algo de lo que se menciona que usted no conocía?</p>           
-                        
+                        <p>Manual - Derechos Humanos y trata de personas: <a href="http://www.catedradh.unesco.unam.mx/BibliotecaV2/Documentos/Trata/Libros/manual_trata_dh.pdf" target="_blank">http://www.catedradh.unesco.unam.mx/BibliotecaV2/Documentos/Trata/Libros/manual_trata_dh.pdf </a></p>         
+                        <p>Después de leer algunos de los anteriores artículos, comparta sus hallazgos con otros participantes del curso en la <a href="http://ciudadanias.net" target="_blank">Red Social Ciudadanías</a>. Luego, los invitamos a reflexionar sobre las siguientes preguntas: ¿Qué relación encuentra usted entre dignidad humana y trata de personas?, ¿cómo afecta la trata de personas el ejercicio de la ciudadanía? </p>
                     </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag6 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag17 -->
             
-            <div class="tab-pane contenido5" id="pag7">
+            <div class="tab-pane contenido5" id="pag18">
                 <div class="row-fluid">
                     <div class="span12">
-                        <h2>Le invitamos a profundizar en esta reflexión sobre la trata de personas y la formación en ciudadanía.</h2>
-                        <p>¿Qué relación encuentra usted entre dignidad humana y trata de personas?<br>
-¿Cómo afecta la trata de personas el ejercicio de la ciudadanía?<br>
-¿Educar para el ejercicio de la ciudadanía ayuda a prevenir la trata de personas? ¿Por qué? </p>
-                        <p>Responda y comente en la <a target="_blank" href="http://ciudadanos.ning.com">Red Social</a></p>
+                        <h2>Actividad 4 – Mi acontecimiento ciudadano.</h2>
+                        <p>El término <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">acontedimiento ciudadano</a> hace referencia a un suceso o hecho significativo que irrumpe en la cotidianidad de las relaciones de la comunidad, y que hace evidente una problemática que afecta, en mayor o menor medida, el bienestar de las personas.</p>
+                        <p>Durante este módulo se ha reflexionado sobre los DDHH y sus características, se identificaron elementos fundamentales para la educación en DDHH y se analizó un tema relevante como lo es la trata de personas. De manera transversal, ha sido evidente como es necesario diseñar acciones para formar a la comunidad educativa para el ejercicio, promoción y exigencia de los DDHH, las cuales sean construidas con la participación de los estudiantes y puedan enriquecer la iniciativa pedagógica planteada por usted partiendo de lo aprendido en este módulo. </p>
+                        <p>A continuación encontrará una caja de herramientas con insumos pedagógicos que le servirán de inspiración para aportar a su acontecimiento.</p>
+                        <h3>Caja de herramientas pedagógicas. </h3>
+                        <p>Teniendo en cuenta las reflexiones anteriores, es momento de utilizar los aprendizajes adquiridos a los largo del módulo para enriquecer la iniciativa pedagógica que usted ha planteado como material de trabajo para este curso.  A continuación, encontrará una serie de insumos pedagógicos  que le podrán servir de inspiración para plantear elementos innovadores frente a su iniciativa. </p>
+                        <p>Luego de revisar estos insumos, lo invitamos a realizar la última actividad del módulo, la cual es diseñar un acontecimiento ciudadano, el cual servirá para potenciar su iniciativa pedagógica y afianzar las comprensiones que ha desarrollado sobre la convivencia.</p>
+                        <h3>Herramientas para profundizar en lo conceptual y pedagógico</h3>
+                        <p><a href="2.METODOLOGIAS.doc" target="_blank">Metodologías pedagógicas</a></p>
+                        <p><a href="3.TALLER DDHH.docx" target="_blank">Taller: La dignidad humana y los derechos humanos</a></p>
+                        <p><a href="4.TALLER-DEBERES.doc" target="_blank">Taller derechos y deberes </a></p>
+                        <p><a href="5.AULA-DDHH.doc" target="_blank">Actividad de aula sobre DDHH</a></p>
+                        <p><a href="6.ENFOQUE.docx" target="_blank">Enfoque de derechos</a></p>
+                        <p>Luego de revisar los insumos, lo invitamos a proponer un acontecimiento ciudadano que complemente su iniciativa siguiendo los siguientes pasos:</p>
+                        <p><strong>Paso 1. Diseñe y redacte su acontecimiento ciudadano.</strong>Teniendo en cuenta lo aprendido en este módulo, diseñe una actividad a manera de acontecimiento ciudadano siguiendo el formato que encontrará al <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">hacer clic aquí</a>.</p>
+                        <p><strong>Paso 2. Participe en el taller de maduración.</strong>En la <a href="http://ciudadanias.net" target="_blank">Red Social Ciudadanías</a> se abrirá un espacio para compartir, discutir y retroalimentar las ideas de los acontecimientos ciudadanos. De esta manera estará listo para desarrollarlo en su escuela.</p>
+                        <p><strong>Paso 3. Desarrollo del acontecimiento ciudadano.</strong>Si es posible desarrollé la actividad que propone y tome nota de los resultados. Si no es posible desarrollarla, puede discutirla son otras personas por ejemplo estudiantes, docentes o familias, para recoger lo que opinan sobre su propuesta.</p>
+                        <p><strong>Paso 4. Comparta su experiencia.</strong>A partir de su experiencia, se abrirá un espacio en la <a href="http://ciudadanias.net" target="_blank">Red Social Ciudadanías</a> para que comparta sus ideas,  reflexiones, imágenes y videos.</p>
+                        <br><br>
+                        <p>Al finalizar este módulo, le solicitamos que diligencie la siguiente valoración: <a href="http://www.redeaprender.org/ciudadanias/moodle/mod/feedback/view.php?id=40">haga clic aquí</a>.</p> 
                     </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag7 -->
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag18 -->
             
-            <div class="tab-pane contenido5" id="pag8">
+            <div class="tab-pane contenido5" id="pag19">
                 <div class="row-fluid">
                     <div class="span12">
-                        <h2>Una historia, muchos desenlaces…</h2>
-                        <p>Cuando leemos estas historias es común que nuestra reacción sea pensar ‘como se hubiera hecho mejor’. Conociendo la historia de Leydi con ‘Maicol’, y teniendo en cuenta una parte de la realidad sobre la trata de personas y cómo ésta afecta la dignidad, los derechos humanos y el ejercicio de la ciudadanía, ¿qué final daría usted a esta historia? Para responder puede tener en cuenta las siguientes preguntas generadoras:</p>
-                        <ul>
-                            <li>¿Cómo supo Leidy que el señor le mintió?</li>
-                            <li>¿Cómo llegó Leidy a la decisión de dejar al señor plantado?</li>
-                        </ul>
-                        <p>Puede también incorporar, en el final que usted propone, la ausencia o presencia las siguientes competencias ciudadanas:</p>
-                        <ul>
-                            <li>Toma de perspectiva.</li>
-                            <li>Pensamiento crítico.</li>
-                            <li>Interpretación de intenciones.</li>
-                            <li>Consideración de consecuencias.</li>
-                            <li>Escucha activa.</li>
-                            <li>Asertividad.</li>
-                        </ul>
-                        <p>Construya su propio relato en la <a target="_blank" href="http://ciudadanos.ning.com">Red Social</a></p>
+                        <h2>Para finalizar…</h2>
+                        <p>A lo largo de este módulo se han realizado importantes precisiones sobre los DDHH y sobre la importancia de la educación para el ejercicio de los DDHH como parte integral de la calidad educativa. Lo que ha permitido enfatizar en la importancia de la creación de espacios escolares donde se promueva la construcción de espacios propicios para el ejercicio de los DDHH, espacios que permitirán que los estudiantes, docentes, familias y demás personas de la comunidad puedan apropiarse de estos escenarios y convertirse en agentes de transformación. Este proceso de corresponsabilidad se consolida con acciones como las propuestas por usted a manera de acontecimiento ciudadano, lo que muestra como los DDHH pueden estar en diferentes espacios escolares de manera pertinente y real.</p>
+                        <h3>Referencias</h3>
+                        <p>Amnistía Internacional (2011). Recuperado de Educación en Derechos Humanos. <a href="https://www.es.amnesty.org/es/grupos-locales/pais-vasco/grupos/bilbao/paginas/educacion-en-derechos-humanos/" target="_blank">https://www.es.amnesty.org/es/grupos-locales/pais-vasco/grupos/bilbao/paginas/educacion-en-derechos-humanos/</a> </p>
+                        <p>Arón, A. &amp; Milic, N. (1999). Clima social escolar y desarrollo personal. Un programa de mejoramiento. Santiago de Chile: Editorial Andrés Bello.</p>
+                        <p>Azkarate, G., Errasti, L. &amp; Mena, M (2000). Materiales para la educación en Derechos Humanos. Ejercicios prácticos para diferentes áreas y líneas transversales. Recuperado de <a href="http://www.ararteko.net/RecursosWeb/DOCUMENTOS/1/2_466_3.pdf" target="_blank">http://www.ararteko.net/RecursosWeb/DOCUMENTOS/1/2_466_3.pdf</a></p>
+                        <p>Chaux, E.; Lleras, J. &amp; Velásquez, A.M. (Ed.) (2004). Competencias ciudadanas: De los estándares al aula. Bogotá: Uniandes.</p>
+                        <p>Defensoría del Pueblo (2001). Serie Red Nacional de Promotores de los Derechos Humanos. Derechos de Libertad. Bogotá: Defensoría del Pueblo.</p>
+                        <p>IEPALA (2011).Curso sistemático de DDHH. Recuperado de <a href="http://www.iepala.es/curso_ddhh/ddhh765.htm" target="_blank">http://www.iepala.es/curso_ddhh/ddhh765.htm</a></p>
+                        <p>IIDH (1994). Educación en derechos humanos. Costa Rica: IIDH</p>
                     </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag8 -->
-            
-            <div class="tab-pane contenido5" id="pag9">
-                <div class="row-fluid">
-                    <div class="span12">
-                        <h3>Y en la vida real, ¿qué hace para cuidarse y cuidar a los suyos?</h3>
-                        <p>Ya propuso un final para la historia de Leidy, ahora cuéntenos cómo lo hace usted en la vida real, con los suyos, sus hijos, hermanos, estudiantes, y la gente de su entorno: </p>
-                       <p> Señale con una X si conoce o ha desarrollado alguna acción ciudadana para informar o educar sobre la trata de personas, prevenirla o denunciarla:<br><br>
-                          <i class="clic fa fa-square-o"></i> En casa.<br>
-                          <i class="clic fa fa-square-o"></i> En el trabajo.<br>
-                          <i class="clic fa fa-square-o"></i> En el colegio.<br>
-                          <i class="clic fa fa-square-o"></i> En su barrio/vereda.<br>
-                       </p>
-                       
-                       <p>Comparta con el curso en qué consiste su acción ciudadana sobre la trata de personas. </p>
-                       <p>Una posibilidad de ampliar el impacto de su acción ciudadana para la prevención de la trata de personas es convocar acciones colectivas que generen el interés o el deseo de expresarse de otros miembros de su localidad. Un colectivo de ciudadanía activa en Colombia realiza algunas actividades de este tipo:  <a href="http://100en1dia.com/" target="_blank"> http://100en1dia.com </a></p>
-                       
-                       <h3>Comente en la <a href="http://ciudadanos.ning.com" target="_blank">Red Social Ciudadanías</a> la siguiente pregunta:</h3>
+                </div><!-- ./row-fluid -->
+            </div><!-- /.tab-pane #pag19 -->
 
-<p>A su juicio, ¿qué tipo de acciones ciudadanas contra la trata de personas generan mayor impacto? </p>
-<p>Las que tienen un énfasis puesto en…<br>
-…la educación y la información.<br>
-…el fortalecimiento de la autonomía y la autoestima.<br>
-…el control sobre las relaciones y amistades de niños, niñas y jóvenes.<br>
-…el manejo del acceso a las redes sociales.<br>
-…las rutas legales para la denuncia y la judicialización.<br>
-Otras<br>
-¿Por qué?</p>
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag9 -->
-            
-             <div class="tab-pane contenido5" id="pag10">
-                <div class="row-fluid">
-                    <div class="span12">
-                       <h2>Acontecimiento ciudadano:</h2> 
-                        <p>A continuación realice la actividad <a href="http://www.redeaprender.org/ciudadanias/moodle/course/view.php?id=2&section=9">Acontecimiento Ciudadano.</a></p>
-                        <p>Gracias por su participación.</p>
-                    </div><!-- /.span12 -->
-                </div><!-- /.row-fluid -->
-            </div><!-- /.tab-pane #pag8 --> 
-            
-          
-           
-            
-            
-            
         </div><!-- /.tab-content -->   
 
 
@@ -1298,6 +1801,17 @@ Otras<br>
                 <li><a href="#pag6">6</a></li>
                 <li><a href="#pag7">7</a></li>
                 <li><a href="#pag8">8</a></li>
+                <li><a href="#pag9">9</a></li>
+                <li><a href="#pag10">10</a></li>
+                <li><a href="#pag11">11</a></li>
+                <li><a href="#pag12">12</a></li>
+                <li><a href="#pag13">13</a></li>
+                <li><a href="#pag14">14</a></li>
+                <li><a href="#pag15">15</a></li>
+                <li><a href="#pag16">16</a></li>
+                <li><a href="#pag17">17</a></li>
+                <li><a href="#pag18">18</a></li>
+                <li><a href="#pag19">19</a></li>
             </ul>
         </div><!-- /.pagination -->
         
@@ -1365,6 +1879,26 @@ Otras<br>
                     $(this).removeClass('fa-square-o').addClass('fa-check-square-o');
                 });
             });
+            function limpiaEncuesta(obj) {
+                var nomFrame= $(obj).attr('name');
+                $(obj).siblings('.cargandoEncuesta').hide();
+                $(obj).show();
+                $(frames[nomFrame].document.body).children('header').hide();
+                $(frames[nomFrame].document.body).children('#page').children('header').hide();
+                $(frames[nomFrame].document.body).children('#page').children('footer').hide();
+                $(frames[nomFrame].document.body).children('#page').children('#page-content').children('aside').hide();
+                $(frames[nomFrame].document.body).children('#page').children('#page-content').children('#region-main').children('div').children('h2').hide();
+                $(frames[nomFrame].document.body).children('#page').children('#page-content').children('#region-main').children('div').children('.feedback_complete_cancel').hide();
+                $(frames[nomFrame].document.body).children('#page').children('#page-content').children('#region-main').children('div').children('.feedback_form').children('form').children('fieldset').children('.feedback_anonymousinfo').hide();
+                $(frames[nomFrame].document.body).children('#page').children('#page-content').children('#region-main').children('div').children('.feedback_form').children('form').children('fieldset').children('.feedback_items').children('.feedback_item_box_left').children('.boxalign_left').children('.feedback_item_label_left').children('label').hide();
+                $(frames[nomFrame].document.body).css('background-color', '#FFFFFF');       
+                $(frames[nomFrame].document.body).children('#page').children('#page-content').children('#region-main').children('div').children('.continuebutton').hide();
+                $(frames[nomFrame].document.body).children('#page').children('#page-content').children('#region-main').children('div').children('.boxaligncenter').children('.continuebutton').hide();
+                $(frames[nomFrame].document.body).children('#page').children('#page-content').children('#region-main').children('div').children('.feedback_form').children('form').on('submit', function(){
+                    $(obj).hide();
+                    $(obj).siblings('.cargandoEncuesta').show();
+                });
+            }
         </script> 
 
 

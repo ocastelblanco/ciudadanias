@@ -93,6 +93,10 @@ li#section-0.section.main>div.right.side {
 .user-grade td.oddd1, .user-grade th.oddd1 {
     background-color: rgb(47, 61, 70);
 }
+.forumpost {
+    background-color: transparent;
+    border: none;
+}
 /* ---------------------------------- Estilos para los contenidos hotpotatoes ------------------- */
 body#page-mod-hotpot-attempt div.continuebutton {
     display:none;
